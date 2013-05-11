@@ -3,7 +3,6 @@ function Ingredient(context, sx, sy, w, h, imgPath, zOrder, draggable, name, hea
 	this.setDraggable(draggable);
 	this.name = name;
 
-
 	this.HEATRISINGRATE = heatRisingRate;
 	this.DEFAULTTEMPERATURE = 24;
 	this.temperature = this.DEFAULTTEMPERATURE;
@@ -18,20 +17,20 @@ function Ingredient(context, sx, sy, w, h, imgPath, zOrder, draggable, name, hea
 Ingredient.prototype = new VisualRenderObject();
 Ingredient.prototype.constructor = Ingredient;
 
-Ingredient.prototype.updateTemperature = function (temperature) {
+Ingredient.prototype.updateTemperature = function(temperature) {
 	if(this.temperature < temperature) {
-        this.temperature = this.temperature + temperature * this.HEATRISINGRATE;
-	        this.temperatureState = this.HEATING;
-        if(this.temperature > temperature) {
-	        this.temperature = temperature;
-	        this.temperatureState = this.HEATED;
-        }
-    } else if( this.temperature > temperature) {
-        this.temperature = this.temperature- temperature * this.HEATRISINGRATE;
-	            this.temperatureState = this.COOLING;
-        if(this.temperature < temperature) {
-               this.temperature = temperature;
-	            this.temperatureState = this.COOL;
-           }
-    }
+		this.temperature = this.temperature + temperature * this.HEATRISINGRATE;
+		this.temperatureState = this.HEATING;
+		if(this.temperature > temperature) {
+			this.temperature = temperature;
+			this.temperatureState = this.HEATED;
+		}
+	} else if(this.temperature > temperature) {
+		this.temperature = this.temperature - temperature * this.HEATRISINGRATE;
+		this.temperatureState = this.COOLING;
+		if(this.temperature < temperature) {
+			this.temperature = temperature;
+			this.temperatureState = this.COOL;
+		}
+	}
 };
