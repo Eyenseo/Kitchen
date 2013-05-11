@@ -22,15 +22,24 @@ function Kitchen(canvasId){
 	var nudel = new Ingredient(this.stage.getContext(), 15,80, 165,54, "images/nudel.png", 111, true, "Nudel");
 	var water = new Ingredient(this.stage.getContext(), 20,85, 86,150, "images/water.png", 111, true, "Wasser");
 	var oil = new Ingredient(this.stage.getContext(), 25,90, 87,350, "images/oil.png", 111, true, "Öl");
-	
+	var fleisch = new Ingredient(this.stage.getContext(), 25,90, 100,100, "images/fleisch.png", 111, true, "Fleisch");
+	var karotte = new Ingredient(this.stage.getContext(), 25,90, 100,100, "images/karotte.png", 111, true, "Karotte");
+	var pilze = new Ingredient(this.stage.getContext(), 25,90, 100,100, "images/pilze.png", 111, true, "Pilze");
+
 	this.ingredients.push(nudel);
 	this.ingredients.push(water);
 	this.ingredients.push(oil);
-	
+	this.ingredients.push(fleisch);
+	this.ingredients.push(karotte);
+	this.ingredients.push(pilze);
+
 	this.stage.addToStage(nudel);
 	this.stage.addToStage(water);
 	this.stage.addToStage(oil);
-	
+	this.stage.addToStage(fleisch);
+	this.stage.addToStage(karotte);
+	this.stage.addToStage(pilze);
+
 	//event stuff
 	this.stage.registerEvent('click', this);
 	this.stage.registerEvent('dragend', this);
