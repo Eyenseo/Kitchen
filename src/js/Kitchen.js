@@ -10,6 +10,12 @@ function Kitchen(canvasId) {
 
 	//create Objects
 
+	//SoundManager
+	this.soundManager = new SoundManager();
+
+	//Loop variable
+	this.runEvery = 0;
+
 	//Plate
 	this.plates = [];
 	var plate1 = new Plate(this.stage.getContext(), 500, 400, 90, "Plate One");
@@ -34,8 +40,8 @@ function Kitchen(canvasId) {
 
 	//Pot
 	this.pots = [];
-	var pot1 = new Pot(this.stage.getContext(), 300, 100, 242, 187, "images/pot.png", 100, true, "Pot One");
-	var pot2 = new Pot(this.stage.getContext(), 300, 100, 242, 187, "images/pot.png", 100, true, "Pot Two");
+	var pot1 = new Pot(this.stage.getContext(), 300, 100, 242, 187, "images/pot.png", 100, true, "Pot One", 0.002, this.soundManager);
+	var pot2 = new Pot(this.stage.getContext(), 300, 100, 242, 187, "images/pot.png", 100, true, "Pot Two", 0.002, this.soundManager);
 
 	this.pots.push(pot1);
 	this.pots.push(pot2);
@@ -78,39 +84,43 @@ function Kitchen(canvasId) {
 
 //Event handler
 Kitchen.prototype.onClick = function(event) {
+	var kitchen = this;
 	if(event.target instanceof Knob) {
 		event.target.changeState();
+		kitchen.soundManager.playSound(kitchen.soundManager.KNOB);
 	}
-}
+};
 
 Kitchen.prototype.onDragend = function(event) {
 	//console.log(event.target);
+	var kitchen = this;
 	if(event.target instanceof Ingredient) {
 		var ingredinentCenterX = event.target.getCenter().cx;
 		var ingredinentCenterY = event.target.getCenter().cy;
-		var kitchen = this;
 
 		this.pots.forEach(function(pot) {
 			var zone = pot.getHitZone();
 			if(ingredinentCenterX >= zone.hx && ingredinentCenterY >= zone.hy && ingredinentCenterX <= zone.hx + zone.hw && ingredinentCenterY <= zone.hy + zone.hh) {
 				pot.addPotContent(event.target);
 				kitchen.stage.removeFromStage(event.target);
+				kitchen.soundManager.playSound(kitchen.soundManager.DROP);
 			}
 		});
 	} else if(event.target instanceof Pot) {
 		var plateCenterX = event.target.getBottomCenter().cx;
 		var plateCenterY = event.target.getBottomCenter().cy;
-
 		this.plates.forEach(function(plate) {
 			var zone = plate.getHitZone();
 			if(plateCenterX >= zone.hx && plateCenterY >= zone.hy && plateCenterX <= zone.hx + zone.hw && plateCenterY <= zone.hy + zone.hh) {
 				plate.setPot(event.target);
 				event.target.setPlate(plate);
 				plate.updatePotTemperature();
+
+				kitchen.soundManager.playSound(kitchen.soundManager.POTONTOSTOVE);
 			}
 		});
 	}
-}
+};
 
 Kitchen.prototype.onDragstart = function(event) {
 	if(event.target instanceof Pot) {
@@ -118,9 +128,9 @@ Kitchen.prototype.onDragstart = function(event) {
 			event.target.plate.setPot(null);
 			event.target.plate = null;
 		}
-		event.target.setTemperature(event.target.DEFAULTTEMPERATURE);
+		event.target.setGoalTemperature(event.target.DEFAULTTEMPERATURE);
 	}
-}
+};
 
 /**
  * Animation loop
@@ -133,6 +143,13 @@ Kitchen.prototype.run = function(kit) {
 		this.pots[i].updateTemperatures();
 	}
 
+	if(this.runEvery == 120) {
+		this.runEvery = 0;
+		this.soundManager.cleanUp();
+	} else {
+		this.runEvery++;
+	}
+
 	// Always render after the updates
 	kit.stage.render();
 	// keep the loop going
@@ -140,4 +157,4 @@ Kitchen.prototype.run = function(kit) {
 		kit.run(kit);
 	});
 
-}
+};

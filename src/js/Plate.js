@@ -22,9 +22,9 @@ Plate.prototype.setPot = function(pot) {
 Plate.prototype.updatePotTemperature = function() {
 	if(this.pot != null) {
 		if(this.state != 0) {
-			this.pot.setTemperature(60 * this.state);
+			this.pot.setGoalTemperature(60 * this.state);
 		} else {
-			this.pot.setTemperature(this.pot.DEFAULTTEMPERATURE);
+			this.pot.setGoalTemperature(this.pot.DEFAULTTEMPERATURE);
 		}
 	}
 };
