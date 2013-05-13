@@ -48,22 +48,22 @@ Pot.prototype.setGoalTemperature = function(temperature) {
 Pot.prototype.updateTemperature = function() {
 	if(this.temperature != this.goalTemperature) {
 		if(this.temperature < this.goalTemperature) {
-			this.temperature = this.temperature + this.goalTemperature * this.HEATRISINGRATE;
-			if(this.temperatureState != this.HEATING) {
-				this.soundManager.loopSound(this.soundManager.POTHEATINGUP);
+			if(this.temperatureState == this.COOL) {
+				this.soundManager.playLoop(this.soundManager.POTHEATINGUP);
 			}
+			this.temperature = this.temperature + this.goalTemperature * this.HEATRISINGRATE;
 			this.temperatureState = this.HEATING;
-			if(this.temperature > this.goalTemperature) {
+			if(this.temperature >= this.goalTemperature) {
 				this.temperature = this.goalTemperature;
 				this.temperatureState = this.HEATED;
 			}
 		} else if(this.temperature > this.goalTemperature) {
 			this.temperature = this.temperature - this.goalTemperature * this.HEATRISINGRATE;
 			this.temperatureState = this.COOLING;
-			if(this.temperature < this.goalTemperature) {
+			if(this.temperature <= this.goalTemperature) {
 				this.temperature = this.goalTemperature;
 				this.temperatureState = this.COOL;
-				this.soundManager.stopSound(this.soundManager.POTHEATINGUP);
+				this.soundManager.stopLoop(this.soundManager.POTHEATINGUP);
 			}
 		}
 	}

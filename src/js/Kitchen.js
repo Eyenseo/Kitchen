@@ -13,9 +13,6 @@ function Kitchen(canvasId) {
 	//SoundManager
 	this.soundManager = new SoundManager();
 
-	//Loop variable
-	this.runEvery = 0;
-
 	//Plate
 	this.plates = [];
 	var plate1 = new Plate(this.stage.getContext(), 500, 400, 90, "Plate One");
@@ -87,7 +84,7 @@ Kitchen.prototype.onClick = function(event) {
 	var kitchen = this;
 	if(event.target instanceof Knob) {
 		event.target.changeState();
-		kitchen.soundManager.playSound(kitchen.soundManager.KNOB);
+		kitchen.soundManager.play(kitchen.soundManager.KNOB);
 	}
 };
 
@@ -103,7 +100,7 @@ Kitchen.prototype.onDragend = function(event) {
 			if(ingredinentCenterX >= zone.hx && ingredinentCenterY >= zone.hy && ingredinentCenterX <= zone.hx + zone.hw && ingredinentCenterY <= zone.hy + zone.hh) {
 				pot.addPotContent(event.target);
 				kitchen.stage.removeFromStage(event.target);
-				kitchen.soundManager.playSound(kitchen.soundManager.DROP);
+				kitchen.soundManager.play(kitchen.soundManager.DROP);
 			}
 		});
 	} else if(event.target instanceof Pot) {
@@ -116,7 +113,7 @@ Kitchen.prototype.onDragend = function(event) {
 				event.target.setPlate(plate);
 				plate.updatePotTemperature();
 
-				kitchen.soundManager.playSound(kitchen.soundManager.POTONTOSTOVE);
+				kitchen.soundManager.play(kitchen.soundManager.POTONTOSTOVE);
 			}
 		});
 	}
@@ -141,13 +138,6 @@ Kitchen.prototype.run = function(kit) {
 	// update the objects (Plate, Knob, ...)
 	for(var i = 0; i < this.pots.length; i++) {
 		this.pots[i].updateTemperatures();
-	}
-
-	if(this.runEvery == 120) {
-		this.runEvery = 0;
-		this.soundManager.cleanUp();
-	} else {
-		this.runEvery++;
 	}
 
 	// Always render after the updates

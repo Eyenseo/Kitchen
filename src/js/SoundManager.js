@@ -1,112 +1,120 @@
 function SoundManager() {
-	this.DROP = "sounds/drop.wav";
-	this.KNOB = "sounds/knob.wav";
-	this.POTHEATINGUP = "sounds/potHeatingUp.wav";
-	this.POTONTOSTOVE = "sounds/potOntoStove.wav";
+	this.dropLoop = 0;
+	this.knobLoop = 0;
+	this.potHeatingUpLoop = 0;
+	this.potOntoStoveLoop = 0;
 
-	this.dropFirst = null;
-	this.knobFirst = null;
-	this.potHeatingUpFirst = null;
-	this.potOntoStoveFirst = null;
+	this.DROP = new Array(4);
+	this.KNOB = new Array(3);
+	this.POTHEATINGUP = new Array(4);
+	this.POTONTOSTOVE = new Array(3);
 
-	this.dropEle = new Array(4);
-	this.knobEle = new Array(3);
-	this.potHeatingUpEle = new Array(4);
-	this.potOntoStoveEle = new Array(3);
+	this.initialiseSound(this.DROP, "sounds/drop.wav");
+	this.initialiseSound(this.KNOB, "sounds/knob.wav");
+	this.initialiseSound(this.POTHEATINGUP, "sounds/potHeatingUp.wav");
+	this.initialiseSound(this.POTONTOSTOVE, "sounds/potOntoStove.wav");
 }
 
 SoundManager.prototype.constructor = SoundManager;
 
-SoundManager.prototype.playSound = function(sound) {
-	this.manageSound(sound, 1);
+SoundManager.prototype.initialiseSound = function(array, path) {
+	for(var i = 0; i < array.length; i++) {
+		array[i] = new Audio(path);
+	}
 };
 
-SoundManager.prototype.stopSound = function(sound) {
+SoundManager.prototype.stop = function(sound) {
 	this.manageSound(sound, 0);
 };
 
-SoundManager.prototype.loopSound = function(sound) {
+SoundManager.prototype.play = function(sound) {
+	this.manageSound(sound, 1);
+};
+
+SoundManager.prototype.stopLoop = function(sound) {
+
 	this.manageSound(sound, 2);
+};
+
+SoundManager.prototype.playLoop = function(sound) {
+	this.manageSound(sound, 3);
 };
 
 SoundManager.prototype.manageSound = function(sound, status) {
 	if(sound == this.DROP) {
-		this.dropFirst = this.controlSound(this.dropEle, this.dropFirst, this.DROP, status);
+		this.dropLoop += this.controlSound(this.DROP, this.dropLoop, status);
 	} else if(sound == this.KNOB) {
-		this.knobFirst = this.controlSound(this.knobEle, this.knobFirst, this.KNOB, status);
+		this.knobLoop += this.controlSound(this.KNOB, this.knobLoop, status);
 	} else if(sound == this.POTHEATINGUP) {
-		this.potHeatingUpFirst = this.controlSound(this.potHeatingUpEle, this.potHeatingUpFirst, this.POTHEATINGUP, status);
+		this.potHeatingUpLoop += this.controlSound(this.POTHEATINGUP, this.potHeatingUpLoop, status);
 	} else if(sound == this.POTONTOSTOVE) {
-		this.potOntoStoveFirst = this.controlSound(this.potOntoStoveEle, this.potOntoStoveFirst, this.POTONTOSTOVE, status);
+		this.potOntoStoveLoop += this.controlSound(this.POTONTOSTOVE, this.potOntoStoveLoop, status);
 	}
 };
 
-SoundManager.prototype.controlSound = function(soundEle, soundFirst, sound, status) {
-	if(status > 0) {
-		for(var i = 0; i < soundEle.length; i++) {
-			if(soundEle[i] == undefined || soundEle[i] == null) {
-				//noinspection JSUnresolvedFunction
-				soundEle[i] = new Audio(sound);
-				if(status == 2) {
-					soundEle[i].loop = true;
+SoundManager.prototype.controlSound = function(sound, loop, status) {
+	switch(status) {
+		case 0:
+			if(loop < sound.length) {
+				var playing = 0;
+				sound.forEach(function(audio) {
+					if(!audio.ended) {
+						playing++;
+					}
+				});
+				if(loop < playing) {
+					for(var i = 0; i < sound.length; i++) {
+						if(!sound[i].ended) {
+							sound[i].pause();
+							sound[i].currentTime = 0;
+							break;
+						}
+					}
 				}
-				soundEle[i].play();
-				if(soundFirst == null) {
-					return i;
-				}
-				return soundFirst;
 			}
-		}
-		soundEle[soundFirst].pause();
-		soundEle[soundFirst].currentTime = 0;
-		soundEle[soundFirst].play();
-		if(soundFirst < soundEle.length - 1) {
-			return ++soundFirst;
-		}
-		return 0;
-	} else {
-		if(soundEle[soundFirst] != undefined && soundEle[soundFirst] != null) {
-			soundEle[soundFirst].pause();
-			soundEle[soundFirst] = null;
-			if(soundFirst < soundEle.length - 1) {
-				if(soundEle[soundFirst + 1] != undefined && soundEle[soundFirst + 1] != null) {
-					return ++soundFirst;
+			break;
+		case 1:
+			if(loop < sound.length) {
+				for(var i = 0; i < sound.length; i++) {
+					if(sound[i].ended || sound[i].currentTime == 0) {
+						sound[i].currentTime = 0;
+						sound[i].play();
+						break;
+					}
 				}
-				return null;
-			} else {
-				if(soundEle[0] != undefined && soundEle[0] != null) {
-					return 0;
-				}
-				return null;
 			}
-		}
-		return null;
+			break;
+		case 2:
+			if(loop > 0) {
+				if(loop <= sound.length) {
+					for(var i = 0; i < sound.length; i++) {
+						if(sound[i].loop == true) {
+							sound[i].pause();
+							sound[i].loop = false;
+							sound[i].currentTime = 0;
+							break;
+						}
+					}
+				}
+				return -1;
+			}
+			break;
+		case 3:
+			if(loop < sound.length) {
+				for(var i = 0; i < sound.length; i++) {
+					if(sound[i].ended || sound[i].currentTime == 0) {
+						sound[i].currentTime = 0;
+						sound[i].loop = true;
+						sound[i].play();
+						break;
+					} else if(sound[i].loop == false) {
+						sound[i].loop = true;
+						break;
+					}
+				}
+			}
+			return 1;
 	}
+	return 0;
 };
 
-SoundManager.prototype.cleanUp = function() {
-	this.dropFirst = this.removeEndedSounds(this.dropEle, this.dropFirst);
-	this.knobFirst = this.removeEndedSounds(this.knobEle, this.knobFirst);
-	this.potHeatingUpFirst = this.removeEndedSounds(this.potHeatingUpEle, this.potHeatingUpFirst);
-	this.potOntoStoveFirst = this.removeEndedSounds(this.potOntoStoveEle, this.potOntoStoveFirst);
-};
-
-SoundManager.prototype.removeEndedSounds = function(soundEle, soundFirst) {
-	if(soundFirst != null) {
-		//noinspection JSDuplicatedDeclaration
-		for(var i = 0; i < soundEle.length; i++) {
-			if(soundEle[i] != null && soundEle[i] != undefined) {
-				if(soundEle[i].ended) {
-					soundEle[i] = null;
-				}
-			}
-		}
-		//noinspection JSDuplicatedDeclaration
-		for(var i = 0, j = soundFirst; i < soundEle.length; i++, j = (j + 1 >= soundEle.length) ? 0 : j++) {
-			if(soundEle[j] != null) {
-				return j;
-			}
-		}
-	}
-	return null;
-};
