@@ -37,7 +37,9 @@ Ingredient.prototype.updateTemperature = function(temperature) {
 			}
 		}
 	}
-	this.logTemperature();
+	if(this.temperature != this.DEFAULTTEMPERATURE) {
+		this.logTemperature();
+	}
 };
 
 Ingredient.prototype.logTemperature = function() {
