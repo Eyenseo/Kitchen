@@ -6,7 +6,7 @@ function Knob(context, sx, sy, zOrder, name, plate) {
 	this.state = 0;
 }
 
-Knob.prototype = new VisualRenderObject();
+Knob.prototype = Object.create(VisualRenderObject.prototype);
 Knob.prototype.constructor = Knob;
 
 Knob.prototype.changeState = function() {

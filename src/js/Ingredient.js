@@ -16,7 +16,7 @@ function Ingredient(context, sx, sy, w, h, imgPath, zOrder, draggable, name, hea
 	this.logCounter = 0;
 }
 
-Ingredient.prototype = new VisualRenderObject();
+Ingredient.prototype = Object.create(VisualRenderObject.prototype);
 Ingredient.prototype.constructor = Ingredient;
 
 Ingredient.prototype.updateTemperature = function(temperature) {

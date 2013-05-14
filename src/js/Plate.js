@@ -6,7 +6,7 @@ function Plate(context, sx, sy, zOrder, name) {
 	this.pot = null;
 }
 
-Plate.prototype = new VisualRenderObject();
+Plate.prototype = Object.create(VisualRenderObject.prototype);
 Plate.prototype.constructor = Plate;
 
 Plate.prototype.setState = function(state) {
