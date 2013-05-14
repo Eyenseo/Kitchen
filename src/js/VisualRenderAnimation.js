@@ -65,13 +65,13 @@ function VisualRenderAnimation(context, sx, sy, w, h, imgPath, zOrder, aniObject
 	this.currentAnimation = this.animations["default"].seq || [0];
 	this.currentAniIndex = 0;
 
-	this.loop = aniObject.currentAnimation.loop || false;
+	this.loop = this.animations["default"].loop || false;
 
 	this.lastSpriteUpdateTime = 0;
-	this.aniInterval = 80;
+	this.aniInterval = 170;
 }
 
-VisualRenderAnimation.prototype = Object.create(VisualRenderAnimation.prototype);
+VisualRenderAnimation.prototype = Object.create(VisualRenderObject.prototype);
 VisualRenderAnimation.prototype.constructor = VisualRenderAnimation;
 
 /**
@@ -81,7 +81,7 @@ VisualRenderAnimation.prototype.constructor = VisualRenderAnimation;
 VisualRenderAnimation.prototype.changeAnimation = function(name) {
 	try {
 		this.currentAnimation = this.animations[name].seq;
-		this.loop = this.currentAnimation.loop;
+		this.loop = this.animations[name].loop;
 		this.currentAniIndex = 0;
 	} catch(e) {
 		console.log("There is no animation named:" + name);
@@ -93,7 +93,7 @@ VisualRenderAnimation.prototype.changeAnimation = function(name) {
  * calculate the next tile for the current animation
  */
 VisualRenderAnimation.prototype.nextAniTile = function() {
-	if(this.currentAniIndex != this.currentAnimation.length - 1) {
+	if(this.currentAniIndex + 1 < this.currentAnimation.length) {
 		this.currentAniIndex++;
 	} else if(this.loop) {
 		this.currentAniIndex = 0;
