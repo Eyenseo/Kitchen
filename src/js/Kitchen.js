@@ -36,9 +36,47 @@ function Kitchen(canvasId) {
 	this.stage.addToStage(knob2);
 
 	//Pot
+	var aniObject = {
+		"image"     : {
+			"tileWidth" : 242,
+			"tileHeight": 187,
+			"imgWidth"  : 2420,
+			"imgHeight" : 187
+		},
+		"animations": {
+			"default"       : {
+				"seq" : [0],
+				"loop": false
+			},
+			"lowStatic"     : {
+				"seq" : [3],
+				"loop": false
+			},
+			"mediumStatic"  : {
+				"seq" : [6],
+				"loop": false
+			},
+			"highStatic"    : {
+				"seq" : [9],
+				"loop": false
+			},
+			"lowChanging"   : {
+				"seq" : [1, 2, 3, 2],
+				"loop": true
+			},
+			"mediumChanging": {
+				"seq" : [4, 5, 6, 5],
+				"loop": true
+			},
+			"highChanging"  : {
+				"seq" : [7, 8, 9, 8],
+				"loop": true
+			}
+		}
+	};
 	this.pots = [];
-	var pot1 = new Pot(this.stage.getContext(), 300, 100, 242, 187, "images/pot.png", 100, true, "Pot One", 0.002, this.soundManager);
-	var pot2 = new Pot(this.stage.getContext(), 300, 100, 242, 187, "images/pot.png", 100, true, "Pot Two", 0.002, this.soundManager);
+	var pot1 = new Pot(this.stage.getContext(), 300, 100, 242, 187, "images/potAni.png", 100, true, "Pot One", 0.002, this.soundManager, aniObject);
+	var pot2 = new Pot(this.stage.getContext(), 300, 100, 242, 187, "images/potAni.png", 100, true, "Pot Two", 0.002, this.soundManager, aniObject);
 
 	this.pots.push(pot1);
 	this.pots.push(pot2);
