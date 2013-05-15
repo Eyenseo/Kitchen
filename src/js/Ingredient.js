@@ -1,3 +1,16 @@
+/**
+ * represents an object to be rendered on the stage that represents a ingredient to be cooked
+ * @param context - context object - the 2d context of the canvas
+ * @param sx NUMBER - the start x position
+ * @param sy NUMBER - the start y position
+ * @param w NUMBER - the width of the object
+ * @param h NUMBER - the height of the object
+ * @param imgPath TEXT- the path of the image
+ * @param zOrder NUMBER - the order to be drawn on stage
+ * @param draggable BOOLEAN - if the object can be dragged
+ * @param name TEXT - name of the ingredient
+ * @param heatRisingRate NUMBER - the value determines how fast the ingredient adapts to a different temperature than it has
+ */
 function Ingredient(context, sx, sy, w, h, imgPath, zOrder, draggable, name, heatRisingRate) {
 	VisualRenderObject.call(this, context, sx, sy, w, h, imgPath, zOrder);
 	this.setDraggable(draggable);
@@ -15,10 +28,13 @@ function Ingredient(context, sx, sy, w, h, imgPath, zOrder, draggable, name, hea
 
 	this.logCounter = 0;
 }
-
 Ingredient.prototype = Object.create(VisualRenderObject.prototype);
 Ingredient.prototype.constructor = Ingredient;
 
+/**
+ * The function updated the temperature of the ingredient towards the temperature parameter respect the HEATRISINGRATE attribute
+ * @param temperature NUMBER - the value determines the temperature of the environment
+ */
 Ingredient.prototype.updateTemperature = function(temperature) {
 	if(this.temperature != temperature) {
 		if(this.temperature < temperature) {
@@ -42,6 +58,9 @@ Ingredient.prototype.updateTemperature = function(temperature) {
 	}
 };
 
+/**
+ * The function prints out the temperature of the ingredient every 120 frames
+ */
 Ingredient.prototype.logTemperature = function() {
 	if(this.logCounter == 120) {
 		this.logCounter = 0;
