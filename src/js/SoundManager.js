@@ -2,11 +2,13 @@
  * The SoundManager manages the sound files.
  */
 function SoundManager() {
+	//xyzLoop counts the amount of sound files that are currently looping
 	this.dropLoop = 0;
 	this.knobLoop = 0;
 	this.potHeatingUpLoop = 0;
 	this.potOntoStoveLoop = 0;
 
+	//creates array for sound files. The length of the array is the amount of songs that can be played simultaneously
 	this.DROP = new Array(4);
 	this.KNOB = new Array(3);
 	this.POTHEATINGUP = new Array(4);
@@ -104,7 +106,7 @@ SoundManager.prototype.controlSound = function(sound, loop, status) {
 				});
 				if(loop < playing) {
 					for(var i = 0; i < sound.length; i++) {
-						if(!sound[i].ended) {
+						if(!sound[i].ended && sound[i].loop == false) {
 							sound[i].pause();
 							sound[i].currentTime = 0;
 							break;
@@ -141,15 +143,23 @@ SoundManager.prototype.controlSound = function(sound, loop, status) {
 			break;
 		case 3:
 			if(loop < sound.length) {
+				var done = false;
 				for(var i = 0; i < sound.length; i++) {
 					if(sound[i].ended || sound[i].currentTime == 0) {
 						sound[i].currentTime = 0;
 						sound[i].loop = true;
 						sound[i].play();
+						done = true;
 						break;
-					} else if(sound[i].loop == false) {
-						sound[i].loop = true;
-						break;
+					}
+
+				}
+				if(!done) {
+					for(var i = 0; i < sound.length; i++) {
+						if(sound[i].loop == false) {
+							sound[i].loop = true;
+							break;
+						}
 					}
 				}
 			}
@@ -157,4 +167,3 @@ SoundManager.prototype.controlSound = function(sound, loop, status) {
 	}
 	return 0;
 };
-
