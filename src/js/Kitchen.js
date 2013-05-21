@@ -37,39 +37,39 @@ function Kitchen(canvasId) {
 
 	//Pot
 	var aniObject = {
-		"image"     : {
-			"tileWidth" : 242,
+		"image": {
+			"tileWidth": 242,
 			"tileHeight": 187,
-			"imgWidth"  : 2420,
-			"imgHeight" : 187
+			"imgWidth": 2420,
+			"imgHeight": 187
 		},
 		"animations": {
-			"default"       : {
-				"seq" : [0],
+			"default": {
+				"seq": [0],
 				"loop": false
 			},
-			"lowStatic"     : {
-				"seq" : [3],
+			"lowStatic": {
+				"seq": [3],
 				"loop": false
 			},
-			"mediumStatic"  : {
-				"seq" : [6],
+			"mediumStatic": {
+				"seq": [6],
 				"loop": false
 			},
-			"highStatic"    : {
-				"seq" : [9],
+			"highStatic": {
+				"seq": [9],
 				"loop": false
 			},
-			"lowChanging"   : {
-				"seq" : [1, 2, 3, 2],
+			"lowChanging": {
+				"seq": [1, 2, 3, 2],
 				"loop": true
 			},
 			"mediumChanging": {
-				"seq" : [4, 5, 6, 5],
+				"seq": [4, 5, 6, 5],
 				"loop": true
 			},
-			"highChanging"  : {
-				"seq" : [7, 8, 9, 8],
+			"highChanging": {
+				"seq": [7, 8, 9, 8],
 				"loop": true
 			}
 		}

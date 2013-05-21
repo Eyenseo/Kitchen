@@ -19,15 +19,15 @@ function Plate(context, sx, sy, zOrder, name) {
 				"seq": [0],
 				"loop": false
 			},
-			"lowStatic"     : {
+			"lowStatic": {
 				"seq": [1],
 				"loop": false
 			},
-			"mediumStatic"     : {
+			"mediumStatic": {
 				"seq": [2],
 				"loop": false
 			},
-			"highStatic"     : {
+			"highStatic": {
 				"seq": [3],
 				"loop": false
 			}
