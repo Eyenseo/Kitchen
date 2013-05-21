@@ -7,13 +7,40 @@
  * @param name TEXT - name of the plate
  */
 function Plate(context, sx, sy, zOrder, name) {
-	VisualRenderObject.call(this, context, sx, sy, 198, 67, "images/platte0.png", zOrder);
+	var aniObject = {
+		"image": {
+			"tileWidth": 198,
+			"tileHeight": 67,
+			"imgWidth": 792,
+			"imgHeight": 67
+		},
+		"animations": {
+			"default": {
+				"seq": [0],
+				"loop": false
+			},
+			"lowStatic"     : {
+				"seq": [1],
+				"loop": false
+			},
+			"mediumStatic"     : {
+				"seq": [2],
+				"loop": false
+			},
+			"highStatic"     : {
+				"seq": [3],
+				"loop": false
+			}
+		}
+	};
+
+	VisualRenderAnimation.call(this, context, sx, sy, 198, 67, "images/platte.png", zOrder, aniObject);
 	this.setDraggable(false);
 	this.name = name;
 	this.state = 0;
 	this.pot = null;
 }
-Plate.prototype = Object.create(VisualRenderObject.prototype);
+Plate.prototype = Object.create(VisualRenderAnimation.prototype);
 Plate.prototype.constructor = Plate;
 
 /**
@@ -23,7 +50,20 @@ Plate.prototype.constructor = Plate;
 	//TODO Improve by using the VisualRenderAnimation
 Plate.prototype.setState = function(state) {
 	this.state = state;
-	this.changeImage("images/platte" + state + ".png");
+
+	switch(state) {
+		case 0:
+			this.changeAnimation("default");
+			break;
+		case 1:
+			this.changeAnimation("lowStatic");
+			break;
+		case 2:
+			this.changeAnimation("mediumStatic");
+			break;
+		case 3:
+			this.changeAnimation("highStatic");
+	}
 	this.updatePotTemperature();
 };
 
