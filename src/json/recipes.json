@@ -59,29 +59,29 @@
 					]
 				},
 				{
-                	"text": "Die Pilze und Zwiebeln auf das Schneidebrett legen.",
-                	"action": [
-                		{
-                			"cuttingBoard": [
-                				{
-                					"put": ["mushroom", "onion"]
-                				}
-                			]
-                		}
-                	]
-                },
-                {
-                   	"text": "Die Pilze und Zwiebeln in Scheiben schneiden.",
-                   	"action": [
-                   		{
-                            "cuttingBoard": [
-                        		{
-                        		    "isCutted": ["mushroom", "onion"]
-                        		}
-                        	]
-                        }
-                    ]
-                },
+					"text": "Die Pilze und Zwiebeln auf das Schneidebrett legen.",
+					"action": [
+						{
+							"cuttingBoard": [
+								{
+									"put": ["mushroom", "onion"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Pilze und Zwiebeln in Scheiben schneiden.",
+					"action": [
+						{
+							"cuttingBoard": [
+								{
+									"isCutted": ["mushroom", "onion"]
+								}
+							]
+						}
+					]
+				},
 				{
 					"text": "Das Nuddelsieb ins Spülbecken stellen.",
 					"action": [
@@ -116,7 +116,7 @@
 								}
 							]
 
-						},
+						}
 					]
 				},
 				{
@@ -128,11 +128,11 @@
 									"put": ["sieve", "mushroom", "onion", "oil"]
 
 								},
-                        		{
-                        			"isCooked": ["noodle", "mushroom", "onion"]
-                        		}
-                        	]
-                        }
+								{
+									"isCooked": ["noodle", "mushroom", "onion"]
+								}
+							]
+						}
 					]
 				},
 				{
@@ -148,7 +148,7 @@
 					]
 				}
 			]
-		}
+		},
 		{
 			"name": "Fleisch mit Sauerkraut",
 			"difficulty": "3",
@@ -255,29 +255,29 @@
 					]
 				},
 				{
-                	"text": "Die Zwiebeln auf das Schneidebrett legen.",
-                	"action": [
-                		{
-                			"cuttingBoard": [
-                				{
-                					"put": ["onion"]
-                				}
-                			]
-                		}
-                	]
-                },
-                {
-                   	"text": "Die Zwiebeln in Scheiben schneiden.",
-                   	"action": [
-                   		{
-                            "cuttingBoard": [
-                        		{
-                        		    "isCutted": ["onion"]
-                        		}
-                        	]
-                        }
-                    ]
-                },
+					"text": "Die Zwiebeln auf das Schneidebrett legen.",
+					"action": [
+						{
+							"cuttingBoard": [
+								{
+									"put": ["onion"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Zwiebeln in Scheiben schneiden.",
+					"action": [
+						{
+							"cuttingBoard": [
+								{
+									"isCutted": ["onion"]
+								}
+							]
+						}
+					]
+				},
 				{
 					"text": "Das Sieb ins Spülbecken stellen.",
 					"action": [
@@ -311,7 +311,7 @@
 									"put": ["pan"]
 								}
 							]
-						},
+						}
 					]
 				},
 				{
@@ -323,11 +323,11 @@
 									"put": ["cuttingBoard", "meat", "oil"]
 
 								},
-                        		{
-                        			"isCooked": ["onion", "meat"]
-                        		}
-                        	]
-                        }
+								{
+									"isCooked": ["onion", "meat"]
+								}
+							]
+						}
 					]
 				},
 				{
@@ -355,6 +355,6 @@
 					]
 				}
 			]
-        }
+		}
 	]
 }
