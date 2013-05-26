@@ -331,7 +331,7 @@
 					]
 				}
 			]
-        }
+		},
 		{
 			"name": "Bratkartoffeln",
 			"difficulty": "1",
@@ -415,29 +415,29 @@
 					]
 				},
 				{
-                	"text": "Die Kartoffeln aus dem Sieb und die Zwiebeln auf das Schneidebrett legen.",
-                	"action": [
-                		{
-                			"cuttingBoard": [
-                				{
-                					"put": ["sieve", "onion"]
-                				}
-                			]
-                		}
-                	]
-                },
-                {
-                   	"text": "Die Kartoffeln und Zwiebeln in Scheiben schneiden.",
-                   	"action": [
-                   		{
-                            "cuttingBoard": [
-                        		{
-                        		    "isCutted": ["potato", "onion"]
-                        		}
-                        	]
-                        }
-                    ]
-                },
+					"text": "Die Kartoffeln aus dem Sieb und die Zwiebeln auf das Schneidebrett legen.",
+					"action": [
+						{
+							"cuttingBoard": [
+								{
+									"put": ["sieve", "onion"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Kartoffeln und Zwiebeln in Scheiben schneiden.",
+					"action": [
+						{
+							"cuttingBoard": [
+								{
+									"isCutted": ["potato", "onion"]
+								}
+							]
+						}
+					]
+				},
 				{
 					"text": "Einen Topf mit Wasser füllen.",
 					"action": [
@@ -496,7 +496,7 @@
 								}
 							]
 
-						},
+						}
 					]
 				},
 				{
@@ -508,11 +508,11 @@
 									"put": ["cuttingBoard", "oil"]
 
 								},
-                        		{
-                        			"isCooked": ["potato", "onion"]
-                        		}
-                        	]
-                        }
+								{
+									"isCooked": ["potato", "onion"]
+								}
+							]
+						}
 					]
 				},
 				{
@@ -526,7 +526,7 @@
 							]
 						}
 					]
-				}
+				},
 				{
 					"text": "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
 					"action": [
