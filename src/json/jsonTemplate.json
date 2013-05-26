@@ -1,0 +1,101 @@
+{
+	"recipes": [
+		{
+			"name": "noodles",
+			"difficulty": "1",
+			"pictureBig": "/images/recipe/noodlesBig.png",
+			"pictureFinish": "/images/recipe/noodlesFinish.png",
+			"description": "Noodles with nothing but noodles.\nbla bla bla",
+			"ingredients": [
+				"noodle", "water", "oil", "salt"
+			],
+			"utensils": ["dish", "plate", "bigPot", "sieve", "sink"],
+			"schedule": [
+				{
+					"text": "Put water, oil and salt in the big pot",
+					"action": [
+						{
+							"bigPot": [
+								{
+									"put": ["water", "salt", "oil"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Put big pot on plate, and boil the water",
+					"required": null,
+					"action": [
+						{
+							"plate": [
+								{
+									"put": ["bigPot"]
+								}
+							]
+
+						},
+						{
+							"bigPot": [
+								{
+									"isCooked": ["water"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Put noodles in the big pot and boil them.",
+					"action": [
+						{
+							"bigPot": [
+								{
+									"put": ["noodle"]
+								},
+								{
+									"isCooked": ["noodle"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Put sieve in the sink",
+					"action": [
+						{
+							"sink": [
+								{
+									"put": ["sieve"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Put noodles in the sieve",
+					"action": [
+						{
+							"sieve": [
+								{
+									"put": ["bigPot"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Put noodles on a plate",
+					"action": [
+						{
+							"dish": [
+								{
+									"put": ["sieve"]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+	]
+}
