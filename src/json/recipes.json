@@ -7,12 +7,12 @@
 			"pictureFinish": "/images/recipe/noodlesFinish.png",
 			"description": "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht.",
 			"ingredients": [
-				"noodle", "water", "oil", "salt", "cheese", "mushroom", "onion", "tomatoe"
+				"noodle", "water", "oil", "salt", "cheese", "mushroom", "onion"
 			],
-			"utensils": ["dish", "plate", "bigPot", "pan", "sieve", "sink"],
+			"utensils": ["dish", "plate", "bigPot", "pan", "sieve", "sink", "cuttingBoard"],
 			"schedule": [
 				{
-					"text": "Einen Topf mit Wasser füllen.",
+					"text": "Einen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
 							"bigPot": [
@@ -25,7 +25,6 @@
 				},
 				{
 					"text": "Den Topf auf die Herdplatte stellen.",
-					"required": null,
 					"action": [
 						{
 							"plate": [
@@ -142,7 +141,7 @@
 						{
 							"dish": [
 								{
-									"put": ["sieve"]
+									"put": ["pan"]
 								}
 							]
 						}
@@ -150,5 +149,212 @@
 				}
 			]
 		}
+		{
+			"name": "Fleisch mit Sauerkraut",
+			"difficulty": "3",
+			"pictureBig": "/images/recipe/noodlesBig.png",
+			"pictureFinish": "/images/recipe/noodlesFinish.png",
+			"description": "Kassler mit Sauerkraut und Kartoffeln als Beilage ist ein altbekanntes Rezept.",
+			"ingredients": [
+				"potato", "water", "salt", "sauerkraut", "cream", "onion", "meat"
+			],
+			"utensils": ["dish", "plate", "bigPot", "pan", "smallPot", "cuttingBoard"],
+			"schedule": [
+				{
+					"text": "Einen großen Topf mit Wasser und einer Priese Salz füllen.",
+					"action": [
+						{
+							"bigPot": [
+								{
+									"put": ["water", "salt"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Den Topf auf die Herdplatte stellen.",
+					"action": [
+						{
+							"plate": [
+								{
+									"put": ["bigPot"]
+								}
+							]
+
+						},
+						{
+							"bigPot": [
+								{
+									"isCooked": ["water"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Kartoffeln ins kochende Wasser füllen.",
+					"action": [
+						{
+							"bigPot": [
+								{
+									"put": ["potato"]
+								},
+								{
+									"isCooked": ["potato"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Einen kleinen Topf mit Wasser und einer Priese Salz füllen.",
+					"action": [
+						{
+							"smallPot": [
+								{
+									"put": ["water", "salt"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Den Topf auf die Herdplatte stellen.",
+					"action": [
+						{
+							"plate": [
+								{
+									"put": ["smallPot"]
+								}
+							]
+
+						},
+						{
+							"smallPot": [
+								{
+									"isCooked": ["water"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Das Sauerkraut ins kochende Wasser füllen.",
+					"action": [
+						{
+							"smallPot": [
+								{
+									"put": ["sauerkraut"]
+								},
+								{
+									"isCooked": ["sauerkraut"]
+								}
+							]
+						}
+					]
+				},
+				{
+                	"text": "Die Zwiebeln auf das Schneidebrett legen.",
+                	"action": [
+                		{
+                			"cuttingBoard": [
+                				{
+                					"put": ["onion"]
+                				}
+                			]
+                		}
+                	]
+                },
+                {
+                   	"text": "Die Zwiebeln in Scheiben schneiden.",
+                   	"action": [
+                   		{
+                            "cuttingBoard": [
+                        		{
+                        		    "isCutted": ["onion"]
+                        		}
+                        	]
+                        }
+                    ]
+                },
+				{
+					"text": "Das Sieb ins Spülbecken stellen.",
+					"action": [
+						{
+							"sink": [
+								{
+									"put": ["sieve"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Kartoffeln ins Sieb schütten.",
+					"action": [
+						{
+							"sieve": [
+								{
+									"put": ["bigPot"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Eine Pfanne auf die Herdplatte stellen.",
+					"action": [
+						{
+							"plate": [
+								{
+									"put": ["pan"]
+								}
+							]
+						},
+					]
+				},
+				{
+					"text": "Das Kasslersteak und die Zwiebeln mit Öl in die Pfanne geben.",
+					"action": [
+						{
+							"pan": [
+								{
+									"put": ["cuttingBoard", "meat", "oil"]
+
+								},
+                        		{
+                        			"isCooked": ["onion", "meat"]
+                        		}
+                        	]
+                        }
+					]
+				},
+				{
+					"text": "Die Kartoffeln und das Sauerkraut in die Pfanne geben.",
+					"action": [
+						{
+							"pan": [
+								{
+									"put": ["sieve", "smallPot"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
+					"action": [
+						{
+							"dish": [
+								{
+									"put": ["pan"]
+								}
+							]
+						}
+					]
+				}
+			]
+        }
 	]
 }
