@@ -1,5 +1,154 @@
 {
 	"recipes": [
+		{
+			"name": "Käsespätzle",
+			"difficulty": "1",
+			"pictureBig": "/images/recipe/noodlesBig.png",
+			"pictureFinish": "/images/recipe/noodlesFinish.png",
+			"description": "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht.",
+			"ingredients": [
+				"noodle", "water", "oil", "salt", "cheese", "mushroom", "onion", "tomatoe"
+			],
+			"utensils": ["dish", "plate", "bigPot", "pan", "sieve", "sink"],
+			"schedule": [
+				{
+					"text": "Einen Topf mit Wasser füllen.",
+					"action": [
+						{
+							"bigPot": [
+								{
+									"put": ["water", "salt"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Den Topf auf die Herdplatte stellen.",
+					"required": null,
+					"action": [
+						{
+							"plate": [
+								{
+									"put": ["bigPot"]
+								}
+							]
 
+						},
+						{
+							"bigPot": [
+								{
+									"isCooked": ["water"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Käsespätzle ins kochende Wasser füllen.",
+					"action": [
+						{
+							"bigPot": [
+								{
+									"put": ["noodle"]
+								},
+								{
+									"isCooked": ["noodle"]
+								}
+							]
+						}
+					]
+				},
+				{
+                	"text": "Die Pilze und Zwiebeln auf das Schneidebrett legen.",
+                	"action": [
+                		{
+                			"cuttingBoard": [
+                				{
+                					"put": ["mushroom", "onion"]
+                				}
+                			]
+                		}
+                	]
+                },
+                {
+                   	"text": "Die Pilze und Zwiebeln in Scheiben schneiden.",
+                   	"action": [
+                   		{
+                            "cuttingBoard": [
+                        		{
+                        		    "isCutted": ["mushroom", "onion"]
+                        		}
+                        	]
+                        }
+                    ]
+                },
+				{
+					"text": "Das Nuddelsieb ins Spülbecken stellen.",
+					"action": [
+						{
+							"sink": [
+								{
+									"put": ["sieve"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Nuddeln ins Sieb schütten.",
+					"action": [
+						{
+							"sieve": [
+								{
+									"put": ["bigPot"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Eine Pfanne auf die Herdplatte stellen.",
+					"action": [
+						{
+							"plate": [
+								{
+									"put": ["pan"]
+								}
+							]
+
+						},
+					]
+				},
+				{
+					"text": "Die Spätzle, Pilze und Zwiebeln mit Öl in die Pfanne geben.",
+					"action": [
+						{
+							"pan": [
+								{
+									"put": ["sieve", "mushroom", "onion", "oil"]
+
+								},
+                        		{
+                        			"isCooked": ["noodle", "mushroom", "onion"]
+                        		}
+                        	]
+                        }
+					]
+				},
+				{
+					"text": "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
+					"action": [
+						{
+							"dish": [
+								{
+									"put": ["sieve"]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
 	]
 }
