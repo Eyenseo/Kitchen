@@ -2,7 +2,7 @@
 	"recipes": [
 		{
 			"name": "Käsespätzle",
-			"difficulty": "1",
+			"difficulty": "2",
 			"pictureBig": "/images/recipe/noodlesBig.png",
 			"pictureFinish": "/images/recipe/noodlesFinish.png",
 			"description": "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht.",
@@ -59,29 +59,17 @@
 					]
 				},
 				{
-                	"text": "Die Pilze und Zwiebeln auf das Schneidebrett legen.",
-                	"action": [
-                		{
-                			"cuttingBoard": [
-                				{
-                					"put": ["mushroom", "onion"]
-                				}
-                			]
-                		}
-                	]
-                },
-                {
-                   	"text": "Die Pilze und Zwiebeln in Scheiben schneiden.",
-                   	"action": [
-                   		{
-                            "cuttingBoard": [
-                        		{
-                        		    "isCutted": ["mushroom", "onion"]
-                        		}
-                        	]
-                        }
-                    ]
-                },
+					"text": "Die Pilze und Zwiebeln auf das Schneidebrett legen.",
+					"action": [
+						{
+							"cuttingBoard": [
+								{
+									"put": ["mushroom", "onion"]
+								}
+							]
+						}
+					]
+				},
 				{
 					"text": "Das Nuddelsieb ins Spülbecken stellen.",
 					"action": [
@@ -116,7 +104,7 @@
 								}
 							]
 
-						},
+						}
 					]
 				},
 				{
@@ -128,11 +116,11 @@
 									"put": ["sieve", "mushroom", "onion", "oil"]
 
 								},
-                        		{
-                        			"isCooked": ["noodle", "mushroom", "onion"]
-                        		}
-                        	]
-                        }
+								{
+									"isCooked": ["noodle", "mushroom", "onion"]
+								}
+							]
+						}
 					]
 				},
 				{
@@ -148,7 +136,7 @@
 					]
 				}
 			]
-		}
+		},
 		{
 			"name": "Fleisch mit Sauerkraut",
 			"difficulty": "3",
@@ -255,29 +243,17 @@
 					]
 				},
 				{
-                	"text": "Die Zwiebeln auf das Schneidebrett legen.",
-                	"action": [
-                		{
-                			"cuttingBoard": [
-                				{
-                					"put": ["onion"]
-                				}
-                			]
-                		}
-                	]
-                },
-                {
-                   	"text": "Die Zwiebeln in Scheiben schneiden.",
-                   	"action": [
-                   		{
-                            "cuttingBoard": [
-                        		{
-                        		    "isCutted": ["onion"]
-                        		}
-                        	]
-                        }
-                    ]
-                },
+					"text": "Die Zwiebeln auf das Schneidebrett legen.",
+					"action": [
+						{
+							"cuttingBoard": [
+								{
+									"put": ["onion"]
+								}
+							]
+						}
+					]
+				},
 				{
 					"text": "Das Sieb ins Spülbecken stellen.",
 					"action": [
@@ -311,7 +287,7 @@
 									"put": ["pan"]
 								}
 							]
-						},
+						}
 					]
 				},
 				{
@@ -323,11 +299,11 @@
 									"put": ["cuttingBoard", "meat", "oil"]
 
 								},
-                        		{
-                        			"isCooked": ["onion", "meat"]
-                        		}
-                        	]
-                        }
+								{
+									"isCooked": ["onion", "meat"]
+								}
+							]
+						}
 					]
 				},
 				{
@@ -355,6 +331,216 @@
 					]
 				}
 			]
-        }
+		},
+		{
+			"name": "Bratkartoffeln",
+			"difficulty": "1",
+			"pictureBig": "/images/recipe/noodlesBig.png",
+			"pictureFinish": "/images/recipe/noodlesFinish.png",
+			"description": "Bratkartoffeln mit Würstchen sind einfach lecker.",
+			"ingredients": [
+				"noodle", "water", "oil", "salt", "potato", "sausage", "onion"
+			],
+			"utensils": ["dish", "plate", "bigPot", "pan", "cuttingBoard"],
+			"schedule": [
+				{
+					"text": "Einen Topf mit Wasser und einer Priese Salz füllen.",
+					"action": [
+						{
+							"bigPot": [
+								{
+									"put": ["water", "salt"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Den Topf auf die Herdplatte stellen.",
+					"action": [
+						{
+							"plate": [
+								{
+									"put": ["bigPot"]
+								}
+							]
+
+						},
+						{
+							"bigPot": [
+								{
+									"isCooked": ["water"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Kartoffeln ins kochende Wasser füllen.",
+					"action": [
+						{
+							"bigPot": [
+								{
+									"put": ["potato"]
+								},
+								{
+									"isCooked": ["potato"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Das Sieb ins Spülbecken stellen.",
+					"action": [
+						{
+							"sink": [
+								{
+									"put": ["sieve"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Kartoffeln ins Sieb schütten.",
+					"action": [
+						{
+							"sieve": [
+								{
+									"put": ["bigPot"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Kartoffeln aus dem Sieb und die Zwiebeln auf das Schneidebrett legen.",
+					"action": [
+						{
+							"cuttingBoard": [
+								{
+									"put": ["sieve", "onion"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Kartoffeln und Zwiebeln in Scheiben schneiden.",
+					"action": [
+						{
+							"cuttingBoard": [
+								{
+									"isCutted": ["potato", "onion"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Einen Topf mit Wasser füllen.",
+					"action": [
+						{
+							"bigPot": [
+								{
+									"put": ["water", "salt"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Den Topf auf die Herdplatte stellen.",
+					"action": [
+						{
+							"plate": [
+								{
+									"put": ["bigPot"]
+								}
+							]
+
+						},
+						{
+							"bigPot": [
+								{
+									"isCooked": ["water"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Würstchen ins kochende Wasser füllen.",
+					"action": [
+						{
+							"bigPot": [
+								{
+									"put": ["sausage"]
+								},
+								{
+									"isCooked": ["sausage"]
+								}
+							]
+						}
+					]
+				},
+
+				{
+					"text": "Eine Pfanne auf die Herdplatte stellen.",
+					"action": [
+						{
+							"plate": [
+								{
+									"put": ["pan"]
+								}
+							]
+
+						}
+					]
+				},
+				{
+					"text": "Die Kartoffeln und Zwiebeln mit Öl in die Pfanne geben.",
+					"action": [
+						{
+							"pan": [
+								{
+									"put": ["cuttingBoard", "oil"]
+
+								},
+								{
+									"isCooked": ["potato", "onion"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Die Würstchen aus dem Topf in die Pfanne geben.",
+					"action": [
+						{
+							"pan": [
+								{
+									"put": ["bigPot"]
+								}
+							]
+						}
+					]
+				},
+				{
+					"text": "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
+					"action": [
+						{
+							"dish": [
+								{
+									"put": ["pan"]
+								}
+							]
+						}
+					]
+				}
+			]
+		}
+
 	]
 }
