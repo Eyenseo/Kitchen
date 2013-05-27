@@ -3,9 +3,9 @@
 		{
 			"name": "noodles",
 			"difficulty": "1",
-			"pictureBig": "/images/recipe/noodlesBig.png",
-			"pictureFinish": "/images/recipe/noodlesFinish.png",
 			"description": "Noodles with nothing but noodles.\nbla bla bla",
+			"picture": "/images/recipe/noodles.png",
+			"pictureBig": "/images/recipe/noodlesBig.png",
 			"ingredients": [
 				"noodle", "water", "oil", "salt"
 			],
@@ -25,7 +25,6 @@
 				},
 				{
 					"text": "Put big pot on plate, and boil the water",
-					"required": null,
 					"action": [
 						{
 							"plate": [
