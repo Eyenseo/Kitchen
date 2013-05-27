@@ -1,0 +1,68 @@
+{
+	"types": [
+		{
+			"name": "noodle",
+			"sx": "15",
+			"sy": "80",
+			"w": "242",
+			"h": "187",
+			"zOrder": "100",
+			"actionTime": "480",
+			"picture": "/images/ingredient/noodleAni.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 242,
+					"tileHeight": 187,
+					"imgWidth": 242,
+					"imgHeight": 561
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "water",
+			"sx": "20",
+			"sy": "85",
+			"w": "86",
+			"h": "150",
+			"zOrder": "101",
+			"actionTime": "600",
+			"picture": "/images/ingredient/water.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 86,
+					"tileHeight": 150,
+					"imgWidth": 86,
+					"imgHeight": 450
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		}
+	]
+}
