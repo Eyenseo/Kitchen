@@ -130,12 +130,12 @@ Kitchen.prototype.onDragend = function(event) {
 	//console.log(event.target);
 	var kitchen = this;
 	if(event.target instanceof Ingredient) {
-		var ingredinentCenterX = event.target.getCenter().cx;
-		var ingredinentCenterY = event.target.getCenter().cy;
+		var ingredientCenterX = event.target.getCenter().cx;
+		var ingredientCenterY = event.target.getCenter().cy;
 
 		this.pots.forEach(function(pot) {
 			var zone = pot.getHitZone();
-			if(ingredinentCenterX >= zone.hx && ingredinentCenterY >= zone.hy && ingredinentCenterX <= zone.hx + zone.hw && ingredinentCenterY <= zone.hy + zone.hh) {
+			if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw && ingredientCenterY <= zone.hy + zone.hh) {
 				pot.addPotContent(event.target);
 				kitchen.stage.removeFromStage(event.target);
 				kitchen.soundManager.play(kitchen.soundManager.DROP);
