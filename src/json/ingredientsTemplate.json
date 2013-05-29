@@ -6,7 +6,7 @@
 			"sy": 80,
 			"w": 242,
 			"h": 187,
-			"zOrder": 100,
+			"zOrder": 200,
 			"actionTime": 480,
 			"picture": "/images/ingredient/noodleAni.png",
 			"aniObject": {
@@ -38,7 +38,7 @@
 			"sy": 85,
 			"w": 86,
 			"h": 150,
-			"zOrder": 101,
+			"zOrder": 201,
 			"actionTime": 600,
 			"picture": "/images/ingredient/water.png",
 			"aniObject": {
