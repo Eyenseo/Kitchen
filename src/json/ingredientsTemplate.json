@@ -2,12 +2,12 @@
 	"types": [
 		{
 			"name": "noodle",
-			"sx": "15",
-			"sy": "80",
-			"w": "242",
-			"h": "187",
-			"zOrder": "100",
-			"actionTime": "480",
+			"sx": 15,
+			"sy": 80,
+			"w": 242,
+			"h": 187,
+			"zOrder": 100,
+			"actionTime": 480,
 			"picture": "/images/ingredient/noodleAni.png",
 			"aniObject": {
 				"image": {
@@ -34,12 +34,12 @@
 		},
 		{
 			"name": "water",
-			"sx": "20",
-			"sy": "85",
-			"w": "86",
-			"h": "150",
-			"zOrder": "101",
-			"actionTime": "600",
+			"sx": 20,
+			"sy": 85,
+			"w": 86,
+			"h": 150,
+			"zOrder": 101,
+			"actionTime": 600,
 			"picture": "/images/ingredient/water.png",
 			"aniObject": {
 				"image": {

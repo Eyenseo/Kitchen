@@ -3,14 +3,14 @@
 		{
 			"name": "bigPot",
 			"type": "Pot",
-			"sx": "15",
-			"sy": "80",
-			"w": "165",
-			"h": "54",
-			"zOrder": "200",
-			"cookTime": "10",
+			"sx": 15,
+			"sy": 80,
+			"w": 165,
+			"h": 54,
+			"zOrder": 200,
+			"cookTime": 10,
 			"draggable": true,
-			"actionTime": "60",
+			"actionTime": 60,
 			"picture": "images/bigPotAni.png",
 			"aniObject": {
 				"image": {
@@ -54,14 +54,14 @@
 		{
 			"name": "smallPot",
 			"type": "Pot",
-			"sx": "15",
-			"sy": "80",
-			"w": "165",
-			"h": "54",
-			"zOrder": "201",
-			"cookTime": "10",
+			"sx": 15,
+			"sy": 80,
+			"w": 165,
+			"h": 54,
+			"zOrder": 201,
+			"cookTime": 10,
 			"draggable": true,
-			"actionTime": "30",
+			"actionTime": 30,
 			"picture": "images/smallPotAni.png",
 			"aniObject": {
 				"image": {

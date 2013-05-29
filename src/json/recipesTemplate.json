@@ -2,7 +2,7 @@
 	"recipes": [
 		{
 			"name": "noodles",
-			"difficulty": "1",
+			"difficulty": 1,
 			"description": "Noodles with nothing but noodles.\nbla bla bla",
 			"picture": "/images/recipe/noodles.png",
 			"pictureBig": "/images/recipe/noodlesBig.png",
