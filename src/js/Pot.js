@@ -7,15 +7,14 @@
  * @param h NUMBER - the height of the object
  * @param imgPath TEXT- the path of the image
  * @param zOrder NUMBER - the order to be drawn on stage
- * @param draggable BOOLEAN - if the object can be dragged
  * @param name TEXT - name of the ingredient
  * @param heatRisingRate NUMBER - the value determines how fast the ingredient adapts to a different temperature than it has
  * @param soundManager SoundManager object - the value determines the SoundManager to be used
  * @param aniObject object - The value determines the animation information for the VisualRenderAnimation
  */
-function Pot(context, sx, sy, w, h, imgPath, zOrder, draggable, name, heatRisingRate, soundManager, aniObject) {
+function Pot(context, sx, sy, w, h, imgPath, zOrder, name, heatRisingRate, soundManager, aniObject) {
 	VisualRenderAnimation.call(this, context, sx, sy, w, h, imgPath, zOrder, aniObject);
-	this.setDraggable(draggable);
+	this.setDraggable(true);
 	this.name = name;
 	this.soundManager = soundManager;
 

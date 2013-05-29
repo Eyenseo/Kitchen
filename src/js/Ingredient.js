@@ -7,13 +7,13 @@
  * @param h NUMBER - the height of the object
  * @param imgPath TEXT- the path of the image
  * @param zOrder NUMBER - the order to be drawn on stage
- * @param draggable BOOLEAN - if the object can be dragged
  * @param name TEXT - name of the ingredient
  * @param heatRisingRate NUMBER - the value determines how fast the ingredient adapts to a different temperature than it has
+ * @param aniObject object - The value determines the animation information for the VisualRenderAnimation
  */
-function Ingredient(context, sx, sy, w, h, imgPath, zOrder, draggable, name, heatRisingRate) {
-	VisualRenderObject.call(this, context, sx, sy, w, h, imgPath, zOrder);
-	this.setDraggable(draggable);
+function Ingredient(context, sx, sy, w, h, imgPath, zOrder, name, heatRisingRate, aniObject) {
+	VisualRenderAnimation.call(this, context, sx, sy, w, h, imgPath, zOrder, aniObject);
+	this.setDraggable(true);
 	this.name = name;
 
 	this.HEATRISINGRATE = heatRisingRate;
@@ -28,7 +28,7 @@ function Ingredient(context, sx, sy, w, h, imgPath, zOrder, draggable, name, hea
 
 	this.logCounter = 0;
 }
-Ingredient.prototype = Object.create(VisualRenderObject.prototype);
+Ingredient.prototype = Object.create(VisualRenderAnimation.prototype);
 Ingredient.prototype.constructor = Ingredient;
 
 /**
