@@ -5,8 +5,8 @@
 
 	<script>
 		window.onload = function() {
-			var k = new Kitchen('kitchenCanvas');
-
+			var jsonHandler = new JSONHandler();
+			var kitchen = new Kitchen('kitchenCanvas');
 		}
 	</script>
 	<style>
@@ -27,6 +27,8 @@
 		Your Browser does not support the canvas element!
 	</canvas>
 </div>
+<script src="js/JSONHandler.js"></script>
+<script src="js/Ajax.js"></script>
 <script src="js/Kitchen.js"></script>
 <script src="js/Stage.js"></script>
 <script src="js/SoundManager.js"></script>
