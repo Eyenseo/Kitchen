@@ -2,7 +2,7 @@
 	"recipes": [
 		{
 			"name": "Käsespätzle",
-			"difficulty": "2",
+			"difficulty": 2,
 			"pictureBig": "/images/recipe/noodlesBig.png",
 			"pictureFinish": "/images/recipe/noodlesFinish.png",
 			"description": "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht.",
@@ -139,7 +139,7 @@
 		},
 		{
 			"name": "Fleisch mit Sauerkraut",
-			"difficulty": "3",
+			"difficulty": 3,
 			"pictureBig": "/images/recipe/noodlesBig.png",
 			"pictureFinish": "/images/recipe/noodlesFinish.png",
 			"description": "Kassler mit Sauerkraut und Kartoffeln als Beilage ist ein altbekanntes Rezept.",
@@ -334,7 +334,7 @@
 		},
 		{
 			"name": "Bratkartoffeln",
-			"difficulty": "1",
+			"difficulty": 1,
 			"pictureBig": "/images/recipe/noodlesBig.png",
 			"pictureFinish": "/images/recipe/noodlesFinish.png",
 			"description": "Bratkartoffeln mit Würstchen sind einfach lecker.",
