@@ -1,0 +1,484 @@
+{
+	"types": [
+		{
+			"name": "meat",
+			"sx": 15,
+			"sy": 80,
+			"w": 80,
+			"h": 60,
+			"zOrder": 100,
+			"actionTime": 120,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": mushroom,
+			"sx": 50,
+			"sy": 80,
+			"w": 80,
+			"h": 60,
+			"zOrder": 110,
+			"actionTime": 35,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "noodle",
+			"sx": 80,
+			"sy": 100,
+			"w": 80,
+			"h": 60,
+			"zOrder": 120,
+			"actionTime": 50,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "onion",
+			"sx": 120,
+			"sy": 100,
+			"w": 80,
+			"h": 60,
+			"zOrder": 125,
+			"actionTime": 35,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "potato",
+			"sx": 140,
+			"sy": 120,
+			"w": 80,
+			"h": 60,
+			"zOrder": 125,
+			"actionTime": 75,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "sauerkraut",
+			"sx": 170,
+			"sy": 100,
+			"w": 80,
+			"h": 60,
+			"zOrder": 125,
+			"actionTime": 55,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "cream",
+			"sx": 200,
+			"sy": 100,
+			"w": 80,
+			"h": 60,
+			"zOrder": 130,
+			"actionTime": 35,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "flour",
+			"sx": 220,
+			"sy": 100,
+			"w": 80,
+			"h": 60,
+			"zOrder": 130,
+			"actionTime": 10,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "egg",
+			"sx": 220,
+			"sy": 150,
+			"w": 80,
+			"h": 60,
+			"zOrder": 130,
+			"actionTime": 25,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "strawberry",
+			"sx": 250,
+			"sy": 100,
+			"w": 80,
+			"h": 60,
+			"zOrder": 130,
+			"actionTime": 20,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "backing powder",
+			"sx": 280,
+			"sy": 150,
+			"w": 80,
+			"h": 60,
+			"zOrder": 145,
+			"actionTime": 5,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "butter",
+			"sx": 320,
+			"sy": 175,
+			"w": 80,
+			"h": 60,
+			"zOrder": 145,
+			"actionTime": 15,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "salt",
+			"sx": 350,
+			"sy": 100,
+			"w": 80,
+			"h": 60,
+			"zOrder": 145,
+			"actionTime": 5,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "pepper",
+			"sx": 390,
+			"sy": 100,
+			"w": 80,
+			"h": 60,
+			"zOrder": 145,
+			"actionTime": 4,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "oil",
+			"sx": 450,
+			"sy": 150,
+			"w": 80,
+			"h": 60,
+			"zOrder": 145,
+			"actionTime": 4,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
+	]
+}
