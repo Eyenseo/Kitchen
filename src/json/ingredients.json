@@ -480,5 +480,37 @@
 				}
 			}
 		},
+		{
+			"name": "water",
+			"sx": 550,
+			"sy": 250,
+			"w": 80,
+			"h": 60,
+			"zOrder": 145,
+			"actionTime": 20,
+			"picture": "/images/ingredient/ingredient.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 80,
+					"tileHeight": 60,
+					"imgWidth": 80,
+					"imgHeight": 180
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1],
+						"loop": false
+					},
+					"cooked": {
+						"seq": [2],
+						"loop": false
+					}
+				}
+			}
+		},
 	]
 }
