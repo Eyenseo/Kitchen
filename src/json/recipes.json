@@ -339,7 +339,7 @@
 			"pictureFinish": "/images/recipe/noodlesFinish.png",
 			"description": "Bratkartoffeln mit Würstchen sind einfach lecker.",
 			"ingredients": [
-				"noodle", "water", "oil", "salt", "potato", "sausage", "onion"
+				"noodle", "water", "oil", "salt", "potato", "bacon", "onion"
 			],
 			"utensils": ["dish", "plate", "bigPot", "pan", "cuttingBoard"],
 			"schedule": [
@@ -415,77 +415,29 @@
 					]
 				},
 				{
-					"text": "Die Kartoffeln aus dem Sieb und die Zwiebeln auf das Schneidebrett legen.",
+					"text": "Die Kartoffeln aus dem Sieb, Schinken und die Zwiebeln auf das Schneidebrett legen.",
 					"action": [
 						{
 							"cuttingBoard": [
 								{
-									"put": ["sieve", "onion"]
+									"put": ["sieve", "onion", "bacon"]
 								}
 							]
 						}
 					]
 				},
 				{
-					"text": "Die Kartoffeln und Zwiebeln in Scheiben schneiden.",
+					"text": "Die Kartoffeln, Schinken und Zwiebeln in Scheiben schneiden.",
 					"action": [
 						{
 							"cuttingBoard": [
 								{
-									"isCut": ["potato", "onion"]
+									"isCut": ["potato", "onion", "bacon"]
 								}
 							]
 						}
 					]
 				},
-				{
-					"text": "Einen Topf mit Wasser füllen.",
-					"action": [
-						{
-							"bigPot": [
-								{
-									"put": ["water", "salt"]
-								}
-							]
-						}
-					]
-				},
-				{
-					"text": "Den Topf auf die Herdplatte stellen.",
-					"action": [
-						{
-							"plate": [
-								{
-									"put": ["bigPot"]
-								}
-							]
-
-						},
-						{
-							"bigPot": [
-								{
-									"isCooked": ["water"]
-								}
-							]
-						}
-					]
-				},
-				{
-					"text": "Die Würstchen ins kochende Wasser füllen.",
-					"action": [
-						{
-							"bigPot": [
-								{
-									"put": ["sausage"]
-								},
-								{
-									"isCooked": ["sausage"]
-								}
-							]
-						}
-					]
-				},
-
 				{
 					"text": "Eine Pfanne auf die Herdplatte stellen.",
 					"action": [
@@ -509,19 +461,7 @@
 
 								},
 								{
-									"isCooked": ["potato", "onion"]
-								}
-							]
-						}
-					]
-				},
-				{
-					"text": "Die Würstchen aus dem Topf in die Pfanne geben.",
-					"action": [
-						{
-							"pan": [
-								{
-									"put": ["bigPot"]
+									"isCooked": ["potato", "onion", "bacon"]
 								}
 							]
 						}
@@ -541,6 +481,5 @@
 				}
 			]
 		}
-
 	]
 }
