@@ -1,6 +1,6 @@
 //TODO DOC
 function JSONHandler() {
-	jsonHandler = this;
+	var jsonHandler = this;
 	this.recipes = 0;
 	this.ingredients = 0;
 	this.utensiles = 0;
