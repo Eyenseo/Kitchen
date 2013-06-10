@@ -149,7 +149,7 @@ function Kitchen(canvasId) {
 			                    "w": 86,
 			                    "h": 150,
 			                    "zOrder": 201,
-			                    "actionTime": 0.00125,  // TODO 'old heatRising value - most probably will be changed to time based action
+			                    "actionTime": 0.002,  // TODO 'old heatRising value - most probably will be changed to time based action
 			                    "picture": "images/water.png",
 			                    "aniObject": {
 				                    "image": {
@@ -178,7 +178,7 @@ function Kitchen(canvasId) {
 			                 "zOrder": 100,
 			                 "cookTime": 10,
 			                 "draggable": true,
-			                 "actionTime": 0.002,   // TODO 'old heatRising value - most probably will be changed to time based action
+			                 "actionTime": 0.0003,   // TODO 'old heatRising value - most probably will be changed to time based action
 			                 "picture": "images/potAni.png",
 			                 "aniObject": {
 				                 "image": {
@@ -229,7 +229,7 @@ function Kitchen(canvasId) {
 			                 "zOrder": 101,
 			                 "cookTime": 10,
 			                 "draggable": true,
-			                 "actionTime": 0.002,  // TODO 'old heatRising value - most probably will be changed to time based action
+			                 "actionTime": 0.0003,  // TODO 'old heatRising value - most probably will be changed to time based action
 			                 "picture": "images/potAni.png",
 			                 "aniObject": {
 				                 "image": {
