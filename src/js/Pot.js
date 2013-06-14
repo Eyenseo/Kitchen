@@ -160,3 +160,30 @@ Pot.prototype.logTemperature = function() {
 Pot.prototype.setPlate = function(plate) {
 	this.plate = plate
 };
+
+//TODO Doc
+Pot.prototype.dragEndAction = function(kitchen) {
+	var pot = this;
+	var potCenterX = this.getBottomCenter().cx;
+	var potCenterY = this.getBottomCenter().cy;
+
+	kitchen.plates.forEach(function(plate) {
+		var zone = plate.getHitZone();
+		if(potCenterX >= zone.hx && potCenterY >= zone.hy && potCenterX <= zone.hx + zone.hw && potCenterY <= zone.hy + zone.hh) {
+			plate.setPot(pot);
+			pot.setPlate(plate);
+			plate.updatePotTemperature();
+
+			kitchen.soundManager.play(kitchen.soundManager.POTONTOSTOVE);
+		}
+	});
+};
+
+//TODO Doc
+Pot.prototype.dragStartAction = function() {
+	if(this.plate != null) {
+		this.plate.setPot(null);
+		this.plate = null;
+	}
+	this.goalTemperature = this.DEFAULTTEMPERATURE;
+};
