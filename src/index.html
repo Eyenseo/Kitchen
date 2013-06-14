@@ -5,24 +5,13 @@
 
 	<script>
 		window.onload = function() {
-			var jsonHandler = new JSONHandler();
 			var kitchen = new Kitchen('kitchenCanvas');
 		}
 	</script>
-	<style>
-		div {
-			margin: 0px auto;
-			width: 1000px;
-			height: 600px;
-		}
-
-		canvas {
-			border: 1px solid black;
-		}
-	</style>
+	<link href="css/style.css" type="text/css" rel="stylesheet">
 </head>
 <body>
-<div>
+<div id="kitchenDiv">
 	<canvas id="kitchenCanvas" width="1000" height="600">
 		Your Browser does not support the canvas element!
 	</canvas>
@@ -38,5 +27,6 @@
 <script src="js/Plate.js"></script>
 <script src="js/Pot.js"></script>
 <script src="js/Ingredient.js"></script>
+<script src="js/RecipeHTML.js"></script>
 </body>
 </html>

@@ -1,0 +1,9 @@
+#kitchenDiv {
+    margin: 0 auto;
+    width: 1000px;
+    height: 600px;
+}
+
+#kitchenCanvas {
+    border: 1px solid black;
+}
