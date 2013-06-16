@@ -8,6 +8,9 @@ function Kitchen(canvasId) {
 	// create a new stage object
 	this.stage = new Stage(canvasId);
 
+	//Ajax
+	this.jsonHandler = new JSONHandler();
+
 	//create Objects
 
 	//SoundManager
@@ -115,6 +118,8 @@ function Kitchen(canvasId) {
 	// start the animation loop
 	// parameter this (kitchen itself) needed, because of the closure within the run function
 	this.run(this);
+
+	var html = new RecipeHTML(this.jsonHandler);
 
 	//TODO This is for testing only - the object will be loaded from the Ajax object
 	this.addIngredients([
