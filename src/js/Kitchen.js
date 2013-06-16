@@ -8,6 +8,9 @@ function Kitchen(canvasId) {
 	// create a new stage object
 	this.stage = new Stage(canvasId);
 
+	//Ajax
+	this.jsonHandler = new JSONHandler();
+
 	//create Objects
 
 	//SoundManager
@@ -115,6 +118,8 @@ function Kitchen(canvasId) {
 	// start the animation loop
 	// parameter this (kitchen itself) needed, because of the closure within the run function
 	this.run(this);
+
+	var html = new RecipeHTML(this.jsonHandler);
 
 	//TODO This is for testing only - the object will be loaded from the Ajax object
 	this.addIngredients([
@@ -311,53 +316,23 @@ Kitchen.prototype.addUtensils = function(recipeUtensils) {
 
 //TODO DOC
 Kitchen.prototype.onClick = function(event) {
-	var kitchen = this;
 	if(event.target instanceof Knob) {
-		event.target.changeState();
-		kitchen.soundManager.play(kitchen.soundManager.KNOB);
+		event.target.clickAction(this);
 	}
 };
 
 //TODO DOC
 Kitchen.prototype.onDragend = function(event) {
 	//console.log(event.target);
-	var kitchen = this;
-	if(event.target instanceof Ingredient) {
-		var ingredientCenterX = event.target.getCenter().cx;
-		var ingredientCenterY = event.target.getCenter().cy;
-
-		this.pots.forEach(function(pot) {
-			var zone = pot.getHitZone();
-			if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw && ingredientCenterY <= zone.hy + zone.hh) {
-				pot.addPotContent(event.target);
-				kitchen.stage.removeFromStage(event.target);
-				kitchen.soundManager.play(kitchen.soundManager.DROP);
-			}
-		});
-	} else if(event.target instanceof Pot) {
-		var plateCenterX = event.target.getBottomCenter().cx;
-		var plateCenterY = event.target.getBottomCenter().cy;
-		this.plates.forEach(function(plate) {
-			var zone = plate.getHitZone();
-			if(plateCenterX >= zone.hx && plateCenterY >= zone.hy && plateCenterX <= zone.hx + zone.hw && plateCenterY <= zone.hy + zone.hh) {
-				plate.setPot(event.target);
-				event.target.setPlate(plate);
-				plate.updatePotTemperature();
-
-				kitchen.soundManager.play(kitchen.soundManager.POTONTOSTOVE);
-			}
-		});
+	if(event.target instanceof Ingredient || event.target instanceof Pot) {
+		event.target.dragEndAction(this);
 	}
 };
 
 //TODO DOC
 Kitchen.prototype.onDragstart = function(event) {
 	if(event.target instanceof Pot) {
-		if(event.target.plate != null) {
-			event.target.plate.setPot(null);
-			event.target.plate = null;
-		}
-		event.target.setGoalTemperature(event.target.DEFAULTTEMPERATURE);
+		event.target.dragStartAction();
 	}
 };
 

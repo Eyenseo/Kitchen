@@ -1,4 +1,12 @@
-function RecipeHTML() {
+function RecipeHTML(jsonHandler) {
+	this.recipes = jsonHandler.recipes;
+	this.allRecipes();
+}
+
+RecipeHTML.prototype.constructor = RecipeHTML;
+
+RecipeHTML.prototype.allRecipes = function() {
+	var THIS = this;
 	var body = document.querySelector('body');
 
 	var startUpDiv = document.createElement('div');
@@ -12,13 +20,14 @@ function RecipeHTML() {
 	//menu
 	var menuDiv = document.createElement('div');
 	menuDiv.setAttribute('id', 'menuDiv');
+	menuDiv.style.display = "none";
 	noteGroundDiv.appendChild(menuDiv);
 
 	var backImage = document.createElement('img');
 	backImage.setAttribute('id', 'backImage');
-	backImage.src = 'images/menu/backImage.png';
+	backImage.src = 'images/menu/back.png';
 	backImage.addEventListener('click', function() {
-		var detail = document.querySelector('#recipeDetail');
+		var detail = document.querySelector('#recipeDetails');
 		detail.parentNode.removeChild(detail);
 		document.querySelector('#menuDiv').style.display = 'none';
 		document.querySelector('#allRecipesDiv').style.display = 'block';
@@ -27,40 +36,55 @@ function RecipeHTML() {
 
 	var startImage = document.createElement('img');
 	startImage.setAttribute('id', 'startImage');
-	startImage.src = 'images/menu/startImage.png';
+	startImage.src = 'images/menu/start.png';
 	menuDiv.appendChild(startImage);
 
-	//List of Recipes
+	//Recipe div
 	var allRecipesDiv = document.createElement('div');
 	allRecipesDiv.setAttribute('id', 'allRecipesDiv');
 	noteGroundDiv.appendChild(allRecipesDiv);
 
+	//header
+	var header = document.createElement("h1");
+	header.appendChild(document.createTextNode("Rezepte"));
+	allRecipesDiv.appendChild(header);
+
+	//List of Recipes
 	var ul = document.createElement('ul');
 	allRecipesDiv.appendChild(ul);
 
-	for(var i = 0; JSONHandler.recipes.length > i; i++) {
+	for(var i = 0; i < this.recipes.length; i++) {
 		var li = document.createElement('li');
 		ul.appendChild(li);
 
 		var oneRecipeDiv = document.createElement('div');
 		oneRecipeDiv.setAttribute('class', 'oneRecipeDiv');
-		oneRecipeDiv.addEventListener("click", this.recipeDetail(i));
+		// This is a closure
+		// A closure, in JavaScript, can simply be described as a retained scope; at least, this is how I think of it. The benefit of a closure is in the fact that it retains the scope (the “scope chain”) of the outer (or “parent”) execution context. This behaviour can be used in a number of different ways and has become a useful remedy for quite a few JavaScript gotchas; one of the most common being the “looping problem”.
+		// ...
+		// http://james.padolsey.com/javascript/closures-in-javascript/
+		oneRecipeDiv.addEventListener("click", (function(n) {
+			return function() {
+				THIS.recipeDetail(n);
+			};
+
+		})(i));
 		li.appendChild(oneRecipeDiv);
 
 		var recipeImage = document.createElement('img');
-		recipeImage.src = JSONHandler.recipes[i].pictureFinish;
+		recipeImage.src = this.recipes[i].pictureFinish;
 		oneRecipeDiv.appendChild(recipeImage);
 
 		var recipeName = document.createElement('span');
-		recipeName.innerHTML = JSONHandler.recipes[i].name;
+		recipeName.innerHTML = this.recipes[i].name;
 		oneRecipeDiv.appendChild(recipeName);
 
 		var recipeDifficulty = document.createElement('img');
-		recipeDifficulty.src = "images/star" + JSONHandler.recipes[i].difficulty + ".jpg";
+		recipeDifficulty.src = "images/star" + this.recipes[i].difficulty + ".jpg";
 		oneRecipeDiv.appendChild(recipeDifficulty);
 
 	}
-}
+};
 
 /**
  * Function to display the selected recipe with more detail instead of the recipe list
@@ -77,17 +101,17 @@ RecipeHTML.prototype.recipeDetail = function(index) {
 
 	var recipeDetails = document.createElement('div');
 	recipeDetails.setAttribute('id', 'recipeDetails');
-	document.querySelector("menuDiv").appendChild(recipeDetails);
+	document.querySelector("#noteGroundDiv").appendChild(recipeDetails);
 
 	var hl = document.createElement('hl');
 	recipeDetails.appendChild(hl);
 
 	var starImage = document.createElement('img');
-	starImage.src = "images/star" + JSONHandler.recipes[index].difficulty + ".jpg";
+	starImage.src = "images/star" + this.recipes[index].difficulty + ".jpg";
 	recipeDetails.appendChild(starImage);
 
 	var recipeName = document.createElement('span');
-	recipeName.innerHTML = JSONHandler.recipes[index].name;
+	recipeName.innerHTML = this.recipes[index].name;
 	hl.appendChild(recipeName);
 
 	var ul = document.createElement('ul');
@@ -96,18 +120,18 @@ RecipeHTML.prototype.recipeDetail = function(index) {
 	var p = document.createElement('p');
 	recipeDetails.appendChild(p);
 
-	JSONHandler.recipes[index].ingredients.forEach(function(ingredient) {
+	this.recipes[index].ingredients.forEach(function(ingredient) {
 		var li = document.createElement('li');
 		ul.appendChild(li);
 
-		var recipeIngredient = document.createTextNode(ingredients);
+		var recipeIngredient = document.createTextNode(ingredient);
 		li.appendChild(recipeIngredient);
 
 	});
 
 	var recipeImage = document.createElement('img');
-	recipeImage.src = JSONHandler.recipes[index].pictureBig;
+	recipeImage.src = this.recipes[index].pictureBig;
 	p.appendChild(recipeImage);
-	p.appendChild(document.createTextNode(JSONHandler.recipes[index].description));
+	p.appendChild(document.createTextNode(this.recipes[index].description));
 
 };

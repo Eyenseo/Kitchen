@@ -5,13 +5,13 @@ function JSONHandler() {
 	this.ingredients = 0;
 	this.utensiles = 0;
 
-	Ajax.getJSON("http://localhost/eyenseo/Kitchen/src/json/recipes.json", function(data) {
+	Ajax.getJSON("json/recipes.json", function(data) {
 		jsonHandler.recipes = data;
 	});
-	Ajax.getJSON("http://localhost/eyenseo/Kitchen/src/json/ingredients.json", function(data) {
+	Ajax.getJSON("json/ingredients.json", function(data) {
 		jsonHandler.ingredients = data;
 	});
-	Ajax.getJSON("http://localhost/eyenseo/Kitchen/src/json/utensils.json", function(data) {
+	Ajax.getJSON("json/utensils.json", function(data) {
 		jsonHandler.utensiles = data;
 	});
 }

@@ -69,3 +69,19 @@ Ingredient.prototype.logTemperature = function() {
 		this.logCounter++;
 	}
 };
+
+//TODO Doc
+Ingredient.prototype.dragEndAction = function(kitchen) {
+	var ingredient = this;
+	var ingredientCenterX = this.getCenter().cx;
+	var ingredientCenterY = this.getCenter().cy;
+
+	kitchen.pots.forEach(function(pot) {
+		var zone = pot.getHitZone();
+		if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw && ingredientCenterY <= zone.hy + zone.hh) {
+			pot.addPotContent(ingredient);
+			kitchen.stage.removeFromStage(ingredient);
+			kitchen.soundManager.play(kitchen.soundManager.DROP);
+		}
+	});
+};

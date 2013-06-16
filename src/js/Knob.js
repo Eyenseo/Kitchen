@@ -40,3 +40,9 @@ Knob.prototype.changeState = function() {
 	}
 	this.plate.setState(this.state);
 };
+
+//TODO Doc
+Knob.prototype.clickAction = function(kitchen) {
+	this.changeState();
+	kitchen.soundManager.play(kitchen.soundManager.KNOB);
+};
