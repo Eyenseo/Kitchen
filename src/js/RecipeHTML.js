@@ -71,7 +71,8 @@ RecipeHTML.prototype.recipeDetail = function(index) {
 	document.querySelector('#allRecipesDiv').style.display = 'none';
 
 	document.querySelector('#startImage').addEventListener('click', function() {
-		//TODO function to give the kitchen the selected recipe
+		document.querySelector('#startUpDiv').style.display = 'none';
+		kitchen.prepareKitchen(JSONHandler.recipes[index]);
 	});
 
 	var recipeDetails = document.createElement('div');
