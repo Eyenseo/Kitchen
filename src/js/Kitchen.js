@@ -278,6 +278,13 @@ function Kitchen(canvasId) {
 	                 ]);
 }
 
+Kitchen.prototype.prepareKitchen = function(currentRecipe) {
+	var kitchen = this;
+
+	kitchen.addIngredients(currentRecipe.ingredients);
+	kitchen.addIngredients(currentRecipe.utensiles);
+};
+
 //TODO DOC
 Kitchen.prototype.addIngredients = function(recipeIngredients) {
 	var kitchen = this;
