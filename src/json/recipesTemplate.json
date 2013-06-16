@@ -15,11 +15,9 @@
 					"text": "Put water, oil and salt in the big pot",
 					"action": [
 						{
-							"bigPot": [
-								{
-									"put": ["water", "salt", "oil"]
-								}
-							]
+							"utensil": "bigPot",
+							"act": "put",
+							"stuff": ["water", "salt"]
 						}
 					]
 				},
@@ -27,19 +25,14 @@
 					"text": "Put big pot on plate, and boil the water",
 					"action": [
 						{
-							"plate": [
-								{
-									"put": ["bigPot"]
-								}
-							]
-
+							"utensil": "plate",
+							"act": "put",
+							"stuff": ["bigPot"]
 						},
 						{
-							"bigPot": [
-								{
-									"isCooked": ["water"]
-								}
-							]
+							"utensil": "plate",
+							"act": "isCooked",
+							"stuff": ["water"]
 						}
 					]
 				},
@@ -47,14 +40,14 @@
 					"text": "Put noodles in the big pot and boil them.",
 					"action": [
 						{
-							"bigPot": [
-								{
-									"put": ["noodle"]
-								},
-								{
-									"isCooked": ["noodle"]
-								}
-							]
+							"utensil": "bigPot",
+							"act": "put",
+							"stuff": ["noodle"]
+						},
+						{
+							"utensil": "bigPot",
+							"act": "isCooked",
+							"stuff": ["noodle"]
 						}
 					]
 				},
@@ -62,11 +55,9 @@
 					"text": "Put sieve in the sink",
 					"action": [
 						{
-							"sink": [
-								{
-									"put": ["sieve"]
-								}
-							]
+							"utensil": "sink",
+							"act": "put",
+							"stuff": ["sieve"]
 						}
 					]
 				},
@@ -74,11 +65,9 @@
 					"text": "Put noodles in the sieve",
 					"action": [
 						{
-							"sieve": [
-								{
-									"put": ["bigPot"]
-								}
-							]
+							"utensil": "sieve",
+							"act": "put",
+							"stuff": ["bigPot"]
 						}
 					]
 				},
@@ -86,11 +75,9 @@
 					"text": "Put noodles on a plate",
 					"action": [
 						{
-							"dish": [
-								{
-									"put": ["sieve"]
-								}
-							]
+							"utensil": "dish",
+							"act": "put",
+							"stuff": ["sieve"]
 						}
 					]
 				}
