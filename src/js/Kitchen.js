@@ -12,6 +12,9 @@ function Kitchen(canvasId) {
 	this.jsonHandler = new JSONHandler();
 
 	//create Objects
+	//kitchen background
+	this.kitchenBackground = new VisualRenderObject(this.stage.getContext(), 0, 0, 1024, 650, "images/kitchenBackground.png", 5);
+	this.stage.addToStage(this.kitchenBackground);
 
 	//SoundManager
 	this.soundManager = new SoundManager();
