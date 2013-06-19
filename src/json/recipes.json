@@ -15,11 +15,9 @@
 					"text": "Einen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
-							"bigPot": [
-								{
-									"put": ["water", "salt"]
-								}
-							]
+							"utensil": "bigPot",
+							 "act": "put",
+							 "stuff": ["water", "salt"]
 						}
 					]
 				},
@@ -27,19 +25,14 @@
 					"text": "Den Topf auf die Herdplatte stellen.",
 					"action": [
 						{
-							"plate": [
-								{
-									"put": ["bigPot"]
-								}
-							]
-
+							"utensil": "plate",
+							"act": "put",
+							"stuff": ["bigPot"]
 						},
 						{
-							"bigPot": [
-								{
-									"isCooked": ["water"]
-								}
-							]
+							"utensil": "bigPot",
+							"act":"isCooked",
+							"stuff": ["water"]
 						}
 					]
 				},
@@ -47,14 +40,14 @@
 					"text": "Die Käsespätzle ins kochende Wasser füllen.",
 					"action": [
 						{
-							"bigPot": [
-								{
-									"put": ["noodle"]
-								},
-								{
-									"isCooked": ["noodle"]
-								}
-							]
+							"utensil": "bigPot",
+							"act": "put",
+							"stuff": ["noodle"]
+						},
+						{
+							"utensil": "bigPot",
+							"act": "isCooked",
+							"stuff": ["noodle"]
 						}
 					]
 				},
@@ -62,11 +55,9 @@
 					"text": "Die Pilze und Zwiebeln auf das Schneidebrett legen.",
 					"action": [
 						{
-							"cuttingBoard": [
-								{
-									"put": ["mushroom", "onion"]
-								}
-							]
+							"utensil": "cuttingBoard"
+							"act": "put",
+							"stuff": ["mushroom", "onion"]
 						}
 					]
 				},
@@ -74,11 +65,9 @@
 					"text": "Das Nuddelsieb ins Spülbecken stellen.",
 					"action": [
 						{
-							"sink": [
-								{
-									"put": ["sieve"]
-								}
-							]
+							"utensil": "sink",
+							"act": "put",
+							"stuff": ["sieve"]
 						}
 					]
 				},
@@ -86,11 +75,9 @@
 					"text": "Die Nuddeln ins Sieb schütten.",
 					"action": [
 						{
-							"sieve": [
-								{
-									"put": ["bigPot"]
-								}
-							]
+							"utensil": "sieve",
+							"act": "put",
+							"stuff": ["bigPot"]
 						}
 					]
 				},
@@ -98,12 +85,9 @@
 					"text": "Eine Pfanne auf die Herdplatte stellen.",
 					"action": [
 						{
-							"plate": [
-								{
-									"put": ["pan"]
-								}
-							]
-
+							"utensil": "plate",
+							"act": "put",
+							"stuff": ["pan"]
 						}
 					]
 				},
@@ -111,15 +95,14 @@
 					"text": "Die Spätzle, Pilze und Zwiebeln mit Öl in die Pfanne geben.",
 					"action": [
 						{
-							"pan": [
-								{
-									"put": ["sieve", "mushroom", "onion", "oil"]
-
-								},
-								{
-									"isCooked": ["noodle", "mushroom", "onion"]
-								}
-							]
+							"utensil": "pan",
+							"act": "put",
+							"stuff": ["sieve", "mushroom", "onion", "oil"]
+                        },
+                        {
+                            "utensil": "pan",
+                            "act": "isCooked",
+                            "stuff": ["noodle", "mushroom", "onion"]
 						}
 					]
 				},
@@ -127,11 +110,9 @@
 					"text": "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
 					"action": [
 						{
-							"dish": [
-								{
-									"put": ["pan"]
-								}
-							]
+							"utensil": "dish",
+							"act": "put",
+							"stuff": ["pan"]
 						}
 					]
 				}
@@ -152,31 +133,24 @@
 					"text": "Einen großen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
-							"bigPot": [
-								{
-									"put": ["water", "salt"]
-								}
-							]
+							"utensil": "bigPot",
+							"act": "put",
+							"stuff": ["water", "salt"]
 						}
 					]
 				},
 				{
-					"text": "Den Topf auf die Herdplatte stellen.",
+					"text": "Den Topf auf die Herdplatte stellen und das Wasser zum Kochen bringen.",
 					"action": [
 						{
-							"plate": [
-								{
-									"put": ["bigPot"]
-								}
-							]
-
+							"utensil": "plate",
+							"act": "put",
+							"stuff": ["bigPot"]
 						},
 						{
-							"bigPot": [
-								{
-									"isCooked": ["water"]
-								}
-							]
+							"utensil": "plate",
+							"act": "isCooked",
+							"stuff": ["water"]
 						}
 					]
 				},
@@ -184,14 +158,14 @@
 					"text": "Die Kartoffeln ins kochende Wasser füllen.",
 					"action": [
 						{
-							"bigPot": [
-								{
-									"put": ["potato"]
-								},
-								{
-									"isCooked": ["potato"]
-								}
-							]
+							"utensil": "bigPot",
+							"act": "put",
+							"stuff": ["potato"]
+						},
+						{
+							"utensil": "bigPot",
+							"act": "isCooked",
+							"stuff": ["potato"]
 						}
 					]
 				},
@@ -199,11 +173,9 @@
 					"text": "Einen kleinen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
-							"smallPot": [
-								{
-									"put": ["water", "salt"]
-								}
-							]
+							"utensil": "smallPot",
+							"act": "put",
+							"stuff": ["water", "salt"]
 						}
 					]
 				},
@@ -211,19 +183,14 @@
 					"text": "Den Topf auf die Herdplatte stellen.",
 					"action": [
 						{
-							"plate": [
-								{
-									"put": ["smallPot"]
-								}
-							]
-
+							"utensil": "plate",
+							"act": "put",
+							"stuff": ["smallPot"]
 						},
 						{
-							"smallPot": [
-								{
-									"isCooked": ["water"]
-								}
-							]
+							"utensil": "smallPot"
+							"act": "isCooked",
+							"stuff": ["water"]
 						}
 					]
 				},
@@ -231,14 +198,14 @@
 					"text": "Das Sauerkraut ins kochende Wasser füllen.",
 					"action": [
 						{
-							"smallPot": [
-								{
-									"put": ["sauerkraut"]
-								},
-								{
-									"isCooked": ["sauerkraut"]
-								}
-							]
+							"utensil": "smallPot",
+							"act": "put",
+							"stuff": ["sauerkraut"]
+						},
+						{
+							"utensil": "smallPot",
+							"act": "isCooked"
+							"stuff": ["sauerkraut"]
 						}
 					]
 				},
@@ -246,11 +213,9 @@
 					"text": "Die Zwiebeln auf das Schneidebrett legen.",
 					"action": [
 						{
-							"cuttingBoard": [
-								{
-									"put": ["onion"]
-								}
-							]
+							"utensil": "cuttingBoard",
+							"act": "put",
+							"stuff": ["onion"]
 						}
 					]
 				},
@@ -258,11 +223,9 @@
 					"text": "Das Sieb ins Spülbecken stellen.",
 					"action": [
 						{
-							"sink": [
-								{
-									"put": ["sieve"]
-								}
-							]
+							"utensil": "sink",
+							"act": "put",
+							"stuff": ["sieve"]
 						}
 					]
 				},
@@ -270,11 +233,9 @@
 					"text": "Die Kartoffeln ins Sieb schütten.",
 					"action": [
 						{
-							"sieve": [
-								{
-									"put": ["bigPot"]
-								}
-							]
+							"utensil": "sieve",
+							"act": "put",
+							"stuff": ["bigPot"]
 						}
 					]
 				},
@@ -282,11 +243,9 @@
 					"text": "Eine Pfanne auf die Herdplatte stellen.",
 					"action": [
 						{
-							"plate": [
-								{
-									"put": ["pan"]
-								}
-							]
+							"utensil": "plate",
+							"act": "put",
+							"stuff": ["pan"]
 						}
 					]
 				},
@@ -294,15 +253,14 @@
 					"text": "Das Kasslersteak und die Zwiebeln mit Öl in die Pfanne geben.",
 					"action": [
 						{
-							"pan": [
-								{
-									"put": ["cuttingBoard", "meat", "oil"]
-
-								},
-								{
-									"isCooked": ["onion", "meat"]
-								}
-							]
+							"utensil": "pan",
+							"act": "put",
+							"stuff": ["cuttingBoard", "meat", "oil"]
+						},
+						{
+							"utensil": "pan",
+							"act": "isCooked",
+							"stuff": ["onion", "meat"]
 						}
 					]
 				},
@@ -310,11 +268,9 @@
 					"text": "Die Kartoffeln und das Sauerkraut in die Pfanne geben.",
 					"action": [
 						{
-							"pan": [
-								{
-									"put": ["sieve", "smallPot"]
-								}
-							]
+							"utensil": "pan",
+							"act": "put",
+							"stuff": ["sieve", "smallPot"]
 						}
 					]
 				},
@@ -322,11 +278,9 @@
 					"text": "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
 					"action": [
 						{
-							"dish": [
-								{
-									"put": ["pan"]
-								}
-							]
+							"utensil": "dish",
+							"act": "put",
+							"stuff": ["pan"]
 						}
 					]
 				}
@@ -347,11 +301,9 @@
 					"text": "Einen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
-							"bigPot": [
-								{
-									"put": ["water", "salt"]
-								}
-							]
+							"utensil": "bigPot",
+							"act": "put",
+							"stuff": ["water", "salt"]
 						}
 					]
 				},
@@ -359,19 +311,14 @@
 					"text": "Den Topf auf die Herdplatte stellen.",
 					"action": [
 						{
-							"plate": [
-								{
-									"put": ["bigPot"]
-								}
-							]
-
+							"utensil": "plate",
+							"act": "put",
+							"stuff": ["bigPot"]
 						},
 						{
-							"bigPot": [
-								{
-									"isCooked": ["water"]
-								}
-							]
+							"utensil": "plate",
+							"act": "isCooked",
+							"stuff": ["water"]
 						}
 					]
 				},
@@ -379,14 +326,14 @@
 					"text": "Die Kartoffeln ins kochende Wasser füllen.",
 					"action": [
 						{
-							"bigPot": [
-								{
-									"put": ["potato"]
-								},
-								{
-									"isCooked": ["potato"]
-								}
-							]
+							"utensil": "bigPot",
+							"act": "put",
+							"stuff": ["potato"]
+						},
+						{
+							"utensil": "bigPot",
+							"act": "isCooked",
+							"stuff": ["potato"]
 						}
 					]
 				},
@@ -394,11 +341,9 @@
 					"text": "Das Sieb ins Spülbecken stellen.",
 					"action": [
 						{
-							"sink": [
-								{
-									"put": ["sieve"]
-								}
-							]
+							"utensil": "sink",
+							"act": "put",
+							"stuff": ["sieve"]
 						}
 					]
 				},
@@ -406,11 +351,9 @@
 					"text": "Die Kartoffeln ins Sieb schütten.",
 					"action": [
 						{
-							"sieve": [
-								{
-									"put": ["bigPot"]
-								}
-							]
+							"utensil": "sieve",
+							"act": "put",
+							"stuff": ["bigPot"]
 						}
 					]
 				},
@@ -418,11 +361,9 @@
 					"text": "Die Kartoffeln aus dem Sieb, Schinken und die Zwiebeln auf das Schneidebrett legen.",
 					"action": [
 						{
-							"cuttingBoard": [
-								{
-									"put": ["sieve", "onion", "bacon"]
-								}
-							]
+							"utensil": "cuttingBoard",
+							"act": "put",
+							"stuff": ["sieve", "onion", "bacon"]
 						}
 					]
 				},
@@ -430,11 +371,9 @@
 					"text": "Die Kartoffeln, Schinken und Zwiebeln in Scheiben schneiden.",
 					"action": [
 						{
-							"cuttingBoard": [
-								{
-									"isCut": ["potato", "onion", "bacon"]
-								}
-							]
+							"utensil": "cuttingBoard",
+							"act": "isCut",
+							"stuff": ["potato", "onion", "bacon"]
 						}
 					]
 				},
@@ -442,12 +381,9 @@
 					"text": "Eine Pfanne auf die Herdplatte stellen.",
 					"action": [
 						{
-							"plate": [
-								{
-									"put": ["pan"]
-								}
-							]
-
+							"utensil": "plate",
+							"act": "put",
+							"stuff": ["pan"]
 						}
 					]
 				},
@@ -455,15 +391,14 @@
 					"text": "Die Kartoffeln und Zwiebeln mit Öl in die Pfanne geben.",
 					"action": [
 						{
-							"pan": [
-								{
-									"put": ["cuttingBoard", "oil"]
-
-								},
-								{
-									"isCooked": ["potato", "onion", "bacon"]
-								}
-							]
+							"utensil": "pan",
+							"act": "put",
+							"stuff": ["cuttingBoard", "oil"]
+						},
+						{
+							"utensil": "pan",
+							"act": "isCooked",
+							"stuff": ["potato", "onion", "bacon"]
 						}
 					]
 				},
@@ -471,11 +406,9 @@
 					"text": "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
 					"action": [
 						{
-							"dish": [
-								{
-									"put": ["pan"]
-								}
-							]
+							"utensil": "dish",
+							"act": "put",
+							"stuff": ["pan"]
 						}
 					]
 				}
