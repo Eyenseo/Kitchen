@@ -1,27 +1,20 @@
 /**
  * represents an object to be rendered on the stage that represents a ingredient to be cooked
  * @param context - context object - the 2d context of the canvas
- * @param sx NUMBER - the start x position
- * @param sy NUMBER - the start y position
- * @param w NUMBER - the width of the object
- * @param h NUMBER - the height of the object
- * @param imgPath TEXT- the path of the image
- * @param zOrder NUMBER - the order to be drawn on stage
- * @param name TEXT - name of the ingredient
- * @param heatRisingRate NUMBER - the value determines how fast the ingredient adapts to a different temperature than it has
+ * @param data OBJECT - object obtained from the utensil.json file that defines the pot
  * @param soundManager SoundManager object - the value determines the SoundManager to be used
- * @param aniObject object - The value determines the animation information for the VisualRenderAnimation
+
  */
-function Pot(context, sx, sy, w, h, imgPath, zOrder, name, heatRisingRate, soundManager, aniObject) {
-	VisualRenderAnimation.call(this, context, sx, sy, w, h, imgPath, zOrder, aniObject);
+function Pot(context, data, soundManager) {
+	VisualRenderAnimation.call(this, context, data.sx, data.sy, data.w, data.h, data.picture, data.zOrder, data.aniObject);
 	this.setDraggable(true);
-	this.name = name;
+	this.name = data.name;
 	this.soundManager = soundManager;
 
 	this.potContent = [];
 	this.setHitZone(35, 8, 205, 42);
 
-	this.HEATRISINGRATE = heatRisingRate;
+	this.HEATRISINGRATE = data.actionTime;
 	this.DEFAULTTEMPERATURE = 24;
 	this.goalTemperature = this.DEFAULTTEMPERATURE;
 	this.temperature = this.DEFAULTTEMPERATURE;
