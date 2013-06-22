@@ -28,6 +28,18 @@
 					"cooked": {
 						"seq": [2],
 						"loop": false
+					},
+					"defaultHover": {
+						"seq": [0],
+						"loop": false
+					},
+					"cutHover": {
+						"seq": [1],
+						"loop": false
+					},
+					"cookedHover": {
+						"seq": [2],
+						"loop": false
 					}
 				}
 			}
