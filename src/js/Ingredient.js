@@ -18,6 +18,13 @@ function Ingredient(context, data) {
 	this.COOL = 3;
 	this.temperatureState = this.COOL;
 
+	//The cutState is false at the beginning of the program because the ingredients are uncut
+	this.cutState = false;
+	//The hoverState is false at the beginning
+	this.hoverState = false;
+
+	this.cuttingBoard = null;
+
 	this.logCounter = 0;
 }
 Ingredient.prototype = Object.create(VisualRenderAnimation.prototype);
@@ -76,4 +83,36 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
 			kitchen.soundManager.play(kitchen.soundManager.DROP);
 		}
 	});
+};
+
+/**
+ * Function to drag an ingredient.
+ * When the ingredient lied on the cutting board it is removed from the array in the cutting board.
+ */
+Ingredient.prototype.dragStartAction = function() {
+	if(!(this.cuttingBoard == null)) {
+		this.cuttingBoard.removeIngredient(this);
+	}
+};
+
+/**
+ * Function to change the image of an ingredient when it is cut.
+ */
+Ingredient.prototype.changeState = function() {
+	this.changeAnimation("cut");
+	this.cutState = true;
+};
+
+/**
+ * Function to make the ingredients hover.
+ * Checks if the ingredient is cut or not that it shows the right hovered image.
+ */
+Ingredient.prototype.hoverAction = function() {
+	if(this.cutState) {
+		this.changeAnimation("cutHover");
+		this.hoverState = true;
+	} else {
+		this.changeAnimation("defaultHover");
+		this.hoverState = true;
+	}
 };
