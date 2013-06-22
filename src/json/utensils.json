@@ -11,7 +11,7 @@
 			"cookTime": 10,
 			"draggable": true,
 			"actionTime": 60,
-			"picture": "images/utensil/bigPot.png",
+			"picture": "images/utensils/bigPot.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 136,
@@ -142,7 +142,7 @@
 			"cookTime": 10,
 			"draggable": true,
 			"actionTime": 60,
-			"picture": "images/utensil/bigPot.png",
+			"picture": "images/utensils/bigPot.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 136,
@@ -273,7 +273,7 @@
 			"cookTime": 10,
 			"draggable": true,
 			"actionTime": 60,
-			"picture": "images/utensil/bigPot.png",
+			"picture": "images/utensils/bigPot.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 136,
@@ -404,7 +404,7 @@
 			"cookTime": 10,
 			"draggable": true,
 			"actionTime": 60,
-			"picture": "images/utensil/knife.png",
+			"picture": "images/utensils/knife.png",
 
 			"aniObject": {
 				"image": {
@@ -446,7 +446,7 @@
 			"cookTime": 10,
 			"draggable": true,
 			"actionTime": 60,
-			"picture": "images/utensil/bowl.png",
+			"picture": "images/utensils/bowl.png",
 
 			"aniObject": {
 				"image": {
@@ -478,7 +478,7 @@
 			"cookTime": 10,
 			"draggable": true,
 			"actionTime": 60,
-			"picture": "images/utensil/cuttingBoard.png",
+			"picture": "images/utensils/cuttingBoard.png",
 
 			"aniObject": {
 				"image": {
@@ -510,7 +510,7 @@
 			"cookTime": 10,
 			"draggable": true,
 			"actionTime": 60,
-			"picture": "images/utensil/bakingTin.png",
+			"picture": "images/utensils/bakingTin.png",
 
 			"aniObject": {
 				"image": {
@@ -550,7 +550,7 @@
 			"cookTime": 10,
 			"draggable": true,
 			"actionTime": 60,
-			"picture": "images/utensil/plate.png",
+			"picture": "images/utensils/dish.png",
 
 			"aniObject": {
 				"image": {
@@ -572,8 +572,8 @@
 			}
 		},
 		{
-			"name": "sive",
-			"type": "Sive",
+			"name": "sieve",
+			"type": "Sieve",
 			"sx": 15,
 			"sy": 80,
 			"w": 189,
@@ -582,7 +582,7 @@
 			"cookTime": 10,
 			"draggable": true,
 			"actionTime": 60,
-			"picture": "images/utensil/sive.png",
+			"picture": "images/utensils/seive.png",
 
 			"aniObject": {
 				"image": {

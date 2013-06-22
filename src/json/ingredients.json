@@ -8,7 +8,7 @@
 			"h": 85,
 			"zOrder": 145,
 			"actionTime": 0.005,
-			"picture": "/images/ingredients/backingPowder.png",
+			"picture": "images/ingredients/backingPowder.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 66,
@@ -36,7 +36,7 @@
 			"h": 74,
 			"zOrder": 145,
 			"actionTime": 0.00012,
-			"picture": "/images/ingredients/bacon.png",
+			"picture": "images/ingredients/bacon.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 111,
@@ -57,14 +57,14 @@
 			}
 		},
 		{
-			"name": "beef",
+			"name": "meat",
 			"sx": 15,
 			"sy": 80,
 			"w": 115,
 			"h": 86,
 			"zOrder": 205,
 			"actionTime": 0.000012,
-			"picture": "/images/ingredients/beef.png",
+			"picture": "images/ingredients/meat.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 115,
@@ -92,7 +92,7 @@
 			"h": 66,
 			"zOrder": 145,
 			"actionTime": 0.00015,
-			"picture": "/images/ingredients/butter.png",
+			"picture": "images/ingredients/butter.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 111,
@@ -120,7 +120,7 @@
 			"h": 111,
 			"zOrder": 205,
 			"actionTime": 0.000012,
-			"picture": "/images/ingredients/cheese.png",
+			"picture": "images/ingredients/cheese.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 90,
@@ -148,7 +148,7 @@
 			"h": 73,
 			"zOrder": 130,
 			"actionTime": 0.00035,
-			"picture": "/images/ingredients/cream.png",
+			"picture": "images/ingredients/cream.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 57,
@@ -176,7 +176,7 @@
 			"h": 76,
 			"zOrder": 130,
 			"actionTime": 0.00025,
-			"picture": "/images/ingredients/eggs.png",
+			"picture": "images/ingredients/eggs.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 117,
@@ -204,7 +204,7 @@
 			"h": 116,
 			"zOrder": 130,
 			"actionTime": 0.0001,
-			"picture": "/images/ingredients/flour.png",
+			"picture": "images/ingredients/flour.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 85,
@@ -232,7 +232,7 @@
 			"h": 72,
 			"zOrder": 210,
 			"actionTime": 0.00035,
-			"picture": "/images/ingredients/mushroom.png",
+			"picture": "images/ingredients/mushroom.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 91,
@@ -268,7 +268,7 @@
 			"h": 122,
 			"zOrder": 145,
 			"actionTime": 0.004,
-			"picture": "/images/ingredients/oil.png",
+			"picture": "images/ingredients/oil.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 46,
@@ -296,7 +296,7 @@
 			"h": 78,
 			"zOrder": 125,
 			"actionTime": 0.00035,
-			"picture": "/images/ingredients/onion.png",
+			"picture": "images/ingredients/onion.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 77,
@@ -332,7 +332,7 @@
 			"h": 82,
 			"zOrder": 145,
 			"actionTime": 0.004,
-			"picture": "/images/ingredients/pepper.png",
+			"picture": "images/ingredients/pepper.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 55,
@@ -353,14 +353,14 @@
 			}
 		},
 		{
-			"name": "potatoes",
+			"name": "potato",
 			"sx": 140,
 			"sy": 120,
 			"w": 113,
 			"h": 82,
 			"zOrder": 125,
 			"actionTime": 0.00075,
-			"picture": "/images/ingredients/potatoes.png",
+			"picture": "images/ingredients/potatoes.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 113,
@@ -396,7 +396,7 @@
 			"h": 75,
 			"zOrder": 145,
 			"actionTime": 0.005,
-			"picture": "/images/ingredients/salt.png",
+			"picture": "images/ingredients/salt.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 46,
@@ -424,7 +424,7 @@
 			"h": 108,
 			"zOrder": 125,
 			"actionTime": 0.00055,
-			"picture": "/images/ingredients/sauerkraut.png",
+			"picture": "images/ingredients/sauerkraut.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 79,
@@ -452,11 +452,11 @@
 			"h": 114,
 			"zOrder": 120,
 			"actionTime": 0.0005,
-			"picture": "/images/ingredients/spaetzle.png",
+			"picture": "images/ingredients/spaetzle.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 63,
-					"tileHeight": 228,
+					"tileHeight": 114,
 					"imgWidth": 63,
 					"imgHeight": 228
 				},
@@ -480,7 +480,7 @@
 			"h": 80,
 			"zOrder": 130,
 			"actionTime": 0.0002,
-			"picture": "/images/ingredients/strawberries.png",
+			"picture": "images/ingredients/strawberries.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 105,
@@ -516,7 +516,7 @@
 			"h": 123,
 			"zOrder": 145,
 			"actionTime": 0.0002,
-			"picture": "/images/ingredients/ingredients.png",
+			"picture": "images/ingredients/ingredients.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 82,
@@ -544,7 +544,7 @@
 			"h": 150,
 			"zOrder": 145,
 			"actionTime": 0.0002,
-			"picture": "/images/water.png",
+			"picture": "images/water.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 86,

@@ -1,5 +1,6 @@
-function RecipeHTML(jsonHandler) {
+function RecipeHTML(jsonHandler, kitchen) {
 	this.recipes = jsonHandler.recipes;
+	this.kitchen = kitchen;
 	this.allRecipes();
 }
 
@@ -92,12 +93,13 @@ RecipeHTML.prototype.allRecipes = function() {
  * @param index NUMBER - index of the selected recipe in the json file
  */
 RecipeHTML.prototype.recipeDetail = function(index) {
+	var THIS = this;
 	document.querySelector('#menuDiv').style.display = 'block';
 	document.querySelector('#allRecipesDiv').style.display = 'none';
 
 	document.querySelector('#startImage').addEventListener('click', function() {
 		document.querySelector('#startUpDiv').style.display = 'none';
-		kitchen.prepareKitchen(JSONHandler.recipes[index]);
+		THIS.kitchen.prepareKitchen(THIS.recipes[index]);
 	});
 
 	var recipeDetails = document.createElement('div');
