@@ -255,18 +255,35 @@ Kitchen.prototype.onClick = function(event) {
 	}
 };
 
-//TODO DOC
+/**
+ * Checks what has to happen if something is dropped over an other thing.
+ * Then the special function dragEndAction of an object is performed.
+ * @param event
+ */
 Kitchen.prototype.onDragend = function(event) {
 	//console.log(event.target);
-	if(event.target instanceof Ingredient || event.target instanceof Pot) {
+	if(event.target instanceof Ingredient || event.target instanceof Pot || event.target instanceof CuttingBoard) {
 		event.target.dragEndAction(this);
 	}
 };
 
-//TODO DOC
+/**
+ * Checks if a function has to be performed when something is dragged from somewhere.
+ * @param event
+ */
 Kitchen.prototype.onDragstart = function(event) {
-	if(event.target instanceof Pot) {
+	if(event.target instanceof Pot || event.target instanceof Ingredient) {
 		event.target.dragStartAction();
+	}
+};
+
+/**
+ * Function to make an object hover if the mouse slides over it
+ * @param event
+ */
+Kitchen.prototype.onMouseover = function(event) {
+	if(event.target instanceof Ingredient) {
+		event.target.hoverAction();
 	}
 };
 
