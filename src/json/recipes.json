@@ -5,9 +5,12 @@
 			"difficulty": 2,
 			"pictureBig": "/images/recipe/noodlesBig.png",
 			"pictureFinish": "/images/recipe/noodlesFinish.png",
-			"description": "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht.",
+			"description": "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht. Sie sind bekannt aus dem Schwabenländle. Dort werden sie in nahezu jeder Familie traditionsmäßig gegessen.",
 			"ingredients": [
-				"noodle", "water", "oil", "salt", "cheese", "mushroom", "onion"
+				"spaetzle", "water", "oil", "salt", "cheese", "mushroom", "onion"
+			],
+			"ingredientsReadable": [
+				"Spaetzle", "Wasser", "Öl", "Salz", "Käse", "Pilze", "Zwiebeln"
 			],
 			"utensils": ["dish", "plate", "bigPot", "pan", "sieve", "sink", "cuttingBoard"],
 			"schedule": [
@@ -123,9 +126,12 @@
 			"difficulty": 3,
 			"pictureBig": "/images/recipe/noodlesBig.png",
 			"pictureFinish": "/images/recipe/noodlesFinish.png",
-			"description": "Kassler mit Sauerkraut und Kartoffeln als Beilage ist ein altbekanntes Rezept.",
+			"description": "Kassler mit Sauerkraut und Kartoffeln als Beilage ist ein altbekanntes Rezept. Meist wird das Rezept für dieses traditionelle Gericht von Mutter an Tochter durch die Familie gereicht.",
 			"ingredients": [
-				"potato", "water", "salt", "sauerkraut", "cream", "onion", "meat"
+				"potatoes", "water", "salt", "sauerkraut", "cream", "onion", "meat"
+			],
+			"ingredientsReadable": [
+				"Kartoffeln", "Wasser", "Salz", "Sauerkraut", "Sahne", "Zwiebeln", "Fleisch"
 			],
 			"utensils": ["dish", "plate", "bigPot", "pan", "smallPot", "cuttingBoard"],
 			"schedule": [
@@ -291,9 +297,12 @@
 			"difficulty": 1,
 			"pictureBig": "/images/recipe/noodlesBig.png",
 			"pictureFinish": "/images/recipe/noodlesFinish.png",
-			"description": "Bratkartoffeln mit Würstchen sind einfach lecker.",
+			"description": "Bratkartoffeln mit Würstchen sind einfach lecker. Man kann sie schnell und leicht zubereiten. Außerdem sind die Zutaten typisch für die Deutsche Kultur.",
 			"ingredients": [
-				"noodle", "water", "oil", "salt", "potato", "bacon", "onion"
+				"Spaetzle", "water", "oil", "salt", "potato", "bacon", "onion"
+			],
+			"ingredientsReadable": [
+				"Spaetzle", "Wasser", "Öl", "Salz", "Kartoffeln", "Speck", "Zwiebeln"
 			],
 			"utensils": ["dish", "plate", "bigPot", "pan", "cuttingBoard"],
 			"schedule": [

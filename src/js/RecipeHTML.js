@@ -118,7 +118,7 @@ RecipeHTML.prototype.recipeDetail = function(index) {
 	var p = document.createElement('p');
 	recipeDetails.appendChild(p);
 
-	this.recipes[index].ingredients.forEach(function(ingredient) {
+	this.recipes[index].ingredientsReadable.forEach(function(ingredient) {
 		var li = document.createElement('li');
 		ul.appendChild(li);
 
