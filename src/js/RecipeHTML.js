@@ -80,7 +80,8 @@ RecipeHTML.prototype.allRecipes = function() {
 		oneRecipeDiv.appendChild(recipeName);
 
 		var recipeDifficulty = document.createElement('img');
-		recipeDifficulty.src = "images/star" + this.recipes[i].difficulty + ".jpg";
+		recipeDifficulty.className = "recipeDifficulty";
+		recipeDifficulty.src = "images/menu/stars/" + this.recipes[i].difficulty + ".png";
 		oneRecipeDiv.appendChild(recipeDifficulty);
 
 	}
@@ -103,16 +104,13 @@ RecipeHTML.prototype.recipeDetail = function(index) {
 	recipeDetails.setAttribute('id', 'recipeDetails');
 	document.querySelector("#noteGroundDiv").appendChild(recipeDetails);
 
-	var hl = document.createElement('hl');
-	recipeDetails.appendChild(hl);
+	var h1 = document.createElement('h1');
+	h1.appendChild(document.createTextNode(this.recipes[index].name));
+	recipeDetails.appendChild(h1);
 
 	var starImage = document.createElement('img');
-	starImage.src = "images/star" + this.recipes[index].difficulty + ".jpg";
+	starImage.src = "images/menu/stars/" + this.recipes[index].difficulty + ".png";
 	recipeDetails.appendChild(starImage);
-
-	var recipeName = document.createElement('span');
-	recipeName.innerHTML = this.recipes[index].name;
-	hl.appendChild(recipeName);
 
 	var ul = document.createElement('ul');
 	recipeDetails.appendChild(ul);
