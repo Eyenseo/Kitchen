@@ -156,15 +156,15 @@ Pot.prototype.setPlate = function(plate) {
 
 //TODO Doc
 Pot.prototype.dragEndAction = function(kitchen) {
-	var pot = this;
+	var THIS = this;
 	var potCenterX = this.getBottomCenter().cx;
 	var potCenterY = this.getBottomCenter().cy;
 
 	kitchen.plates.forEach(function(plate) {
 		var zone = plate.getHitZone();
 		if(potCenterX >= zone.hx && potCenterY >= zone.hy && potCenterX <= zone.hx + zone.hw && potCenterY <= zone.hy + zone.hh) {
-			plate.setPot(pot);
-			pot.setPlate(plate);
+			plate.setPot(THIS);
+			THIS.setPlate(plate);
 			plate.updatePotTemperature();
 
 			kitchen.soundManager.play(kitchen.soundManager.POTONTOSTOVE);
