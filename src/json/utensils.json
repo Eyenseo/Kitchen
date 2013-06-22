@@ -1,0 +1,615 @@
+{
+	"types": [
+		{
+			"name": "bigPot",
+			"type": "Pot",
+			"sx": 15,
+			"sy": 80,
+			"w": 136,
+			"h": 110,
+			"zOrder": 100,
+			"cookTime": 10,
+			"draggable": true,
+			"actionTime": 60,
+			"picture": "images/utensil/bigPot.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 136,
+					"tileHeight": 110,
+					"imgWidth": 2720,
+					"imgHeight": 440
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+
+					"lowEmptyStatic": {
+						"seq": [0],
+						"loop": false
+					},
+					"mediumEmptyStatic": {
+						"seq": [9],
+						"loop": false
+					},
+					"highEmptyStatic": {
+						"seq": [19],
+						"loop": false
+					},
+
+					"lowFullStatic": {
+						"seq": [20],
+						"loop": false
+					},
+					"mediumFullStatic": {
+						"seq": [29],
+						"loop": false
+					},
+					"highFullStatic": {
+						"seq": [39],
+						"loop": false
+					},
+
+					"lowEmptyHoverStatic": {
+						"seq": [40],
+						"loop": false
+					},
+					"mediumEmptyHoverStatic": {
+						"seq": [49],
+						"loop": false
+					},
+					"highEmptyHoverStatic": {
+						"seq": [59],
+						"loop": false
+					},
+
+					"lowFullHoverStatic": {
+						"seq": [60],
+						"loop": false
+					},
+					"mediumFullHoverStatic": {
+						"seq": [69],
+						"loop": false
+					},
+					"highFullHoverStatic": {
+						"seq": [79],
+						"loop": false
+					},
+
+					"lowEmptyChanging": {
+						"seq": [ 1, 2, 3, 4, 5, 6, 5, 4, 3, 2],
+						"loop": true
+					},
+					"mediumEmptyChanging": {
+						"seq": [ 7, 8, 9, 10, 11, 12, 11, 10, 9, 8],
+						"loop": true
+					},
+					"highEmptyChanging": {
+						"seq": [13, 14, 15, 16, 17, 18, 17, 16, 15, 14],
+						"loop": true
+					},
+
+					"lowEmptyHoverChanging": {
+						"seq": [21, 22, 23, 24, 25, 26, 25, 24, 23, 22],
+						"loop": true
+					},
+					"mediumEmptyHoverChanging": {
+						"seq": [27, 28, 29, 30, 31, 32, 31, 30, 29, 28],
+						"loop": true
+					},
+					"highEmptyHoverChanging": {
+						"seq": [33, 34, 35, 36, 37, 38, 37, 36, 35, 34],
+						"loop": true
+					},
+
+					"lowFullChanging": {
+						"seq": [41, 42, 43, 44, 45, 46, 45, 44, 43, 42],
+						"loop": true
+					},
+					"mediumFullChanging": {
+						"seq": [47, 48, 49, 50, 51, 52, 51, 50, 49, 48],
+						"loop": true
+					},
+					"highFullChanging": {
+						"seq": [53, 54, 55, 56, 57, 58, 57, 56, 55, 54],
+						"loop": true
+					},
+
+					"lowFullHoverChanging": {
+						"seq": [61, 62, 63, 64, 65, 66, 65, 64, 63, 62],
+						"loop": true
+					},
+					"mediumFullHoverChanging": {
+						"seq": [67, 68, 69, 70, 71, 72, 71, 70, 69, 68],
+						"loop": true
+					},
+					"highFullHoverChanging": {
+						"seq": [73, 74, 75, 76, 77, 78, 77, 76, 75, 74],
+						"loop": true
+					}
+				}
+			}
+		},
+		{
+			"name": "smallPot",
+			"type": "Pot",
+			"sx": 15,
+			"sy": 80,
+			"w": 136,
+			"h": 110,
+			"zOrder": 101,
+			"cookTime": 10,
+			"draggable": true,
+			"actionTime": 60,
+			"picture": "images/utensil/bigPot.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 136,
+					"tileHeight": 110,
+					"imgWidth": 2720,
+					"imgHeight": 440
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+
+					"lowEmptyStatic": {
+						"seq": [0],
+						"loop": false
+					},
+					"mediumEmptyStatic": {
+						"seq": [9],
+						"loop": false
+					},
+					"highEmptyStatic": {
+						"seq": [19],
+						"loop": false
+					},
+
+					"lowFullStatic": {
+						"seq": [20],
+						"loop": false
+					},
+					"mediumFullStatic": {
+						"seq": [29],
+						"loop": false
+					},
+					"highFullStatic": {
+						"seq": [39],
+						"loop": false
+					},
+
+					"lowEmptyHoverStatic": {
+						"seq": [40],
+						"loop": false
+					},
+					"mediumEmptyHoverStatic": {
+						"seq": [49],
+						"loop": false
+					},
+					"highEmptyHoverStatic": {
+						"seq": [59],
+						"loop": false
+					},
+
+					"lowFullHoverStatic": {
+						"seq": [60],
+						"loop": false
+					},
+					"mediumFullHoverStatic": {
+						"seq": [69],
+						"loop": false
+					},
+					"highFullHoverStatic": {
+						"seq": [79],
+						"loop": false
+					},
+
+					"lowEmptyChanging": {
+						"seq": [ 1, 2, 3, 4, 5, 6, 5, 4, 3, 2],
+						"loop": true
+					},
+					"mediumEmptyChanging": {
+						"seq": [ 7, 8, 9, 10, 11, 12, 11, 10, 9, 8],
+						"loop": true
+					},
+					"highEmptyChanging": {
+						"seq": [13, 14, 15, 16, 17, 18, 17, 16, 15, 14],
+						"loop": true
+					},
+
+					"lowEmptyHoverChanging": {
+						"seq": [21, 22, 23, 24, 25, 26, 25, 24, 23, 22],
+						"loop": true
+					},
+					"mediumEmptyHoverChanging": {
+						"seq": [27, 28, 29, 30, 31, 32, 31, 30, 29, 28],
+						"loop": true
+					},
+					"highEmptyHoverChanging": {
+						"seq": [33, 34, 35, 36, 37, 38, 37, 36, 35, 34],
+						"loop": true
+					},
+
+					"lowFullChanging": {
+						"seq": [41, 42, 43, 44, 45, 46, 45, 44, 43, 42],
+						"loop": true
+					},
+					"mediumFullChanging": {
+						"seq": [47, 48, 49, 50, 51, 52, 51, 50, 49, 48],
+						"loop": true
+					},
+					"highFullChanging": {
+						"seq": [53, 54, 55, 56, 57, 58, 57, 56, 55, 54],
+						"loop": true
+					},
+
+					"lowFullHoverChanging": {
+						"seq": [61, 62, 63, 64, 65, 66, 65, 64, 63, 62],
+						"loop": true
+					},
+					"mediumFullHoverChanging": {
+						"seq": [67, 68, 69, 70, 71, 72, 71, 70, 69, 68],
+						"loop": true
+					},
+					"highFullHoverChanging": {
+						"seq": [73, 74, 75, 76, 77, 78, 77, 76, 75, 74],
+						"loop": true
+					}
+				}
+			}
+		},
+		{
+			"name": "pan",
+			"type": "Pot",
+			"sx": 15,
+			"sy": 80,
+			"w": 136,
+			"h": 110,
+			"zOrder": 101,
+			"cookTime": 10,
+			"draggable": true,
+			"actionTime": 60,
+			"picture": "images/utensil/bigPot.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 136,
+					"tileHeight": 110,
+					"imgWidth": 2720,
+					"imgHeight": 440
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+
+					"lowEmptyStatic": {
+						"seq": [0],
+						"loop": false
+					},
+					"mediumEmptyStatic": {
+						"seq": [9],
+						"loop": false
+					},
+					"highEmptyStatic": {
+						"seq": [19],
+						"loop": false
+					},
+
+					"lowFullStatic": {
+						"seq": [20],
+						"loop": false
+					},
+					"mediumFullStatic": {
+						"seq": [29],
+						"loop": false
+					},
+					"highFullStatic": {
+						"seq": [39],
+						"loop": false
+					},
+
+					"lowEmptyHoverStatic": {
+						"seq": [40],
+						"loop": false
+					},
+					"mediumEmptyHoverStatic": {
+						"seq": [49],
+						"loop": false
+					},
+					"highEmptyHoverStatic": {
+						"seq": [59],
+						"loop": false
+					},
+
+					"lowFullHoverStatic": {
+						"seq": [60],
+						"loop": false
+					},
+					"mediumFullHoverStatic": {
+						"seq": [69],
+						"loop": false
+					},
+					"highFullHoverStatic": {
+						"seq": [79],
+						"loop": false
+					},
+
+					"lowEmptyChanging": {
+						"seq": [ 1, 2, 3, 4, 5, 6, 5, 4, 3, 2],
+						"loop": true
+					},
+					"mediumEmptyChanging": {
+						"seq": [ 7, 8, 9, 10, 11, 12, 11, 10, 9, 8],
+						"loop": true
+					},
+					"highEmptyChanging": {
+						"seq": [13, 14, 15, 16, 17, 18, 17, 16, 15, 14],
+						"loop": true
+					},
+
+					"lowEmptyHoverChanging": {
+						"seq": [21, 22, 23, 24, 25, 26, 25, 24, 23, 22],
+						"loop": true
+					},
+					"mediumEmptyHoverChanging": {
+						"seq": [27, 28, 29, 30, 31, 32, 31, 30, 29, 28],
+						"loop": true
+					},
+					"highEmptyHoverChanging": {
+						"seq": [33, 34, 35, 36, 37, 38, 37, 36, 35, 34],
+						"loop": true
+					},
+
+					"lowFullChanging": {
+						"seq": [41, 42, 43, 44, 45, 46, 45, 44, 43, 42],
+						"loop": true
+					},
+					"mediumFullChanging": {
+						"seq": [47, 48, 49, 50, 51, 52, 51, 50, 49, 48],
+						"loop": true
+					},
+					"highFullChanging": {
+						"seq": [53, 54, 55, 56, 57, 58, 57, 56, 55, 54],
+						"loop": true
+					},
+
+					"lowFullHoverChanging": {
+						"seq": [61, 62, 63, 64, 65, 66, 65, 64, 63, 62],
+						"loop": true
+					},
+					"mediumFullHoverChanging": {
+						"seq": [67, 68, 69, 70, 71, 72, 71, 70, 69, 68],
+						"loop": true
+					},
+					"highFullHoverChanging": {
+						"seq": [73, 74, 75, 76, 77, 78, 77, 76, 75, 74],
+						"loop": true
+					}
+				}
+			}
+		},
+		{
+			"name": "knife",
+			"type": "Knife",
+			"sx": 15,
+			"sy": 80,
+			"w": 201,
+			"h": 111,
+			"zOrder": 103,
+			"cookTime": 10,
+			"draggable": true,
+			"actionTime": 60,
+			"picture": "images/utensil/knife.png",
+
+			"aniObject": {
+				"image": {
+					"tileWidth": 201,
+					"tileHeight": 111,
+					"imgWidth": 4020,
+					"imgHeight": 222
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"hover": {
+						"seq": [20],
+						"loop": false
+					},
+					"cut": {
+						"seq": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 18, 17, 16, 15, 14, 13,
+						        12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2],
+						"loop": true
+					},
+					"cutHover": {
+						"seq": [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 38, 37, 36,
+						        35, 34, 33, 32, 31, 30, 2, 9, 28, 27, 26, 25, 24, 23, 22],
+						"loop": true
+					}
+				}
+			}
+		},
+		{
+			"name": "bowl",
+			"type": "Bowl",
+			"sx": 15,
+			"sy": 80,
+			"w": 116,
+			"h": 74,
+			"zOrder": 104,
+			"cookTime": 10,
+			"draggable": true,
+			"actionTime": 60,
+			"picture": "images/utensil/bowl.png",
+
+			"aniObject": {
+				"image": {
+					"tileWidth": 116,
+					"tileHeight": 74,
+					"imgWidth": 116,
+					"imgHeight": 148
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"hover": {
+						"seq": [1],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "cuttingBoard",
+			"type": "CuttingBoard",
+			"sx": 15,
+			"sy": 80,
+			"w": 174,
+			"h": 78,
+			"zOrder": 105,
+			"cookTime": 10,
+			"draggable": true,
+			"actionTime": 60,
+			"picture": "images/utensil/cuttingBoard.png",
+
+			"aniObject": {
+				"image": {
+					"tileWidth": 174,
+					"tileHeight": 78,
+					"imgWidth": 174,
+					"imgHeight": 156
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"hover": {
+						"seq": [1],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "bakingTin",
+			"type": "BakingTin",
+			"sx": 15,
+			"sy": 80,
+			"w": 124,
+			"h": 77,
+			"zOrder": 106,
+			"cookTime": 10,
+			"draggable": true,
+			"actionTime": 60,
+			"picture": "images/utensil/bakingTin.png",
+
+			"aniObject": {
+				"image": {
+					"tileWidth": 124,
+					"tileHeight": 77,
+					"imgWidth": 124,
+					"imgHeight": 308
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"hover": {
+						"seq": [1],
+						"loop": false
+					},
+					"full": {
+						"seq": [2],
+						"loop": false
+					},
+					"fullHover": {
+						"seq": [4],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "plate",
+			"type": "Plate",
+			"sx": 15,
+			"sy": 80,
+			"w": 136,
+			"h": 69,
+			"zOrder": 107,
+			"cookTime": 10,
+			"draggable": true,
+			"actionTime": 60,
+			"picture": "images/utensil/plate.png",
+
+			"aniObject": {
+				"image": {
+					"tileWidth": 136,
+					"tileHeight": 69,
+					"imgWidth": 136,
+					"imgHeight": 138
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"hover": {
+						"seq": [1],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"name": "sive",
+			"type": "Sive",
+			"sx": 15,
+			"sy": 80,
+			"w": 189,
+			"h": 80,
+			"zOrder": 108,
+			"cookTime": 10,
+			"draggable": true,
+			"actionTime": 60,
+			"picture": "images/utensil/sive.png",
+
+			"aniObject": {
+				"image": {
+					"tileWidth": 189,
+					"tileHeight": 80,
+					"imgWidth": 189,
+					"imgHeight": 320
+				},
+				"animations": {
+					"default": {
+						"seq": [0],
+						"loop": false
+					},
+					"hover": {
+						"seq": [1],
+						"loop": false
+					},
+					"full": {
+						"seq": [3],
+						"loop": false
+					},
+					"fullHover": {
+						"seq": [4],
+						"loop": false
+					}
+				}
+			}
+		}
+	]
+}
