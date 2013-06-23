@@ -50,6 +50,8 @@ function Kitchen(canvasId) {
 	this.stage.registerEvent('click', this);
 	this.stage.registerEvent('dragend', this);
 	this.stage.registerEvent('dragstart', this);
+	this.stage.registerEvent('mouseover', this);
+	this.stage.registerEvent('mouseout', this);
 
 	// start the animation loop
 	// parameter this (kitchen itself) needed, because of the closure within the run function
@@ -305,13 +307,17 @@ Kitchen.prototype.onDragstart = function(event) {
 	}
 };
 
-/**
- * Function to make an object hover if the mouse slides over it
- * @param event
- */
+//TODO JAVADOC
 Kitchen.prototype.onMouseover = function(event) {
 	if(event.target instanceof Ingredient) {
-		event.target.hoverAction();
+		event.target.mouseOverAction();
+	}
+};
+
+//TODO JAVADOC
+Kitchen.prototype.onMouseout = function(event) {
+	if(event.target instanceof Ingredient) {
+		event.target.mouseOutAction();
 	}
 };
 

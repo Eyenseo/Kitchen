@@ -107,12 +107,18 @@ Ingredient.prototype.changeState = function() {
  * Function to make the ingredients hover.
  * Checks if the ingredient is cut or not that it shows the right hovered image.
  */
-Ingredient.prototype.hoverAction = function() {
+Ingredient.prototype.mouseOverAction = function() {
 	if(this.cutState) {
 		this.changeAnimation("cutHover");
-		this.hoverState = true;
 	} else {
 		this.changeAnimation("defaultHover");
-		this.hoverState = true;
+	}
+};
+
+Ingredient.prototype.mouseOutAction = function() {
+	if(this.cutState) {
+		this.changeAnimation("cut");
+	} else {
+		this.changeAnimation("default");
 	}
 };
