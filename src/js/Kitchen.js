@@ -44,6 +44,8 @@ function Kitchen(canvasId) {
 	this.pots = [];
 	this.ingredients = [];
 
+	this.cuttingBoard = null;
+
 	//event stuff
 	this.stage.registerEvent('click', this);
 	this.stage.registerEvent('dragend', this);
@@ -255,6 +257,12 @@ Kitchen.prototype.addUtensils = function(recipeUtensils) {
 					case "Pot":
 						thing = new Pot(THIS.stage.getContext(), utensilData, THIS.soundManager);
 						THIS.pots.push(thing);
+						break;
+					case "Knife":         //TODO Remove Knife from utensils
+						thing = new Knife(THIS.stage.getContext(), utensilData);
+						break;
+					case "CuttingBoard": //TODO Remove CuttingBoard from utensils
+						thing = new CuttingBoard(THIS.stage.getContext(), utensilData);
 						break;
 				}
 				THIS.stage.addToStage(thing);

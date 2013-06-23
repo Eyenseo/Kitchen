@@ -8,7 +8,7 @@
 			"description": "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht. Sie sind bekannt aus dem Schwabenländle. Dort werden sie in nahezu jeder Familie traditionsmäßig gegessen.",
 			"ingredients": ["spaetzle", "water", "oil", "salt", "cheese", "mushroom", "onion"],
 			"ingredientsReadable": ["Spaetzle", "Wasser", "Öl", "Salz", "Käse", "Pilze", "Zwiebeln"],
-			"utensils": ["dish", "plate", "bigPot", "pan", "sieve", "sink", "cuttingBoard"],
+			"utensils": ["dish", "plate", "bigPot", "pan", "sieve", "sink", "cuttingBoard", "knife"],
 			"schedule": [
 				{
 					"text": "Einen Topf mit Wasser und einer Priese Salz füllen.",
@@ -125,7 +125,7 @@
 			"description": "Kassler mit Sauerkraut und Kartoffeln als Beilage ist ein altbekanntes Rezept. Meist wird das Rezept für dieses traditionelle Gericht von Mutter an Tochter durch die Familie gereicht.",
 			"ingredients": ["potato", "water", "salt", "sauerkraut", "cream", "onion", "meat"],
 			"ingredientsReadable": ["Kartoffeln", "Wasser", "Salz", "Sauerkraut", "Sahne", "Zwiebeln", "Fleisch"],
-			"utensils": ["dish", "plate", "bigPot", "pan", "smallPot", "cuttingBoard"],
+			"utensils": ["dish", "plate", "bigPot", "pan", "smallPot", "cuttingBoard", "knife"],
 			"schedule": [
 				{
 					"text": "Einen großen Topf mit Wasser und einer Priese Salz füllen.",
@@ -292,7 +292,7 @@
 			"description": "Bratkartoffeln mit Würstchen sind einfach lecker. Man kann sie schnell und leicht zubereiten. Außerdem sind die Zutaten typisch für die Deutsche Kultur.",
 			"ingredients": ["spaetzle", "water", "oil", "salt", "potato", "bacon", "onion"],
 			"ingredientsReadable": ["Spätzle", "Wasser", "Öl", "Salz", "Kartoffeln", "Speck", "Zwiebeln"],
-			"utensils": ["dish", "plate", "bigPot", "pan", "cuttingBoard"],
+			"utensils": ["dish", "plate", "bigPot", "pan", "cuttingBoard", "knife"],
 			"schedule": [
 				{
 					"text": "Einen Topf mit Wasser und einer Priese Salz füllen.",

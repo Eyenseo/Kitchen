@@ -1,18 +1,12 @@
 /**
  * Function for the cutting board. Methods like changing the state of ingredients are set.
  * @param context context object - the 2d context of the canvas
- * @param sx x-coordinate where the picture is set
- * @param sy y-coordinate where the picture is set
- * @param zOrder level on which the cutting board lies
- * @param name
  * @constructor cutting board is from the VisualRenderObject
  */
-function CuttingBoard(context) {
-	VisualRenderAnimation.call(this, context, sx, sy, 158, 61, "images/utensils/cuttingBoard.png", 5);
+function CuttingBoard(context, data) {
+	VisualRenderAnimation.call(this, context, data.sx, data.sy, data.w, data.h, data.picture, data.zOrder, data.aniObject);
 	this.setDraggable(false);
-	this.name = cuttingBoard;
-	this.sx = 255;
-	this.sy = 400;
+	this.name = data.name;
 
 	//Array for the ingredients on the cutting board
 	this.ingredients = [];
