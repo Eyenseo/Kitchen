@@ -123,7 +123,7 @@
 			"pictureBig": "/images/recipe/noodlesBig.png",
 			"pictureFinish": "/images/recipe/noodlesFinish.png",
 			"description": "Kassler mit Sauerkraut und Kartoffeln als Beilage ist ein altbekanntes Rezept. Meist wird das Rezept für dieses traditionelle Gericht von Mutter an Tochter durch die Familie gereicht.",
-			"ingredients": ["potatoes", "water", "salt", "sauerkraut", "cream", "onion", "meat"],
+			"ingredients": ["potato", "water", "salt", "sauerkraut", "cream", "onion", "meat"],
 			"ingredientsReadable": ["Kartoffeln", "Wasser", "Salz", "Sauerkraut", "Sahne", "Zwiebeln", "Fleisch"],
 			"utensils": ["dish", "plate", "bigPot", "pan", "smallPot", "cuttingBoard"],
 			"schedule": [
