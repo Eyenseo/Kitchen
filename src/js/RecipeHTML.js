@@ -18,11 +18,15 @@ RecipeHTML.prototype.allRecipes = function() {
 	noteGroundDiv.setAttribute('id', 'noteGroundDiv');
 	startUpDiv.appendChild(noteGroundDiv);
 
+	var scrollDiv = document.createElement("div");
+	scrollDiv.setAttribute("id", "scrollDiv");
+	noteGroundDiv.appendChild(scrollDiv);
+
 	//menu
 	var menuDiv = document.createElement('div');
 	menuDiv.setAttribute('id', 'menuDiv');
 	menuDiv.style.display = "none";
-	noteGroundDiv.appendChild(menuDiv);
+	scrollDiv.appendChild(menuDiv);
 
 	var backImage = document.createElement('img');
 	backImage.setAttribute('id', 'backImage');
@@ -43,7 +47,7 @@ RecipeHTML.prototype.allRecipes = function() {
 	//Recipe div
 	var allRecipesDiv = document.createElement('div');
 	allRecipesDiv.setAttribute('id', 'allRecipesDiv');
-	noteGroundDiv.appendChild(allRecipesDiv);
+	scrollDiv.appendChild(allRecipesDiv);
 
 	//header
 	var header = document.createElement("h1");
@@ -61,7 +65,7 @@ RecipeHTML.prototype.allRecipes = function() {
 		var oneRecipeDiv = document.createElement('div');
 		oneRecipeDiv.setAttribute('class', 'oneRecipeDiv');
 		// This is a closure
-		// A closure, in JavaScript, can simply be described as a retained scope; at least, this is how I think of it. The benefit of a closure is in the fact that it retains the scope (the “scope chain”) of the outer (or “parent”) execution context. This behaviour can be used in a number of different ways and has become a useful remedy for quite a few JavaScript gotchas; one of the most common being the “looping problem”.
+		// A closure, in JavaScript, can simply be described as a retained scope; at least, this is how I think of it. The benefit of a closure is in the fact that it retains the scope (the ?scope chain?) of the outer (or ?parent?) execution context. This behaviour can be used in a number of different ways and has become a useful remedy for quite a few JavaScript gotchas; one of the most common being the ?looping problem?.
 		// ...
 		// http://james.padolsey.com/javascript/closures-in-javascript/
 		oneRecipeDiv.addEventListener("click", (function(n) {
@@ -104,7 +108,7 @@ RecipeHTML.prototype.recipeDetail = function(index) {
 
 	var recipeDetails = document.createElement('div');
 	recipeDetails.setAttribute('id', 'recipeDetails');
-	document.querySelector("#noteGroundDiv").appendChild(recipeDetails);
+	document.querySelector("#scrollDiv").appendChild(recipeDetails);
 
 	var h1 = document.createElement('h1');
 	h1.appendChild(document.createTextNode(this.recipes[index].name));
