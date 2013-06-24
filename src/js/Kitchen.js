@@ -12,17 +12,29 @@ function Kitchen(canvasId) {
 	this.jsonHandler = new JSONHandler();
 
 	//create Objects
+	this.allObjects = [];
+	this.allMoveable = [];
+	this.pots = [];
+	this.plates = [];
+	this.maxIndex = 0;
+	this.holdObject = null;
+
 	//kitchen background
-	this.kitchenBackground = new VisualRenderObject(this.stage.getContext(), 0, 0, 1024, 650, "images/kitchenBackground.png", 5);
+	var background = new VisualRenderObject(this.stage.getContext(), 0, 0, 1024, 650, "images/kitchenBackground.png", 5);
+	this.allObjects.push(background);
+	//TODO remove
+	this.kitchenBackground = background;
 	this.stage.addToStage(this.kitchenBackground);
 
 	//SoundManager
 	this.soundManager = new SoundManager();
 
 	//Plate
-	this.plates = [];
 	var plate1 = new Plate(this.stage.getContext(), 500, 400, 90, "Plate One");
 	var plate2 = new Plate(this.stage.getContext(), 750, 400, 90, "Plate Two");
+
+	this.allObjects.push(plate1);
+	this.allObjects.push(plate2);
 
 	this.plates.push(plate1);
 	this.plates.push(plate2);
@@ -31,18 +43,14 @@ function Kitchen(canvasId) {
 	this.stage.addToStage(plate2);
 
 	//Knob
-	this.knobs = [];
 	var knob1 = new Knob(this.stage.getContext(), 600, 500, 90, "Knob One", plate1);
 	var knob2 = new Knob(this.stage.getContext(), 850, 500, 90, "Knob Two", plate2);
 
-	this.knobs.push(knob1);
-	this.knobs.push(knob2);
+	this.allObjects.push(knob1);
+	this.allObjects.push(knob2);
 
 	this.stage.addToStage(knob1);
 	this.stage.addToStage(knob2);
-
-	this.pots = [];
-	this.ingredients = [];
 
 	this.cuttingBoard = null;
 
@@ -50,6 +58,8 @@ function Kitchen(canvasId) {
 	this.stage.registerEvent('click', this);
 	this.stage.registerEvent('dragend', this);
 	this.stage.registerEvent('dragstart', this);
+	this.stage.registerEvent('mousedown', this);
+	this.stage.registerEvent('mouseup', this);
 	this.stage.registerEvent('mouseover', this);
 	this.stage.registerEvent('mouseout', this);
 
@@ -58,162 +68,6 @@ function Kitchen(canvasId) {
 	this.run(this);
 
 	var html = new RecipeHTML(this.jsonHandler, this);
-
-	//TODO This is for testing only - the object will be loaded from the Ajax object
-	//	this.addIngredients([
-	//		                    {
-	//			                    "name": "noodle",
-	//			                    "sx": 15,
-	//			                    "sy": 85,
-	//			                    "w": 165,
-	//			                    "h": 54,
-	//			                    "zOrder": 6,
-	//			                    "actionTime": 0.001,  // TODO 'old heatRising value - most probably will be changed to time based action
-	//			                    "picture": "images/nudel.png",
-	//			                    "aniObject": {
-	//				                    "image": {
-	//					                    "tileWidth": 165,
-	//					                    "tileHeight": 54,
-	//					                    "imgWidth": 165,
-	//					                    "imgHeight": 54
-	//				                    },
-	//				                    "animations": {
-	//					                    "default": {
-	//						                    "seq": [0],
-	//						                    "loop": false
-	//					                    }
-	//				                    }
-	//			                    }
-	//		                    },
-	//		                    {
-	//			                    "name": "water",
-	//			                    "sx": 20,
-	//			                    "sy": 80,
-	//			                    "w": 86,
-	//			                    "h": 150,
-	//			                    "zOrder": 201,
-	//			                    "actionTime": 0.002,  // TODO 'old heatRising value - most probably will be changed to time based action
-	//			                    "picture": "images/water.png",
-	//			                    "aniObject": {
-	//				                    "image": {
-	//					                    "tileWidth": 86,
-	//					                    "tileHeight": 150,
-	//					                    "imgWidth": 86,
-	//					                    "imgHeight": 150
-	//				                    },
-	//				                    "animations": {
-	//					                    "default": {
-	//						                    "seq": [0],
-	//						                    "loop": false
-	//					                    }
-	//				                    }
-	//			                    }
-	//		                    }
-	//	                    ]);
-	//	this.addUtensils([
-	//		                 {
-	//			                 "name": "bigPot",
-	//			                 "type": "Pot",
-	//			                 "sx": 15,
-	//			                 "sy": 187,
-	//			                 "w": 242,
-	//			                 "h": 187,
-	//			                 "zOrder": 10,
-	//			                 "cookTime": 10,
-	//			                 "draggable": true,
-	//			                 "actionTime": 0.0003,   // TODO 'old heatRising value - most probably will be changed to time based action
-	//			                 "picture": "images/potAni.png",
-	//			                 "aniObject": {
-	//				                 "image": {
-	//					                 "tileWidth": 242,
-	//					                 "tileHeight": 187,
-	//					                 "imgWidth": 2420,
-	//					                 "imgHeight": 187
-	//				                 },
-	//				                 "animations": {
-	//					                 "default": {
-	//						                 "seq": [0],
-	//						                 "loop": false
-	//					                 },
-	//					                 "lowStatic": {
-	//						                 "seq": [3],
-	//						                 "loop": false
-	//					                 },
-	//					                 "mediumStatic": {
-	//						                 "seq": [6],
-	//						                 "loop": false
-	//					                 },
-	//					                 "highStatic": {
-	//						                 "seq": [9],
-	//						                 "loop": false
-	//					                 },
-	//					                 "lowChanging": {
-	//						                 "seq": [1, 2, 3, 2],
-	//						                 "loop": true
-	//					                 },
-	//					                 "mediumChanging": {
-	//						                 "seq": [4, 5, 6, 5],
-	//						                 "loop": true
-	//					                 },
-	//					                 "highChanging": {
-	//						                 "seq": [7, 8, 9, 8],
-	//						                 "loop": true
-	//					                 }
-	//				                 }
-	//			                 }
-	//		                 },
-	//		                 {
-	//			                 "name": "bigPot",
-	//			                 "type": "Pot",
-	//			                 "sx": 15,
-	//			                 "sy": 187,
-	//			                 "w": 242,
-	//			                 "h": 187,
-	//			                 "zOrder": 11,
-	//			                 "cookTime": 10,
-	//			                 "draggable": true,
-	//			                 "actionTime": 0.0003,  // TODO 'old heatRising value - most probably will be changed to time based action
-	//			                 "picture": "images/potAni.png",
-	//			                 "aniObject": {
-	//				                 "image": {
-	//					                 "tileWidth": 242,
-	//					                 "tileHeight": 187,
-	//					                 "imgWidth": 2420,
-	//					                 "imgHeight": 187
-	//				                 },
-	//				                 "animations": {
-	//					                 "default": {
-	//						                 "seq": [0],
-	//						                 "loop": false
-	//					                 },
-	//					                 "lowStatic": {
-	//						                 "seq": [3],
-	//						                 "loop": false
-	//					                 },
-	//					                 "mediumStatic": {
-	//						                 "seq": [6],
-	//						                 "loop": false
-	//					                 },
-	//					                 "highStatic": {
-	//						                 "seq": [9],
-	//						                 "loop": false
-	//					                 },
-	//					                 "lowChanging": {
-	//						                 "seq": [1, 2, 3, 2],
-	//						                 "loop": true
-	//					                 },
-	//					                 "mediumChanging": {
-	//						                 "seq": [4, 5, 6, 5],
-	//						                 "loop": true
-	//					                 },
-	//					                 "highChanging": {
-	//						                 "seq": [7, 8, 9, 8],
-	//						                 "loop": true
-	//					                 }
-	//				                 }
-	//			                 }
-	//		                 }
-	//	                 ]);
 }
 
 Kitchen.prototype.prepareKitchen = function(currentRecipe) {
@@ -221,6 +75,17 @@ Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 
 	kitchen.addIngredients(currentRecipe.ingredients);
 	kitchen.addUtensils(currentRecipe.utensils);
+
+	var index = 0;
+	this.allObjects.forEach(function(object) {
+		if(object != undefined && object != null) {
+			object.zOrder = index;
+			index = index + 1;
+		}
+	});
+	this.stage.reorderRenderObjects();
+	this.maxIndex = index;
+
 };
 
 //TODO DOC
@@ -233,7 +98,11 @@ Kitchen.prototype.addIngredients = function(recipeIngredients) {
 			if(ingredientName == ingredientData.name) {
 				var thing = new Ingredient(THIS.stage.getContext(), ingredientData);
 
-				THIS.ingredients.push(thing);
+				if(thing == undefined || thing == null) {
+					console.log("BÄÄÄÄÄÄHHHHHH");
+				}
+				THIS.allObjects.push(thing);
+				THIS.allMoveable.push(thing);
 				THIS.stage.addToStage(thing);
 				add = true;
 			}
@@ -249,9 +118,8 @@ Kitchen.prototype.addIngredients = function(recipeIngredients) {
 Kitchen.prototype.addUtensils = function(recipeUtensils) {
 	var THIS = this;
 
-	var thing;
-
 	recipeUtensils.forEach(function(utensilName) {
+		var thing;
 		var add = false;
 		THIS.jsonHandler.utensils.forEach(function(utensilData) {
 			if(utensilName == utensilData.name) {
@@ -267,8 +135,12 @@ Kitchen.prototype.addUtensils = function(recipeUtensils) {
 						thing = new CuttingBoard(THIS.stage.getContext(), utensilData);
 						break;
 				}
-				THIS.stage.addToStage(thing);
-				add = true;
+				if(thing != undefined) {
+					THIS.allObjects.push(thing);
+					THIS.allMoveable.push(thing);
+					THIS.stage.addToStage(thing);
+					add = true;
+				}
 			}
 		});
 
@@ -318,6 +190,34 @@ Kitchen.prototype.onMouseover = function(event) {
 Kitchen.prototype.onMouseout = function(event) {
 	if(event.target instanceof Ingredient) {
 		event.target.mouseOutAction();
+	}
+};
+
+//TODO JAVADOC
+Kitchen.prototype.onMousedown = function(event) {
+	if(event.target.hasOwnProperty("draggable") && event.target.draggable) {
+		var THIS = this;
+		var oldIndex = event.target.zOrder;
+		this.holdObject = event.target;
+
+		this.allMoveable.forEach(function(object) {
+			if(object == event.target) {
+				object.zOrder = THIS.maxIndex;
+			} else if(object.zOrder >= oldIndex) {
+				object.zOrder = object.zOrder - 1;
+			}
+		});
+
+		this.stage.reorderRenderObjects();
+	}
+};
+
+//TODO JAVADOC
+Kitchen.prototype.onMouseup = function(event) {
+	if(this.holdObject != null) {
+		this.holdObject.zOrder = this.holdObject.zOrder - 1;
+		this.holdObject = null;
+		this.stage.reorderRenderObjects();
 	}
 };
 
