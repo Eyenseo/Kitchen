@@ -132,7 +132,7 @@
 			}
 		},
 		{
-			"name": "smallPot",
+			"name": "littlePot",
 			"type": "Pot",
 			"sx": 15,
 			"sy": 80,
