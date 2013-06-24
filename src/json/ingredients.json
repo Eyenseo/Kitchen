@@ -145,16 +145,16 @@
 			"sx": 200,
 			"sy": 100,
 			"w": 57,
-			"h": 73,
+			"h": 74,
 			"zOrder": 130,
 			"actionTime": 0.00035,
 			"picture": "images/ingredients/cream.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 57,
-					"tileHeight": 73,
+					"tileHeight": 74,
 					"imgWidth": 57,
-					"imgHeight": 147
+					"imgHeight": 148
 				},
 				"animations": {
 					"default": {
@@ -392,17 +392,17 @@
 			"name": "salt",
 			"sx": 350,
 			"sy": 100,
-			"w": 46,
-			"h": 75,
+			"w": 53,
+			"h": 82,
 			"zOrder": 145,
 			"actionTime": 0.005,
 			"picture": "images/ingredients/salt.png",
 			"aniObject": {
 				"image": {
-					"tileWidth": 46,
-					"tileHeight": 75,
-					"imgWidth": 46,
-					"imgHeight": 151
+					"tileWidth": 53,
+					"tileHeight": 82,
+					"imgWidth": 53,
+					"imgHeight": 164
 				},
 				"animations": {
 					"default": {
