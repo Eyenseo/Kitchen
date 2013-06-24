@@ -582,7 +582,7 @@
 			"cookTime": 10,
 			"draggable": true,
 			"actionTime": 60,
-			"picture": "images/utensils/seive.png",
+			"picture": "images/utensils/sieve.png",
 
 			"aniObject": {
 				"image": {
