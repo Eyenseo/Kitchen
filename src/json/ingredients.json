@@ -516,7 +516,7 @@
 			"h": 123,
 			"zOrder": 145,
 			"actionTime": 0.0002,
-			"picture": "images/ingredients/ingredients.png",
+			"picture": "images/ingredients/sugar.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 82,
