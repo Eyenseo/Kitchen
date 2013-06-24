@@ -1,6 +1,33 @@
 {
 	"recipes": [
 		{
+			"name": "DEBUG",
+			"difficulty": 5,
+			"pictureBig": "/images/recipe/noodlesBig.png",
+			"pictureFinish": "/images/recipe/noodlesFinish.png",
+			"description": "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht. Sie sind bekannt aus dem Schwabenländle. Dort werden sie in nahezu jeder Familie traditionsmäßig gegessen.",
+			"ingredients": ["backingPowder", "bacon", "butter", "cheese", "cream", "eggs", "flour", "meat", "mushroom",
+			                "oil", "onion", "pepper", "potato", "salt", "sauerkraut", "spaetzle", "strawberries",
+			                "sugar", "water"],
+			"ingredientsReadable": ["backingPowder", "bacon", "butter", "cheese", "cream", "eggs", "flour", "meat",
+			                        "mushroom", "oil", "onion", "pepper", "potato", "salt", "sauerkraut", "spaetzle",
+			                        "strawberries", "sugar", "water"],
+			"utensils": ["bakingTin", "bowl", "littlePot", "dish", "plate", "bigPot", "pan", "sieve", "sink",
+			             "cuttingBoard", "knife"],
+			"schedule": [
+				{
+					"text": "Einen Topf mit Wasser und einer Priese Salz füllen.",
+					"action": [
+						{
+							"utensil": "bigPot",
+							"act": "put",
+							"stuff": ["water", "salt"]
+						}
+					]
+				}
+			]
+		},
+		{
 			"name": "Käsespätzle",
 			"difficulty": 2,
 			"pictureBig": "/images/recipe/noodlesBig.png",

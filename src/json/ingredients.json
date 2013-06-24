@@ -360,7 +360,7 @@
 			"h": 82,
 			"zOrder": 125,
 			"actionTime": 0.00075,
-			"picture": "images/ingredients/potatoes.png",
+			"picture": "images/ingredients/potato.png",
 			"aniObject": {
 				"image": {
 					"tileWidth": 113,
