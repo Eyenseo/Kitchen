@@ -77,7 +77,7 @@
 						"seq": [0],
 						"loop": false
 					},
-					"cut": {
+					"defaultHover": {
 						"seq": [1],
 						"loop": false
 					}
