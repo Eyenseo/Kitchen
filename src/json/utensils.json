@@ -10,7 +10,7 @@
 			"zOrder": 100,
 			"cookTime": 10,
 			"draggable": true,
-			"actionTime": 60,
+			"actionTime": 0.0011,
 			"picture": "images/utensils/bigPot.png",
 			"aniObject": {
 				"image": {
@@ -25,55 +25,73 @@
 						"loop": false
 					},
 
-					"lowEmptyStatic": {
+					"defaultEmptyStatic": {
 						"seq": [0],
 						"loop": false
 					},
-					"mediumEmptyStatic": {
-						"seq": [9],
-						"loop": false
-					},
-					"highEmptyStatic": {
-						"seq": [19],
-						"loop": false
-					},
-
-					"lowFullStatic": {
+					"defaultEmptyHoverStatic": {
 						"seq": [20],
 						"loop": false
 					},
-					"mediumFullStatic": {
-						"seq": [29],
+
+					"defaultFullStatic": {
+						"seq": [40],
 						"loop": false
 					},
-					"highFullStatic": {
-						"seq": [39],
+					"defaultFullHoverStatic": {
+						"seq": [60],
+						"loop": false
+					},
+
+					"lowEmptyStatic": {
+						"seq": [5],
+						"loop": false
+					},
+					"mediumEmptyStatic": {
+						"seq": [8],
+						"loop": false
+					},
+					"highEmptyStatic": {
+						"seq": [18],
 						"loop": false
 					},
 
 					"lowEmptyHoverStatic": {
-						"seq": [40],
+						"seq": [25],
 						"loop": false
 					},
 					"mediumEmptyHoverStatic": {
-						"seq": [49],
+						"seq": [28],
 						"loop": false
 					},
 					"highEmptyHoverStatic": {
-						"seq": [59],
+						"seq": [38],
+						"loop": false
+					},
+
+					"lowFullStatic": {
+						"seq": [45],
+						"loop": false
+					},
+					"mediumFullStatic": {
+						"seq": [48],
+						"loop": false
+					},
+					"highFullStatic": {
+						"seq": [58],
 						"loop": false
 					},
 
 					"lowFullHoverStatic": {
-						"seq": [60],
+						"seq": [65],
 						"loop": false
 					},
 					"mediumFullHoverStatic": {
-						"seq": [69],
+						"seq": [68],
 						"loop": false
 					},
 					"highFullHoverStatic": {
-						"seq": [79],
+						"seq": [78],
 						"loop": false
 					},
 
@@ -138,10 +156,10 @@
 			"sy": 80,
 			"w": 136,
 			"h": 110,
-			"zOrder": 101,
+			"zOrder": 100,
 			"cookTime": 10,
 			"draggable": true,
-			"actionTime": 60,
+			"actionTime": 0.0011,
 			"picture": "images/utensils/bigPot.png",
 			"aniObject": {
 				"image": {
@@ -156,55 +174,73 @@
 						"loop": false
 					},
 
-					"lowEmptyStatic": {
+					"defaultEmptyStatic": {
 						"seq": [0],
 						"loop": false
 					},
-					"mediumEmptyStatic": {
-						"seq": [9],
-						"loop": false
-					},
-					"highEmptyStatic": {
-						"seq": [19],
-						"loop": false
-					},
-
-					"lowFullStatic": {
+					"defaultEmptyHoverStatic": {
 						"seq": [20],
 						"loop": false
 					},
-					"mediumFullStatic": {
-						"seq": [29],
+
+					"defaultFullStatic": {
+						"seq": [40],
 						"loop": false
 					},
-					"highFullStatic": {
-						"seq": [39],
+					"defaultFullHoverStatic": {
+						"seq": [60],
+						"loop": false
+					},
+
+					"lowEmptyStatic": {
+						"seq": [5],
+						"loop": false
+					},
+					"mediumEmptyStatic": {
+						"seq": [8],
+						"loop": false
+					},
+					"highEmptyStatic": {
+						"seq": [18],
 						"loop": false
 					},
 
 					"lowEmptyHoverStatic": {
-						"seq": [40],
+						"seq": [25],
 						"loop": false
 					},
 					"mediumEmptyHoverStatic": {
-						"seq": [49],
+						"seq": [28],
 						"loop": false
 					},
 					"highEmptyHoverStatic": {
-						"seq": [59],
+						"seq": [38],
+						"loop": false
+					},
+
+					"lowFullStatic": {
+						"seq": [45],
+						"loop": false
+					},
+					"mediumFullStatic": {
+						"seq": [48],
+						"loop": false
+					},
+					"highFullStatic": {
+						"seq": [58],
 						"loop": false
 					},
 
 					"lowFullHoverStatic": {
-						"seq": [60],
+						"seq": [65],
 						"loop": false
 					},
 					"mediumFullHoverStatic": {
-						"seq": [69],
+						"seq": [68],
 						"loop": false
 					},
 					"highFullHoverStatic": {
-						"seq": [79],
+						"seq": [78],
 						"loop": false
 					},
 
@@ -269,10 +305,10 @@
 			"sy": 80,
 			"w": 136,
 			"h": 110,
-			"zOrder": 101,
+			"zOrder": 100,
 			"cookTime": 10,
 			"draggable": true,
-			"actionTime": 60,
+			"actionTime": 0.0011,
 			"picture": "images/utensils/bigPot.png",
 			"aniObject": {
 				"image": {
@@ -287,55 +323,73 @@
 						"loop": false
 					},
 
-					"lowEmptyStatic": {
+					"defaultEmptyStatic": {
 						"seq": [0],
 						"loop": false
 					},
-					"mediumEmptyStatic": {
-						"seq": [9],
-						"loop": false
-					},
-					"highEmptyStatic": {
-						"seq": [19],
-						"loop": false
-					},
-
-					"lowFullStatic": {
+					"defaultEmptyHoverStatic": {
 						"seq": [20],
 						"loop": false
 					},
-					"mediumFullStatic": {
-						"seq": [29],
+
+					"defaultFullStatic": {
+						"seq": [40],
 						"loop": false
 					},
-					"highFullStatic": {
-						"seq": [39],
+					"defaultFullHoverStatic": {
+						"seq": [60],
+						"loop": false
+					},
+
+					"lowEmptyStatic": {
+						"seq": [5],
+						"loop": false
+					},
+					"mediumEmptyStatic": {
+						"seq": [8],
+						"loop": false
+					},
+					"highEmptyStatic": {
+						"seq": [18],
 						"loop": false
 					},
 
 					"lowEmptyHoverStatic": {
-						"seq": [40],
+						"seq": [25],
 						"loop": false
 					},
 					"mediumEmptyHoverStatic": {
-						"seq": [49],
+						"seq": [28],
 						"loop": false
 					},
 					"highEmptyHoverStatic": {
-						"seq": [59],
+						"seq": [38],
+						"loop": false
+					},
+
+					"lowFullStatic": {
+						"seq": [45],
+						"loop": false
+					},
+					"mediumFullStatic": {
+						"seq": [48],
+						"loop": false
+					},
+					"highFullStatic": {
+						"seq": [58],
 						"loop": false
 					},
 
 					"lowFullHoverStatic": {
-						"seq": [60],
+						"seq": [65],
 						"loop": false
 					},
 					"mediumFullHoverStatic": {
-						"seq": [69],
+						"seq": [68],
 						"loop": false
 					},
 					"highFullHoverStatic": {
-						"seq": [79],
+						"seq": [78],
 						"loop": false
 					},
 
@@ -418,7 +472,7 @@
 						"seq": [0],
 						"loop": false
 					},
-					"hover": {
+					"defaultHover": {
 						"seq": [20],
 						"loop": false
 					},
@@ -460,7 +514,7 @@
 						"seq": [0],
 						"loop": false
 					},
-					"hover": {
+					"defaultHover": {
 						"seq": [1],
 						"loop": false
 					}
@@ -470,8 +524,8 @@
 		{
 			"name": "cuttingBoard",
 			"type": "CuttingBoard",
-			"sx": 15,
-			"sy": 80,
+			"sx": 250,
+			"sy": 339,
 			"w": 174,
 			"h": 78,
 			"zOrder": 105,
@@ -492,7 +546,7 @@
 						"seq": [0],
 						"loop": false
 					},
-					"hover": {
+					"defaultHover": {
 						"seq": [1],
 						"loop": false
 					}
@@ -524,7 +578,7 @@
 						"seq": [0],
 						"loop": false
 					},
-					"hover": {
+					"defaultHover": {
 						"seq": [1],
 						"loop": false
 					},
@@ -564,7 +618,7 @@
 						"seq": [0],
 						"loop": false
 					},
-					"hover": {
+					"defaultHover": {
 						"seq": [1],
 						"loop": false
 					}
@@ -576,8 +630,8 @@
 			"type": "Sieve",
 			"sx": 15,
 			"sy": 80,
-			"w": 189,
-			"h": 80,
+			"w": 171,
+			"h": 73,
 			"zOrder": 108,
 			"cookTime": 10,
 			"draggable": true,
@@ -586,17 +640,17 @@
 
 			"aniObject": {
 				"image": {
-					"tileWidth": 189,
-					"tileHeight": 80,
-					"imgWidth": 189,
-					"imgHeight": 320
+					"tileWidth": 171,
+					"tileHeight": 73,
+					"imgWidth": 171,
+					"imgHeight": 290
 				},
 				"animations": {
 					"default": {
 						"seq": [0],
 						"loop": false
 					},
-					"hover": {
+					"defaultHover": {
 						"seq": [1],
 						"loop": false
 					},
