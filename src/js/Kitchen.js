@@ -134,6 +134,15 @@ Kitchen.prototype.addUtensils = function(recipeUtensils) {
 					case "CuttingBoard": //TODO Remove CuttingBoard from utensils
 						thing = new CuttingBoard(THIS.stage.getContext(), utensilData);
 						break;
+					case "Bowl":
+						thing = new Bowl(THIS.stage.getContext(), utensilData);
+						break;
+					case "Sieve":
+						thing = new Sieve(THIS.stage.getContext(), utensilData);
+						break;
+					/*case "BakingTin":
+					 thing = new BakingTin(THIS.stage.getContext(), utensilData);
+					 break;*/
 				}
 				if(thing != undefined) {
 					THIS.allObjects.push(thing);
@@ -181,14 +190,14 @@ Kitchen.prototype.onDragstart = function(event) {
 
 //TODO JAVADOC
 Kitchen.prototype.onMouseover = function(event) {
-	if(event.target instanceof Ingredient) {
+	if(event.target instanceof Ingredient || event.target instanceof Utensil) {
 		event.target.mouseOverAction();
 	}
 };
 
 //TODO JAVADOC
 Kitchen.prototype.onMouseout = function(event) {
-	if(event.target instanceof Ingredient) {
+	if(event.target instanceof Ingredient || event.target instanceof Utensil) {
 		event.target.mouseOutAction();
 	}
 };
