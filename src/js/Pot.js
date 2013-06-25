@@ -3,16 +3,10 @@
  * @param context - context object - the 2d context of the canvas
  * @param data OBJECT - object obtained from the utensil.json file that defines the pot
  * @param soundManager SoundManager object - the value determines the SoundManager to be used
-
  */
 function Pot(context, data, soundManager) {
-	VisualRenderAnimation.call(this, context, data.sx, data.sy, data.w, data.h, data.picture, data.zOrder, data.aniObject);
-	this.setDraggable(true);
-	this.name = data.name;
+	ContainerUtensil.call(this, context, data);
 	this.soundManager = soundManager;
-
-	this.potContent = [];
-	this.setHitZone(35, 8, 205, 42);
 
 	this.HEATRISINGRATE = data.actionTime;
 	this.DEFAULTTEMPERATURE = 24;
@@ -25,24 +19,8 @@ function Pot(context, data, soundManager) {
 
 	this.logCounter = 0;
 }
-Pot.prototype = Object.create(VisualRenderAnimation.prototype);
+Pot.prototype = Object.create(ContainerUtensil.prototype);
 Pot.prototype.constructor = Pot;
-
-/**
- * @param ingredient Ingredient object to be added to the potContent array
- */
-Pot.prototype.addPotContent = function(ingredient) {
-	if(ingredient instanceof Ingredient) {
-		this.potContent.push(ingredient);
-	}
-};
-
-/**
- * @returns {Array} Ingredient - the return value is an array filled with all ingredients that are in the pot
- */
-Pot.prototype.getPotContent = function() {
-	return this.potContent;
-};
 
 /**
  * @param temperature NUMBER -  the value determines the temperature to be set to be the goal temperature
@@ -67,7 +45,7 @@ Pot.prototype.updatePot = function() {
 			this.soundManager.stopLoop(this.soundManager.POTHEATINGUP);
 		}
 		this.temperatureState = temperatureLevel + state;
-		this.changeAnimation(this.temperatureState);
+		this.changeAnimation(this.temperatureState, true);
 	}
 };
 
@@ -91,13 +69,23 @@ Pot.prototype.getTemperatureLevel = function() {
  * @returns {string} TEXT - the return value is the current state of the Pot if it's default temperature "", if it's changing the temperature "Changing" and if it reached the goal temperature "Static"
  */
 Pot.prototype.getStatus = function() {
-	if(this.temperature == this.DEFAULTTEMPERATURE) {
-		return "";
-	} else if(this.temperature == this.goalTemperature) {
-		return "Static";
+	var state;
+	if(this.empty) {
+		state = "Empty";
 	} else {
-		return "Changing";
+		state = "Full";
 	}
+
+	if(this.hover) {
+		state += "Hover";
+	}
+
+	if(this.temperature == this.goalTemperature) {
+		state += "Static";
+	} else {
+		state += "Changing";
+	}
+	return state;
 };
 
 /**
@@ -122,13 +110,13 @@ Pot.prototype.updateTemperature = function() {
 };
 
 /**
- * The function updates the temperature of the pot and temperatures of all ingredients of the potContent array
+ * The function updates the temperature of the pot and temperatures of all ingredients of the content array
  * DEBUG: runs logTemperature function
  */
 Pot.prototype.updateTemperatures = function() {
 	this.updateTemperature();
-	for(var i = 0; i < this.potContent.length; i++) {
-		this.potContent[i].updateTemperature(this.temperature);
+	for(var i = 0; i < this.content.length; i++) {
+		this.content[i].updateTemperature(this.temperature);
 	}
 	if(this.temperature != this.DEFAULTTEMPERATURE) {
 		this.logTemperature();
@@ -179,4 +167,17 @@ Pot.prototype.dragStartAction = function() {
 		this.plate = null;
 	}
 	this.goalTemperature = this.DEFAULTTEMPERATURE;
+};
+
+/**
+ * Function to make the utensil hover.
+ */
+Pot.prototype.mouseOverAction = function() {
+	this.hover = true;
+	this.updatePot();
+};
+
+Pot.prototype.mouseOutAction = function() {
+	this.hover = false;
+	this.updatePot();
 };

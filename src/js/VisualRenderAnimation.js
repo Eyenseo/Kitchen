@@ -74,15 +74,21 @@ function VisualRenderAnimation(context, sx, sy, w, h, imgPath, zOrder, aniObject
 VisualRenderAnimation.prototype = Object.create(VisualRenderObject.prototype);
 VisualRenderAnimation.prototype.constructor = VisualRenderAnimation;
 
+VisualRenderAnimation.prototype.changeAnimation = function(name) {
+	this.changeAnimation(name, false);
+};
+
 /**
  * Change current animation
  * @param name Name of the new animation specified in the aniObject from the constructor that shall be rendered next
  */
-VisualRenderAnimation.prototype.changeAnimation = function(name) {
+VisualRenderAnimation.prototype.changeAnimation = function(name, keepProgress) {
 	try {
 		this.currentAnimation = this.animations[name].seq;
 		this.loop = this.animations[name].loop;
-		this.currentAniIndex = 0;
+		if(!keepProgress || this.currentAniIndex > this.currentAnimation.length) {
+			this.currentAniIndex = 0;
+		}
 	} catch(e) {
 		console.log("There is no animation named:" + name);
 		//TODO Stop Script !
