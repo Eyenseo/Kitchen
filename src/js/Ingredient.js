@@ -18,6 +18,8 @@ function Ingredient(context, data) {
 	this.COOL = 3;
 	this.temperatureState = this.COOL;
 
+	//state to check if an Ingredient ist cooked or not. At the beginning false
+	this.cookState = false;
 	//The cutState is false at the beginning of the program because the ingredients are uncut
 	this.cutState = false;
 	//The hoverState is false at the beginning
@@ -42,6 +44,7 @@ Ingredient.prototype.updateTemperature = function(temperature) {
 			if(this.temperature > temperature) {
 				this.temperature = temperature;
 				this.temperatureState = this.HEATED;
+				this.setCooked(true);
 			}
 		} else if(this.temperature > temperature) {
 			this.temperature = this.temperature - temperature * this.HEATRISINGRATE;
@@ -96,14 +99,6 @@ Ingredient.prototype.dragStartAction = function() {
 };
 
 /**
- * Function to change the image of an ingredient when it is cut.
- */
-Ingredient.prototype.changeState = function() {
-	this.changeAnimation("cut");
-	this.cutState = true;
-};
-
-/**
  * Function to make the ingredients hover.
  * Checks if the ingredient is cut or not that it shows the right hovered image.
  */
@@ -115,10 +110,33 @@ Ingredient.prototype.mouseOverAction = function() {
 	}
 };
 
+/**
+ * Function to change the image of an ingredient when it is cut.
+ */
+Ingredient.prototype.changeState = function() {
+	this.changeAnimation("cut");
+	this.cutState = true;
+};
+
 Ingredient.prototype.mouseOutAction = function() {
 	if(this.cutState) {
 		this.changeAnimation("cut");
 	} else {
 		this.changeAnimation("default");
 	}
+};
+
+/** Getter function to get the cut state of an ingredient ...*/
+Ingredient.prototype.isCut = function() {
+	return this.cutState;
+};
+
+/** Set the cook state ...*/
+Ingredient.prototype.setCooked = function(state) {
+	this.cookState = state;
+};
+
+/** Getter function to get the cook state ...*/
+Ingredient.prototype.isCooked = function() {
+	return this.cookState;
 };
