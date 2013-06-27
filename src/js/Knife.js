@@ -57,7 +57,7 @@ Knife.prototype.selectAnimation = function() {
 			this.changeAnimation("default");
 		}
 	}
-}
+};
 
 //TODO DOC
 Knife.prototype.mouseOutAction = function() {
