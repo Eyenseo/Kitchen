@@ -44,28 +44,28 @@
 					},
 
 					"lowEmptyStatic": {
-						"seq": [5],
+						"seq": [6],
 						"loop": false
 					},
 					"mediumEmptyStatic": {
-						"seq": [8],
+						"seq": [12],
 						"loop": false
 					},
 					"highEmptyStatic": {
-						"seq": [18],
+						"seq": [19],
 						"loop": false
 					},
 
 					"lowEmptyHoverStatic": {
-						"seq": [25],
+						"seq": [26],
 						"loop": false
 					},
 					"mediumEmptyHoverStatic": {
-						"seq": [28],
+						"seq": [32],
 						"loop": false
 					},
 					"highEmptyHoverStatic": {
-						"seq": [38],
+						"seq": [39],
 						"loop": false
 					},
 
@@ -78,20 +78,20 @@
 						"loop": false
 					},
 					"highFullStatic": {
-						"seq": [58],
+						"seq": [59],
 						"loop": false
 					},
 
 					"lowFullHoverStatic": {
-						"seq": [65],
+						"seq": [66],
 						"loop": false
 					},
 					"mediumFullHoverStatic": {
-						"seq": [68],
+						"seq": [62],
 						"loop": false
 					},
 					"highFullHoverStatic": {
-						"seq": [78],
+						"seq": [79],
 						"loop": false
 					},
 
