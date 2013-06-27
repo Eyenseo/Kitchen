@@ -22,8 +22,6 @@ function Ingredient(context, data) {
 	this.cookState = false;
 	//The cutState is false at the beginning of the program because the ingredients are uncut
 	this.cutState = false;
-	//The hoverState is false at the beginning
-	this.hoverState = false;
 
 	this.cuttingBoard = null;
 
@@ -107,10 +105,24 @@ Ingredient.prototype.dragStartAction = function() {
  * Checks if the ingredient is cut or not that it shows the right hovered image.
  */
 Ingredient.prototype.mouseOverAction = function() {
-	if(this.cutState) {
-		this.changeAnimation("cutHover");
+	this.hover = true;
+	this.selectAnimation();
+};
+
+//TODO DOC
+Ingredient.prototype.selectAnimation = function() {
+	if(this.hover) {
+		if(this.cutState) {
+			this.changeAnimation("cutHover");
+		} else {
+			this.changeAnimation("defaultHover");
+		}
 	} else {
-		this.changeAnimation("defaultHover");
+		if(this.cutState) {
+			this.changeAnimation("cut");
+		} else {
+			this.changeAnimation("default");
+		}
 	}
 };
 
@@ -118,16 +130,13 @@ Ingredient.prototype.mouseOverAction = function() {
  * Function to change the image of an ingredient when it is cut.
  */
 Ingredient.prototype.changeState = function() {
-	this.changeAnimation("cut");
 	this.cutState = true;
+	this.selectAnimation();
 };
-
+//TODO DOC
 Ingredient.prototype.mouseOutAction = function() {
-	if(this.cutState) {
-		this.changeAnimation("cut");
-	} else {
-		this.changeAnimation("default");
-	}
+	this.hover = false;
+	this.selectAnimation();
 };
 
 /** Getter function to get the cut state of an ingredient ...*/
