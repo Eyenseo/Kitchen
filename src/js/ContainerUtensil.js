@@ -24,6 +24,20 @@ ContainerUtensil.prototype.getContent = function() {
 	return this.content;
 };
 
+//TODO DOC
+ContainerUtensil.prototype.removeContent = function(ingredient) {
+	var array = []
+	for(var i = 0; i < this.content.length; i++) {
+		if(this.content[i] !== ingredient) {
+			array.push(this.content[i]);
+		}
+	}
+	if(array.length == 0) {
+		this.empty = true;
+	}
+	this.content = array;
+};
+
 /**
  *
  * @returns {Array} Ingredient - the return value is an empty array

@@ -78,12 +78,16 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
 	var ingredientCenterX = this.getCenter().cx;
 	var ingredientCenterY = this.getCenter().cy;
 
-	kitchen.pots.forEach(function(pot) {
-		var zone = pot.getHitZone();
-		if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw && ingredientCenterY <= zone.hy + zone.hh) {
-			pot.addContent(THIS);
-			kitchen.stage.removeFromStage(THIS);
-			kitchen.soundManager.play(kitchen.soundManager.DROP);
+	kitchen.allObjects.forEach(function(object) {
+		if(object instanceof ContainerUtensil) {
+			var zone = object.getHitZone();
+			if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw && ingredientCenterY <= zone.hy + zone.hh) {
+				object.addContent(THIS);
+				if(!(object instanceof CuttingBoard)) {
+					kitchen.stage.removeFromStage(THIS);
+					kitchen.soundManager.play(kitchen.soundManager.DROP);
+				}
+			}
 		}
 	});
 };
@@ -94,7 +98,7 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
  */
 Ingredient.prototype.dragStartAction = function() {
 	if(!(this.cuttingBoard == null)) {
-		this.cuttingBoard.removeIngredient(this);
+		this.cuttingBoard.removeContent(this);
 	}
 };
 

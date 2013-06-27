@@ -70,6 +70,7 @@ function Kitchen(canvasId) {
 	var html = new RecipeHTML(this.jsonHandler, this);
 }
 
+//TODO DOC
 Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 	this.addIngredients(currentRecipe.ingredients);
 	this.addUtensils(currentRecipe.utensils);
@@ -142,6 +143,7 @@ Kitchen.prototype.addUtensils = function(recipeUtensils) {
 						break;
 					case "CuttingBoard": //TODO Remove CuttingBoard from utensils
 						thing = new CuttingBoard(THIS.stage.getContext(), utensilData);
+						THIS.cuttingBoard = thing;
 						break;
 					case "Bowl":
 						thing = new Bowl(THIS.stage.getContext(), utensilData);
@@ -182,7 +184,7 @@ Kitchen.prototype.onClick = function(event) {
  */
 Kitchen.prototype.onDragend = function(event) {
 	//console.log(event.target);
-	if(event.target instanceof Ingredient || event.target instanceof Pot || event.target instanceof CuttingBoard) {
+	if(event.target instanceof Ingredient || event.target instanceof Pot || event.target instanceof Knife) {
 		event.target.dragEndAction(this);
 	}
 };
@@ -244,11 +246,19 @@ Kitchen.prototype.onMouseup = function(event) {
  * @param kit the kitchen object
  */
 Kitchen.prototype.run = function(kit) {
+	var THIS = this;
 
 	// update the objects (Plate, Knob, ...)
 	for(var i = 0; i < this.pots.length; i++) {
 		this.pots[i].updateTemperatures();
 	}
+
+	this.allMoveable.forEach(function(object) {
+		//the keyword [String] in [Object] checks if the object has a function named as specified in the String
+		if("action" in object) {
+			object.action(THIS);
+		}
+	});
 
 	// Always render after the updates
 	kit.stage.render();
