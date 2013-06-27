@@ -72,13 +72,13 @@ SoundManager.prototype.playLoop = function(sound) {
  *                        3: Play looping sound
  */
 SoundManager.prototype.manageSound = function(sound, status) {
-	if(sound == this.DROP) {
+	if(sound === this.DROP) {
 		this.dropLoop += this.controlSound(this.DROP, this.dropLoop, status);
-	} else if(sound == this.KNOB) {
+	} else if(sound === this.KNOB) {
 		this.knobLoop += this.controlSound(this.KNOB, this.knobLoop, status);
-	} else if(sound == this.POTHEATINGUP) {
+	} else if(sound === this.POTHEATINGUP) {
 		this.potHeatingUpLoop += this.controlSound(this.POTHEATINGUP, this.potHeatingUpLoop, status);
-	} else if(sound == this.POTONTOSTOVE) {
+	} else if(sound === this.POTONTOSTOVE) {
 		this.potOntoStoveLoop += this.controlSound(this.POTONTOSTOVE, this.potOntoStoveLoop, status);
 	}
 };
@@ -106,7 +106,7 @@ SoundManager.prototype.controlSound = function(sound, loop, status) {
 				});
 				if(loop < playing) {
 					for(var i = 0; i < sound.length; i++) {
-						if(!sound[i].ended && sound[i].loop == false) {
+						if(!sound[i].ended && sound[i].loop === false) {
 							sound[i].pause();
 							sound[i].currentTime = 0;
 							break;
@@ -118,7 +118,7 @@ SoundManager.prototype.controlSound = function(sound, loop, status) {
 		case 1:
 			if(loop < sound.length) {
 				for(var i = 0; i < sound.length; i++) {
-					if(sound[i].ended || sound[i].currentTime == 0) {
+					if(sound[i].ended || sound[i].currentTime === 0) {
 						sound[i].currentTime = 0;
 						sound[i].play();
 						break;
@@ -130,7 +130,7 @@ SoundManager.prototype.controlSound = function(sound, loop, status) {
 			if(loop > 0) {
 				if(loop <= sound.length) {
 					for(var i = 0; i < sound.length; i++) {
-						if(sound[i].loop == true) {
+						if(sound[i].loop === true) {
 							sound[i].pause();
 							sound[i].loop = false;
 							sound[i].currentTime = 0;
@@ -145,7 +145,7 @@ SoundManager.prototype.controlSound = function(sound, loop, status) {
 			if(loop < sound.length) {
 				var done = false;
 				for(var i = 0; i < sound.length; i++) {
-					if(sound[i].ended || sound[i].currentTime == 0) {
+					if(sound[i].ended || sound[i].currentTime === 0) {
 						sound[i].currentTime = 0;
 						sound[i].loop = true;
 						sound[i].play();
@@ -156,7 +156,7 @@ SoundManager.prototype.controlSound = function(sound, loop, status) {
 				}
 				if(!done) {
 					for(var i = 0; i < sound.length; i++) {
-						if(sound[i].loop == false) {
+						if(sound[i].loop === false) {
 							sound[i].loop = true;
 							break;
 						}

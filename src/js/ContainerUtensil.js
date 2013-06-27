@@ -32,7 +32,7 @@ ContainerUtensil.prototype.removeContent = function(ingredient) {
 			array.push(this.content[i]);
 		}
 	}
-	if(array.length == 0) {
+	if(array.length === 0) {
 		this.empty = true;
 	}
 	this.content = array;

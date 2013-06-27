@@ -4,7 +4,8 @@
  * @param data OBJECT - object obtained from the ingredient.json file that defines the ingredient
  */
 function Ingredient(context, data) {
-	VisualRenderAnimation.call(this, context, data.sx, data.sy, data.w, data.h, data.picture, data.zOrder, data.aniObject);
+	VisualRenderAnimation.call(this, context, data.sx, data.sy, data.w, data.h, data.picture, data.zOrder,
+	                           data.aniObject);
 	this.setDraggable(true);
 	this.name = data.name;
 
@@ -35,7 +36,7 @@ Ingredient.prototype.constructor = Ingredient;
  * @param temperature NUMBER - the value determines the temperature of the environment
  */
 Ingredient.prototype.updateTemperature = function(temperature) {
-	if(this.temperature != temperature) {
+	if(this.temperature !== temperature) {
 		if(this.temperature < temperature) {
 			this.temperature = this.temperature + temperature * this.HEATRISINGRATE;
 			this.temperatureState = this.HEATING;
@@ -53,7 +54,7 @@ Ingredient.prototype.updateTemperature = function(temperature) {
 			}
 		}
 	}
-	if(this.temperature != this.DEFAULTTEMPERATURE) {
+	if(this.temperature !== this.DEFAULTTEMPERATURE) {
 		this.logTemperature();
 	}
 };
@@ -62,7 +63,7 @@ Ingredient.prototype.updateTemperature = function(temperature) {
  * The function prints out the temperature of the ingredient every 120 frames
  */
 Ingredient.prototype.logTemperature = function() {
-	if(this.logCounter == 120) {
+	if(this.logCounter === 120) {
 		this.logCounter = 0;
 		console.log(this.name + ": " + this.temperature);
 	} else {
@@ -79,7 +80,8 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
 	kitchen.allObjects.forEach(function(object) {
 		if(object instanceof ContainerUtensil) {
 			var zone = object.getHitZone();
-			if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw && ingredientCenterY <= zone.hy + zone.hh) {
+			if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw &&
+			   ingredientCenterY <= zone.hy + zone.hh) {
 				object.addContent(THIS);
 				if(!(object instanceof CuttingBoard)) {
 					kitchen.stage.removeFromStage(THIS);
@@ -95,7 +97,7 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
  * When the ingredient lied on the cutting board it is removed from the array in the cutting board.
  */
 Ingredient.prototype.dragStartAction = function() {
-	if(!(this.cuttingBoard == null)) {
+	if(!(this.cuttingBoard === null)) {
 		this.cuttingBoard.removeContent(this);
 	}
 };

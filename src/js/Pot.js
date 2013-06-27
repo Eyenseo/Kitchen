@@ -37,11 +37,11 @@ Pot.prototype.updatePot = function() {
 	var temperatureLevel = this.getTemperatureLevel();
 	var state = this.getStatus();
 
-	if(temperatureLevel + state != this.temperatureState) {
-		if(this.temperatureState == "default") {
+	if(temperatureLevel + state !== this.temperatureState) {
+		if(this.temperatureState === "default") {
 			this.soundManager.playLoop(this.soundManager.POTHEATINGUP);
 		}
-		if(temperatureLevel == "default") {
+		if(temperatureLevel === "default") {
 			this.soundManager.stopLoop(this.soundManager.POTHEATINGUP);
 		}
 		this.temperatureState = temperatureLevel + state;
@@ -80,7 +80,7 @@ Pot.prototype.getStatus = function() {
 		state += "Hover";
 	}
 
-	if(this.temperature == this.goalTemperature) {
+	if(this.temperature === this.goalTemperature) {
 		state += "Static";
 	} else {
 		state += "Changing";
@@ -93,7 +93,7 @@ Pot.prototype.getStatus = function() {
  */
 	//TODO think of better names for the functions updateTemerature/s
 Pot.prototype.updateTemperature = function() {
-	if(this.temperature != this.goalTemperature) {
+	if(this.temperature !== this.goalTemperature) {
 		if(this.temperature < this.goalTemperature) {
 			this.temperature = this.temperature + this.goalTemperature * this.HEATRISINGRATE;
 			if(this.temperature >= this.goalTemperature) {
@@ -118,7 +118,7 @@ Pot.prototype.updateTemperatures = function() {
 	for(var i = 0; i < this.content.length; i++) {
 		this.content[i].updateTemperature(this.temperature);
 	}
-	if(this.temperature != this.DEFAULTTEMPERATURE) {
+	if(this.temperature !== this.DEFAULTTEMPERATURE) {
 		this.logTemperature();
 	}
 };
@@ -127,7 +127,7 @@ Pot.prototype.updateTemperatures = function() {
  * The function prints out the temperature of the pot every 90 frames
  */
 Pot.prototype.logTemperature = function() {
-	if(this.logCounter == 90) {
+	if(this.logCounter === 90) {
 		this.logCounter = 0;
 		console.log(this.name + ": " + this.temperature);
 	} else {
@@ -150,7 +150,8 @@ Pot.prototype.dragEndAction = function(kitchen) {
 
 	kitchen.plates.forEach(function(plate) {
 		var zone = plate.getHitZone();
-		if(potCenterX >= zone.hx && potCenterY >= zone.hy && potCenterX <= zone.hx + zone.hw && potCenterY <= zone.hy + zone.hh) {
+		if(potCenterX >= zone.hx && potCenterY >= zone.hy && potCenterX <= zone.hx + zone.hw &&
+		   potCenterY <= zone.hy + zone.hh) {
 			plate.setPot(THIS);
 			THIS.setPlate(plate);
 			plate.updatePotTemperature();
@@ -162,7 +163,7 @@ Pot.prototype.dragEndAction = function(kitchen) {
 
 //TODO Doc
 Pot.prototype.dragStartAction = function() {
-	if(this.plate != null) {
+	if(this.plate !== null) {
 		this.plate.setPot(null);
 		this.plate = null;
 	}

@@ -8,27 +8,27 @@
  */
 function Plate(context, sx, sy, zOrder, name) {
 	var aniObject = {
-		"image": {
-			"tileWidth": 198,
+		"image"     : {
+			"tileWidth" : 198,
 			"tileHeight": 67,
-			"imgWidth": 792,
-			"imgHeight": 67
+			"imgWidth"  : 792,
+			"imgHeight" : 67
 		},
 		"animations": {
-			"default": {
-				"seq": [0],
+			"default"     : {
+				"seq" : [0],
 				"loop": false
 			},
-			"lowStatic": {
-				"seq": [1],
+			"lowStatic"   : {
+				"seq" : [1],
 				"loop": false
 			},
 			"mediumStatic": {
-				"seq": [2],
+				"seq" : [2],
 				"loop": false
 			},
-			"highStatic": {
-				"seq": [3],
+			"highStatic"  : {
+				"seq" : [3],
 				"loop": false
 			}
 		}
@@ -78,8 +78,8 @@ Plate.prototype.setPot = function(pot) {
  * The function updates the temperature of the pot based on the stage of the plate
  */
 Plate.prototype.updatePotTemperature = function() {
-	if(this.pot != null) {
-		if(this.state != 0) {
+	if(this.pot !== null) {
+		if(this.state !== 0) {
 			this.pot.setGoalTemperature(60 * this.state);
 		} else {
 			this.pot.setGoalTemperature(this.pot.DEFAULTTEMPERATURE);

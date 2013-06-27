@@ -20,9 +20,9 @@ Restrainer.prototype.checkOption = function(objectOneName, doAction, objectTwoNa
 				var action = this.recipe.schedule[this.recipeStage].action;
 
 				action.forEach(function(act) {
-					if(act.act == daAction) {
+					if(act.act === daAction) {
 						act.stuff.forEach(function(name) {
-							if(name == objectTwoName) {
+							if(name === objectTwoName) {
 								return true;
 							} else {
 								return false;
@@ -88,7 +88,7 @@ Restrainer.prototype.checkStage = function() {
 //TODO Doc
 Restrainer.prototype.getObject = function(name) {
 	this.kitchenStage.renderObjects.forEach(function(object) {
-		if(object.hasOwnProperty(name) && object.name == name) {
+		if(object.hasOwnProperty(name) && object.name === name) {
 			return object;
 		}
 	});

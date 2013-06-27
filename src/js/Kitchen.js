@@ -1,7 +1,8 @@
 function Kitchen(canvasId) {
 
 	// get the right requestAnimationFrame for this browser
-	var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+	var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
+	                            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 	// apply the right animation frame to the window object
 	window.requestAnimationFrame = requestAnimationFrame;
 
@@ -20,7 +21,8 @@ function Kitchen(canvasId) {
 	this.holdObject = null;
 
 	//kitchen background
-	var background = new VisualRenderObject(this.stage.getContext(), 0, 0, 1024, 650, "images/kitchenBackground.png", 5);
+	var background = new VisualRenderObject(this.stage.getContext(), 0, 0, 1024, 650, "images/kitchenBackground.png",
+	                                        5);
 	this.allObjects.push(background);
 	//TODO remove
 	this.kitchenBackground = background;
@@ -88,7 +90,7 @@ Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 	var index = 0;
 
 	this.allObjects.forEach(function(object) {
-		if(object != undefined && object != null) {
+		if(object !== undefined && object !== null) {
 			object.zOrder = index;
 			index = index + 1;
 		}
@@ -105,10 +107,10 @@ Kitchen.prototype.addIngredients = function(recipeIngredients) {
 	recipeIngredients.forEach(function(ingredientName) {
 		var add = false;
 		THIS.jsonHandler.ingredients.forEach(function(ingredientData) {
-			if(ingredientName == ingredientData.name) {
+			if(ingredientName === ingredientData.name) {
 				var thing = new Ingredient(THIS.stage.getContext(), ingredientData);
 
-				if(thing == undefined || thing == null) {
+				if(thing === undefined || thing === null) {
 					console.log("BÄÄÄÄÄÄHHHHHH");
 				}
 				THIS.allObjects.push(thing);
@@ -132,7 +134,7 @@ Kitchen.prototype.addUtensils = function(recipeUtensils) {
 		var thing;
 		var add = false;
 		THIS.jsonHandler.utensils.forEach(function(utensilData) {
-			if(utensilName == utensilData.name) {
+			if(utensilName === utensilData.name) {
 				switch(utensilData.type) {
 					case "Pot":
 						thing = new Pot(THIS.stage.getContext(), utensilData, THIS.soundManager);
@@ -155,7 +157,7 @@ Kitchen.prototype.addUtensils = function(recipeUtensils) {
 					 thing = new BakingTin(THIS.stage.getContext(), utensilData);
 					 break;*/
 				}
-				if(thing != undefined) {
+				if(thing !== undefined) {
 					THIS.allObjects.push(thing);
 					THIS.allMoveable.push(thing);
 					THIS.stage.addToStage(thing);
@@ -221,7 +223,7 @@ Kitchen.prototype.onMousedown = function(event) {
 		this.holdObject = event.target;
 
 		this.allMoveable.forEach(function(object) {
-			if(object == event.target) {
+			if(object === event.target) {
 				object.zOrder = THIS.maxIndex;
 			} else if(object.zOrder >= oldIndex) {
 				object.zOrder = object.zOrder - 1;
@@ -234,7 +236,7 @@ Kitchen.prototype.onMousedown = function(event) {
 
 //TODO JAVADOC
 Kitchen.prototype.onMouseup = function(event) {
-	if(this.holdObject != null) {
+	if(this.holdObject !== null) {
 		this.holdObject.zOrder = this.holdObject.zOrder - 1;
 		this.holdObject = null;
 		this.stage.reorderRenderObjects();

@@ -22,11 +22,12 @@ Knife.prototype.dragEndAction = function(kitchen) {
 	var knifeCenterY = this.getCenter().cy;
 	var zone;
 
-	if(kitchen.cuttingBoard != null && kitchen.cuttingBoard != undefined) {
+	if(kitchen.cuttingBoard !== null && kitchen.cuttingBoard !== undefined) {
 		zone = kitchen.cuttingBoard.getHitZone();
 	}
 
-	if(knifeCenterX >= zone.hx && knifeCenterY >= zone.hy && knifeCenterX <= zone.hx + zone.hw && knifeCenterY <= zone.hy + zone.hh) {
+	if(knifeCenterX >= zone.hx && knifeCenterY >= zone.hy && knifeCenterX <= zone.hx + zone.hw &&
+	   knifeCenterY <= zone.hy + zone.hh) {
 		this.cutting = true;
 		this.selectAnimation();
 		//TODO add sound
