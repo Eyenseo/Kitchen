@@ -68,7 +68,7 @@ function VisualRenderAnimation(context, sx, sy, w, h, imgPath, zOrder, aniObject
 	this.loop = this.animations["default"].loop || false;
 
 	this.lastSpriteUpdateTime = 0;
-	this.aniInterval = 170;
+	this.aniInterval = 80;
 }
 
 VisualRenderAnimation.prototype = Object.create(VisualRenderObject.prototype);
