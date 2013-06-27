@@ -28,6 +28,7 @@ Knife.prototype.dragEndAction = function(kitchen) {
 
 	if(knifeCenterX >= zone.hx && knifeCenterY >= zone.hy && knifeCenterX <= zone.hx + zone.hw && knifeCenterY <= zone.hy + zone.hh) {
 		this.cutting = true;
+		this.selectAnimation();
 		//TODO add sound
 		//kitchen.soundManager.play(kitchen.soundManager.KNIFEONTOCUTTINGBOARD);
 	}
@@ -37,22 +38,31 @@ Knife.prototype.dragEndAction = function(kitchen) {
  * Function to make the utensil hover.
  */
 Knife.prototype.mouseOverAction = function() {
-	if(this.cutting) {
-		this.changeAnimation("cutHover", true);
-	} else {
-		this.changeAnimation("defaultHover");
-	}
 	this.hover = true;
+	this.selectAnimation();
 };
 
 //TODO DOC
-Knife.prototype.mouseOutAction = function() {
-	if(this.cutting) {
-		this.changeAnimation("cut", true);
+Knife.prototype.selectAnimation = function() {
+	if(this.hover) {
+		if(this.cutting) {
+			this.changeAnimation("cutHover", true);
+		} else {
+			this.changeAnimation("defaultHover");
+		}
 	} else {
-		this.changeAnimation("default");
+		if(this.cutting) {
+			this.changeAnimation("cut", true);
+		} else {
+			this.changeAnimation("default");
+		}
 	}
+}
+
+//TODO DOC
+Knife.prototype.mouseOutAction = function() {
 	this.hover = false;
+	this.selectAnimation();
 };
 //TODO DOC
 Knife.prototype.action = function(kitchen) {
@@ -60,11 +70,7 @@ Knife.prototype.action = function(kitchen) {
 		kitchen.cuttingBoard.cutAll();
 		this.cyclus = 0;
 		this.cutting = false;
-		if(this.hover) {
-			this.changeAnimation("defaultHover");
-		} else {
-			this.changeAnimation("default");
-		}
+		this.selectAnimation();
 	} else {
 		this.cyclus++;
 	}
