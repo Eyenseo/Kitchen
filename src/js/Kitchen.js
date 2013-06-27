@@ -71,21 +71,30 @@ function Kitchen(canvasId) {
 }
 
 Kitchen.prototype.prepareKitchen = function(currentRecipe) {
-	var kitchen = this;
+	this.addIngredients(currentRecipe.ingredients);
+	this.addUtensils(currentRecipe.utensils);
 
-	kitchen.addIngredients(currentRecipe.ingredients);
-	kitchen.addUtensils(currentRecipe.utensils);
+	this.allObjects.sort(function compare(a, b) {
+		if(a.zOrder < b.zOrder) {
+			return -1;
+		}
+		if(a.zOrder > b.zOrder) {
+			return 1;
+		}
+		return 0;
+	});
 
 	var index = 0;
+
 	this.allObjects.forEach(function(object) {
 		if(object != undefined && object != null) {
 			object.zOrder = index;
 			index = index + 1;
 		}
 	});
+
 	this.stage.reorderRenderObjects();
 	this.maxIndex = index;
-
 };
 
 //TODO DOC
