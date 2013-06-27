@@ -101,7 +101,13 @@ RecipeHTML.prototype.recipeDetail = function(index) {
 	document.querySelector('#menuDiv').style.display = 'block';
 	document.querySelector('#allRecipesDiv').style.display = 'none';
 
-	document.querySelector('#startImage').addEventListener('click', function() {
+	var withListener = document.querySelector('#startImage');
+	var withoutListener = withListener.cloneNode(true);   //Doesn't clone the event listeners
+
+	withListener.parentNode.appendChild(withoutListener); //add 'same' button without the old listener
+	withListener.parentNode.removeChild(withListener);    //remove original with old / wrong event listener
+
+	withoutListener.addEventListener('click', function() {
 		document.querySelector('#startUpDiv').style.display = 'none';
 		THIS.kitchen.prepareKitchen(THIS.recipes[index]);
 	});
