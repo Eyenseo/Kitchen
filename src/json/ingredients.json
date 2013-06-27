@@ -2,19 +2,19 @@
 	"types": [
 		{
 			"name": "backingPowder",
-			"sx": 280,
-			"sy": 150,
-			"w": 66,
-			"h": 85,
-			"zOrder": 145,
+			"sx": 355,
+			"sy": 429,
+			"w": 54,
+			"h": 70,
+			"zOrder": 242,
 			"actionTime": 0.005,
 			"picture": "images/ingredients/backingPowder.png",
 			"aniObject": {
 				"image": {
-					"tileWidth": 66,
-					"tileHeight": 85,
-					"imgWidth": 66,
-					"imgHeight": 170
+					"tileWidth": 54,
+					"tileHeight": 70,
+					"imgWidth": 54,
+					"imgHeight": 140
 				},
 				"animations": {
 					"default": {
@@ -30,11 +30,11 @@
 		},
 		{
 			"name": "bacon",
-			"sx": 550,
-			"sy": 250,
+			"sx": 45,
+			"sy": 435,
 			"w": 111,
 			"h": 74,
-			"zOrder": 145,
+			"zOrder": 228,
 			"actionTime": 0.00012,
 			"picture": "images/ingredients/bacon.png",
 			"aniObject": {
@@ -58,11 +58,11 @@
 		},
 		{
 			"name": "meat",
-			"sx": 15,
-			"sy": 80,
+			"sx": 110,
+			"sy": 420,
 			"w": 115,
 			"h": 86,
-			"zOrder": 205,
+			"zOrder": 224,
 			"actionTime": 0.000012,
 			"picture": "images/ingredients/meat.png",
 			"aniObject": {
@@ -86,11 +86,11 @@
 		},
 		{
 			"name": "butter",
-			"sx": 320,
-			"sy": 175,
+			"sx": 115,
+			"sy": 345,
 			"w": 111,
 			"h": 66,
-			"zOrder": 145,
+			"zOrder": 226,
 			"actionTime": 0.00015,
 			"picture": "images/ingredients/butter.png",
 			"aniObject": {
@@ -114,11 +114,11 @@
 		},
 		{
 			"name": "cheese",
-			"sx": 15,
-			"sy": 80,
+			"sx": 45,
+			"sy": 180,
 			"w": 90,
 			"h": 111,
-			"zOrder": 205,
+			"zOrder": 208,
 			"actionTime": 0.000012,
 			"picture": "images/ingredients/cheese.png",
 			"aniObject": {
@@ -142,11 +142,11 @@
 		},
 		{
 			"name": "cream",
-			"sx": 200,
-			"sy": 100,
+			"sx": 165,
+			"sy": 210,
 			"w": 57,
 			"h": 74,
-			"zOrder": 130,
+			"zOrder": 208,
 			"actionTime": 0.00035,
 			"picture": "images/ingredients/cream.png",
 			"aniObject": {
@@ -170,11 +170,11 @@
 		},
 		{
 			"name": "eggs",
-			"sx": 220,
-			"sy": 150,
+			"sx": 100,
+			"sy": 210,
 			"w": 117,
 			"h": 76,
-			"zOrder": 130,
+			"zOrder": 202,
 			"actionTime": 0.00025,
 			"picture": "images/ingredients/eggs.png",
 			"aniObject": {
@@ -198,19 +198,19 @@
 		},
 		{
 			"name": "flour",
-			"sx": 220,
-			"sy": 100,
-			"w": 85,
-			"h": 116,
-			"zOrder": 130,
+			"sx": 237,
+			"sy": 411,
+			"w": 73,
+			"h": 100,
+			"zOrder": 248,
 			"actionTime": 0.0001,
 			"picture": "images/ingredients/flour.png",
 			"aniObject": {
 				"image": {
-					"tileWidth": 85,
-					"tileHeight": 116,
-					"imgWidth": 85,
-					"imgHeight": 232
+					"tileWidth": 73,
+					"tileHeight": 100,
+					"imgWidth": 73,
+					"imgHeight": 200
 				},
 				"animations": {
 					"default": {
@@ -227,10 +227,10 @@
 		{
 			"name": "mushroom",
 			"sx": 50,
-			"sy": 80,
+			"sy": 525,
 			"w": 91,
 			"h": 72,
-			"zOrder": 210,
+			"zOrder": 238,
 			"actionTime": 0.00035,
 			"picture": "images/ingredients/mushroom.png",
 			"aniObject": {
@@ -262,11 +262,11 @@
 		},
 		{
 			"name": "oil",
-			"sx": 450,
-			"sy": 150,
+			"sx": 255,
+			"sy": 115,
 			"w": 46,
 			"h": 122,
-			"zOrder": 145,
+			"zOrder": 288,
 			"actionTime": 0.004,
 			"picture": "images/ingredients/oil.png",
 			"aniObject": {
@@ -291,10 +291,10 @@
 		{
 			"name": "onion",
 			"sx": 120,
-			"sy": 100,
+			"sy": 295,
 			"w": 77,
 			"h": 78,
-			"zOrder": 125,
+			"zOrder": 212,
 			"actionTime": 0.00035,
 			"picture": "images/ingredients/onion.png",
 			"aniObject": {
@@ -326,11 +326,11 @@
 		},
 		{
 			"name": "pepper",
-			"sx": 390,
-			"sy": 100,
+			"sx": 325,
+			"sy": 160,
 			"w": 55,
 			"h": 82,
-			"zOrder": 145,
+			"zOrder": 284,
 			"actionTime": 0.004,
 			"picture": "images/ingredients/pepper.png",
 			"aniObject": {
@@ -354,11 +354,11 @@
 		},
 		{
 			"name": "potato",
-			"sx": 140,
-			"sy": 120,
+			"sx": 115,
+			"sy": 510,
 			"w": 113,
 			"h": 82,
-			"zOrder": 125,
+			"zOrder": 232,
 			"actionTime": 0.00075,
 			"picture": "images/ingredients/potato.png",
 			"aniObject": {
@@ -390,11 +390,11 @@
 		},
 		{
 			"name": "salt",
-			"sx": 350,
-			"sy": 100,
+			"sx": 285,
+			"sy": 160,
 			"w": 53,
 			"h": 82,
-			"zOrder": 145,
+			"zOrder": 286,
 			"actionTime": 0.005,
 			"picture": "images/ingredients/salt.png",
 			"aniObject": {
@@ -418,11 +418,11 @@
 		},
 		{
 			"name": "sauerkraut",
-			"sx": 170,
-			"sy": 100,
+			"sx": 50,
+			"sy": 300,
 			"w": 79,
 			"h": 108,
-			"zOrder": 125,
+			"zOrder": 212,
 			"actionTime": 0.00055,
 			"picture": "images/ingredients/sauerkraut.png",
 			"aniObject": {
@@ -446,19 +446,19 @@
 		},
 		{
 			"name": "spaetzle",
-			"sx": 80,
-			"sy": 100,
-			"w": 63,
-			"h": 114,
+			"sx": 340,
+			"sy": 115,
+			"w": 58,
+			"h": 105,
 			"zOrder": 120,
 			"actionTime": 0.0005,
 			"picture": "images/ingredients/spaetzle.png",
 			"aniObject": {
 				"image": {
-					"tileWidth": 63,
-					"tileHeight": 114,
-					"imgWidth": 63,
-					"imgHeight": 228
+					"tileWidth": 58,
+					"tileHeight": 105,
+					"imgWidth": 58,
+					"imgHeight": 210
 				},
 				"animations": {
 					"default": {
@@ -474,11 +474,11 @@
 		},
 		{
 			"name": "strawberries",
-			"sx": 250,
-			"sy": 100,
+			"sx": 50,
+			"sy": 525,
 			"w": 105,
 			"h": 80,
-			"zOrder": 130,
+			"zOrder": 236,
 			"actionTime": 0.0002,
 			"picture": "images/ingredients/strawberries.png",
 			"aniObject": {
@@ -510,19 +510,19 @@
 		},
 		{
 			"name": "sugar",
-			"sx": 550,
-			"sy": 250,
-			"w": 82,
-			"h": 123,
-			"zOrder": 145,
+			"sx": 295,
+			"sy": 409,
+			"w": 72,
+			"h": 100,
+			"zOrder": 246,
 			"actionTime": 0.0002,
 			"picture": "images/ingredients/sugar.png",
 			"aniObject": {
 				"image": {
-					"tileWidth": 82,
-					"tileHeight": 123,
-					"imgWidth": 82,
-					"imgHeight": 246
+					"tileWidth": 72,
+					"tileHeight": 100,
+					"imgWidth": 72,
+					"imgHeight": 200
 				},
 				"animations": {
 					"default": {
@@ -538,11 +538,11 @@
 		},
 		{
 			"name": "water",
-			"sx": 550,
-			"sy": 250,
+			"sx": 825,
+			"sy": 240,
 			"w": 86,
 			"h": 150,
-			"zOrder": 145,
+			"zOrder": 292,
 			"actionTime": 0.0002,
 			"picture": "images/water.png",
 			"aniObject": {
