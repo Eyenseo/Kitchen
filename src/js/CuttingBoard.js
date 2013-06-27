@@ -5,6 +5,7 @@
  */
 function CuttingBoard(context, data) {
 	VisualRenderAnimation.call(this, context, data.sx, data.sy, data.w, data.h, data.picture, data.zOrder, data.aniObject);
+	ContainerUtensil.call(this, context, data);
 	this.setDraggable(false);
 	this.name = data.name;
 
@@ -39,9 +40,10 @@ CuttingBoard.prototype.removeIngredient = function(ingredient) {
 
 /**
  * Function to change the picture and the state of an ingredient if the knife is moving over the cutting board.
+ * It checks every ingredient and changes the image.
  */
 CuttingBoard.prototype.cutAll = function() {
-	for(var i = 0; i < this.ingredients.length; i++) {
-		Ingredient.changeState(this.ingredients[i]);
-	}
+	this.context.forEach(function(context) {
+		context.changeState();
+	});
 };
