@@ -1,438 +1,438 @@
 {
 	"recipes": [
 		{
-			"name": "DEBUG",
-			"difficulty": 5,
-			"pictureBig": "/images/recipe/noodlesBig.png",
-			"pictureFinish": "/images/recipe/noodlesFinish.png",
-			"description": "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht. Sie sind bekannt aus dem Schwabenländle. Dort werden sie in nahezu jeder Familie traditionsmäßig gegessen.",
-			"ingredients": ["backingPowder", "bacon", "butter", "cheese", "cream", "eggs", "flour", "meat", "mushroom",
-			                "oil", "onion", "pepper", "potato", "salt", "sauerkraut", "spaetzle", "strawberries",
-			                "sugar", "water"],
+			"name"               : "DEBUG",
+			"difficulty"         : 5,
+			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
+			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
+			"description"        : "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht. Sie sind bekannt aus dem Schwabenländle. Dort werden sie in nahezu jeder Familie traditionsmäßig gegessen.",
+			"ingredients"        : ["backingPowder", "bacon", "butter", "cheese", "cream", "eggs", "flour", "meat",
+			                        "mushroom", "oil", "onion", "pepper", "potato", "salt", "sauerkraut", "spaetzle",
+			                        "strawberries", "sugar", "water"],
 			"ingredientsReadable": ["backingPowder", "bacon", "butter", "cheese", "cream", "eggs", "flour", "meat",
 			                        "mushroom", "oil", "onion", "pepper", "potato", "salt", "sauerkraut", "spaetzle",
 			                        "strawberries", "sugar", "water"],
-			"utensils": ["bakingTin", "bowl", "littlePot", "dish", "plate", "bigPot", "pan", "sieve", "sink",
-			             "cuttingBoard", "knife"],
-			"schedule": [
+			"utensils"           : ["bakingTin", "bowl", "littlePot", "dish", "plate", "bigPot", "pan", "sieve", "sink",
+			                        "cuttingBoard", "knife"],
+			"schedule"           : [
 				{
-					"text": "Einen Topf mit Wasser und einer Priese Salz füllen.",
+					"text"  : "Einen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
 							"utensil": "bigPot",
-							"act": "put",
-							"stuff": ["water", "salt"]
+							"act"    : "put",
+							"stuff"  : ["water", "salt"]
 						}
 					]
 				}
 			]
 		},
 		{
-			"name": "Käsespätzle",
-			"difficulty": 2,
-			"pictureBig": "/images/recipe/noodlesBig.png",
-			"pictureFinish": "/images/recipe/noodlesFinish.png",
-			"description": "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht. Sie sind bekannt aus dem Schwabenländle. Dort werden sie in nahezu jeder Familie traditionsmäßig gegessen.",
-			"ingredients": ["spaetzle", "water", "oil", "salt", "cheese", "mushroom", "onion"],
+			"name"               : "Käsespätzle",
+			"difficulty"         : 2,
+			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
+			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
+			"description"        : "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht. Sie sind bekannt aus dem Schwabenländle. Dort werden sie in nahezu jeder Familie traditionsmäßig gegessen.",
+			"ingredients"        : ["spaetzle", "water", "oil", "salt", "cheese", "mushroom", "onion"],
 			"ingredientsReadable": ["Spaetzle", "Wasser", "Öl", "Salz", "Käse", "Pilze", "Zwiebeln"],
-			"utensils": ["dish", "plate", "bigPot", "pan", "sieve", "sink", "cuttingBoard", "knife"],
-			"schedule": [
+			"utensils"           : ["dish", "plate", "bigPot", "pan", "sieve", "sink", "cuttingBoard", "knife"],
+			"schedule"           : [
 				{
-					"text": "Einen Topf mit Wasser und einer Priese Salz füllen.",
+					"text"  : "Einen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
 							"utensil": "bigPot",
-							"act": "put",
-							"stuff": ["water", "salt"]
+							"act"    : "put",
+							"stuff"  : ["water", "salt"]
 						}
 					]
 				},
 				{
-					"text": "Den Topf auf die Herdplatte stellen.",
+					"text"  : "Den Topf auf die Herdplatte stellen.",
 					"action": [
 						{
 							"utensil": "plate",
-							"act": "put",
-							"stuff": ["bigPot"]
+							"act"    : "put",
+							"stuff"  : ["bigPot"]
 						},
 						{
 							"utensil": "bigPot",
-							"act": "isCooked",
-							"stuff": ["water"]
+							"act"    : "isCooked",
+							"stuff"  : ["water"]
 						}
 					]
 				},
 				{
-					"text": "Die Käsespätzle ins kochende Wasser füllen.",
+					"text"  : "Die Käsespätzle ins kochende Wasser füllen.",
 					"action": [
 						{
 							"utensil": "bigPot",
-							"act": "put",
-							"stuff": ["noodle"]
+							"act"    : "put",
+							"stuff"  : ["spaetzle"]
 						},
 						{
 							"utensil": "bigPot",
-							"act": "isCooked",
-							"stuff": ["noodle"]
+							"act"    : "isCooked",
+							"stuff"  : ["spaetzle"]
 						}
 					]
 				},
 				{
-					"text": "Die Pilze und Zwiebeln auf das Schneidebrett legen.",
+					"text"  : "Die Pilze und Zwiebeln auf das Schneidebrett legen.",
 					"action": [
 						{
 							"utensil": "cuttingBoard",
-							"act": "put",
-							"stuff": ["mushroom", "onion"]
+							"act"    : "put",
+							"stuff"  : ["mushroom", "onion"]
 						}
 					]
 				},
 				{
-					"text": "Das Nuddelsieb ins Spülbecken stellen.",
+					"text"  : "Das Nuddelsieb ins Spülbecken stellen.",
 					"action": [
 						{
 							"utensil": "sink",
-							"act": "put",
-							"stuff": ["sieve"]
+							"act"    : "put",
+							"stuff"  : ["sieve"]
 						}
 					]
 				},
 				{
-					"text": "Die Nuddeln ins Sieb schütten.",
+					"text"  : "Die Nuddeln ins Sieb schütten.",
 					"action": [
 						{
 							"utensil": "sieve",
-							"act": "put",
-							"stuff": ["bigPot"]
+							"act"    : "put",
+							"stuff"  : ["bigPot"]
 						}
 					]
 				},
 				{
-					"text": "Eine Pfanne auf die Herdplatte stellen.",
+					"text"  : "Eine Pfanne auf die Herdplatte stellen.",
 					"action": [
 						{
 							"utensil": "plate",
-							"act": "put",
-							"stuff": ["pan"]
+							"act"    : "put",
+							"stuff"  : ["pan"]
 						}
 					]
 				},
 				{
-					"text": "Die Spätzle, Pilze und Zwiebeln mit Öl in die Pfanne geben.",
+					"text"  : "Die Spätzle, Pilze und Zwiebeln mit Öl in die Pfanne geben.",
 					"action": [
 						{
 							"utensil": "pan",
-							"act": "put",
-							"stuff": ["sieve", "mushroom", "onion", "oil"]
+							"act"    : "put",
+							"stuff"  : ["sieve", "mushroom", "onion", "oil"]
 						},
 						{
 							"utensil": "pan",
-							"act": "isCooked",
-							"stuff": ["noodle", "mushroom", "onion"]
+							"act"    : "isCooked",
+							"stuff"  : ["spaetzle", "mushroom", "onion"]
 						}
 					]
 				},
 				{
-					"text": "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
+					"text"  : "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
 					"action": [
 						{
 							"utensil": "dish",
-							"act": "put",
-							"stuff": ["pan"]
+							"act"    : "put",
+							"stuff"  : ["pan"]
 						}
 					]
 				}
 			]
 		},
 		{
-			"name": "Fleisch mit Sauerkraut",
-			"difficulty": 3,
-			"pictureBig": "/images/recipe/noodlesBig.png",
-			"pictureFinish": "/images/recipe/noodlesFinish.png",
-			"description": "Kassler mit Sauerkraut und Kartoffeln als Beilage ist ein altbekanntes Rezept. Meist wird das Rezept für dieses traditionelle Gericht von Mutter an Tochter durch die Familie gereicht.",
-			"ingredients": ["potato", "water", "salt", "sauerkraut", "cream", "onion", "meat"],
+			"name"               : "Fleisch mit Sauerkraut",
+			"difficulty"         : 3,
+			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
+			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
+			"description"        : "Kassler mit Sauerkraut und Kartoffeln als Beilage ist ein altbekanntes Rezept. Meist wird das Rezept für dieses traditionelle Gericht von Mutter an Tochter durch die Familie gereicht.",
+			"ingredients"        : ["potato", "water", "salt", "sauerkraut", "cream", "onion", "meat"],
 			"ingredientsReadable": ["Kartoffeln", "Wasser", "Salz", "Sauerkraut", "Sahne", "Zwiebeln", "Fleisch"],
-			"utensils": ["dish", "plate", "bigPot", "pan", "smallPot", "cuttingBoard", "knife"],
-			"schedule": [
+			"utensils"           : ["dish", "plate", "bigPot", "pan", "smallPot", "cuttingBoard", "knife"],
+			"schedule"           : [
 				{
-					"text": "Einen großen Topf mit Wasser und einer Priese Salz füllen.",
+					"text"  : "Einen großen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
 							"utensil": "bigPot",
-							"act": "put",
-							"stuff": ["water", "salt"]
+							"act"    : "put",
+							"stuff"  : ["water", "salt"]
 						}
 					]
 				},
 				{
-					"text": "Den Topf auf die Herdplatte stellen und das Wasser zum Kochen bringen.",
+					"text"  : "Den Topf auf die Herdplatte stellen und das Wasser zum Kochen bringen.",
 					"action": [
 						{
 							"utensil": "plate",
-							"act": "put",
-							"stuff": ["bigPot"]
+							"act"    : "put",
+							"stuff"  : ["bigPot"]
 						},
 						{
 							"utensil": "plate",
-							"act": "isCooked",
-							"stuff": ["water"]
+							"act"    : "isCooked",
+							"stuff"  : ["water"]
 						}
 					]
 				},
 				{
-					"text": "Die Kartoffeln ins kochende Wasser füllen.",
+					"text"  : "Die Kartoffeln ins kochende Wasser füllen.",
 					"action": [
 						{
 							"utensil": "bigPot",
-							"act": "put",
-							"stuff": ["potato"]
+							"act"    : "put",
+							"stuff"  : ["potato"]
 						},
 						{
 							"utensil": "bigPot",
-							"act": "isCooked",
-							"stuff": ["potato"]
+							"act"    : "isCooked",
+							"stuff"  : ["potato"]
 						}
 					]
 				},
 				{
-					"text": "Einen kleinen Topf mit Wasser und einer Priese Salz füllen.",
+					"text"  : "Einen kleinen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
 							"utensil": "smallPot",
-							"act": "put",
-							"stuff": ["water", "salt"]
+							"act"    : "put",
+							"stuff"  : ["water", "salt"]
 						}
 					]
 				},
 				{
-					"text": "Den Topf auf die Herdplatte stellen.",
+					"text"  : "Den Topf auf die Herdplatte stellen.",
 					"action": [
 						{
 							"utensil": "plate",
-							"act": "put",
-							"stuff": ["smallPot"]
+							"act"    : "put",
+							"stuff"  : ["smallPot"]
 						},
 						{
 							"utensil": "smallPot",
-							"act": "isCooked",
-							"stuff": ["water"]
+							"act"    : "isCooked",
+							"stuff"  : ["water"]
 						}
 					]
 				},
 				{
-					"text": "Das Sauerkraut ins kochende Wasser füllen.",
+					"text"  : "Das Sauerkraut ins kochende Wasser füllen.",
 					"action": [
 						{
 							"utensil": "smallPot",
-							"act": "put",
-							"stuff": ["sauerkraut"]
+							"act"    : "put",
+							"stuff"  : ["sauerkraut"]
 						},
 						{
 							"utensil": "smallPot",
-							"act": "isCooked",
-							"stuff": ["sauerkraut"]
+							"act"    : "isCooked",
+							"stuff"  : ["sauerkraut"]
 						}
 					]
 				},
 				{
-					"text": "Die Zwiebeln auf das Schneidebrett legen.",
+					"text"  : "Die Zwiebeln auf das Schneidebrett legen.",
 					"action": [
 						{
 							"utensil": "cuttingBoard",
-							"act": "put",
-							"stuff": ["onion"]
+							"act"    : "put",
+							"stuff"  : ["onion"]
 						}
 					]
 				},
 				{
-					"text": "Das Sieb ins Spülbecken stellen.",
+					"text"  : "Das Sieb ins Spülbecken stellen.",
 					"action": [
 						{
 							"utensil": "sink",
-							"act": "put",
-							"stuff": ["sieve"]
+							"act"    : "put",
+							"stuff"  : ["sieve"]
 						}
 					]
 				},
 				{
-					"text": "Die Kartoffeln ins Sieb schütten.",
+					"text"  : "Die Kartoffeln ins Sieb schütten.",
 					"action": [
 						{
 							"utensil": "sieve",
-							"act": "put",
-							"stuff": ["bigPot"]
+							"act"    : "put",
+							"stuff"  : ["bigPot"]
 						}
 					]
 				},
 				{
-					"text": "Eine Pfanne auf die Herdplatte stellen.",
+					"text"  : "Eine Pfanne auf die Herdplatte stellen.",
 					"action": [
 						{
 							"utensil": "plate",
-							"act": "put",
-							"stuff": ["pan"]
+							"act"    : "put",
+							"stuff"  : ["pan"]
 						}
 					]
 				},
 				{
-					"text": "Das Kasslersteak und die Zwiebeln mit Öl in die Pfanne geben.",
+					"text"  : "Das Kasslersteak und die Zwiebeln mit Öl in die Pfanne geben.",
 					"action": [
 						{
 							"utensil": "pan",
-							"act": "put",
-							"stuff": ["cuttingBoard", "meat", "oil"]
+							"act"    : "put",
+							"stuff"  : ["cuttingBoard", "meat", "oil"]
 						},
 						{
 							"utensil": "pan",
-							"act": "isCooked",
-							"stuff": ["onion", "meat"]
+							"act"    : "isCooked",
+							"stuff"  : ["onion", "meat"]
 						}
 					]
 				},
 				{
-					"text": "Die Kartoffeln und das Sauerkraut in die Pfanne geben.",
+					"text"  : "Die Kartoffeln und das Sauerkraut in die Pfanne geben.",
 					"action": [
 						{
 							"utensil": "pan",
-							"act": "put",
-							"stuff": ["sieve", "smallPot"]
+							"act"    : "put",
+							"stuff"  : ["sieve", "smallPot"]
 						}
 					]
 				},
 				{
-					"text": "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
+					"text"  : "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
 					"action": [
 						{
 							"utensil": "dish",
-							"act": "put",
-							"stuff": ["pan"]
+							"act"    : "put",
+							"stuff"  : ["pan"]
 						}
 					]
 				}
 			]
 		},
 		{
-			"name": "Bratkartoffeln",
-			"difficulty": 1,
-			"pictureBig": "/images/recipe/noodlesBig.png",
-			"pictureFinish": "/images/recipe/noodlesFinish.png",
-			"description": "Bratkartoffeln mit Würstchen sind einfach lecker. Man kann sie schnell und leicht zubereiten. Außerdem sind die Zutaten typisch für die Deutsche Kultur.",
-			"ingredients": ["spaetzle", "water", "oil", "salt", "potato", "bacon", "onion"],
+			"name"               : "Bratkartoffeln",
+			"difficulty"         : 1,
+			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
+			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
+			"description"        : "Bratkartoffeln mit Würstchen sind einfach lecker. Man kann sie schnell und leicht zubereiten. Außerdem sind die Zutaten typisch für die Deutsche Kultur.",
+			"ingredients"        : ["spaetzle", "water", "oil", "salt", "potato", "bacon", "onion"],
 			"ingredientsReadable": ["Spätzle", "Wasser", "Öl", "Salz", "Kartoffeln", "Speck", "Zwiebeln"],
-			"utensils": ["dish", "plate", "bigPot", "pan", "cuttingBoard", "knife"],
-			"schedule": [
+			"utensils"           : ["dish", "plate", "bigPot", "pan", "cuttingBoard", "knife"],
+			"schedule"           : [
 				{
-					"text": "Einen Topf mit Wasser und einer Priese Salz füllen.",
+					"text"  : "Einen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
 							"utensil": "bigPot",
-							"act": "put",
-							"stuff": ["water", "salt"]
+							"act"    : "put",
+							"stuff"  : ["water", "salt"]
 						}
 					]
 				},
 				{
-					"text": "Den Topf auf die Herdplatte stellen.",
+					"text"  : "Den Topf auf die Herdplatte stellen.",
 					"action": [
 						{
 							"utensil": "plate",
-							"act": "put",
-							"stuff": ["bigPot"]
+							"act"    : "put",
+							"stuff"  : ["bigPot"]
 						},
 						{
 							"utensil": "plate",
-							"act": "isCooked",
-							"stuff": ["water"]
+							"act"    : "isCooked",
+							"stuff"  : ["water"]
 						}
 					]
 				},
 				{
-					"text": "Die Kartoffeln ins kochende Wasser füllen.",
+					"text"  : "Die Kartoffeln ins kochende Wasser füllen.",
 					"action": [
 						{
 							"utensil": "bigPot",
-							"act": "put",
-							"stuff": ["potato"]
+							"act"    : "put",
+							"stuff"  : ["potato"]
 						},
 						{
 							"utensil": "bigPot",
-							"act": "isCooked",
-							"stuff": ["potato"]
+							"act"    : "isCooked",
+							"stuff"  : ["potato"]
 						}
 					]
 				},
 				{
-					"text": "Das Sieb ins Spülbecken stellen.",
+					"text"  : "Das Sieb ins Spülbecken stellen.",
 					"action": [
 						{
 							"utensil": "sink",
-							"act": "put",
-							"stuff": ["sieve"]
+							"act"    : "put",
+							"stuff"  : ["sieve"]
 						}
 					]
 				},
 				{
-					"text": "Die Kartoffeln ins Sieb schütten.",
+					"text"  : "Die Kartoffeln ins Sieb schütten.",
 					"action": [
 						{
 							"utensil": "sieve",
-							"act": "put",
-							"stuff": ["bigPot"]
+							"act"    : "put",
+							"stuff"  : ["bigPot"]
 						}
 					]
 				},
 				{
-					"text": "Die Kartoffeln aus dem Sieb, Schinken und die Zwiebeln auf das Schneidebrett legen.",
+					"text"  : "Die Kartoffeln aus dem Sieb, Schinken und die Zwiebeln auf das Schneidebrett legen.",
 					"action": [
 						{
 							"utensil": "cuttingBoard",
-							"act": "put",
-							"stuff": ["sieve", "onion", "bacon"]
+							"act"    : "put",
+							"stuff"  : ["sieve", "onion", "bacon"]
 						}
 					]
 				},
 				{
-					"text": "Die Kartoffeln, Schinken und Zwiebeln in Scheiben schneiden.",
+					"text"  : "Die Kartoffeln, Schinken und Zwiebeln in Scheiben schneiden.",
 					"action": [
 						{
 							"utensil": "cuttingBoard",
-							"act": "isCut",
-							"stuff": ["potato", "onion", "bacon"]
+							"act"    : "isCut",
+							"stuff"  : ["potato", "onion", "bacon"]
 						}
 					]
 				},
 				{
-					"text": "Eine Pfanne auf die Herdplatte stellen.",
+					"text"  : "Eine Pfanne auf die Herdplatte stellen.",
 					"action": [
 						{
 							"utensil": "plate",
-							"act": "put",
-							"stuff": ["pan"]
+							"act"    : "put",
+							"stuff"  : ["pan"]
 						}
 					]
 				},
 				{
-					"text": "Die Kartoffeln und Zwiebeln mit Öl in die Pfanne geben.",
+					"text"  : "Die Kartoffeln und Zwiebeln mit Öl in die Pfanne geben.",
 					"action": [
 						{
 							"utensil": "pan",
-							"act": "put",
-							"stuff": ["cuttingBoard", "oil"]
+							"act"    : "put",
+							"stuff"  : ["cuttingBoard", "oil"]
 						},
 						{
 							"utensil": "pan",
-							"act": "isCooked",
-							"stuff": ["potato", "onion", "bacon"]
+							"act"    : "isCooked",
+							"stuff"  : ["potato", "onion", "bacon"]
 						}
 					]
 				},
 				{
-					"text": "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
+					"text"  : "Das Gemenge aus der Pfanne auf einem Teller anrichten.",
 					"action": [
 						{
 							"utensil": "dish",
-							"act": "put",
-							"stuff": ["pan"]
+							"act"    : "put",
+							"stuff"  : ["pan"]
 						}
 					]
 				}
