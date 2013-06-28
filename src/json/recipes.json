@@ -38,7 +38,7 @@
 			"utensils"           : ["dish", "plate", "bigPot", "pan", "sieve", "sink", "cuttingBoard", "knife"],
 			"schedule"           : [
 				{
-					"text"  : "Einen Topf mit Wasser und einer Priese Salz füllen.",
+					"text"  : "Den großen Topf mit Wasser und einer Priese Salz füllen.",
 					"action": [
 						{
 							"utensil": "bigPot",
@@ -48,7 +48,7 @@
 					]
 				},
 				{
-					"text"  : "Den Topf auf die Herdplatte stellen.",
+					"text"  : "Das Wasser zum Kochen bringen.",
 					"action": [
 						{
 							"utensil": "plate",
@@ -63,26 +63,26 @@
 					]
 				},
 				{
-					"text"  : "Die Käsespätzle ins kochende Wasser füllen.",
+					"text"  : "Die Käsespätzle ins kochende Wasser füllen und kochen lassen.",
 					"action": [
 						{
 							"utensil": "bigPot",
 							"act"    : "put",
-							"stuff"  : ["spaetzle"]
-						},
-						{
-							"utensil": "bigPot",
-							"act"    : "isCooked",
 							"stuff"  : ["spaetzle"]
 						}
 					]
 				},
 				{
-					"text"  : "Die Pilze und Zwiebeln auf das Schneidebrett legen.",
+					"text"  : "Die Pilze und Zwiebeln auf das Schneidebrett legen und klein schneiden.",
 					"action": [
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "put",
+							"stuff"  : ["mushroom", "onion"]
+						},
+						{
+							"utensil": "cuttingBoard",
+							"act"    : "isCut",
 							"stuff"  : ["mushroom", "onion"]
 						}
 					]
@@ -94,6 +94,11 @@
 							"utensil": "sink",
 							"act"    : "put",
 							"stuff"  : ["sieve"]
+						},
+						{
+							"utensil": "bigPot",
+							"act"    : "isCooked",
+							"stuff"  : ["spaetzle"]
 						}
 					]
 				},
@@ -118,7 +123,7 @@
 					]
 				},
 				{
-					"text"  : "Die Spätzle, Pilze und Zwiebeln mit Öl in die Pfanne geben.",
+					"text"  : "Die Spätzle, Pilze und Zwiebeln mit Öl in die Pfanne geben und anbraten.",
 					"action": [
 						{
 							"utensil": "pan",
