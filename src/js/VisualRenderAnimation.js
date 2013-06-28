@@ -62,6 +62,7 @@ function VisualRenderAnimation(context, sx, sy, w, h, imgPath, zOrder, aniObject
 	// Not needed ...
 	// this.maxRows = aniObject.image.imgHeight / this.tileHeight || 1;
 
+	this.currentAnimationName = "default";
 	this.currentAnimation = this.animations["default"].seq || [0];
 	this.currentAniIndex = 0;
 
@@ -84,6 +85,7 @@ VisualRenderAnimation.prototype.changeAnimation = function(name) {
  */
 VisualRenderAnimation.prototype.changeAnimation = function(name, keepProgress) {
 	try {
+		this.currentAnimationName = name;
 		this.currentAnimation = this.animations[name].seq;
 		this.loop = this.animations[name].loop;
 		if(!keepProgress || this.currentAniIndex > this.currentAnimation.length) {
@@ -91,7 +93,6 @@ VisualRenderAnimation.prototype.changeAnimation = function(name, keepProgress) {
 		}
 	} catch(e) {
 		console.log("There is no animation named:" + name);
-		//TODO Stop Script !
 	}
 };
 
@@ -120,7 +121,8 @@ VisualRenderAnimation.prototype.draw = function() {
 	var imgY = row * this.tileHeight;
 
 	// draw
-	this.context.drawImage(this.img, imgX, imgY, this.tileWidth, this.tileHeight, this.x, this.y, this.width, this.height);
+	this.context.drawImage(this.img, imgX, imgY, this.tileWidth, this.tileHeight, this.x, this.y, this.width,
+	                       this.height);
 
 	var time = Date.now();
 	if(this.lastSpriteUpdateTime < time - this.aniInterval) {

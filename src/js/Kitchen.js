@@ -9,6 +9,8 @@ function Kitchen(canvasId) {
 	// create a new stage object
 	this.stage = new Stage(canvasId);
 
+	this.prepared = false;
+
 	//Ajax
 	this.jsonHandler = new JSONHandler();
 
@@ -19,40 +21,56 @@ function Kitchen(canvasId) {
 	this.plates = [];
 	this.maxIndex = 0;
 	this.holdObject = null;
+	this.restrainer = null;
 
 	//kitchen background
-	var background = new VisualRenderObject(this.stage.getContext(), 0, 0, 1024, 650, "images/kitchenBackground.png",
-	                                        5);
-	this.allObjects.push(background);
-	//TODO remove
-	this.kitchenBackground = background;
+	this.kitchenBackground = new VisualRenderObject(this.stage.getContext(), 0, 0, 1024, 650,
+	                                                "images/background/kitchenBackground.png", 5);
+	this.allObjects.push(this.kitchenBackground);
 	this.stage.addToStage(this.kitchenBackground);
 
 	//SoundManager
 	this.soundManager = new SoundManager();
 
 	//Plate
-	var plate1 = new Plate(this.stage.getContext(), 500, 400, 90, "Plate One");
-	var plate2 = new Plate(this.stage.getContext(), 750, 400, 90, "Plate Two");
+	var hotPlateFrontLeft = new Plate(this.stage.getContext(), this.findJSONObjectByName("hotPlateFrontLeft"));
+	var hotPlateFrontRight = new Plate(this.stage.getContext(), this.findJSONObjectByName("hotPlateFrontRight"));
+	var hotPlateBackLeft = new Plate(this.stage.getContext(), this.findJSONObjectByName("hotPlateBackLeft"));
+	var hotPlateBackRight = new Plate(this.stage.getContext(), this.findJSONObjectByName("hotPlateBackRight"));
 
-	this.allObjects.push(plate1);
-	this.allObjects.push(plate2);
+	this.allObjects.push(hotPlateFrontLeft);
+	this.allObjects.push(hotPlateFrontRight);
+	this.allObjects.push(hotPlateBackLeft);
+	this.allObjects.push(hotPlateBackRight);
 
-	this.plates.push(plate1);
-	this.plates.push(plate2);
+	this.plates.push(hotPlateFrontLeft);
+	this.plates.push(hotPlateFrontRight);
+	this.plates.push(hotPlateBackLeft);
+	this.plates.push(hotPlateBackRight);
 
-	this.stage.addToStage(plate1);
-	this.stage.addToStage(plate2);
+	this.stage.addToStage(hotPlateFrontLeft);
+	this.stage.addToStage(hotPlateFrontRight);
+	this.stage.addToStage(hotPlateBackLeft);
+	this.stage.addToStage(hotPlateBackRight);
 
 	//Knob
-	var knob1 = new Knob(this.stage.getContext(), 600, 500, 90, "Knob One", plate1);
-	var knob2 = new Knob(this.stage.getContext(), 850, 500, 90, "Knob Two", plate2);
+	//	var knob1 = new Knob(this.stage.getContext(), 600, 500, 90, "Knob One", oven);
+	var knob2 = new Knob(this.stage.getContext(), this.findJSONObjectByName("knob2"), hotPlateBackLeft);
+	var knob3 = new Knob(this.stage.getContext(), this.findJSONObjectByName("knob3"), hotPlateBackRight);
+	var knob4 = new Knob(this.stage.getContext(), this.findJSONObjectByName("knob4"), hotPlateFrontLeft);
+	var knob5 = new Knob(this.stage.getContext(), this.findJSONObjectByName("knob5"), hotPlateFrontRight);
 
-	this.allObjects.push(knob1);
+	//	this.allObjects.push(knob1);
 	this.allObjects.push(knob2);
+	this.allObjects.push(knob3);
+	this.allObjects.push(knob4);
+	this.allObjects.push(knob5);
 
-	this.stage.addToStage(knob1);
+	//	this.stage.addToStage(knob1);
 	this.stage.addToStage(knob2);
+	this.stage.addToStage(knob3);
+	this.stage.addToStage(knob4);
+	this.stage.addToStage(knob5);
 
 	this.cuttingBoard = null;
 
@@ -73,9 +91,29 @@ function Kitchen(canvasId) {
 }
 
 //TODO DOC
+Kitchen.prototype.findJSONObjectByName = function(name) {
+	var object = null;
+	this.jsonHandler.kitchenStuff.forEach(function(jsonObject) {
+		if(jsonObject.name === name) {
+			object = jsonObject;
+		}
+	});
+	if(object == null) {
+		this.jsonHandler.ingredients.forEach(function(jsonObject) {
+			if(jsonObject.name === name) {
+				object = jsonObject;
+			}
+		});
+	}
+	return object;
+};
+
+//TODO DOC
 Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 	this.addIngredients(currentRecipe.ingredients);
 	this.addUtensils(currentRecipe.utensils);
+	this.restrainer = new Restrainer(this, currentRecipe);
+	var index = 0;
 
 	this.allObjects.sort(function compare(a, b) {
 		if(a.zOrder < b.zOrder) {
@@ -87,8 +125,6 @@ Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 		return 0;
 	});
 
-	var index = 0;
-
 	this.allObjects.forEach(function(object) {
 		if(object !== undefined && object !== null) {
 			object.zOrder = index;
@@ -98,6 +134,7 @@ Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 
 	this.stage.reorderRenderObjects();
 	this.maxIndex = index;
+	this.prepared = true;
 };
 
 //TODO DOC
@@ -110,9 +147,6 @@ Kitchen.prototype.addIngredients = function(recipeIngredients) {
 			if(ingredientName === ingredientData.name) {
 				var thing = new Ingredient(THIS.stage.getContext(), ingredientData);
 
-				if(thing === undefined || thing === null) {
-					console.log("BÄÄÄÄÄÄHHHHHH");
-				}
 				THIS.allObjects.push(thing);
 				THIS.allMoveable.push(thing);
 				THIS.stage.addToStage(thing);
@@ -133,17 +167,17 @@ Kitchen.prototype.addUtensils = function(recipeUtensils) {
 	recipeUtensils.forEach(function(utensilName) {
 		var thing;
 		var add = false;
-		THIS.jsonHandler.utensils.forEach(function(utensilData) {
+		THIS.jsonHandler.kitchenStuff.forEach(function(utensilData) {
 			if(utensilName === utensilData.name) {
 				switch(utensilData.type) {
 					case "Pot":
 						thing = new Pot(THIS.stage.getContext(), utensilData, THIS.soundManager);
 						THIS.pots.push(thing);
 						break;
-					case "Knife":         //TODO Remove Knife from utensils
+					case "Knife":
 						thing = new Knife(THIS.stage.getContext(), utensilData);
 						break;
-					case "CuttingBoard": //TODO Remove CuttingBoard from utensils
+					case "CuttingBoard":
 						thing = new CuttingBoard(THIS.stage.getContext(), utensilData);
 						THIS.cuttingBoard = thing;
 						break;
@@ -203,14 +237,14 @@ Kitchen.prototype.onDragstart = function(event) {
 
 //TODO JAVADOC
 Kitchen.prototype.onMouseover = function(event) {
-	if(event.target instanceof Ingredient || event.target instanceof Utensil) {
+	if(event.target instanceof Ingredient || event.target instanceof KitchenStuff) {
 		event.target.mouseOverAction();
 	}
 };
 
 //TODO JAVADOC
 Kitchen.prototype.onMouseout = function(event) {
-	if(event.target instanceof Ingredient || event.target instanceof Utensil) {
+	if(event.target instanceof Ingredient || event.target instanceof KitchenStuff) {
 		event.target.mouseOutAction();
 	}
 };
@@ -248,19 +282,22 @@ Kitchen.prototype.onMouseup = function(event) {
  * @param kit the kitchen object
  */
 Kitchen.prototype.run = function(kit) {
-	var THIS = this;
+	if(this.prepared) {
+		var THIS = this;
 
-	// update the objects (Plate, Knob, ...)
-	for(var i = 0; i < this.pots.length; i++) {
-		this.pots[i].updateTemperatures();
-	}
-
-	this.allMoveable.forEach(function(object) {
-		//the keyword [String] in [Object] checks if the object has a function named as specified in the String
-		if("action" in object) {
-			object.action(THIS);
+		// update the objects (Plate, Knob, ...)
+		for(var i = 0; i < this.pots.length; i++) {
+			this.pots[i].updateTemperatures();
 		}
-	});
+
+		this.allMoveable.forEach(function(object) {
+			//the keyword [String] in [Object] checks if the object has a function named as specified in the String
+			if("action" in object) {
+				object.action(THIS);
+			}
+		});
+		this.restrainer.checkStage();
+	}
 
 	// Always render after the updates
 	kit.stage.render();

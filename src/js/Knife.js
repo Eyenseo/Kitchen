@@ -3,14 +3,15 @@
  * @param context context object - the 2d context of the canvas
  * @constructor
  */
+	//TODO Doc
 function Knife(context, data) {
-	Utensil.call(this, context, data);
+	KitchenStuff.call(this, context, data);
 	this.setDraggable(true);
 	this.cutting = false;
 	this.cyclus = 0;
 }
 
-Knife.prototype = Object.create(Utensil.prototype);
+Knife.prototype = Object.create(KitchenStuff.prototype);
 Knife.prototype.constructor = Knife;
 
 /**
@@ -40,30 +41,29 @@ Knife.prototype.dragEndAction = function(kitchen) {
  */
 Knife.prototype.mouseOverAction = function() {
 	this.hover = true;
-	this.selectAnimation();
+	this.selectAnimation(true);
 };
 
 //TODO DOC
-Knife.prototype.selectAnimation = function() {
-	if(this.hover) {
-		if(this.cutting) {
-			this.changeAnimation("cutHover", true);
-		} else {
-			this.changeAnimation("defaultHover");
-		}
+Knife.prototype.selectAnimation = function(keepIndex) {
+	var anim = "";
+
+	if(this.cutting) {
+		anim = "cut";
 	} else {
-		if(this.cutting) {
-			this.changeAnimation("cut", true);
-		} else {
-			this.changeAnimation("default");
-		}
+		anim = "default";
 	}
+	if(this.hover) {
+		anim += "Hover";
+	}
+
+	this.changeAnimation(anim, keepIndex);
 };
 
 //TODO DOC
 Knife.prototype.mouseOutAction = function() {
 	this.hover = false;
-	this.selectAnimation();
+	this.selectAnimation(true);
 };
 //TODO DOC
 Knife.prototype.action = function(kitchen) {

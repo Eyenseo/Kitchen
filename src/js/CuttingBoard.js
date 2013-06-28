@@ -3,13 +3,12 @@
  * @param context context object - the 2d context of the canvas
  * @constructor cutting board is from the VisualRenderObject
  */
+	//TODO Doc
 function CuttingBoard(context, data) {
-	ContainerUtensil.call(this, context, data);
-	this.setDraggable(false);
-	this.name = data.name;
+	ContainerStuff.call(this, context, data);
 }
 
-CuttingBoard.prototype = Object.create(ContainerUtensil.prototype);
+CuttingBoard.prototype = Object.create(ContainerStuff.prototype);
 CuttingBoard.prototype.constructor = CuttingBoard;
 
 /**

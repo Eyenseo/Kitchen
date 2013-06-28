@@ -5,7 +5,7 @@
  * @param soundManager SoundManager object - the value determines the SoundManager to be used
  */
 function Pot(context, data, soundManager) {
-	ContainerUtensil.call(this, context, data);
+	ContainerStuff.call(this, context, data);
 	this.soundManager = soundManager;
 
 	this.HEATRISINGRATE = data.actionTime;
@@ -19,7 +19,7 @@ function Pot(context, data, soundManager) {
 
 	this.logCounter = 0;
 }
-Pot.prototype = Object.create(ContainerUtensil.prototype);
+Pot.prototype = Object.create(ContainerStuff.prototype);
 Pot.prototype.constructor = Pot;
 
 /**
@@ -32,13 +32,14 @@ Pot.prototype.setGoalTemperature = function(temperature) {
 /**
  * The function starts the sound for heating and sets the right animation based on the current temperature
  */
-	//TODO Better function name
-Pot.prototype.updatePot = function() {
+Pot.prototype.selectAnimation = function() {
 	var temperatureLevel = this.getTemperatureLevel();
 	var state = this.getStatus();
 
 	if(temperatureLevel + state !== this.temperatureState) {
-		if(this.temperatureState === "default") {
+		if(this.temperatureState === "default" || this.temperatureState === "defaultEmptyStatic" ||
+		   this.temperatureState === "defaultEmptyHoverStatic" || this.temperatureState === "defaultFullStatic" ||
+		   this.temperatureState === "defaultFullHoverStatic") {
 			this.soundManager.playLoop(this.soundManager.POTHEATINGUP);
 		}
 		if(temperatureLevel === "default") {
@@ -106,7 +107,7 @@ Pot.prototype.updateTemperature = function() {
 			}
 		}
 	}
-	this.updatePot();
+	this.selectAnimation();
 };
 
 /**
@@ -118,9 +119,9 @@ Pot.prototype.updateTemperatures = function() {
 	for(var i = 0; i < this.content.length; i++) {
 		this.content[i].updateTemperature(this.temperature);
 	}
-	if(this.temperature !== this.DEFAULTTEMPERATURE) {
-		this.logTemperature();
-	}
+	//	if(this.temperature !== this.DEFAULTTEMPERATURE) {
+	//		this.logTemperature();
+	//	}
 };
 
 /**
@@ -152,7 +153,7 @@ Pot.prototype.dragEndAction = function(kitchen) {
 		var zone = plate.getHitZone();
 		if(potCenterX >= zone.hx && potCenterY >= zone.hy && potCenterX <= zone.hx + zone.hw &&
 		   potCenterY <= zone.hy + zone.hh) {
-			plate.setPot(THIS);
+			plate.addContent(THIS);
 			THIS.setPlate(plate);
 			plate.updatePotTemperature();
 
@@ -164,21 +165,8 @@ Pot.prototype.dragEndAction = function(kitchen) {
 //TODO Doc
 Pot.prototype.dragStartAction = function() {
 	if(this.plate !== null) {
-		this.plate.setPot(null);
+		this.plate.removeContent(this);
 		this.plate = null;
 	}
 	this.goalTemperature = this.DEFAULTTEMPERATURE;
-};
-
-/**
- * Function to make the utensil hover.
- */
-Pot.prototype.mouseOverAction = function() {
-	this.hover = true;
-	this.updatePot();
-};
-
-Pot.prototype.mouseOutAction = function() {
-	this.hover = false;
-	this.updatePot();
 };

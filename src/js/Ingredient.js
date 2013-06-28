@@ -40,10 +40,13 @@ Ingredient.prototype.updateTemperature = function(temperature) {
 		if(this.temperature < temperature) {
 			this.temperature = this.temperature + temperature * this.HEATRISINGRATE;
 			this.temperatureState = this.HEATING;
+			if(this.cookState == false && this.temperature >= 100) {
+				console.log(this.name + " is cooked");
+				this.setCooked(true);
+			}
 			if(this.temperature > temperature) {
 				this.temperature = temperature;
 				this.temperatureState = this.HEATED;
-				this.setCooked(true);
 			}
 		} else if(this.temperature > temperature) {
 			this.temperature = this.temperature - temperature * this.HEATRISINGRATE;
@@ -54,9 +57,9 @@ Ingredient.prototype.updateTemperature = function(temperature) {
 			}
 		}
 	}
-	if(this.temperature !== this.DEFAULTTEMPERATURE) {
-		this.logTemperature();
-	}
+	//	if(this.temperature != this.DEFAULTTEMPERATURE) {
+	//		this.logTemperature();
+	//	}
 };
 
 /**
@@ -78,15 +81,15 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
 	var ingredientCenterY = this.getCenter().cy;
 
 	kitchen.allObjects.forEach(function(object) {
-		if(object instanceof ContainerUtensil) {
-			var zone = object.getHitZone();
-			if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw &&
-			   ingredientCenterY <= zone.hy + zone.hh) {
-				object.addContent(THIS);
-				if(!(object instanceof CuttingBoard)) {
-					kitchen.stage.removeFromStage(THIS);
-					kitchen.soundManager.play(kitchen.soundManager.DROP);
-				}
+		var zone = object.getHitZone();
+		if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw &&
+		   ingredientCenterY <= zone.hy + zone.hh && object instanceof ContainerStuff &&
+		   kitchen.restrainer.checkPutRequest(object, THIS)) {
+
+			object.addContent(THIS);
+			if(!(object instanceof CuttingBoard)) {
+				kitchen.stage.removeFromStage(THIS);
+				kitchen.soundManager.play(kitchen.soundManager.DROP);
 			}
 		}
 	});
