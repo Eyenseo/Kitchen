@@ -1,7 +1,6 @@
 //TODO Doc
 function KitchenStuff(context, data) {
-	VisualRenderAnimation.call(this, context, data.sx, data.sy, data.w, data.h, data.picture, data.zOrder,
-	                           data.aniObject);
+	VisualRenderAnimation.call(this, context, data.sx, data.sy, data.w, data.h, data.picture, data.zOrder, data.aniObject);
 
 	this.setDraggable(data.draggable);
 	this.name = data.name;
@@ -28,9 +27,20 @@ KitchenStuff.prototype.mouseOutAction = function() {
 
 //TODO Doc
 KitchenStuff.prototype.selectAnimation = function(keepIndex) {
-	if(this.hover) {
-		this.changeAnimation("defaultHover", keepIndex);
+	var anim = "";
+
+	if(this.empty) {
+		anim = "default";
+		if(this.currentAnimationName !== "default" && this.currentAnimationName !== "defaultHover") {
+			keepIndex = false;
+		}
 	} else {
-		this.changeAnimation("default", keepIndex);
+		anim = "full";
 	}
+
+	if(this.hover) {
+		anim += "Hover";
+	}
+
+	this.changeAnimation(anim, keepIndex);
 };
