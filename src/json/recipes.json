@@ -387,17 +387,17 @@
 					]
 				},
 				{
-					"text": "Jetzt legen Sie die Kartoffeln aus dem Sieb, Schinken und die Zwiebeln auf das Schneidebrett und schneiden Sie die Zutaten in kleine Stücke.",
+					"text": "Jetzt legen Sie die Kartoffeln aus dem Sieb und die Zwiebeln auf das Schneidebrett und schneiden Sie die Zutaten in kleine Stücke.",
 					"action": [
 						{
 							"utensil": "cuttingBoard",
 							"act": "put",
-							"stuff": ["sieve", "onion", "bacon"]
+							"stuff": ["sieve", "onion"]
 						}      ,
 						{
 							"utensil": "cuttingBoard",
 							"act": "isCut",
-							"stuff": ["potato", "onion", "bacon"]
+							"stuff": ["potato", "onion"]
 						}
 					]
 				},
@@ -412,7 +412,7 @@
 					]
 				},
 				{
-					"text": "Geben Sie die Zutaten auf dem Schneidebrett mit Öl und Pfeffer in die Pfanne und braten Sie das Gemenge.",
+					"text": "Geben Sie die Zutaten auf dem Schneidebrett mit Öl und Pfeffer und Schinken in die Pfanne und braten Sie das Gemenge.",
 					"action": [
 						{
 							"utensil": "pan",
