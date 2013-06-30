@@ -1,8 +1,7 @@
 function Kitchen(canvasId) {
 
 	// get the right requestAnimationFrame for this browser
-	var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
-	                            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
+	var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
 	// apply the right animation frame to the window object
 	window.requestAnimationFrame = requestAnimationFrame;
 
@@ -24,8 +23,7 @@ function Kitchen(canvasId) {
 	this.restrainer = null;
 
 	//kitchen background
-	this.kitchenBackground = new VisualRenderObject(this.stage.getContext(), 0, 0, 1024, 650,
-	                                                "images/background/kitchenBackground.png", 5);
+	this.kitchenBackground = new VisualRenderObject(this.stage.getContext(), 0, 0, 1024, 650, "images/background/kitchenBackground.png", 5);
 	this.allObjects.push(this.kitchenBackground);
 	this.stage.addToStage(this.kitchenBackground);
 
@@ -187,9 +185,9 @@ Kitchen.prototype.addUtensils = function(recipeUtensils) {
 					case "Sieve":
 						thing = new Sieve(THIS.stage.getContext(), utensilData);
 						break;
-					/*case "BakingTin":
-					 thing = new BakingTin(THIS.stage.getContext(), utensilData);
-					 break;*/
+					case "BakingTin":
+						thing = new BakingTin(THIS.stage.getContext(), utensilData);
+						break;
 				}
 				if(thing !== undefined) {
 					THIS.allObjects.push(thing);

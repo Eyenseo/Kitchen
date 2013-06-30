@@ -14,8 +14,11 @@ ContainerStuff.prototype.constructor = ContainerStuff;
 ContainerStuff.prototype.addContent = function(object) {
 	if(object instanceof Ingredient) {
 		this.content.push(object);
+		if(this.empty) {
+			this.empty = false;
+			this.selectAnimation();
+		}
 	}
-	this.empty = false;
 };
 
 /**
@@ -35,6 +38,7 @@ ContainerStuff.prototype.removeContent = function(object) {
 	}
 	if(array.length === 0) {
 		this.empty = true;
+		this.selectAnimation();
 	}
 	this.content = array;
 };
@@ -47,6 +51,7 @@ ContainerStuff.prototype.popContent = function() {
 	var content = this.content;
 	this.content = [];
 	this.empty = true;
+	this.selectAnimation();
 	return content;
 };
 
