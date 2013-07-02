@@ -1,7 +1,7 @@
 function Ingredient(context, data, restrainer) {
 	PhysicalThing.call(this, context, data, restrainer);
 	this.name = data.name;
-	this.liquid = data.liquid;
+	this.tiny = data.tiny;
 
 	this.COOKEDTEMP = 100;
 	this.cooked = false;

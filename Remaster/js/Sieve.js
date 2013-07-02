@@ -20,12 +20,12 @@ Sieve.prototype.linkObjects = function(object, kitchen) {
 	if(object instanceof Container) {
 		this.content.forEach(function(content) {
 			if(THIS.restrainer.checkPutRequest(object, content, true)) {
-				if(!content.liquid) {
+				if(!content.tiny) {
 					console.log("Sieve: Put " + content.name + " in: " + object.name);
 					object.addContent(content);
 					THIS.removeContent(content);
 				}
-			} else if(content.liquid) {
+			} else if(content.tiny) {
 				THIS.removeContent(content);
 			}
 		});
