@@ -30,4 +30,5 @@ Sieve.prototype.linkObjects = function(object, kitchen) {
 			}
 		});
 	}
+	this.selectAnimation(false);
 };
