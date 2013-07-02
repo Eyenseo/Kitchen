@@ -4,8 +4,7 @@
  * @param data OBJECT - object obtained from the ingredient.json file that defines the ingredient
  */
 function Ingredient(context, data) {
-	VisualRenderAnimation.call(this, context, data.sx, data.sy, data.w, data.h, data.picture, data.zOrder,
-	                           data.aniObject);
+	VisualRenderAnimation.call(this, context, data.sx, data.sy, data.w, data.h, data.picture, data.zOrder, data.aniObject);
 	this.setDraggable(true);
 	this.name = data.name;
 
@@ -82,10 +81,8 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
 
 	kitchen.allObjects.forEach(function(object) {
 		var zone = object.getHitZone();
-		if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw &&
-		   ingredientCenterY <= zone.hy + zone.hh && object instanceof ContainerStuff &&
-		   kitchen.restrainer.checkPutRequest(object, THIS)) {
-
+		if(ingredientCenterX >= zone.hx && ingredientCenterY >= zone.hy && ingredientCenterX <= zone.hx + zone.hw && ingredientCenterY <= zone.hy + zone.hh && object instanceof ContainerStuff) {
+			//			kitchen.restrainer.checkPutRequest(object, THIS)
 			object.addContent(THIS);
 			if(!(object instanceof CuttingBoard)) {
 				kitchen.stage.removeFromStage(THIS);
