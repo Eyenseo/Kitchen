@@ -314,7 +314,7 @@
 						"loop": false
 					},
 					"cut": {
-						"seq": [1],
+						"seq": [2],
 						"loop": false
 					},
 					"cutHover": {
