@@ -15,11 +15,11 @@ function Kitchen(canvasId) {
 	//Ajax
 	this.jsonHandler = new JSONHandler();
 
-	//Restrainer
-	this.restrainer = new Restrainer(this);
-
 	//SoundManager
 	this.soundManager = new SoundManager();
+
+	//Restrainer
+	this.restrainer = new Restrainer(this);
 
 	//HTML manager
 	this.htmlManager = new HTMLManager(this.jsonHandler, this);
@@ -47,8 +47,8 @@ function Kitchen(canvasId) {
 
 }
 
-Kitchen.prototype.makeObjectByName = function(objectName, extra) {
-	var objectData = this.jsonHandler.objectByName(objectName);
+Kitchen.prototype.makeObjectById = function(objectId, extra) {
+	var objectData = this.jsonHandler.objectById(objectId);
 	return  this.makeObject(objectData, extra);
 };
 
@@ -63,7 +63,7 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 				if(extra == false) {
 					addToStage = false;
 				}
-				object = new Ingredient(context, objectData);
+				object = new Ingredient(context, objectData, this.restrainer);
 				break;
 			case "Plate":
 				object = new Plate(context, objectData, this.restrainer);
@@ -74,14 +74,20 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 				}
 				object = new Knob(context, objectData, this.restrainer, extra);
 				break;
+			case "Sieve":
+				object = new Sieve(context, objectData, this.restrainer);
+				break;
 			case "Pot":
 				object = new CookContainer(context, objectData, this.restrainer, this.soundManager);
 				break;
 			case "Knife":
-				object = new Knife(context, objectData);
+				object = new Knife(context, objectData, this.restrainer);
 				break;
 			case "Container":
 				object = new Container(context, objectData, this.restrainer);
+				break;
+			case "CuttingBoard":
+				object = new CuttingBoard(context, objectData, this.restrainer);
 				break;
 			case "Sink":
 				if(extra === undefined) {
@@ -116,27 +122,27 @@ Kitchen.prototype.initialiseKitchen = function() {
 	this.addObject(bufferObject, true);
 
 	//Create Stove
-	bufferObject = this.makeObjectByName("hotPlateFrontLeft");
-	this.makeObjectByName("knob2", bufferObject);
-	bufferObject = this.makeObjectByName("hotPlateFrontRight");
-	this.makeObjectByName("knob3", bufferObject);
-	bufferObject = this.makeObjectByName("hotPlateBackLeft");
-	this.makeObjectByName("knob4", bufferObject);
-	bufferObject = this.makeObjectByName("hotPlateBackRight");
-	this.makeObjectByName("knob5", bufferObject);
+	bufferObject = this.makeObjectById("hotPlateFrontLeft");
+	this.makeObjectById("knob2", bufferObject);
+	bufferObject = this.makeObjectById("hotPlateFrontRight");
+	this.makeObjectById("knob3", bufferObject);
+	bufferObject = this.makeObjectById("hotPlateBackLeft");
+	this.makeObjectById("knob4", bufferObject);
+	bufferObject = this.makeObjectById("hotPlateBackRight");
+	this.makeObjectById("knob5", bufferObject);
 
 	//Create Sink
-	this.makeObjectByName("sink", this.jsonHandler.objectByName("water"));
+	this.makeObjectById("sink", this.jsonHandler.objectById("water"));
 };
 
 Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 	var THIS = this;
 
-	currentRecipe.ingredients.forEach(function(objectName) {
-		THIS.makeObjectByName(objectName);
+	currentRecipe.ingredients.forEach(function(objectId) {
+		THIS.makeObjectById(objectId);
 	});
-	currentRecipe.utensils.forEach(function(objectName) {
-		THIS.makeObjectByName(objectName);
+	currentRecipe.utensils.forEach(function(objectId) {
+		THIS.makeObjectById(objectId);
 	});
 
 	this.stage.reorderRenderObjects();

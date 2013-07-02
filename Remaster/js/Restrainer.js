@@ -1,14 +1,20 @@
 //TODO Doc
 function Restrainer(kitchen) {
 	this.kitchen = kitchen;
+	this.soundManager = this.kitchen.soundManager;
 	this.recipe = null;
 	this.recipeStage = 0;
 }
 
 Restrainer.prototype.constructor = Restrainer;
 
+Restrainer.prototype.setRecipe = function(recipe) {
+	this.recipe = recipe;
+	console.log(this.recipe.schedule[this.recipeStage].text);
+};
+
 //TODO Doc
-Restrainer.prototype.checkPutRequest = function(utensile, objectTwo) {
+Restrainer.prototype.checkPutRequest = function(utensile, objectTwo, silent) {
 	if(this.recipe == null) {
 		throw "The restrainer needs a recipe!";
 	}
@@ -29,13 +35,16 @@ Restrainer.prototype.checkPutRequest = function(utensile, objectTwo) {
 			}
 		});
 	} else {
-		throw "put is just available for ContainerUtensils";
+		throw "put is just available for Container";
 	}
 
 	if(!ok) {
 		//TODO do boom or what ever
 		if(!(utensile instanceof Plate && objectTwo instanceof Ingredient)) {
-			console.log(objectTwo.name + " may not be put in " + utensile.name);
+			if(!(silent === true)) {
+				console.log(objectTwo.name + " may not be put in " + utensile.name);
+				this.soundManager.play(this.soundManager.NEGATIVE);
+			}
 		}
 	}
 	return ok;
@@ -71,34 +80,50 @@ Restrainer.prototype.checkStage = function() {
 Restrainer.prototype.checkActionState = function(stuffObjectName, action) {
 	var THIS = this;
 	var done = false;
-
-	var stuffObjects = null;
+	var stuffObjects = this.getObject(stuffObjectName);
 
 	switch(action.act) {
 		case "put":
 			var utensilObjects = THIS.getObject(action.utensil);
-
 			utensilObjects.forEach(function(object) {
 				if(!done) {
-					if(object instanceof Container) {
-						var content = object.content;
-						content.forEach(function(object) {
-							if(!done && stuffObjectName === object.name) {
-								done = true;
-							}
-						});
-						//					if(!done) {
-						//						console.log(stuffObjectName + " was not inside....");
-						//					}
-					} else {
-						throw "put is just available for ContainerUtensils - bad name: " + stuffObjectName;
+					stuffObjects.forEach(function(stuff) {
+						if(stuff instanceof Container) {
+							object.linkedObjects.forEach(function(o) {
+								if(!done && stuffObjectName === o.name) {
+									done = true;
+								}
+							});
+						}
+					});
+					if(!done) {
+						if(object instanceof Container) {
+							var content = object.content;
+							content.forEach(function(o) {
+								if(!done && stuffObjectName === o.name) {
+									done = true;
+								}
+							});
+							//					if(!done) {
+							//						console.log(stuffObjectName + " was not inside....");
+							//					}
+						} else if(object instanceof Plate || object instanceof Sink) {
+							object.linkedObjects.forEach(function(o) {
+								if(!done && stuffObjectName === o.name) {
+									done = true;
+								}
+							})
+						} else {
+							throw "put is just available for Container, Plate and Sink - bad name: " + object.name;
+						}
 					}
 				}
 			});
 			break;
 
-		case "isCooked" :
-			stuffObjects = THIS.getObject(stuffObjectName);
+		case
+		"isCooked"
+		:
 
 			stuffObjects.forEach(function(object) {
 				if(!done) {
@@ -115,8 +140,9 @@ Restrainer.prototype.checkActionState = function(stuffObjectName, action) {
 			});
 			break;
 
-		case "isCut" :
-			stuffObjects = THIS.getObject(stuffObjectName);
+		case
+		"isCut"
+		:
 
 			stuffObjects.forEach(function(object) {
 				if(!done) {
@@ -142,12 +168,14 @@ Restrainer.prototype.checkActionState = function(stuffObjectName, action) {
 //TODO Doc
 Restrainer.prototype.getObject = function(name) {
 	var found = [];
+
 	this.kitchen.allObjects.forEach(function(object) {
 		if(object.hasOwnProperty("name") && object.name === name) {
 			found.push(object);
 		}
 	});
-	if(found.length === 0) {
+
+	if(name !== "water" && found.length === 0) {
 		throw "Object with name: " + name + " wasn't found!";
 	} else {
 		return found;

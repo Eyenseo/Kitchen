@@ -7,17 +7,20 @@ function SoundManager() {
 	this.knobLoop = 0;
 	this.potHeatingUpLoop = 0;
 	this.potOntoStoveLoop = 0;
+	this.negativeLoop = 0;
 
 	//creates array for sound files. The length of the array is the amount of songs that can be played simultaneously
 	this.DROP = new Array(4);
 	this.KNOB = new Array(3);
 	this.POTHEATINGUP = new Array(4);
 	this.POTONTOSTOVE = new Array(3);
+	this.NEGATIVE = new Array(3);
 
 	this.initialiseSound(this.DROP, "sounds/drop.wav");
 	this.initialiseSound(this.KNOB, "sounds/knob.wav");
 	this.initialiseSound(this.POTHEATINGUP, "sounds/potHeatingUp.wav");
 	this.initialiseSound(this.POTONTOSTOVE, "sounds/potOntoStove.wav");
+	this.initialiseSound(this.NEGATIVE, "sounds/negativeBeep.wav");
 }
 //TODO is this needed?
 SoundManager.prototype.constructor = SoundManager;
@@ -74,6 +77,8 @@ SoundManager.prototype.playLoop = function(sound) {
 SoundManager.prototype.manageSound = function(sound, status) {
 	if(sound === this.DROP) {
 		this.dropLoop += this.controlSound(this.DROP, this.dropLoop, status);
+	} else if(sound === this.NEGATIVE) {
+		this.negativeLoop += this.controlSound(this.NEGATIVE, this.negativeLoop, status);
 	} else if(sound === this.KNOB) {
 		this.knobLoop += this.controlSound(this.KNOB, this.knobLoop, status);
 	} else if(sound === this.POTHEATINGUP) {

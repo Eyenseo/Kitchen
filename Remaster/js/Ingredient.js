@@ -1,6 +1,7 @@
-function Ingredient(context, data) {
-	PhysicalThing.call(this, context, data);
+function Ingredient(context, data, restrainer) {
+	PhysicalThing.call(this, context, data, restrainer);
 	this.name = data.name;
+	this.liquid = data.liquid;
 
 	this.COOKEDTEMP = 100;
 	this.cooked = false;
@@ -15,7 +16,7 @@ Ingredient.prototype.Phy_updateTemperatures = Ingredient.prototype.updateTempera
 Ingredient.prototype.updateTemperature = function(temperature) {
 	this.Phy_updateTemperatures(temperature);
 
-	if(this.temperature >= this.COOKEDTEMP) {
+	if(!this.cooked && this.temperature >= this.COOKEDTEMP) {
 		console.log(this.name + " is cooked");
 		this.setCooked(true);
 	}
@@ -50,16 +51,22 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
 };
 
 Ingredient.prototype.linkObjects = function(object, kitchen) {
-	//	if(object instanceof Container && this.restrainer.checkPutRequest(object, this)) {
-	if(object instanceof Container) {
+	if(object instanceof CuttingBoard && this.cut ||
+	   object instanceof Container && this.restrainer.checkPutRequest(object, this)) {
 		this.addLinkedObject(object);
 		object.addLinkedObject(this);
 
-		if(object instanceof Container && object.name !== "cuttingBoard") {
+		if(object instanceof Container && !(object instanceof CuttingBoard)) {
 			kitchen.stage.removeFromStage(this);
 			kitchen.soundManager.play(kitchen.soundManager.DROP);
 		}
 	}
+};
+
+Ingredient.prototype.addLinkedObject = function(object) {
+	console.log("Ingredient: Put " + this.name + " on: " + object.name);
+
+	this.linkedObjects.push(object);
 };
 
 Ingredient.prototype.selectAnimation = function(keepIndex) {

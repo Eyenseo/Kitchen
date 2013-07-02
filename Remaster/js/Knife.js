@@ -26,8 +26,6 @@ Knife.prototype.dragEndAction = function(kitchen) {
 
 	this.linkObjects(cuttingBoard, kitchen);
 
-	console.log(this.linkedObjects);
-
 	this.linkedObjects.forEach(function(object) {
 		if(object.name === "cuttingBoard" && object.content.length !== 0) {
 			THIS.cutting = true;
@@ -50,6 +48,13 @@ Knife.prototype.selectAnimation = function(keepIndex) {
 	}
 
 	this.changeAnimation(anim, keepIndex);
+};
+
+Knife.prototype.linkObjects = function(object, kitchen) {
+	if(object instanceof CuttingBoard) {
+		object.addLinkedObject(this);
+		this.addLinkedObject(object);
+	}
 };
 
 Knife.prototype.PHY_action = Knife.prototype.action;

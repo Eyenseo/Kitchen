@@ -6,6 +6,7 @@ function Sink(context, data, restrainer, kitchen, waterData) {
 	this.currentAniIndex = this.currentAnimation.length - 1;
 	this.waterData = waterData;
 	this.kitchen = kitchen;
+	this.water = new Ingredient(this.kitchen.stage.getContext(), this.waterData);
 }
 
 Sink.prototype = Object.create(PhysicalThing.prototype);
@@ -32,15 +33,12 @@ Sink.prototype.selectAnimation = function(keepIndex) {
 
 	this.changeAnimation(anim, keepIndex);
 };
-Sink.prototype.PHY_addLinkedObject = Sink.prototype.addLinkedObject;
 
 Sink.prototype.addLinkedObject = function(object) {
-	if(object instanceof Container && this.PHY_addLinkedObject(object)) {
-		if(this.puring) {
-			object.addContent(this.kitchen.makeObject(this.waterData, false));
-		}
-		return true;
+	if(this.puring && object instanceof Container && this.restrainer.checkPutRequest(object, this.water, true)) {
+		object.addContent(this.kitchen.makeObject(this.waterData, false));
 	}
+	this.linkedObjects.push(object);
 };
 
 Sink.prototype.clickAction = function(kitchen) {

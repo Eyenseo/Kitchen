@@ -64,12 +64,10 @@ CookContainer.prototype.getStatus = function() {
 };
 
 CookContainer.prototype.CON_addLinkedObject = CookContainer.prototype.addLinkedObject;
-
 CookContainer.prototype.addLinkedObject = function(object) {
-	//TODO this.restrainer.checkPutRequest(object, this))
-	if(object instanceof Plate && this.CON_addLinkedObject(object)) {
+	if(object instanceof Plate) {
 		this.soundManager.play(this.soundManager.POTONTOSTOVE);
-		return true;
+		this.linkedObjects.push(object);
 	} else {
 		return this.CON_addLinkedObject(object);
 	}

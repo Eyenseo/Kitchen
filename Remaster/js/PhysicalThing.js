@@ -121,6 +121,7 @@ PhysicalThing.prototype.action = function(kitchen) {
 		this.y += 2;
 		this.checkFalling(kitchen);
 	}
+
 	var onPlate = false;
 	this.linkedObjects.forEach(function(object) {
 		if(!onPlate && object instanceof Plate) {
@@ -133,15 +134,17 @@ PhysicalThing.prototype.action = function(kitchen) {
 };
 
 PhysicalThing.prototype.linkObjects = function(object, kitchen) {
-	//	if(object instanceof Plate && this.restrainer.checkPutRequest(this, object)) {
-	if(object instanceof PhysicalThing && object.addLinkedObject(this)) {
+	if(object instanceof PhysicalThing) {
+		console.log("Physical: Check Link from: " + this.name + " with: " + object.name);
+		object.addLinkedObject(this);
 		this.addLinkedObject(object);
 	}
 };
 
 PhysicalThing.prototype.addLinkedObject = function(object) {
+	console.log("Physical: : Check put " + this.name + " on: " + object.name);
+
 	this.linkedObjects.push(object);
-	return true;
 };
 
 PhysicalThing.prototype.removeLinkedObject = function(object) {
@@ -169,7 +172,7 @@ PhysicalThing.prototype.checkFalling = function(kitchen) {
 	var falling = true;
 
 	kitchen.collisionBoxes.forEach(function(box) {
-		variation = random * (box.h - box.h / 5) + box.h / 5;
+		variation = random * (box.h - box.h / 3) + box.h / 3;
 
 		if(!THIS.falling) {
 			if(right >= box.x && bottom >= box.y && left <= box.x + box.w && bottom <= box.y + box.h) {

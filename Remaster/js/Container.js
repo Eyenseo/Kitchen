@@ -7,34 +7,16 @@ function Container(context, data, restrainer) {
 Container.prototype = Object.create(PhysicalThing.prototype);
 Container.prototype.constructor = Container;
 
-Container.prototype.addContent = function(object) {
-	//TODO  this.restrainer.checkPutRequest(this, object)) {
-	if(object instanceof Ingredient) {
-		this.content.push(object);
-		this.selectAnimation(false);
-	}
-};
-
-Container.prototype.PHY_addLinkedObject = Container.prototype.addLinkedObject;
-Container.prototype.addLinkedObject = function(object) {
-	if(object instanceof  Ingredient && this.PHY_addLinkedObject(object)) {
-		this.addContent(object);
-		console.log("Add: " + object.name);
-		return true;
-	} else {
-		return this.PHY_addLinkedObject(object);
-	}
-};
-
 Container.prototype.dragEndAction = function(kitchen) {
+	var THIS = this;
 	var bottomObject = this.getBottomCenter();
-	var bottom = bottomObject.cy - 10; //for the glow
+	var bottom = bottomObject.cy - this.height / 8 - 10; // -10 for the glow
 	var left = bottomObject.cx - this.width / 4;
 	var right = bottomObject.cx + this.width / 4;
 	var objectsUnder = [];
 
 	kitchen.allObjects.forEach(function(object) {
-		if(object instanceof Plate || object instanceof Sink) {
+		if((object instanceof Plate || object instanceof Sink || object instanceof Container) && object !== THIS) {
 			var zone = object.getHitZone();
 			if(right >= zone.hx && bottom >= zone.hy && left <= zone.hx + zone.hw && bottom <= zone.hy + zone.hh) {
 				objectsUnder.push(object);
@@ -52,6 +34,34 @@ Container.prototype.dragEndAction = function(kitchen) {
 	this.linkObjects(highestZOrder, kitchen);
 };
 
+Container.prototype.PHY_linkObjects = Container.prototype.linkObjects;
+Container.prototype.linkObjects = function(object, kitchen) {
+	var THIS = this;
+	console.log("Container");
+	this.PHY_linkObjects(object, kitchen);
+
+	if(object instanceof Container) {
+
+		this.content.forEach(function(content) {
+			if(THIS.restrainer.checkPutRequest(object, content, true)) {
+				console.log("Container: Put " + content.name + " in: " + object.name);
+				object.addContent(content);
+				THIS.removeContent(content);
+			}
+		});
+	}
+};
+
+Container.prototype.addLinkedObject = function(object) {
+	console.log("Container: Put " + this.name + " on: " + object.name);
+
+	if(object instanceof Ingredient && this.restrainer.checkPutRequest(this, object)) {
+		this.addContent(object);
+		console.log("Container: Add: " + object.name);
+	}
+	this.linkedObjects.push(object)
+};
+
 Container.prototype.PHY_removeLinkedObject = Container.prototype.removeLinkedObject;
 Container.prototype.removeLinkedObject = function(object) {
 	this.PHY_removeLinkedObject(object);
@@ -65,6 +75,14 @@ Container.prototype.removeLinkedObject = function(object) {
 	});
 
 	this.content = array;
+};
+
+Container.prototype.addContent = function(object) {
+	if((object instanceof Ingredient || object instanceof  Container) &&
+	   this.restrainer.checkPutRequest(this, object)) {
+		this.content.push(object);
+		this.selectAnimation(false);
+	}
 };
 
 Container.prototype.removeContent = function(object) {

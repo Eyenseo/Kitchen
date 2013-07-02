@@ -53,13 +53,3 @@ Plate.prototype.action = function() {
 		});
 	}
 };
-
-Plate.prototype.PHY_addLinkedObject = Plate.prototype.addLinkedObject;
-
-Plate.prototype.addLinkedObject = function(object) {
-	if(object instanceof CookContainer) {
-		return this.PHY_addLinkedObject(object);
-	} else {
-		return false;
-	}
-};

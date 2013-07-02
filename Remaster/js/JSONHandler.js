@@ -19,23 +19,23 @@ function JSONHandler() {
 JSONHandler.prototype.constructor = JSONHandler;
 
 //TODO DOC
-JSONHandler.prototype.objectByName = function(name) {
+JSONHandler.prototype.objectById = function(id) {
 	var object = null;
 
 	this.kitchenStuff.forEach(function(jsonObject) {
-		if(jsonObject.name === name) {
+		if(jsonObject.id === id) {
 			object = jsonObject;
 		}
 	});
 	if(object == null) {
 		this.ingredients.forEach(function(jsonObject) {
-			if(jsonObject.name === name) {
+			if(jsonObject.id === id) {
 				object = jsonObject;
 			}
 		});
 	}
 	if(object == null) {
-		throw "Object \"" + name + "\" was not found!";
+		throw "Object \"" + id + "\" was not found!";
 	}
 	return object;
 };

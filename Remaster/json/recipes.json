@@ -63,7 +63,7 @@
 					]
 				},
 				{
-					"text"  : "Geben Sie die Käsespätzle ins kochende Wasser.",
+					"text"  : "Geben Sie die Spätzle ins kochende Wasser.",
 					"action": [
 						{
 							"utensil": "bigPot",
@@ -88,10 +88,10 @@
 					]
 				},
 				{
-					"text"  : "Stellen Sie nun das Nuddelsieb ins Spülbecken.",
+					"text"  : "Stellen Sie nun das Nuddelsieb ins Spülbecken und warten bis die Nudeln fertig gekocht sind.",
 					"action": [
 						{
-							"utensil": "sinkTap",
+							"utensil": "sink",
 							"act"    : "put",
 							"stuff"  : ["sieve"]
 						},
@@ -108,7 +108,7 @@
 						{
 							"utensil": "sieve",
 							"act"    : "put",
-							"stuff"  : ["bigPot"]
+							"stuff"  : ["water", "salt", "spaetzle"]
 						}
 					]
 				},
@@ -128,7 +128,7 @@
 						{
 							"utensil": "pan",
 							"act"    : "put",
-							"stuff"  : ["sieve", "mushroom", "onion", "oil"]
+							"stuff"  : ["spaetzle", "mushroom", "onion", "oil"]
 						},
 						{
 							"utensil": "pan",
@@ -243,7 +243,7 @@
 					"text"  : "Stellen Sie ein Sieb ins Spülbecken.",
 					"action": [
 						{
-							"utensil": "sinkTap",
+							"utensil": "sink",
 							"act"    : "put",
 							"stuff"  : ["sieve"]
 						},
@@ -370,7 +370,7 @@
 					"text"  : "Wenn die Kartoffeln gekocht sind können Sie ein Sieb ins Spülbecken stellen.",
 					"action": [
 						{
-							"utensil": "sinkTap",
+							"utensil": "sink",
 							"act"    : "put",
 							"stuff"  : ["sieve"]
 						}
