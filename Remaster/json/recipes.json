@@ -321,7 +321,7 @@
 			"difficulty"         : 1,
 			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
 			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
-			"description"        : "Bratkartoffeln mit Würstchen sind einfach lecker. Man kann sie schnell und leicht zubereiten. Außerdem sind die Zutaten typisch für die Deutsche Kultur.",
+			"description"        : "Bratkartoffeln mit Speck sind einfach lecker. Man kann sie schnell und leicht zubereiten. Außerdem sind die Zutaten typisch für die Deutsche Kultur.",
 			"ingredients"        : ["potato", "bacon", "onion", "pepper", "oil", "salt"],
 			"ingredientsReadable": ["Kartoffeln", "Speck", "Zwiebeln", "Pfeffer", "Salz", "Öl"],
 			"utensils"           : ["dish", "sieve", "bigPot", "pan", "cuttingBoard", "knife"],
@@ -536,8 +536,8 @@
 			]
 		}     ,
 		{
-			"name"               : "Zwei in Einem: Bratkartoffeln und Erdbeerkuchen",
-			"difficulty"         : 2,
+			"name"               : "Zwei in Einem:[br] Bratkartoffeln und Erdbeerkuchen",
+			"difficulty"         : 5,
 			"pictureBig"         : "/images/recipe/strawberriesBig.png",
 			"pictureFinish"      : "/images/recipe/potatoesFinish.png",
 			"description"        : "Wer sich schon an den Einzelrezepten versucht hat, kann es mit diesem Rezept probieren, in dem Zwei Gerichte auf einmal fertiggestellt werden sollen: Bratkartofeln und Erdbeerkuchen.",
