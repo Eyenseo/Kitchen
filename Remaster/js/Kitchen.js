@@ -54,12 +54,15 @@ function Kitchen(canvasId) {
 Kitchen.prototype.restart = function() {
 	var THIS = this;
 
+	this.videoManager.stopAll();
+	this.soundManager.stopAll();
+
 	this.allObjects.forEach(function(object) {
 		THIS.stage.removeFromStage(object);
-		if(object instanceof SoundManager && object instanceof VideoManager) {
-			object.stopAll();
-		}
+
 	});
+
+	this.allObjects = [];
 
 	this.initialiseKitchen();
 	this.htmlManager.allRecipes();
