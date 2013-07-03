@@ -100,17 +100,17 @@
 			"type"       : "Pot",
 			"sx"         : 615,
 			"sy"         : 499,
-			"w"          : 107,
-			"h"          : 112,
+			"w"          : 106,
+			"h"          : 104,
 			"zOrder"     : true,
 			"actionValue": 0.0011,
 			"picture"    : "images/utensils/littlePot.png",
 			"aniObject"  : {
 				"image"     : {
-					"tileWidth" : 107,
-					"tileHeight": 112,
-					"imgWidth"  : 2140,
-					"imgHeight" : 450
+					"tileWidth" : 106,
+					"tileHeight": 104,
+					"imgWidth"  : 2120,
+					"imgHeight" : 624
 				},
 				"animations": {
 					"default": {
