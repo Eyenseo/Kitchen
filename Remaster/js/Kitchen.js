@@ -51,6 +51,20 @@ function Kitchen(canvasId) {
 
 }
 
+Kitchen.prototype.restart = function() {
+	var THIS = this;
+
+	this.allObjects.forEach(function(object) {
+		THIS.stage.removeFromStage(object);
+		if(object instanceof SoundManager && object instanceof VideoManager) {
+			object.stopAll();
+		}
+	});
+
+	this.initialiseKitchen();
+	this.htmlManager.allRecipes();
+};
+
 Kitchen.prototype.makeObjectById = function(objectId, extra) {
 	var objectData = this.jsonHandler.objectById(objectId);
 	return  this.makeObject(objectData, extra);
@@ -193,7 +207,7 @@ Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 	this.stage.reorderRenderObjects();
 	this.restrainer.setRecipe(currentRecipe);
 	this.prepared = true;
-
+	this.finished = false;
 };
 
 Kitchen.prototype.onClick = function(event) {
@@ -275,29 +289,30 @@ Kitchen.prototype.onMouseup = function(event) {
  * @param kit the kitchen object
  */
 Kitchen.prototype.run = function(kit) {
-	if(this.prepared) {
-		var THIS = this;
+	if(!this.finished) {
+		if(this.prepared) {
+			var THIS = this;
 
-		this.allObjects.forEach(function(object) {
-			//the keyword [String] in [Object] checks if the object has a function named as specified in the String
-			if("action" in object) {
-				object.action(THIS);
-			}
-		});
-		this.restrainer.checkStage();
+			this.allObjects.forEach(function(object) {
+				//the keyword [String] in [Object] checks if the object has a function named as specified in the String
+				if("action" in object) {
+					object.action(THIS);
+				}
+			});
+			this.restrainer.checkStage();
+		}
+
+		if(this.bug < 5) { // Dirty hack - probably because of something in the stage?
+			this.videoManager.changePower(); // if this is not done the stage doesn't start to render the previous created
+			this.videoManager.changePower();
+			this.bug++
+		}
+
+		// Always render after the updates
+		kit.stage.render();
 	}
-
-	if(this.bug < 5) { // Dirty hack - probably because of something in the stage?
-		this.videoManager.changePower(); // if this is not done the stage doesn't start to render the previous created
-		this.videoManager.changePower();
-		this.bug++
-	}
-
-	// Always render after the updates
-	kit.stage.render();
 	// keep the loop going
 	window.requestAnimationFrame(function() {
 		kit.run(kit);
 	});
-
 };

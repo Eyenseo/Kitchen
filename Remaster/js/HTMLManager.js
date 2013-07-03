@@ -2,18 +2,18 @@ function HTMLManager(jsonHandler, kitchen) {
 	this.recipes = jsonHandler.recipes;
 	this.kitchen = kitchen;
 	this.allRecipes();
+
+	this.kitchenDiv = document.querySelector("#kitchenDiv");
 	this.createSpeechBubble();
 }
 
 HTMLManager.prototype.constructor = HTMLManager;
 
 HTMLManager.prototype.createSpeechBubble = function() {
-	var kitchenDiv = document.querySelector("#kitchenDiv");
-
 	this.speechBubbleDiv = document.createElement("div");
 	this.speechBubbleDiv.setAttribute("id", "speechBubble");
 
-	kitchenDiv.appendChild(this.speechBubbleDiv);
+	this.kitchenDiv.appendChild(this.speechBubbleDiv);
 };
 
 HTMLManager.prototype.updateSpeechBubbleText = function(text) {
@@ -21,7 +21,33 @@ HTMLManager.prototype.updateSpeechBubbleText = function(text) {
 	this.speechBubbleDiv.appendChild(document.createTextNode(text));
 };
 
+HTMLManager.prototype.showWow = function(finishedSource) {
+	var THIS = this;
+
+	var wowDiv = document.createElement("div");
+	wowDiv.setAttribute("id", "wow");
+	this.kitchenDiv.appendChild(wowDiv);
+
+	var backDiv = document.createElement("div");
+	backDiv.setAttribute("id", "back");
+	backDiv.addEventListener('click', function() {
+		THIS.kitchen.restart();
+	});
+	wowDiv.appendChild(backDiv);
+
+	var finishedDiv = document.createElement("div");
+	finishedDiv.setAttribute("id", "finished");
+	finishedDiv.style.backgroundImage = "url(" + finishedSource + ")";
+	wowDiv.appendChild(finishedDiv);
+};
+
 HTMLManager.prototype.allRecipes = function() {
+	var wowDiv = document.querySelector("#wow");
+
+	if(wowDiv !== null) {
+		wowDiv.parentNode.removeChild(wowDiv);
+	}
+
 	var THIS = this;
 	var body = document.querySelector('body');
 
@@ -123,7 +149,8 @@ HTMLManager.prototype.recipeDetail = function(index) {
 	withListener.parentNode.removeChild(withListener);    //remove original with old / wrong event listener
 
 	withoutListener.addEventListener('click', function() {
-		document.querySelector('#startUpDiv').style.display = 'none';
+		var self = document.querySelector('#startUpDiv');
+		self.parentNode.removeChild(self);
 		THIS.kitchen.prepareKitchen(THIS.recipes[index]);
 	});
 
@@ -155,7 +182,7 @@ HTMLManager.prototype.recipeDetail = function(index) {
 	});
 
 	var recipeImage = document.createElement('img');
-	recipeImage.src = this.recipes[index].pictureBig;
+	recipeImage.src = this.recipes[index].pictureFinish;
 	p.appendChild(recipeImage);
 	p.appendChild(document.createTextNode(this.recipes[index].description));
 
