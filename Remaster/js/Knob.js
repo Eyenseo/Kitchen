@@ -1,5 +1,5 @@
-function Knob(context, data, restrainer, plate) {
-	PhysicalThing.call(this, context, data, restrainer);
+function Knob(stage, data, restrainer, plate) {
+	PhysicalThing.call(this, stage, data, restrainer);
 	this.plate = plate;
 	this.state = 0;
 }

@@ -1,12 +1,12 @@
-function Sink(context, data, restrainer, kitchen, waterData) {
-	PhysicalThing.call(this, context, data, restrainer);
+function Sink(stage, data, restrainer, kitchen, waterData) {
+	PhysicalThing.call(this, stage, data, restrainer);
 
 	this.puring = false;
 	this.changeAnimation("closed");
 	this.currentAniIndex = this.currentAnimation.length - 1;
 	this.waterData = waterData;
 	this.kitchen = kitchen;
-	this.water = new Ingredient(this.kitchen.stage.getContext(), this.waterData);
+	this.water = new Ingredient(stage, this.waterData);
 }
 
 Sink.prototype = Object.create(PhysicalThing.prototype);

@@ -1,5 +1,5 @@
-function Sieve(context, data, restrainer) {
-	Container.call(this, context, data, restrainer);
+function Sieve(stage, data, restrainer) {
+	Container.call(this, stage, data, restrainer);
 }
 Sieve.prototype = Object.create(Container.prototype);
 Sieve.prototype.constructor = Sieve;
@@ -12,10 +12,10 @@ Sieve.prototype.addContent = function(object) {
 	}
 };
 
-Sieve.prototype.linkObjects = function(object, kitchen) {
+Sieve.prototype.linkObjects = function(object) {
 	var THIS = this;
 	console.log("Sieve");
-	this.PHY_linkObjects(object, kitchen);
+	this.PHY_linkObjects(object);
 
 	if(object instanceof Container) {
 		this.content.forEach(function(content) {

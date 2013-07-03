@@ -1,5 +1,5 @@
-function Background(context) {
-	VisualRenderObject.call(this, context, 0, 0, 1024, 650, "images/background/kitchenBackground.png", 9);
+function Background(stage) {
+	VisualRenderObject.call(this, stage.getContext(), 0, 0, 1024, 650, "images/background/kitchenBackground.png", 9);
 	this.collisionBoxes = [];
 
 	this.initialiseCollisionBoxes();
@@ -48,7 +48,7 @@ Background.prototype.initialiseCollisionBoxes = function() {
 	this.addCollisionBox(613, 516, 174, 88);
 
 	//floor
-	this.addCollisionBox(0, 609, 1024, 50);
+	this.addCollisionBox(0, 609, 1024, 100);
 };
 
 Background.prototype.addCollisionBox = function(x, y, w, h) {

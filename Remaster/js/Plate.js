@@ -1,5 +1,5 @@
-function Plate(context, data, restrainer) {
-	PhysicalThing.call(this, context, data, restrainer);
+function Plate(stage, data, restrainer) {
+	PhysicalThing.call(this, stage, data, restrainer);
 	this.state = 0;
 }
 

@@ -1,5 +1,5 @@
-function Knife(context, data, restrainer) {
-	PhysicalThing.call(this, context, data, restrainer);
+function Knife(stage, data, restrainer) {
+	PhysicalThing.call(this, stage, data, restrainer);
 	this.cutting = false;
 	this.cuttingTime = 0;
 }
@@ -16,7 +16,7 @@ Knife.prototype.dragEndAction = function(kitchen) {
 	var cuttingBoard = null;
 
 	kitchen.allObjects.forEach(function(object) {
-		if(object instanceof PhysicalThing && object.name === "cuttingBoard") {
+		if(object instanceof CuttingBoard || object instanceof Cupboard) {
 			var zone = object.getHitZone();
 			if(right >= zone.hx && bottom >= zone.hy && left <= zone.hx + zone.hw && bottom <= zone.hy + zone.hh) {
 				cuttingBoard = object;
@@ -24,10 +24,10 @@ Knife.prototype.dragEndAction = function(kitchen) {
 		}
 	});
 
-	this.linkObjects(cuttingBoard, kitchen);
+	this.linkObjects(cuttingBoard);
 
 	this.linkedObjects.forEach(function(object) {
-		if(object.name === "cuttingBoard" && object.content.length !== 0) {
+		if(object instanceof CuttingBoard && object.content.length !== 0) {
 			THIS.cutting = true;
 			THIS.selectAnimation(false);
 		}
@@ -50,8 +50,8 @@ Knife.prototype.selectAnimation = function(keepIndex) {
 	this.changeAnimation(anim, keepIndex);
 };
 
-Knife.prototype.linkObjects = function(object, kitchen) {
-	if(object instanceof CuttingBoard) {
+Knife.prototype.linkObjects = function(object) {
+	if(object instanceof CuttingBoard || object instanceof Cupboard) {
 		object.addLinkedObject(this);
 		this.addLinkedObject(object);
 	}
@@ -64,7 +64,7 @@ Knife.prototype.action = function(kitchen) {
 	if(this.cutting) {
 		if(this.cuttingTime > this.actionValue) {
 			this.linkedObjects.forEach(function(object) {
-				if(object.name === "cuttingBoard") {
+				if(object instanceof CuttingBoard) {
 					object.content.forEach(function(ingredient) {
 						ingredient.setCut(true);
 					});

@@ -1,5 +1,5 @@
-function Container(context, data, restrainer) {
-	PhysicalThing.call(this, context, data, restrainer);
+function Container(stage, data, restrainer) {
+	PhysicalThing.call(this, stage, data, restrainer);
 
 	//container Attributes
 	this.content = [];
@@ -7,16 +7,26 @@ function Container(context, data, restrainer) {
 Container.prototype = Object.create(PhysicalThing.prototype);
 Container.prototype.constructor = Container;
 
+Container.prototype.PHY_updateTemperature = Container.prototype.updateTemperature;
+Container.prototype.updateTemperature = function(temperature) {
+	var THIS = this;
+	this.PHY_updateTemperature(temperature);
+	this.content.forEach(function(object) {
+		object.updateTemperature(THIS.temperature);
+	});
+};
+
 Container.prototype.dragEndAction = function(kitchen) {
 	var THIS = this;
 	var bottomObject = this.getBottomCenter();
 	var bottom = bottomObject.cy - this.height / 8 - 10; // -10 for the glow
-	var left = bottomObject.cx - this.width / 4;
-	var right = bottomObject.cx + this.width / 4;
+	var left = bottomObject.cx - this.width / 8 - 10;
+	var right = bottomObject.cx + this.width / 8 - 10;
 	var objectsUnder = [];
 
 	kitchen.allObjects.forEach(function(object) {
-		if((object instanceof Plate || object instanceof Sink || object instanceof Container) && object !== THIS) {
+		if((object instanceof Plate || object instanceof Sink || object instanceof Container ||
+		    object instanceof Cupboard) && object !== THIS) {
 			var zone = object.getHitZone();
 			if(right >= zone.hx && bottom >= zone.hy && left <= zone.hx + zone.hw && bottom <= zone.hy + zone.hh) {
 				objectsUnder.push(object);
@@ -24,21 +34,16 @@ Container.prototype.dragEndAction = function(kitchen) {
 		}
 	});
 
-	var highestZOrder = {"zOrder": 0};
 	objectsUnder.forEach(function(object) {
-		if(highestZOrder.zOrder < object.zOrder) {
-			highestZOrder = object;
-		}
+		THIS.linkObjects(object);
 	});
-
-	this.linkObjects(highestZOrder, kitchen);
 };
 
 Container.prototype.PHY_linkObjects = Container.prototype.linkObjects;
-Container.prototype.linkObjects = function(object, kitchen) {
+Container.prototype.linkObjects = function(object) {
 	var THIS = this;
 	console.log("Container");
-	this.PHY_linkObjects(object, kitchen);
+	this.PHY_linkObjects(object);
 
 	if(object instanceof Container) {
 
@@ -50,10 +55,11 @@ Container.prototype.linkObjects = function(object, kitchen) {
 			}
 		});
 	}
+	this.selectAnimation(true);
 };
 
 Container.prototype.addLinkedObject = function(object) {
-	console.log("Container: Put " + this.name + " on: " + object.name);
+	console.log("Container: Link " + this.name + " with: " + object.name);
 
 	if(object instanceof Ingredient && this.restrainer.checkPutRequest(this, object)) {
 		this.addContent(object);
@@ -83,6 +89,7 @@ Container.prototype.addContent = function(object) {
 		this.content.push(object);
 		this.selectAnimation(false);
 	}
+	this.selectAnimation(true);
 };
 
 Container.prototype.removeContent = function(object) {
@@ -96,14 +103,6 @@ Container.prototype.removeContent = function(object) {
 	this.selectAnimation(true);
 
 	this.content = array;
-};
-
-Container.prototype.emptyContent = function() {
-	var content = this.content;
-	this.content = [];
-	this.selectAnimation(true);
-
-	return content;
 };
 
 Container.prototype.selectAnimation = function(keepIndex) {

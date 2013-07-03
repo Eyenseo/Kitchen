@@ -753,9 +753,66 @@
 			}
 		},
 		{
-			"name"       : "knob1",
+			"id"         : "knob0",
+			"name"       : "knob0",
 			"type"       : "Knob",
 			"sx"         : 418,
+			"sy"         : 405,
+			"w"          : 44,
+			"h"          : 44,
+			"zOrder"     : 10,
+			"cookTime"   : 10,
+			"actionValue": 60,
+			"picture"    : "images/stuff/knob.png",
+
+			"aniObject": {
+				"image"     : {
+					"tileWidth" : 44,
+					"tileHeight": 44,
+					"imgWidth"  : 44,
+					"imgHeight" : 352
+				},
+				"animations": {
+					"default"     : {
+						"seq" : [0],
+						"loop": false
+					},
+					"defaultHover": {
+						"seq" : [1],
+						"loop": false
+					},
+					"one"         : {
+						"seq" : [2],
+						"loop": false
+					},
+					"oneHover"    : {
+						"seq" : [3],
+						"loop": false
+					},
+					"two"         : {
+						"seq" : [4],
+						"loop": false
+					},
+					"twoHover"    : {
+						"seq" : [5],
+						"loop": false
+					},
+					"three"       : {
+						"seq" : [6],
+						"loop": false
+					},
+					"threeHover"  : {
+						"seq" : [7],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"id"         : "knob1",
+			"name"       : "knob1",
+			"type"       : "Knob",
+			"sx"         : 464,
 			"sy"         : 405,
 			"w"          : 44,
 			"h"          : 44,
@@ -811,7 +868,7 @@
 			"id"         : "knob2",
 			"name"       : "knob2",
 			"type"       : "Knob",
-			"sx"         : 464,
+			"sx"         : 496,
 			"sy"         : 405,
 			"w"          : 44,
 			"h"          : 44,
@@ -867,7 +924,7 @@
 			"id"         : "knob3",
 			"name"       : "knob3",
 			"type"       : "Knob",
-			"sx"         : 496,
+			"sx"         : 528,
 			"sy"         : 405,
 			"w"          : 44,
 			"h"          : 44,
@@ -923,62 +980,6 @@
 			"id"         : "knob4",
 			"name"       : "knob4",
 			"type"       : "Knob",
-			"sx"         : 528,
-			"sy"         : 405,
-			"w"          : 44,
-			"h"          : 44,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
-			"actionValue": 60,
-			"picture"    : "images/stuff/knob.png",
-
-			"aniObject": {
-				"image"     : {
-					"tileWidth" : 44,
-					"tileHeight": 44,
-					"imgWidth"  : 44,
-					"imgHeight" : 352
-				},
-				"animations": {
-					"default"     : {
-						"seq" : [0],
-						"loop": false
-					},
-					"defaultHover": {
-						"seq" : [1],
-						"loop": false
-					},
-					"one"         : {
-						"seq" : [2],
-						"loop": false
-					},
-					"oneHover"    : {
-						"seq" : [3],
-						"loop": false
-					},
-					"two"         : {
-						"seq" : [4],
-						"loop": false
-					},
-					"twoHover"    : {
-						"seq" : [5],
-						"loop": false
-					},
-					"three"       : {
-						"seq" : [6],
-						"loop": false
-					},
-					"threeHover"  : {
-						"seq" : [7],
-						"loop": false
-					}
-				}
-			}
-		},
-		{
-			"id"         : "knob5",
-			"name"       : "knob5",
-			"type"       : "Knob",
 			"sx"         : 560,
 			"sy"         : 405,
 			"w"          : 44,
@@ -1031,6 +1032,7 @@
 				}
 			}
 		},
+
 		{
 			"id"         : "sink",
 			"name"       : "sink",
@@ -1071,6 +1073,339 @@
 					},
 					"closedHover": {
 						"seq" : [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"id"         : "oven",
+			"name"       : "oven",
+			"type"       : "Oven",
+			"sx"         : 402,
+			"sy"         : 432,
+			"w"          : 216,
+			"h"          : 232,
+			"zOrder"     : 649,
+			"cookTime"   : 10,
+			"actionValue": 0.0011,
+			"picture"    : "images/stuff/oven.png",
+			"aniObject"  : {
+				"image"     : {
+					"tileWidth" : 216,
+					"tileHeight": 232,
+					"imgWidth"  : 216,
+					"imgHeight" : 3712
+				},
+				"animations": {
+					"default": {
+						"seq" : [0],
+						"loop": false
+					},
+
+					"defaultClosed"     : {
+						"seq" : [0],
+						"loop": false
+					},
+					"defaultClosedHover": {
+						"seq" : [1],
+						"loop": false
+					},
+
+					"defaultOpen"     : {
+						"seq" : [2],
+						"loop": false
+					},
+					"defaultOpenHover": {
+						"seq" : [3],
+						"loop": false
+					},
+
+					"lowClosed"     : {
+						"seq" : [4],
+						"loop": false
+					},
+					"lowClosedHover": {
+						"seq" : [5],
+						"loop": false
+					},
+
+					"lowOpen"     : {
+						"seq" : [6],
+						"loop": false
+					},
+					"lowOpenHover": {
+						"seq" : [7],
+						"loop": false
+					},
+
+					"mediumClosed"     : {
+						"seq" : [8],
+						"loop": false
+					},
+					"mediumClosedHover": {
+						"seq" : [9],
+						"loop": false
+					},
+
+					"mediumOpen"     : {
+						"seq" : [10],
+						"loop": false
+					},
+					"mediumOpenHover": {
+						"seq" : [11],
+						"loop": false
+					},
+
+					"highClosed"     : {
+						"seq" : [12],
+						"loop": false
+					},
+					"highClosedHover": {
+						"seq" : [13],
+						"loop": false
+					},
+
+					"highOpen"     : {
+						"seq" : [14],
+						"loop": false
+					},
+					"highOpenHover": {
+						"seq" : [15],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"id"         : "oven",
+			"name"       : "oven",
+			"type"       : "Oven",
+			"sx"         : 404,
+			"sy"         : 433,
+			"w"          : 214,
+			"h"          : 230,
+			"zOrder"     : 649,
+			"cookTime"   : 10,
+			"actionValue": 0.0011,
+			"picture"    : "images/stuff/ovenDoor.png",
+			"aniObject"  : {
+				"image"     : {
+					"tileWidth" : 214,
+					"tileHeight": 230,
+					"imgWidth"  : 214,
+					"imgHeight" : 920
+				},
+				"animations": {
+					"default": {
+						"seq" : [0],
+						"loop": false
+					},
+
+					"defaultClosed"     : {
+						"seq" : [0],
+						"loop": false
+					},
+					"defaultClosedHover": {
+						"seq" : [1],
+						"loop": false
+					},
+
+					"defaultOpen"     : {
+						"seq" : [2],
+						"loop": false
+					},
+					"defaultOpenHover": {
+						"seq" : [3],
+						"loop": false
+					},
+
+					"lowClosed"     : {
+						"seq" : [0],
+						"loop": false
+					},
+					"lowClosedHover": {
+						"seq" : [1],
+						"loop": false
+					},
+
+					"lowOpen"     : {
+						"seq" : [2],
+						"loop": false
+					},
+					"lowOpenHover": {
+						"seq" : [3],
+						"loop": false
+					},
+
+					"mediumClosed"     : {
+						"seq" : [0],
+						"loop": false
+					},
+					"mediumClosedHover": {
+						"seq" : [1],
+						"loop": false
+					},
+
+					"mediumOpen"     : {
+						"seq" : [2],
+						"loop": false
+					},
+					"mediumOpenHover": {
+						"seq" : [3],
+						"loop": false
+					},
+
+					"highClosed"     : {
+						"seq" : [0],
+						"loop": false
+					},
+					"highClosedHover": {
+						"seq" : [1],
+						"loop": false
+					},
+
+					"highOpen"     : {
+						"seq" : [2],
+						"loop": false
+					},
+					"highOpenHover": {
+						"seq" : [3],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"id"         : "fridge",
+			"name"       : "fridge",
+			"type"       : "Fridge",
+			"sx"         : -19,
+			"sy"         : 141,
+			"w"          : 259,
+			"h"          : 513,
+			"zOrder"     : 649,
+			"cookTime"   : 10,
+			"actionValue": 0.0011,
+			"picture"    : "images/stuff/fridgeDoor.png",
+			"aniObject"  : {
+				"image"     : {
+					"tileWidth" : 259,
+					"tileHeight": 513,
+					"imgWidth"  : 259,
+					"imgHeight" : 2052
+				},
+				"animations": {
+					"default": {
+						"seq" : [0],
+						"loop": false
+					},
+
+					"closed"     : {
+						"seq" : [0],
+						"loop": false
+					},
+					"closedHover": {
+						"seq" : [1],
+						"loop": false
+					},
+
+					"open"     : {
+						"seq" : [2],
+						"loop": false
+					},
+					"openHover": {
+						"seq" : [3],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"id"         : "leftCupboard",
+			"name"       : "cupboard",
+			"type"       : "Cupboard",
+			"sx"         : 70,
+			"sy"         : 398,
+			"w"          : 356,
+			"h"          : 251,
+			"zOrder"     : 650,
+			"cookTime"   : 10,
+			"actionValue": 0.0011,
+			"picture"    : "images/stuff/leftCupboardDoor.png",
+			"aniObject"  : {
+				"image"     : {
+					"tileWidth" : 356,
+					"tileHeight": 251,
+					"imgWidth"  : 356,
+					"imgHeight" : 1004
+				},
+				"animations": {
+					"default": {
+						"seq" : [0],
+						"loop": false
+					},
+
+					"closed"     : {
+						"seq" : [0],
+						"loop": false
+					},
+					"closedHover": {
+						"seq" : [1],
+						"loop": false
+					},
+
+					"open"     : {
+						"seq" : [2],
+						"loop": false
+					},
+					"openHover": {
+						"seq" : [3],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"id"         : "rightCupboard",
+			"name"       : "cupboard",
+			"type"       : "Cupboard",
+			"sx"         : 597,
+			"sy"         : 398,
+			"w"          : 356,
+			"h"          : 251,
+			"zOrder"     : 650,
+			"cookTime"   : 10,
+			"actionValue": 0.0011,
+			"picture"    : "images/stuff/rightCupboardDoor.png",
+			"aniObject"  : {
+				"image"     : {
+					"tileWidth" : 356,
+					"tileHeight": 251,
+					"imgWidth"  : 356,
+					"imgHeight" : 1004
+				},
+				"animations": {
+					"default": {
+						"seq" : [0],
+						"loop": false
+					},
+
+					"closed"     : {
+						"seq" : [0],
+						"loop": false
+					},
+					"closedHover": {
+						"seq" : [1],
+						"loop": false
+					},
+
+					"open"     : {
+						"seq" : [2],
+						"loop": false
+					},
+					"openHover": {
+						"seq" : [3],
 						"loop": false
 					}
 				}

@@ -23,17 +23,21 @@ Restrainer.prototype.checkPutRequest = function(utensile, objectTwo, silent) {
 
 	if(utensile instanceof Container) {
 		var action = this.recipe.schedule[this.recipeStage].action;
-		action.forEach(function(act) {
-			if(act.utensil === utensile.name) {
-				if(act.act === "put") {
-					act.stuff.forEach(function(name) {
-						if(name === objectTwo.name) {
-							ok = true;
-						}
-					});
+		if(utensile instanceof Fridge || utensile instanceof Cupboard) {
+			ok = true;
+		} else {
+			action.forEach(function(act) {
+				if(act.utensil === utensile.name) {
+					if(act.act === "put") {
+						act.stuff.forEach(function(name) {
+							if(name === objectTwo.name) {
+								ok = true;
+							}
+						});
+					}
 				}
-			}
-		});
+			});
+		}
 	} else {
 		throw "put is just available for Container";
 	}

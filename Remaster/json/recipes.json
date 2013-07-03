@@ -155,9 +155,9 @@
 			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
 			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
 			"description"        : "Kassler mit Sauerkraut und Kartoffeln als Beilage ist ein altbekanntes Rezept. Meist wird das Rezept für dieses traditionelle Gericht von Mutter an Tochter durch die Familie gereicht.",
-			"ingredients"        : ["potato", "water", "salt", "sauerkraut", "cream", "onion", "meat"],
-			"ingredientsReadable": ["Kartoffeln", "Wasser", "Salz", "Sauerkraut", "Sahne", "Zwiebeln", "Fleisch"],
-			"utensils"           : ["dish", "plate", "bigPot", "pan", "smallPot", "cuttingBoard", "knife"],
+			"ingredients"        : ["potato", "salt", "sauerkraut", "cream", "onion", "meat", "oil"],
+			"ingredientsReadable": ["Kartoffeln", "Salz", "Sauerkraut", "Sahne", "Zwiebeln", "Fleisch", "Öl"],
+			"utensils"           : ["dish", "bigPot", "pan", "littlePot", "cuttingBoard", "knife", "sieve"],
 			"schedule"           : [
 				{
 					"text"  : "Zuerst füllen Sie einen großen Topf mit Wasser und einer Priese Salz.",
@@ -195,12 +195,12 @@
 					]
 				},
 				{
-					"text"  : "Füllen Sie einen kleinen Topf mit Wasser und einer Priese Salz.",
+					"text"  : "Füllen Sie einen kleinen Topf mit Wasser.",
 					"action": [
 						{
-							"utensil": "smallPot",
+							"utensil": "littlePot",
 							"act"    : "put",
-							"stuff"  : ["water", "salt"]
+							"stuff"  : ["water"]
 						}
 					]
 				},
@@ -210,10 +210,10 @@
 						{
 							"utensil": "plate",
 							"act"    : "put",
-							"stuff"  : ["smallPot"]
+							"stuff"  : ["littlePot"]
 						},
 						{
-							"utensil": "smallPot",
+							"utensil": "littlePot",
 							"act"    : "isCooked",
 							"stuff"  : ["water"]
 						}
@@ -223,7 +223,7 @@
 					"text"  : "Geben Sie das Sauerkraut in den kleinen Topf.",
 					"action": [
 						{
-							"utensil": "smallPot",
+							"utensil": "littlePot",
 							"act"    : "put",
 							"stuff"  : ["sauerkraut"]
 						}
@@ -260,7 +260,7 @@
 						{
 							"utensil": "sieve",
 							"act"    : "put",
-							"stuff"  : ["bigPot"]
+							"stuff"  : ["water", "salt", "potato"]
 						}
 					]
 				},
@@ -280,7 +280,7 @@
 						{
 							"utensil": "pan",
 							"act"    : "put",
-							"stuff"  : ["cuttingBoard", "meat", "oil"]
+							"stuff"  : ["onion", "meat", "oil"]
 						},
 						{
 							"utensil": "pan",
@@ -293,14 +293,14 @@
 					"text"  : "Nun die Kartoffeln und das Sauerkraut in die Pfanne geben.",
 					"action": [
 						{
-							"utensil": "smallPot",
+							"utensil": "littlePot",
 							"act"    : "isCooked",
 							"stuff"  : ["sauerkraut"]
 						},
 						{
 							"utensil": "pan",
 							"act"    : "put",
-							"stuff"  : ["sieve", "smallPot"]
+							"stuff"  : ["water", "potato", "sauerkraut"]
 						}
 					]
 				},
@@ -322,9 +322,9 @@
 			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
 			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
 			"description"        : "Bratkartoffeln mit Würstchen sind einfach lecker. Man kann sie schnell und leicht zubereiten. Außerdem sind die Zutaten typisch für die Deutsche Kultur.",
-			"ingredients"        : ["potato", "bacon", "onion", "pepper", "water", "oil", "salt"],
-			"ingredientsReadable": ["Kartoffeln", "Speck", "Zwiebeln", "Pfeffer", "Salz", "Wasser", "Öl"],
-			"utensils"           : ["dish", "plate", "bigPot", "pan", "cuttingBoard", "knife"],
+			"ingredients"        : ["potato", "bacon", "onion", "pepper", "oil", "salt"],
+			"ingredientsReadable": ["Kartoffeln", "Speck", "Zwiebeln", "Pfeffer", "Salz", "Öl"],
+			"utensils"           : ["dish", "sieve", "bigPot", "pan", "cuttingBoard", "knife"],
 			"schedule"           : [
 				{
 					"text"  : "Zuerst füllen Sie einen großen Topf mit Wasser und einer Priese Salz.",
@@ -382,7 +382,7 @@
 						{
 							"utensil": "sieve",
 							"act"    : "put",
-							"stuff"  : ["bigPot"]
+							"stuff"  : ["water", "salt", "potato"]
 						}
 					]
 				},
@@ -392,7 +392,7 @@
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "put",
-							"stuff"  : ["sieve", "onion"]
+							"stuff"  : ["potato", "onion"]
 						}      ,
 						{
 							"utensil": "cuttingBoard",
@@ -417,12 +417,12 @@
 						{
 							"utensil": "pan",
 							"act"    : "put",
-							"stuff"  : ["potatoe", "onion", "bacon", "oil", "pepper"]
+							"stuff"  : ["potato", "onion", "bacon", "oil", "pepper"]
 						},
 						{
 							"utensil": "pan",
 							"act"    : "isCooked",
-							"stuff"  : ["potato", "onion", "bacon", "pepper"]
+							"stuff"  : ["potato", "onion", "bacon"]
 						}
 					]
 				},
@@ -446,7 +446,7 @@
 			"description"        : "Dieser Erdbeerkuchen",
 			"ingredients"        : ["strawberries", "flour", "sugar", "backingPowder", "butter", "eggs", "cream"],
 			"ingredientsReadable": ["Erdbeeren", "Mehl", "Zucker", "Backpulver", "Butter", "Eier", "Sahne"],
-			"utensils"           : ["dish", "sieve", "bowl", "backingTin", "cuttingBoard", "knife"],
+			"utensils"           : ["dish", "sieve", "bowl", "bakingTin", "cuttingBoard", "knife"],
 			"schedule"           : [
 				{
 					"text"  : "Zuerst nehmen Sie eine Schüssel und geben Sie in diese nach und nach Mehl, Backpulver, Sahne, Eier und Zucker.",
@@ -462,7 +462,7 @@
 					"text"  : "Fetten Sie nun eine Backform mit Butter ein.",
 					"action": [
 						{
-							"utensil": "backingTin",
+							"utensil": "bakingTin",
 							"act"    : "put",
 							"stuff"  : ["butter"]
 						}
@@ -472,9 +472,9 @@
 					"text"  : "Jetzt wird der Inhalt der Schüssel in die Backform gegeben.",
 					"action": [
 						{
-							"utensil": "backingTin",
+							"utensil": "bakingTin",
 							"act"    : "put",
-							"stuff"  : ["bowl"]
+							"stuff"  : ["flour", "sugar", "backingPowder", "eggs", "cream"]
 						}
 					]
 				},
@@ -484,42 +484,22 @@
 						{
 							"utensil": "oven",
 							"act"    : "put",
-							"stuff"  : ["backingTin"]
+							"stuff"  : ["bakingTin"]
 						}
 					]
 				},
 				{
-					"text"  : "Während der Teig backt, brereiten Sie die Erdbeeren vor. Geben Sie diese in ein Sieb und waschen Sie die Früchte mit Wasser.",
-					"action": [
-						{
-							"utensil": "sieve",
-							"act"    : "put",
-							"stuff"  : ["strawberries", "water"]
-						}
-					]
-				},
-				{
-					"text"  : "Geben Sie die Erdbeeren auf das Schneidebrett und schneiden Sie diese klein.",
+					"text"  : "Schneiden Sie die Erdbeeren auf das Schneidebrett klein.",
 					"action": [
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "put",
-							"stuff"  : ["sieve"]
+							"stuff"  : ["strawberries"]
 						},
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "isCut",
-							"stuff"  : "strawberries"
-						}
-					]
-				},
-				{
-					"text"  : "Nun müssen die Erdbeeren geschnitten werden.",
-					"action": [
-						{
-							"utensil": "cuttingBoard",
-							"act"    : "put",
-							"stuff"  : ["sieve"]
+							"stuff"  : ["strawberries"]
 						}
 					]
 				},
@@ -529,7 +509,7 @@
 						{
 							"utensil": "oven",
 							"act"    : "isCooked",
-							"stuff"  : ["backingTin"]
+							"stuff"  : ["flour", "sugar", "backingPowder", "eggs", "cream", "butter"]
 						}
 					]
 				},
@@ -537,7 +517,7 @@
 					"text"  : "Sobald der Teig fertig ist, werden die Erdbeeren auch in die Form gegeben.",
 					"action": [
 						{
-							"utensil": "backingTin",
+							"utensil": "bakingTin",
 							"act"    : "put",
 							"stuff"  : ["strawberries"]
 						}
@@ -547,7 +527,7 @@
 					"text"  : "Zum Schluss wird die Backform auf einen Teller gestellt und der Kuchen ist fertig.",
 					"action": [
 						{
-							"utensil": "backingTin",
+							"utensil": "bakingTin",
 							"act"    : "put",
 							"stuff"  : ["dish"]
 						}

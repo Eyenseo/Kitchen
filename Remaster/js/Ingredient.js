@@ -1,7 +1,8 @@
-function Ingredient(context, data, restrainer) {
-	PhysicalThing.call(this, context, data, restrainer);
+function Ingredient(stage, data, restrainer, soundManager) {
+	PhysicalThing.call(this, stage, data, restrainer);
 	this.name = data.name;
 	this.tiny = data.tiny;
+	this.soundManager = soundManager;
 
 	this.COOKEDTEMP = 100;
 	this.cooked = false;
@@ -40,31 +41,26 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
 		}
 	});
 
-	var highestZOrder = {"zOrder": 0};
 	objectsUnder.forEach(function(object) {
-		if(highestZOrder.zOrder < object.zOrder) {
-			highestZOrder = object;
-		}
+		THIS.linkObjects(object);
 	});
-
-	this.linkObjects(highestZOrder, kitchen);
 };
 
-Ingredient.prototype.linkObjects = function(object, kitchen) {
+Ingredient.prototype.linkObjects = function(object) {
 	if(object instanceof CuttingBoard && this.cut ||
-	   object instanceof Container && this.restrainer.checkPutRequest(object, this)) {
+	   object instanceof Container && this.restrainer.checkPutRequest(object, this) || object instanceof Cupboard) {
 		this.addLinkedObject(object);
 		object.addLinkedObject(this);
 
 		if(object instanceof Container && !(object instanceof CuttingBoard)) {
-			kitchen.stage.removeFromStage(this);
-			kitchen.soundManager.play(kitchen.soundManager.DROP);
+			this.safeRemoveFromStage();
+			this.soundManager.play(this.soundManager.DROP);
 		}
 	}
 };
 
 Ingredient.prototype.addLinkedObject = function(object) {
-	console.log("Ingredient: Put " + this.name + " on: " + object.name);
+	console.log("Ingredient: Link " + this.name + " with: " + object.name);
 
 	this.linkedObjects.push(object);
 };

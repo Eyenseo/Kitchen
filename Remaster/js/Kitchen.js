@@ -26,6 +26,7 @@ function Kitchen(canvasId) {
 
 	//event stuff
 	this.stage.registerEvent('click', this);
+	this.pressesObject = null;
 	this.stage.registerEvent('dragend', this);
 	this.stage.registerEvent('dragstart', this);
 	this.stage.registerEvent('mousedown', this);
@@ -37,8 +38,7 @@ function Kitchen(canvasId) {
 	this.allObjects = [];
 
 	//zOrder
-	this.maxIndex = 651;
-	this.holdObject = null;
+	this.maxIndex = 660;
 	this.initialiseKitchen();
 
 	// start the animation loop
@@ -56,44 +56,52 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 	var addToStage = true;
 	var object;
 	if(objectData != null && objectData !== undefined) {
-		var context = this.stage.getContext();
 
 		switch(objectData.type) {
 			case "Ingredient":
 				if(extra == false) {
 					addToStage = false;
 				}
-				object = new Ingredient(context, objectData, this.restrainer);
+				object = new Ingredient(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
 			case "Plate":
-				object = new Plate(context, objectData, this.restrainer);
+				object = new Plate(this.stage, objectData, this.restrainer);
 				break;
 			case "Knob":
 				if(extra === undefined) {
 					throw "A connection from a Knob is needed!"
 				}
-				object = new Knob(context, objectData, this.restrainer, extra);
+				object = new Knob(this.stage, objectData, this.restrainer, extra);
 				break;
 			case "Sieve":
-				object = new Sieve(context, objectData, this.restrainer);
+				object = new Sieve(this.stage, objectData, this.restrainer);
 				break;
 			case "Pot":
-				object = new CookContainer(context, objectData, this.restrainer, this.soundManager);
+				object = new CookContainer(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
 			case "Knife":
-				object = new Knife(context, objectData, this.restrainer);
+				object = new Knife(this.stage, objectData, this.restrainer);
 				break;
 			case "Container":
-				object = new Container(context, objectData, this.restrainer);
+				object = new Container(this.stage, objectData, this.restrainer);
 				break;
 			case "CuttingBoard":
-				object = new CuttingBoard(context, objectData, this.restrainer);
+				object = new CuttingBoard(this.stage, objectData, this.restrainer);
 				break;
 			case "Sink":
 				if(extra === undefined) {
 					throw "Water data is for a Sink needed!"
 				}
-				object = new Sink(context, objectData, this.restrainer, this, extra);
+				object = new Sink(this.stage, objectData, this.restrainer, this, extra);
+				break;
+			case "Fridge":
+				object = new Fridge(this.stage, objectData, this.restrainer, this.soundManager);
+				break;
+			case  "Cupboard":
+				object = new Cupboard(this.stage, objectData, this.restrainer);
+				break;
+			case "Oven":
+				object = new Oven(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
 			default :
 				console.log("There is no object with the type: " + objectData.type);
@@ -117,19 +125,32 @@ Kitchen.prototype.initialiseKitchen = function() {
 	var bufferObject;
 
 	//Create background
-	bufferObject = new Background(this.stage.getContext());
+	bufferObject = new Background(this.stage);
 	this.collisionBoxes = bufferObject.collisionBoxes;
 	this.addObject(bufferObject, true);
 
+	//Fridge
+	this.makeObjectById("fridge");
+
+	//Left cupboard
+	this.makeObjectById("leftCupboard");
+
+	//Oven
+	bufferObject = this.makeObjectById("oven");
+	this.makeObjectById("knob0", bufferObject);
+
+	//Right cupboard
+	this.makeObjectById("rightCupboard");
+
 	//Create Stove
 	bufferObject = this.makeObjectById("hotPlateFrontLeft");
-	this.makeObjectById("knob2", bufferObject);
-	bufferObject = this.makeObjectById("hotPlateFrontRight");
-	this.makeObjectById("knob3", bufferObject);
+	this.makeObjectById("knob1", bufferObject);
 	bufferObject = this.makeObjectById("hotPlateBackLeft");
-	this.makeObjectById("knob4", bufferObject);
+	this.makeObjectById("knob2", bufferObject);
 	bufferObject = this.makeObjectById("hotPlateBackRight");
-	this.makeObjectById("knob5", bufferObject);
+	this.makeObjectById("knob3", bufferObject);
+	bufferObject = this.makeObjectById("hotPlateFrontRight");
+	this.makeObjectById("knob4", bufferObject);
 
 	//Create Sink
 	this.makeObjectById("sink", this.jsonHandler.objectById("water"));
@@ -146,12 +167,13 @@ Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 	});
 
 	this.stage.reorderRenderObjects();
-	this.restrainer.recipe = currentRecipe;
+	this.restrainer.setRecipe(currentRecipe);
 	this.prepared = true;
 };
 
 Kitchen.prototype.onClick = function(event) {
-	if("clickAction" in event.target) {
+	if(this.pressesObject !== null && this.pressesObject !== undefined && this.pressesObject === event.target &&
+	   "clickAction" in event.target) {
 		event.target.clickAction(this);
 	}
 };
@@ -198,6 +220,7 @@ Kitchen.prototype.onMousedown = function(event) {
 		event.target.mouseDownAction(this);
 		this.stage.reorderRenderObjects();
 	}
+	this.pressesObject = event.target;
 };
 
 //TODO JAVADOC

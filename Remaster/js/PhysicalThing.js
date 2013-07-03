@@ -1,5 +1,5 @@
-function PhysicalThing(context, data, restrainer) {
-	VisualRenderAnimation.call(this, context, data);
+function PhysicalThing(stage, data, restrainer) {
+	VisualRenderAnimation.call(this, stage.getContext(), data);
 
 	//Various attributes
 	this.name = data.name;
@@ -24,8 +24,10 @@ function PhysicalThing(context, data, restrainer) {
 
 	//AnimationS stuff
 	this.hover = false;
-}
 
+	this.stage = stage;
+	this.onStage = true;
+}
 PhysicalThing.prototype = Object.create(VisualRenderAnimation.prototype);
 PhysicalThing.prototype.constructor = PhysicalThing;
 
@@ -41,7 +43,7 @@ PhysicalThing.prototype.updateTemperature = function(temperature) {
 				this.temperature = temperature;
 			}
 		} else {
-			this.temperature = this.temperature - temperature * this.actionValue * 2;
+			this.temperature = this.temperature - temperature * this.actionValue * 4;
 			if(this.temperature <= temperature) {
 				this.temperature = temperature;
 			}
@@ -66,33 +68,6 @@ PhysicalThing.prototype.mouseOverAction = function(kitchen) {
 PhysicalThing.prototype.mouseOutAction = function(kitchen) {
 	this.hover = false;
 	this.selectAnimation(true);
-};
-
-PhysicalThing.prototype.dragEndAction = function(kitchen) {
-	var THIS = this;
-	var bottomObject = this.getBottomCenter();
-	var bottom = bottomObject.cy - 10; //for the glow
-	var left = bottomObject.cx - this.width / 4;
-	var right = bottomObject.cx + this.width / 4;
-	var objectsUnder = [];
-
-	kitchen.allObjects.forEach(function(object) {
-		if(object instanceof PhysicalThing && !(object instanceof Knife) && object !== THIS) {
-			var zone = object.getHitZone();
-			if(right >= zone.hx && bottom >= zone.hy && left <= zone.hx + zone.hw && bottom <= zone.hy + zone.hh) {
-				objectsUnder.push(object);
-			}
-		}
-	});
-
-	var highestZOrder = {"zOrder": 0};
-	objectsUnder.forEach(function(object) {
-		if(highestZOrder.zOrder < object.zOrder) {
-			highestZOrder = object;
-		}
-	});
-
-	this.linkObjects(highestZOrder, kitchen);
 };
 
 PhysicalThing.prototype.mouseDownAction = function(kitchen) {
@@ -133,7 +108,29 @@ PhysicalThing.prototype.action = function(kitchen) {
 	}
 };
 
-PhysicalThing.prototype.linkObjects = function(object, kitchen) {
+PhysicalThing.prototype.dragEndAction = function(kitchen) {
+	var THIS = this;
+	var bottomObject = this.getBottomCenter();
+	var bottom = bottomObject.cy - 10; //for the glow
+	var left = bottomObject.cx - this.width / 8 - 10;
+	var right = bottomObject.cx + this.width / 8 - 10;
+	var objectsUnder = [];
+
+	kitchen.allObjects.forEach(function(object) {
+		if(object instanceof PhysicalThing && !(object instanceof Knife) && object !== THIS) {
+			var zone = object.getHitZone();
+			if(right >= zone.hx && bottom >= zone.hy && left <= zone.hx + zone.hw && bottom <= zone.hy + zone.hh) {
+				objectsUnder.push(object);
+			}
+		}
+	});
+
+	objectsUnder.forEach(function(object) {
+		THIS.linkObjects(object);
+	});
+};
+
+PhysicalThing.prototype.linkObjects = function(object) {
 	if(object instanceof PhysicalThing) {
 		console.log("Physical: Check Link from: " + this.name + " with: " + object.name);
 		object.addLinkedObject(this);
@@ -142,7 +139,7 @@ PhysicalThing.prototype.linkObjects = function(object, kitchen) {
 };
 
 PhysicalThing.prototype.addLinkedObject = function(object) {
-	console.log("Physical: : Check put " + this.name + " on: " + object.name);
+	console.log("Physical: Link " + this.name + " with: " + object.name);
 
 	this.linkedObjects.push(object);
 };
@@ -158,6 +155,20 @@ PhysicalThing.prototype.removeLinkedObject = function(object) {
 	});
 
 	this.linkedObjects = array;
+};
+
+PhysicalThing.prototype.safeAddToStage = function() {
+	if(!this.onStage) {
+		this.stage.addToStage(this);
+		this.onStage = true;
+	}
+};
+
+PhysicalThing.prototype.safeRemoveFromStage = function() {
+	if(this.onStage) {
+		this.stage.removeFromStage(this);
+		this.onStage = false;
+	}
 };
 
 PhysicalThing.prototype.checkFalling = function(kitchen) {

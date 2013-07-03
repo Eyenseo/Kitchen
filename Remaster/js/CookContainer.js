@@ -1,5 +1,5 @@
-function CookContainer(context, data, restrainer, soundManager) {
-	Container.call(this, context, data, restrainer);
+function CookContainer(stage, data, restrainer, soundManager) {
+	Container.call(this, stage, data, restrainer);
 	this.soundManager = soundManager;
 	this.temperatureState = "defaultEmpty";
 	this.temperatureLevel = "default";
@@ -7,14 +7,9 @@ function CookContainer(context, data, restrainer, soundManager) {
 CookContainer.prototype = Object.create(Container.prototype);
 CookContainer.prototype.constructor = CookContainer;
 
-CookContainer.prototype.SUPERupdateTemperature = CookContainer.prototype.updateTemperature;
-
+CookContainer.prototype.CON_updateTemperature = CookContainer.prototype.updateTemperature;
 CookContainer.prototype.updateTemperature = function(temperature) {
-	var THIS = this;
-	this.SUPERupdateTemperature(temperature);
-	this.content.forEach(function(object) {
-		object.updateTemperature(THIS.temperature);
-	});
+	this.CON_updateTemperature(temperature);
 	this.selectAnimation();
 };
 
