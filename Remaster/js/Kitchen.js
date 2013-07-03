@@ -62,6 +62,8 @@ Kitchen.prototype.restart = function() {
 
 	});
 
+	this.restrainer.recipeStage = 0;
+
 	this.allObjects = [];
 
 	this.initialiseKitchen();
@@ -118,7 +120,7 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 			case "Fridge":
 				object = new Fridge(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
-			case  "Cupboard":
+			case "Cupboard":
 				object = new Cupboard(this.stage, objectData, this.restrainer);
 				break;
 			case "PowerButton":
@@ -129,6 +131,9 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 				break;
 			case "BackButton":
 				object = new BackButton(this.stage.getContext(), objectData);
+				break;
+			case "RestartButton":
+				object = new RestartButton(this.stage.getContext(), objectData);
 				break;
 			case "Oven":
 				object = new Oven(this.stage, objectData, this.restrainer, this.soundManager);
@@ -161,6 +166,9 @@ Kitchen.prototype.initialiseKitchen = function() {
 	bufferObject = new Background(this.stage);
 	this.collisionBoxes = bufferObject.collisionBoxes;
 	this.addObject(bufferObject, true);
+
+	//Restart Button
+	this.makeObjectById("restartButton");
 
 	//TV
 	this.makeObjectById("powerButton");

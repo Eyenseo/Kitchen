@@ -1412,6 +1412,37 @@
 					}
 				}
 			}
+		},
+		{
+			"id"         : "restartButton",
+			"name"       : "restartButton",
+			"type"       : "RestartButton",
+			"sx"         : -2,
+			"sy"         : -2,
+			"w"          : 90,
+			"h"          : 62,
+			"zOrder"     : 9,
+			"actionValue": 0.0011,
+			"picture"    : "images/stuff/backButton.png",
+			"aniObject"  : {
+				"image"     : {
+					"tileWidth" : 90,
+					"tileHeight": 62,
+					"imgWidth"  : 90,
+					"imgHeight" : 124
+				},
+				"animations": {
+					"default": {
+						"seq" : [0],
+						"loop": false
+					},
+
+					"defaultHover": {
+						"seq" : [1],
+						"loop": false
+					}
+				}
+			}
 		}
 	]
 }

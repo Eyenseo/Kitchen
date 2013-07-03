@@ -41,7 +41,7 @@ Restrainer.prototype.checkPutRequest = function(utensile, objectTwo, silent) {
 			});
 		}
 	} else {
-		throw "put is just available for Container";
+		console.log("put is just available for Container");
 	}
 
 	if(!ok) {
@@ -84,6 +84,7 @@ Restrainer.prototype.checkStage = function() {
 			this.recipeStage = this.recipeStage + 1;
 			this.htmlManager.updateSpeechBubbleText(this.recipe.schedule[this.recipeStage].text);
 		}
+		this.soundManager.play(this.soundManager.POSITIVE);
 	}
 };
 
@@ -96,40 +97,43 @@ Restrainer.prototype.checkActionState = function(stuffObjectName, action) {
 	switch(action.act) {
 		case "put":
 			var utensilObjects = THIS.getObject(action.utensil);
-			utensilObjects.forEach(function(object) {
-				if(!done) {
-					stuffObjects.forEach(function(stuff) {
-						if(stuff instanceof Container) {
-							object.linkedObjects.forEach(function(o) {
-								if(!done && stuffObjectName === o.name) {
-									done = true;
-								}
-							});
-						}
-					});
+			if(utensilObjects !== undefined) {
+				utensilObjects.forEach(function(object) {
 					if(!done) {
-						if(object instanceof Container) {
-							var content = object.content;
-							content.forEach(function(o) {
-								if(!done && stuffObjectName === o.name) {
-									done = true;
-								}
-							});
-							//					if(!done) {
-							//						console.log(stuffObjectName + " was not inside....");
-							//					}
-						} else if(object instanceof Plate || object instanceof Sink) {
-							object.linkedObjects.forEach(function(o) {
-								if(!done && stuffObjectName === o.name) {
-									done = true;
-								}
-							})
-						} else {
-							throw "put is just available for Container, Plate and Sink - bad name: " + object.name;
+						stuffObjects.forEach(function(stuff) {
+							if(stuff instanceof Container) {
+								object.linkedObjects.forEach(function(o) {
+									if(!done && stuffObjectName === o.name) {
+										done = true;
+									}
+								});
+							}
+						});
+						if(!done) {
+							if(object instanceof Container) {
+								var content = object.content;
+								content.forEach(function(o) {
+									if(!done && stuffObjectName === o.name) {
+										done = true;
+									}
+								});
+								//					if(!done) {
+								//						console.log(stuffObjectName + " was not inside....");
+								//					}
+							} else if(object instanceof Plate || object instanceof Sink) {
+								object.linkedObjects.forEach(function(o) {
+									if(!done && stuffObjectName === o.name) {
+										done = true;
+									}
+								})
+							} else {
+								console.log("put is just available for Container, Plate and Sink - bad name: " +
+								            object.name);
+							}
 						}
 					}
-				}
-			});
+				});
+			}
 			break;
 
 		case
@@ -145,7 +149,7 @@ Restrainer.prototype.checkActionState = function(stuffObjectName, action) {
 						//						console.log(stuffObjectName + " was not cooked....");
 						//					}
 					} else {
-						throw "isCooked is just available for Ingredients";
+						console.log("isCooked is just available for Ingredients");
 					}
 				}
 			});
@@ -154,23 +158,24 @@ Restrainer.prototype.checkActionState = function(stuffObjectName, action) {
 		case
 		"isCut"
 		:
-
-			stuffObjects.forEach(function(object) {
-				if(!done) {
-					if(object instanceof Ingredient) {
-						done = object.cut;
-						//					if(!done) {
-						//						console.log(stuffObjectName + " was not cut....");
-						//					}
-					} else {
-						throw "isCut is just available for Ingredients";
+			if(utensilObjects !== undefined) {
+				stuffObjects.forEach(function(object) {
+					if(!done) {
+						if(object instanceof Ingredient) {
+							done = object.cut;
+							//					if(!done) {
+							//						console.log(stuffObjectName + " was not cut....");
+							//					}
+						} else {
+							console.log("isCut is just available for Ingredients");
+						}
 					}
-				}
-			});
+				});
+			}
 			break;
 
 		default:
-			throw "Undefined action!";
+			console.log("Undefined action!");
 	}
 
 	return done;
@@ -187,7 +192,7 @@ Restrainer.prototype.getObject = function(name) {
 	});
 
 	if(name !== "water" && found.length === 0) {
-		throw "Object with name: " + name + " wasn't found!";
+		console.log("Object with name: " + name + " wasn't found!");
 	} else {
 		return found;
 	}
