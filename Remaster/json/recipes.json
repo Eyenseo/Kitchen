@@ -545,7 +545,7 @@
 			                        "sugar", "backingPowder", "butter", "eggs", "cream"],
 			"ingredientsReadable": ["Kartoffeln", "Speck", "Zwiebeln", "Pfeffer", "Salz", "Wasser", "Öl", "Erdbeeren",
 			                        "Mehl", "Zucker", "Backpulver", "Butter", "Eier", "Sahne"],
-			"utensils"           : ["dish", "bigPot", "pan", "sieve", "bowl", "backingTin", "cuttingBoard", "knife"],
+			"utensils"           : ["dish", "bigPot", "pan", "sieve", "bowl", "bakingTin", "cuttingBoard", "knife"],
 			"schedule"           : [
 				{
 					"text"  : "Zuerst füllen Sie einen großen Topf mit Wasser und einer Priese Salz.",
@@ -601,7 +601,7 @@
 					"text"  : "Fetten Sie nun eine Backform mit Butter ein.",
 					"action": [
 						{
-							"utensil": "backingTin",
+							"utensil": "bakingTin",
 							"act"    : "put",
 							"stuff"  : ["butter"]
 						}
@@ -611,7 +611,7 @@
 					"text"  : "Jetzt wird der Inhalt der Schüssel in die Backform gegeben.",
 					"action": [
 						{
-							"utensil": "backingTin",
+							"utensil": "bakingTin",
 							"act"    : "put",
 							"stuff"  : ["flour", "sugar", "backingPowder", "eggs", "cream"]
 						}
@@ -623,7 +623,7 @@
 						{
 							"utensil": "oven",
 							"act"    : "put",
-							"stuff"  : ["backingTin"]
+							"stuff"  : ["bakingTin"]
 						}
 					]
 				},
@@ -728,7 +728,7 @@
 					"action": [
 
 						{
-							"utensil": "backingTin",
+							"utensil": "bakingTin",
 							"act"    : "put",
 							"stuff"  : ["strawberries"]
 						}
