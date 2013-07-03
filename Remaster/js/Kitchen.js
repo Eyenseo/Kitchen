@@ -117,7 +117,7 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 				object = new Oven(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
 			case "Mascot":
-				object = new Mascot(this.stage.context, objectData);
+				object = new Mascot(this.stage.getContext(), objectData);
 				break;
 			default :
 				console.log("There is no object with the type: " + objectData.type);
