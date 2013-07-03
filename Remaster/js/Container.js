@@ -59,6 +59,7 @@ Container.prototype.linkObjects = function(object) {
 				console.log("Container: Put " + content.name + " in: " + object.name);
 				object.addContent(content);
 				THIS.removeContent(content);
+				THIS.temperature = THIS.DEFAULTTEMP;
 			}
 		});
 	}

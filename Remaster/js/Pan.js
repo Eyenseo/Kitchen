@@ -10,10 +10,10 @@ Pan.prototype.selectAnimation = function() {
 
 	if(temperatureLevel + state !== this.temperatureState) {
 		if(this.temperatureLevel === "default") {
-			this.soundManager.playLoop(this.soundManager.POTHEATINGUP);
+			this.soundManager.playLoop(this.soundManager.FIRYING);
 		}
 		if(temperatureLevel === "default") {
-			this.soundManager.stopLoop(this.soundManager.POTHEATINGUP);
+			this.soundManager.stopLoop(this.soundManager.FIRYING);
 		}
 		this.temperatureLevel = temperatureLevel;
 		this.temperatureState = temperatureLevel + state;

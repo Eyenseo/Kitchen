@@ -191,7 +191,7 @@
 		{
 			"id"         : "pan",
 			"name"       : "pan",
-			"type"       : "Pot",
+			"type"       : "Pan",
 			"sx"         : 603,
 			"sy"         : 500,
 			"w"          : 173,

@@ -1,5 +1,6 @@
-function Sieve(stage, data, restrainer) {
+function Sieve(stage, data, restrainer, soundManager) {
 	Container.call(this, stage, data, restrainer);
+	this.soundManager = soundManager;
 }
 Sieve.prototype = Object.create(Container.prototype);
 Sieve.prototype.constructor = Sieve;
@@ -13,6 +14,7 @@ Sieve.prototype.addContent = function(object) {
 };
 
 Sieve.prototype.linkObjects = function(object) {
+	var added = false;
 	var THIS = this;
 	console.log("Sieve");
 	this.PHY_linkObjects(object);
@@ -24,11 +26,15 @@ Sieve.prototype.linkObjects = function(object) {
 					console.log("Sieve: Put " + content.name + " in: " + object.name);
 					object.addContent(content);
 					THIS.removeContent(content);
+					added = true;
 				}
 			} else if(content.tiny) {
 				THIS.removeContent(content);
 			}
 		});
+	}
+	if(added) {
+		this.soundManager.play(this.soundManager.DROP);
 	}
 	this.selectAnimation(false);
 };
