@@ -9,7 +9,6 @@
 			"w"          : 136,
 			"h"          : 110,
 			"zOrder"     : true,
-			"cookTime"   : 10,
 			"actionValue": 0.0011,
 			"picture"    : "images/utensils/bigPot.png",
 			"aniObject"  : {
@@ -104,7 +103,6 @@
 			"w"          : 107,
 			"h"          : 112,
 			"zOrder"     : true,
-			"cookTime"   : 10,
 			"actionValue": 0.0011,
 			"picture"    : "images/utensils/littlePot.png",
 			"aniObject"  : {
@@ -199,7 +197,6 @@
 			"w"          : 136,
 			"h"          : 110,
 			"zOrder"     : true,
-			"cookTime"   : 10,
 			"actionValue": 0.0011,
 			"picture"    : "images/utensils/bigPot.png",
 			"aniObject"  : {
@@ -294,7 +291,6 @@
 			"w"          : 201,
 			"h"          : 111,
 			"zOrder"     : true,
-			"cookTime"   : 10,
 			"actionValue": 600,
 			"picture"    : "images/utensils/knife.png",
 
@@ -336,7 +332,6 @@
 			"w"          : 116,
 			"h"          : 74,
 			"zOrder"     : true,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/utensils/bowl.png",
 
@@ -378,7 +373,6 @@
 			"w"          : 174,
 			"h"          : 78,
 			"zOrder"     : 105,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/utensils/cuttingBoard.png",
 
@@ -419,7 +413,6 @@
 			"w"          : 124,
 			"h"          : 77,
 			"zOrder"     : true,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/utensils/bakingTin.png",
 
@@ -461,7 +454,6 @@
 			"w"          : 136,
 			"h"          : 69,
 			"zOrder"     : true,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/utensils/dish.png",
 
@@ -493,7 +485,6 @@
 			"w"          : 171,
 			"h"          : 72,
 			"zOrder"     : true,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/utensils/sieve.png",
 
@@ -533,7 +524,6 @@
 			"w"          : 91,
 			"h"          : 53,
 			"zOrder"     : 10,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/stuff/hotPlateFront.png",
 
@@ -590,7 +580,6 @@
 			"w"          : 91,
 			"h"          : 53,
 			"zOrder"     : 10,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/stuff/hotPlateFront.png",
 
@@ -647,7 +636,6 @@
 			"w"          : 80,
 			"h"          : 48,
 			"zOrder"     : 10,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/stuff/hotPlateBack.png",
 
@@ -704,7 +692,6 @@
 			"w"          : 80,
 			"h"          : 48,
 			"zOrder"     : 10,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/stuff/hotPlateBack.png",
 
@@ -761,7 +748,6 @@
 			"w"          : 44,
 			"h"          : 44,
 			"zOrder"     : 10,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/stuff/knob.png",
 
@@ -817,7 +803,6 @@
 			"w"          : 44,
 			"h"          : 44,
 			"zOrder"     : 10,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/stuff/knob.png",
 
@@ -873,7 +858,6 @@
 			"w"          : 44,
 			"h"          : 44,
 			"zOrder"     : 10,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/stuff/knob.png",
 
@@ -929,7 +913,6 @@
 			"w"          : 44,
 			"h"          : 44,
 			"zOrder"     : 10,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/stuff/knob.png",
 
@@ -985,7 +968,6 @@
 			"w"          : 44,
 			"h"          : 44,
 			"zOrder"     : 10,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/stuff/knob.png",
 
@@ -1042,7 +1024,6 @@
 			"w"          : 178,
 			"h"          : 168,
 			"zOrder"     : 10,
-			"cookTime"   : 10,
 			"actionValue": 0.0011,
 			"picture"    : "images/stuff/sinkTap.png",
 			"aniObject"  : {
@@ -1087,7 +1068,6 @@
 			"w"          : 216,
 			"h"          : 232,
 			"zOrder"     : 649,
-			"cookTime"   : 10,
 			"actionValue": 0.0011,
 			"picture"    : "images/stuff/oven.png",
 			"aniObject"  : {
@@ -1186,7 +1166,6 @@
 			"w"          : 214,
 			"h"          : 230,
 			"zOrder"     : 649,
-			"cookTime"   : 10,
 			"actionValue": 0.0011,
 			"picture"    : "images/stuff/ovenDoor.png",
 			"aniObject"  : {
@@ -1285,7 +1264,6 @@
 			"w"          : 259,
 			"h"          : 513,
 			"zOrder"     : 649,
-			"cookTime"   : 10,
 			"actionValue": 0.0011,
 			"picture"    : "images/stuff/fridgeDoor.png",
 			"aniObject"  : {
@@ -1330,7 +1308,6 @@
 			"w"          : 356,
 			"h"          : 251,
 			"zOrder"     : 650,
-			"cookTime"   : 10,
 			"actionValue": 0.0011,
 			"picture"    : "images/stuff/leftCupboardDoor.png",
 			"aniObject"  : {
@@ -1375,7 +1352,6 @@
 			"w"          : 356,
 			"h"          : 251,
 			"zOrder"     : 650,
-			"cookTime"   : 10,
 			"actionValue": 0.0011,
 			"picture"    : "images/stuff/rightCupboardDoor.png",
 			"aniObject"  : {
@@ -1406,6 +1382,99 @@
 					},
 					"openHover": {
 						"seq" : [3],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"id"         : "powerButton",
+			"name"       : "powerButton",
+			"type"       : "PowerButton",
+			"sx"         : 205,
+			"sy"         : 54,
+			"w"          : 34,
+			"h"          : 35,
+			"zOrder"     : 9,
+			"actionValue": 0.0011,
+			"picture"    : "images/stuff/tvPowerButton.png",
+			"aniObject"  : {
+				"image"     : {
+					"tileWidth" : 34,
+					"tileHeight": 35,
+					"imgWidth"  : 34,
+					"imgHeight" : 70
+				},
+				"animations": {
+					"default": {
+						"seq" : [0],
+						"loop": false
+					},
+
+					"defaultHover": {
+						"seq" : [1],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"id"         : "forwardButton",
+			"name"       : "forwardButton",
+			"type"       : "ForwardButton",
+			"sx"         : 206,
+			"sy"         : 90,
+			"w"          : 34,
+			"h"          : 34,
+			"zOrder"     : 9,
+			"actionValue": 0.0011,
+			"picture"    : "images/stuff/tvForwardButton.png",
+			"aniObject"  : {
+				"image"     : {
+					"tileWidth" : 34,
+					"tileHeight": 34,
+					"imgWidth"  : 34,
+					"imgHeight" : 68
+				},
+				"animations": {
+					"default": {
+						"seq" : [0],
+						"loop": false
+					},
+
+					"defaultHover": {
+						"seq" : [1],
+						"loop": false
+					}
+				}
+			}
+		},
+		{
+			"id"         : "backButton",
+			"name"       : "backButton",
+			"type"       : "BackButton",
+			"sx"         : 205,
+			"sy"         : 110,
+			"w"          : 34,
+			"h"          : 34,
+			"zOrder"     : 9,
+			"actionValue": 0.0011,
+			"picture"    : "images/stuff/tvBackButton.png",
+			"aniObject"  : {
+				"image"     : {
+					"tileWidth" : 34,
+					"tileHeight": 34,
+					"imgWidth"  : 34,
+					"imgHeight" : 68
+				},
+				"animations": {
+					"default": {
+						"seq" : [0],
+						"loop": false
+					},
+
+					"defaultHover": {
+						"seq" : [1],
 						"loop": false
 					}
 				}

@@ -1,5 +1,4 @@
 function Kitchen(canvasId) {
-
 	// get the right requestAnimationFrame for this browser
 	var requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame ||
 	                            window.webkitRequestAnimationFrame || window.msRequestAnimationFrame;
@@ -17,6 +16,9 @@ function Kitchen(canvasId) {
 
 	//SoundManager
 	this.soundManager = new SoundManager();
+
+	//VideoManager
+	this.videoManager = new VideoManager();
 
 	//Restrainer
 	this.restrainer = new Restrainer(this);
@@ -100,6 +102,15 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 			case  "Cupboard":
 				object = new Cupboard(this.stage, objectData, this.restrainer);
 				break;
+			case "PowerButton":
+				object = new PowerButton(this.stage.getContext(), objectData);
+				break;
+			case "ForwardButton":
+				object = new ForwardButton(this.stage.getContext(), objectData);
+				break;
+			case "BackButton":
+				object = new BackButton(this.stage.getContext(), objectData);
+				break;
 			case "Oven":
 				object = new Oven(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
@@ -128,6 +139,11 @@ Kitchen.prototype.initialiseKitchen = function() {
 	bufferObject = new Background(this.stage);
 	this.collisionBoxes = bufferObject.collisionBoxes;
 	this.addObject(bufferObject, true);
+
+	//TV
+	this.makeObjectById("powerButton");
+	this.makeObjectById("backButton");
+	this.makeObjectById("forwardButton");
 
 	//Fridge
 	this.makeObjectById("fridge");
@@ -169,12 +185,15 @@ Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 	this.stage.reorderRenderObjects();
 	this.restrainer.setRecipe(currentRecipe);
 	this.prepared = true;
+
 };
 
 Kitchen.prototype.onClick = function(event) {
-	if(this.pressesObject !== null && this.pressesObject !== undefined && this.pressesObject === event.target &&
-	   "clickAction" in event.target) {
-		event.target.clickAction(this);
+	if(event.target !== null && event.target !== undefined) {
+		if(this.pressesObject !== null && this.pressesObject !== undefined && this.pressesObject === event.target &&
+		   "clickAction" in event.target) {
+			event.target.clickAction(this);
+		}
 	}
 };
 
@@ -184,9 +203,11 @@ Kitchen.prototype.onClick = function(event) {
  * @param event
  */
 Kitchen.prototype.onDragend = function(event) {
-	if("dragEndAction" in event.target) {
-		event.target.dragEndAction(this);
-		this.stage.reorderRenderObjects();
+	if(event.target !== null && event.target !== undefined) {
+		if("dragEndAction" in event.target) {
+			event.target.dragEndAction(this);
+			this.stage.reorderRenderObjects();
+		}
 	}
 };
 
@@ -195,39 +216,49 @@ Kitchen.prototype.onDragend = function(event) {
  * @param event
  */
 Kitchen.prototype.onDragstart = function(event) {
-	if("dragStartAction" in event.target) {
-		event.target.dragStartAction(this);
+	if(event.target !== null && event.target !== undefined) {
+		if("dragStartAction" in event.target) {
+			event.target.dragStartAction(this);
+		}
 	}
 };
 
 //TODO JAVADOC
 Kitchen.prototype.onMouseover = function(event) {
-	if("mouseOverAction" in event.target) {
-		event.target.mouseOverAction(this);
+	if(event.target !== null && event.target !== undefined) {
+		if("mouseOverAction" in event.target) {
+			event.target.mouseOverAction(this);
+		}
 	}
 };
 
 //TODO JAVADOC
 Kitchen.prototype.onMouseout = function(event) {
-	if("mouseOutAction" in event.target) {
-		event.target.mouseOutAction(this);
+	if(event.target !== null && event.target !== undefined) {
+		if("mouseOutAction" in event.target) {
+			event.target.mouseOutAction(this);
+		}
 	}
 };
 
 //TODO JAVADOC
 Kitchen.prototype.onMousedown = function(event) {
-	if("mouseDownAction" in event.target && event.target.hasOwnProperty("draggable") && event.target.draggable) {
-		event.target.mouseDownAction(this);
-		this.stage.reorderRenderObjects();
+	if(event.target !== null && event.target !== undefined) {
+		if("mouseDownAction" in event.target && event.target.hasOwnProperty("draggable") && event.target.draggable) {
+			event.target.mouseDownAction(this);
+			this.stage.reorderRenderObjects();
+		}
 	}
 	this.pressesObject = event.target;
 };
 
 //TODO JAVADOC
 Kitchen.prototype.onMouseup = function(event) {
-	if("mouseUpAction" in event.target) {
-		event.target.mouseUpAction(this);
-		this.stage.reorderRenderObjects();
+	if(event.target !== null && event.target !== undefined) {
+		if("mouseUpAction" in event.target) {
+			event.target.mouseUpAction(this);
+			this.stage.reorderRenderObjects();
+		}
 	}
 };
 
@@ -247,6 +278,9 @@ Kitchen.prototype.run = function(kit) {
 		});
 		this.restrainer.checkStage();
 	}
+
+	this.videoManager.changePower(); // Dirty hack - probably because of something in the stage?
+	this.videoManager.changePower(); // if this is not done the stage doesn't start to render the previous created
 
 	// Always render after the updates
 	kit.stage.render();

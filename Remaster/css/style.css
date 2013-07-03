@@ -5,7 +5,24 @@
 }
 
 #kitchenCanvas {
-	border : 1px solid black;
+	position : relative;
+	z-index  : 1;
+	border   : 1px solid black;
+}
+
+#video {
+	z-index          : 0;
+	margin-top       : -597px;
+	margin-left      : 82px;
+	width            : 129px;
+	height           : 80px;
+	background-color : #1F1F1F;
+}
+
+#video video {
+	display    : block;
+	margin     : auto;
+	max-height : 80px;
 }
 
 #startUpDiv {
@@ -36,8 +53,8 @@
 }
 
 #scrollDiv {
-	height     : 503px; /* try and error -_- */
-	overflow-y : auto;
+	overflow-y : auto; /* try and error -_- */
+	height     : 503px;
 }
 
 #menuDiv {
