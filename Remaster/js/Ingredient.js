@@ -42,13 +42,20 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
 	});
 
 	objectsUnder.forEach(function(object) {
-		THIS.linkObjects(object);
+		if(object instanceof Oven || object instanceof Cupboard) {
+			if((!object.open && !THIS.stage._checkTransparency({ x: bottomObject.cx, y: bottomObject.cy }, object))) {
+				THIS.linkObjects(object);
+			}
+		} else {
+			THIS.linkObjects(object);
+		}
 	});
 };
 
 Ingredient.prototype.linkObjects = function(object) {
 	if(object instanceof CuttingBoard && this.cut ||
-	   object instanceof Container && this.restrainer.checkPutRequest(object, this) || object instanceof Cupboard) {
+	   object instanceof Container && this.restrainer.checkPutRequest(object, this) || object instanceof Cupboard ||
+	   object instanceof Oven) {
 		this.addLinkedObject(object);
 		object.addLinkedObject(this);
 

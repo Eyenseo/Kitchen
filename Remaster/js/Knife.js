@@ -13,22 +13,35 @@ Knife.prototype.dragEndAction = function(kitchen) {
 	var bottom = bottomObject.cy - 10; //for the glow
 	var left = bottomObject.cx - this.width / 4;
 	var right = bottomObject.cx + this.width / 4;
-	var cuttingBoard = null;
+	var objectsUnder = [];
 
 	kitchen.allObjects.forEach(function(object) {
 		if(object instanceof CuttingBoard || object instanceof Cupboard) {
 			var zone = object.getHitZone();
 			if(right >= zone.hx && bottom >= zone.hy && left <= zone.hx + zone.hw && bottom <= zone.hy + zone.hh) {
-				cuttingBoard = object;
+				objectsUnder.push(object);
 			}
 		}
 	});
 
-	this.linkObjects(cuttingBoard);
+	objectsUnder.forEach(function(object) {
+		if(object instanceof Oven || object instanceof Cupboard) {
+			console.log("Knife: check Oven and Cupboard");
+			if((!object.open && !THIS.stage._checkTransparency({ x: bottomObject.cx, y: bottomObject.cy }, object))) {
+				THIS.linkObjects(object);
+			}
+		} else {
+			THIS.linkObjects(object);
+		}
+	});
 
 	this.linkedObjects.forEach(function(object) {
 		if(object instanceof CuttingBoard && object.content.length !== 0) {
-			THIS.cutting = true;
+			object.content.forEach(function(content) {
+				if(!content.cut) {
+					THIS.cutting = true;
+				}
+			});
 			THIS.selectAnimation(false);
 		}
 	});
@@ -51,7 +64,7 @@ Knife.prototype.selectAnimation = function(keepIndex) {
 };
 
 Knife.prototype.linkObjects = function(object) {
-	if(object instanceof CuttingBoard || object instanceof Cupboard) {
+	if(object instanceof CuttingBoard || object instanceof Cupboard || object instanceof Oven) {
 		object.addLinkedObject(this);
 		this.addLinkedObject(object);
 	}

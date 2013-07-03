@@ -35,7 +35,14 @@ Container.prototype.dragEndAction = function(kitchen) {
 	});
 
 	objectsUnder.forEach(function(object) {
-		THIS.linkObjects(object);
+		if(object instanceof Oven || object instanceof Cupboard) {
+			console.log("Container: check Oven and Cupboard");
+			if((!object.open && !THIS.stage._checkTransparency({ x: bottomObject.cx, y: bottomObject.cy }, object))) {
+				THIS.linkObjects(object);
+			}
+		} else {
+			THIS.linkObjects(object);
+		}
 	});
 };
 
