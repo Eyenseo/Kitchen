@@ -7,16 +7,16 @@
 			"sx"         : 655,
 			"sy"         : 400,
 			"w"          : 136,
-			"h"          : 110,
+			"h"          : 130,
 			"zOrder"     : true,
 			"actionValue": 0.0011,
 			"picture"    : "images/utensils/bigPot.png",
 			"aniObject"  : {
 				"image"     : {
 					"tileWidth" : 136,
-					"tileHeight": 110,
+					"tileHeight": 130,
 					"imgWidth"  : 2720,
-					"imgHeight" : 440
+					"imgHeight" : 780
 				},
 				"animations": {
 					"default": {
