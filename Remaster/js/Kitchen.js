@@ -20,11 +20,11 @@ function Kitchen(canvasId) {
 	//VideoManager
 	this.videoManager = new VideoManager();
 
-	//Restrainer
-	this.restrainer = new Restrainer(this);
-
 	//HTML manager
 	this.htmlManager = new HTMLManager(this.jsonHandler, this);
+
+	//Restrainer
+	this.restrainer = new Restrainer(this);
 
 	//event stuff
 	this.stage.registerEvent('click', this);
