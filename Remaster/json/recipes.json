@@ -536,7 +536,7 @@
 			]
 		}     ,
 		{
-			"name"               : "Zwei in Einem:[br] Bratkartoffeln und Erdbeerkuchen",
+			"name"               : "Zwei in Einem: <br> Bratkartoffeln und Erdbeerkuchen",
 			"difficulty"         : 5,
 			"pictureBig"         : "/images/recipe/strawberriesBig.png",
 			"pictureFinish"      : "/images/recipe/potatoesFinish.png",
