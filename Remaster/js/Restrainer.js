@@ -136,9 +136,7 @@ Restrainer.prototype.checkActionState = function(stuffObjectName, action) {
 			}
 			break;
 
-		case
-		"isCooked"
-		:
+		case "isCooked":
 
 			stuffObjects.forEach(function(object) {
 				if(!done) {
@@ -155,23 +153,19 @@ Restrainer.prototype.checkActionState = function(stuffObjectName, action) {
 			});
 			break;
 
-		case
-		"isCut"
-		:
-			if(utensilObjects !== undefined) {
-				stuffObjects.forEach(function(object) {
-					if(!done) {
-						if(object instanceof Ingredient) {
-							done = object.cut;
-							//					if(!done) {
-							//						console.log(stuffObjectName + " was not cut....");
-							//					}
-						} else {
-							console.log("isCut is just available for Ingredients");
-						}
+		case "isCut":
+			stuffObjects.forEach(function(object) {
+				if(!done) {
+					if(object instanceof Ingredient) {
+						done = object.cut;
+						//					if(!done) {
+						//						console.log(stuffObjectName + " was not cut....");
+						//					}
+					} else {
+						console.log("isCut is just available for Ingredients");
 					}
-				});
-			}
+				}
+			});
 			break;
 
 		default:
