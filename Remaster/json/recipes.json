@@ -545,8 +545,7 @@
 			                        "sugar", "backingPowder", "butter", "eggs", "cream"],
 			"ingredientsReadable": ["Kartoffeln", "Speck", "Zwiebeln", "Pfeffer", "Salz", "Wasser", "Öl", "Erdbeeren",
 			                        "Mehl", "Zucker", "Backpulver", "Butter", "Eier", "Sahne"],
-			"utensils"           : ["dish", "plate", "bigPot", "pan", "sieve", "bowl", "backingTin", "cuttingBoard",
-			                        "knife"],
+			"utensils"           : ["dish", "bigPot", "pan", "sieve", "bowl", "backingTin", "cuttingBoard", "knife"],
 			"schedule"           : [
 				{
 					"text"  : "Zuerst füllen Sie einen großen Topf mit Wasser und einer Priese Salz.",
