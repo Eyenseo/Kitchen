@@ -39,7 +39,7 @@ Oven.prototype.selectAnimation = function(keepIndex) {
 
 Oven.prototype.clickAction = function(kitchen) {
 	this.open = !this.open;
-	this.selectAnimation(false);
+	this.selectAnimation(true);
 };
 
 Oven.prototype.action = function(kitchen) {

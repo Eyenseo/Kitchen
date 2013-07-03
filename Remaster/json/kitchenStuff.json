@@ -1071,105 +1071,6 @@
 			"id"         : "oven",
 			"name"       : "oven",
 			"type"       : "Oven",
-			"sx"         : 402,
-			"sy"         : 432,
-			"w"          : 216,
-			"h"          : 232,
-			"zOrder"     : 649,
-			"cookTime"   : 10,
-			"actionValue": 0.0011,
-			"picture"    : "images/stuff/oven.png",
-			"aniObject"  : {
-				"image"     : {
-					"tileWidth" : 216,
-					"tileHeight": 232,
-					"imgWidth"  : 216,
-					"imgHeight" : 3712
-				},
-				"animations": {
-					"default": {
-						"seq" : [0],
-						"loop": false
-					},
-
-					"defaultClosed"     : {
-						"seq" : [0],
-						"loop": false
-					},
-					"defaultClosedHover": {
-						"seq" : [1],
-						"loop": false
-					},
-
-					"defaultOpen"     : {
-						"seq" : [2],
-						"loop": false
-					},
-					"defaultOpenHover": {
-						"seq" : [3],
-						"loop": false
-					},
-
-					"lowClosed"     : {
-						"seq" : [4],
-						"loop": false
-					},
-					"lowClosedHover": {
-						"seq" : [5],
-						"loop": false
-					},
-
-					"lowOpen"     : {
-						"seq" : [6],
-						"loop": false
-					},
-					"lowOpenHover": {
-						"seq" : [7],
-						"loop": false
-					},
-
-					"mediumClosed"     : {
-						"seq" : [8],
-						"loop": false
-					},
-					"mediumClosedHover": {
-						"seq" : [9],
-						"loop": false
-					},
-
-					"mediumOpen"     : {
-						"seq" : [10],
-						"loop": false
-					},
-					"mediumOpenHover": {
-						"seq" : [11],
-						"loop": false
-					},
-
-					"highClosed"     : {
-						"seq" : [12],
-						"loop": false
-					},
-					"highClosedHover": {
-						"seq" : [13],
-						"loop": false
-					},
-
-					"highOpen"     : {
-						"seq" : [14],
-						"loop": false
-					},
-					"highOpenHover": {
-						"seq" : [15],
-						"loop": false
-					}
-				}
-			}
-		},
-		{
-			"id"         : "oven",
-			"name"       : "oven",
-			"type"       : "Oven",
 			"sx"         : 394,
 			"sy"         : 433,
 			"w"          : 231,
@@ -1181,7 +1082,7 @@
 				"image"     : {
 					"tileWidth" : 231,
 					"tileHeight": 230,
-					"imgWidth"  : 231,
+					"imgWidth"  : 4620,
 					"imgHeight" : 920
 				},
 				"animations": {
@@ -1195,71 +1096,71 @@
 						"loop": false
 					},
 					"defaultClosedHover": {
-						"seq" : [1],
+						"seq" : [20],
 						"loop": false
 					},
 
 					"defaultOpen"     : {
-						"seq" : [2],
+						"seq" : [40],
 						"loop": false
 					},
 					"defaultOpenHover": {
-						"seq" : [3],
+						"seq" : [60],
 						"loop": false
 					},
 
 					"lowClosed"     : {
-						"seq" : [0],
-						"loop": false
+						"seq" : [1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2],
+						"loop": true
 					},
 					"lowClosedHover": {
-						"seq" : [1],
-						"loop": false
+						"seq" : [21, 22, 23, 24, 25, 26, 26, 25, 24, 23, 22],
+						"loop": true
 					},
 
 					"lowOpen"     : {
-						"seq" : [2],
-						"loop": false
+						"seq" : [41, 42, 43, 44, 45, 46, 46, 45, 44, 43, 42],
+						"loop": true
 					},
 					"lowOpenHover": {
-						"seq" : [3],
-						"loop": false
+						"seq" : [61, 62, 63, 64, 65, 66, 66, 65, 64, 63, 62],
+						"loop": true
 					},
 
 					"mediumClosed"     : {
-						"seq" : [0],
-						"loop": false
+						"seq" : [27, 28, 29, 30, 31, 32, 32, 31, 30, 29, 28],
+						"loop": true
 					},
 					"mediumClosedHover": {
-						"seq" : [1],
-						"loop": false
+						"seq" : [47, 48, 49, 50, 51, 52, 52, 51, 50, 49, 48],
+						"loop": true
 					},
 
 					"mediumOpen"     : {
-						"seq" : [2],
-						"loop": false
+						"seq" : [47, 48, 49, 50, 51, 52, 52, 51, 50, 49, 48],
+						"loop": true
 					},
 					"mediumOpenHover": {
-						"seq" : [3],
-						"loop": false
+						"seq" : [67, 68, 69, 70, 71, 72, 72, 71, 70, 69, 68],
+						"loop": true
 					},
 
 					"highClosed"     : {
-						"seq" : [0],
-						"loop": false
+						"seq" : [13, 14, 15, 16, 17, 18, 18, 17, 16, 15, 14],
+						"loop": true
 					},
 					"highClosedHover": {
-						"seq" : [1],
-						"loop": false
+						"seq" : [33, 34, 35, 36, 37, 38, 38, 37, 36, 35, 34],
+						"loop": true
 					},
 
 					"highOpen"     : {
-						"seq" : [2],
-						"loop": false
+						"seq" : [53, 54, 55, 56, 57, 58, 58, 57, 56, 55, 54],
+						"loop": true
 					},
 					"highOpenHover": {
-						"seq" : [3],
-						"loop": false
+						"seq" : [73, 74, 75, 76, 77, 78, 78, 77, 76, 75, 74],
+						"loop": true
 					}
 				}
 			}
