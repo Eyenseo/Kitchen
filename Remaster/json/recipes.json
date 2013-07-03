@@ -536,13 +536,13 @@
 			]
 		}     ,
 		{
-			"name"               : "Zwei in Einem: <br> Bratkartoffeln und Erdbeerkuchen",
+			"name"               : "Zwei in Einem: Bratkartoffeln und Erdbeerkuchen",
 			"difficulty"         : 5,
 			"pictureBig"         : "/images/recipe/strawberriesBig.png",
 			"pictureFinish"      : "/images/recipe/potatoesFinish.png",
 			"description"        : "Wer sich schon an den Einzelrezepten versucht hat, kann es mit diesem Rezept probieren, in dem Zwei Gerichte auf einmal fertiggestellt werden sollen: Bratkartofeln und Erdbeerkuchen.",
-			"ingredients"        : ["potato", "bacon", "onion", "pepper", "water", "oil", "salt", "strawberries",
-			                        "flour", "sugar", "backingPowder", "butter", "eggs", "cream"],
+			"ingredients"        : ["potato", "bacon", "onion", "pepper", "oil", "salt", "strawberries", "flour",
+			                        "sugar", "backingPowder", "butter", "eggs", "cream"],
 			"ingredientsReadable": ["Kartoffeln", "Speck", "Zwiebeln", "Pfeffer", "Salz", "Wasser", "Öl", "Erdbeeren",
 			                        "Mehl", "Zucker", "Backpulver", "Butter", "Eier", "Sahne"],
 			"utensils"           : ["dish", "plate", "bigPot", "pan", "sieve", "bowl", "backingTin", "cuttingBoard",
