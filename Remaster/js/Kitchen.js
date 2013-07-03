@@ -103,7 +103,7 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 				object = new CookContainer(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
 			case "Knife":
-				object = new Knife(this.stage, objectData, this.restrainer);
+				object = new Knife(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
 			case "Container":
 				object = new Container(this.stage, objectData, this.restrainer);
@@ -121,7 +121,7 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 				object = new Fridge(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
 			case "Cupboard":
-				object = new Cupboard(this.stage, objectData, this.restrainer);
+				object = new Cupboard(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
 			case "PowerButton":
 				object = new PowerButton(this.stage.getContext(), objectData);

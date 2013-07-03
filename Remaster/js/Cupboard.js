@@ -1,6 +1,7 @@
-function Cupboard(stage, data, restrainer) {
+function Cupboard(stage, data, restrainer, soundManager) {
 	PhysicalThing.call(this, stage, data, restrainer);
 	this.open = false;
+	this.soundManager = soundManager;
 }
 
 Cupboard.prototype = Object.create(PhysicalThing.prototype);
@@ -24,6 +25,13 @@ Cupboard.prototype.selectAnimation = function(keepIndex) {
 
 Cupboard.prototype.clickAction = function(kitchen) {
 	this.open = !this.open;
+
+	if(this.open) {
+		this.soundManager.play(this.soundManager.OPENDOOR);
+	} else {
+		this.soundManager.play(this.soundManager.CLOSEDOOR);
+	}
+
 	this.selectAnimation(false);
 };
 

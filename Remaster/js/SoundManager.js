@@ -9,14 +9,24 @@ function SoundManager() {
 	this.potOntoStoveLoop = 0;
 	this.negativeLoop = 0;
 	this.positiveLoop = 0;
+	this.waterLoop = 0;
+	this.fryingLoop = 0;
+	this.openDoorLoop = 0;
+	this.closeDoorLoop = 0;
+	this.cutLoop = 0;
 
 	//creates array for sound files. The length of the array is the amount of songs that can be played simultaneously
 	this.DROP = new Array(4);
 	this.KNOB = new Array(3);
 	this.POTHEATINGUP = new Array(4);
 	this.POTONTOSTOVE = new Array(3);
-	this.NEGATIVE = new Array(3);
+	this.NEGATIVE = new Array(1);
 	this.POSITIVE = new Array(1);
+	this.WATER = new Array(3);
+	this.FIRYING = new Array(3);
+	this.OPENDOOR = new Array(3);
+	this.CLOSEDOOR = new Array(3);
+	this.CUT = new Array(2);
 
 	this.initialiseSound(this.DROP, "sounds/drop.wav");
 	this.initialiseSound(this.KNOB, "sounds/knob.wav");
@@ -24,6 +34,11 @@ function SoundManager() {
 	this.initialiseSound(this.POTONTOSTOVE, "sounds/potOntoStove.wav");
 	this.initialiseSound(this.NEGATIVE, "sounds/negativeBeep.wav");
 	this.initialiseSound(this.POSITIVE, "sounds/positiveChime.wav");
+	this.initialiseSound(this.WATER, "sounds/water.wav");
+	this.initialiseSound(this.FIRYING, "sounds/frying.wav");
+	this.initialiseSound(this.OPENDOOR, "sounds/openDoor.wav");
+	this.initialiseSound(this.CLOSEDOOR, "sounds/closeDoor.wav");
+	this.initialiseSound(this.CUT, "sounds/cut.wav");
 }
 //TODO is this needed?
 SoundManager.prototype.constructor = SoundManager;
@@ -47,12 +62,32 @@ SoundManager.prototype.stopAll = function() {
 	this.POSITIVE.forEach(function(sound) {
 		sound.pause();
 	});
+	this.WATER.forEach(function(sound) {
+		sound.pause();
+	});
+	this.FIRYING.forEach(function(sound) {
+		sound.pause();
+	});
+	this.OPENDOOR.forEach(function(sound) {
+		sound.pause();
+	});
+	this.CLOSEDOOR.forEach(function(sound) {
+		sound.pause();
+	});
+	this.CUT.forEach(function(sound) {
+		sound.pause();
+	});
 	this.dropLoop = 0;
 	this.knobLoop = 0;
 	this.potHeatingUpLoop = 0;
 	this.potOntoStoveLoop = 0;
 	this.negativeLoop = 0;
 	this.positiveLoop = 0;
+	this.waterLoop = 0;
+	this.fryingLoop = 0;
+	this.openDoorLoop = 0;
+	this.closeDoorLoop = 0;
+	this.cutLoop = 0;
 };
 
 /**
@@ -117,6 +152,16 @@ SoundManager.prototype.manageSound = function(sound, status) {
 		this.potHeatingUpLoop += this.controlSound(this.POTHEATINGUP, this.potHeatingUpLoop, status);
 	} else if(sound === this.POTONTOSTOVE) {
 		this.potOntoStoveLoop += this.controlSound(this.POTONTOSTOVE, this.potOntoStoveLoop, status);
+	} else if(sound === this.WATER) {
+		this.waterLoop += this.controlSound(this.WATER, this.waterLoop, status);
+	} else if(sound === this.FIRYING) {
+		this.fryingLoop += this.controlSound(this.FIRYING, this.fryingLoop, status);
+	} else if(sound === this.OPENDOOR) {
+		this.openDoorLoop += this.controlSound(this.OPENDOOR, this.openDoorLoop, status);
+	} else if(sound === this.CLOSEDOOR) {
+		this.closeDoorLoop += this.controlSound(this.CLOSEDOOR, this.closeDoorLoop, status);
+	} else if(sound === this.CUT) {
+		this.cutLoop += this.controlSound(this.CUT, this.cutLoop, status);
 	}
 };
 

@@ -15,6 +15,7 @@ function Sink(stage, data, restrainer, kitchen, waterData) {
 	this.currentAniIndex = this.currentAnimation.length - 1;
 	this.waterData = waterData;
 	this.kitchen = kitchen;
+	this.soundManager = kitchen.soundManager;
 	this.water = new Ingredient(stage, this.waterData);
 }
 
@@ -68,5 +69,8 @@ Sink.prototype.clickAction = function(kitchen) {
 		this.linkedObjects.forEach(function(object) {
 			object.addContent(kitchen.makeObject(THIS.waterData, false));
 		});
+		this.soundManager.playLoop(this.soundManager.WATER);
+	} else {
+		this.soundManager.stopLoop(this.soundManager.WATER);
 	}
 };

@@ -24,6 +24,13 @@ Fridge.prototype.selectAnimation = function(keepIndex) {
 
 Fridge.prototype.clickAction = function(kitchen) {
 	this.open = !this.open;
+
+	if(this.open) {
+		this.soundManager.play(this.soundManager.OPENDOOR);
+	} else {
+		this.soundManager.play(this.soundManager.CLOSEDOOR);
+	}
+
 	this.selectAnimation(false);
 };
 

@@ -5,8 +5,9 @@
  * @param restrainer Restrainerobject from the restrainer.js
  * @constructor
  */
-function Knife(stage, data, restrainer) {
+function Knife(stage, data, restrainer, soundManager) {
 	PhysicalThing.call(this, stage, data, restrainer);
+	this.soundManager = soundManager;
 	this.cutting = false;
 	this.cuttingTime = 0;
 }
@@ -63,6 +64,10 @@ Knife.prototype.dragEndAction = function(kitchen) {
 			THIS.selectAnimation(false);
 		}
 	});
+
+	if(this.cutting) {
+		this.soundManager.playLoop(this.soundManager.CUT);
+	}
 };
 
 /**
@@ -107,7 +112,8 @@ Knife.prototype.action = function(kitchen) {
 			});
 			this.cuttingTime = 0;
 			this.cutting = false;
-			this.selectAnimation();
+			this.soundManager.stopLoop(this.soundManager.CUT);
+			this.selectAnimation(false);
 		} else {
 			this.cuttingTime++;
 		}
