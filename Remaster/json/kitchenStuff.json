@@ -194,17 +194,17 @@
 			"type"       : "Pot",
 			"sx"         : 603,
 			"sy"         : 500,
-			"w"          : 190,
-			"h"          : 110,
+			"w"          : 173,
+			"h"          : 100,
 			"zOrder"     : true,
 			"actionValue": 0.0011,
 			"picture"    : "images/utensils/pan.png",
 			"aniObject"  : {
 				"image"     : {
-					"tileWidth" : 190,
-					"tileHeight": 110,
-					"imgWidth"  : 3800,
-					"imgHeight" : 660
+					"tileWidth" : 173,
+					"tileHeight": 100,
+					"imgWidth"  : 3460,
+					"imgHeight" : 600
 				},
 				"animations": {
 					"default": {
