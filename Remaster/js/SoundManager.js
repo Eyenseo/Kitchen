@@ -8,6 +8,7 @@ function SoundManager() {
 	this.potHeatingUpLoop = 0;
 	this.potOntoStoveLoop = 0;
 	this.negativeLoop = 0;
+	this.positiveLoop = 0;
 
 	//creates array for sound files. The length of the array is the amount of songs that can be played simultaneously
 	this.DROP = new Array(4);
@@ -15,12 +16,14 @@ function SoundManager() {
 	this.POTHEATINGUP = new Array(4);
 	this.POTONTOSTOVE = new Array(3);
 	this.NEGATIVE = new Array(3);
+	this.POSITIVE = new Array(1);
 
 	this.initialiseSound(this.DROP, "sounds/drop.wav");
 	this.initialiseSound(this.KNOB, "sounds/knob.wav");
 	this.initialiseSound(this.POTHEATINGUP, "sounds/potHeatingUp.wav");
 	this.initialiseSound(this.POTONTOSTOVE, "sounds/potOntoStove.wav");
 	this.initialiseSound(this.NEGATIVE, "sounds/negativeBeep.wav");
+	this.initialiseSound(this.POSITIVE, "sounds/positiveChime.wav");
 }
 //TODO is this needed?
 SoundManager.prototype.constructor = SoundManager;
@@ -41,11 +44,15 @@ SoundManager.prototype.stopAll = function() {
 	this.NEGATIVE.forEach(function(sound) {
 		sound.pause();
 	});
+	this.POSITIVE.forEach(function(sound) {
+		sound.pause();
+	});
 	this.dropLoop = 0;
 	this.knobLoop = 0;
 	this.potHeatingUpLoop = 0;
 	this.potOntoStoveLoop = 0;
 	this.negativeLoop = 0;
+	this.positiveLoop = 0;
 };
 
 /**
@@ -100,6 +107,8 @@ SoundManager.prototype.playLoop = function(sound) {
 SoundManager.prototype.manageSound = function(sound, status) {
 	if(sound === this.DROP) {
 		this.dropLoop += this.controlSound(this.DROP, this.dropLoop, status);
+	} else if(sound === this.POSITIVE) {
+		this.positiveLoop += this.controlSound(this.POSITIVE, this.positiveLoop, status);
 	} else if(sound === this.NEGATIVE) {
 		this.negativeLoop += this.controlSound(this.NEGATIVE, this.negativeLoop, status);
 	} else if(sound === this.KNOB) {
