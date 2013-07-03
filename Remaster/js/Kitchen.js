@@ -43,6 +43,8 @@ function Kitchen(canvasId) {
 	this.maxIndex = 660;
 	this.initialiseKitchen();
 
+	this.bug = 0;
+
 	// start the animation loop
 	// parameter this (kitchen itself) needed, because of the closure within the run function
 	this.run(this);
@@ -279,8 +281,11 @@ Kitchen.prototype.run = function(kit) {
 		this.restrainer.checkStage();
 	}
 
-	this.videoManager.changePower(); // Dirty hack - probably because of something in the stage?
-	this.videoManager.changePower(); // if this is not done the stage doesn't start to render the previous created
+	if(this.bug < 5) { // Dirty hack - probably because of something in the stage?
+		this.videoManager.changePower(); // if this is not done the stage doesn't start to render the previous created
+		this.videoManager.changePower();
+		this.bug++
+	}
 
 	// Always render after the updates
 	kit.stage.render();
