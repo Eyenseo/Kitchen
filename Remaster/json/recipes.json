@@ -537,7 +537,7 @@
 		}     ,
 		{
 			"name"               : "Zwei in Einem: Bratkartoffeln und Erdbeerkuchen",
-			"difficulty"         : 2,
+			"difficulty"         : 5,
 			"pictureBig"         : "/images/recipe/strawberriesBig.png",
 			"pictureFinish"      : "/images/recipe/potatoesFinish.png",
 			"description"        : "Wer sich schon an den Einzelrezepten versucht hat, kann es mit diesem Rezept probieren, in dem Zwei Gerichte auf einmal fertiggestellt werden sollen: Bratkartofeln und Erdbeerkuchen.",
