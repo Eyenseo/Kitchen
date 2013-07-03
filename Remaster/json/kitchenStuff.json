@@ -1,1032 +1,1032 @@
 {
 	"types": [
 		{
-			"id"         : "bigPot",
-			"name"       : "bigPot",
-			"type"       : "Pot",
-			"sx"         : 655,
-			"sy"         : 400,
-			"w"          : 136,
-			"h"          : 110,
-			"zOrder"     : true,
-			"cookTime"   : 10,
+			"id": "bigPot",
+			"name": "bigPot",
+			"type": "Pot",
+			"sx": 655,
+			"sy": 400,
+			"w": 136,
+			"h": 110,
+			"zOrder": true,
+			"cookTime": 10,
 			"actionValue": 0.0011,
-			"picture"    : "images/utensils/bigPot.png",
-			"aniObject"  : {
-				"image"     : {
-					"tileWidth" : 136,
+			"picture": "images/utensils/bigPot.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 136,
 					"tileHeight": 110,
-					"imgWidth"  : 2720,
-					"imgHeight" : 440
+					"imgWidth": 2720,
+					"imgHeight": 440
 				},
 				"animations": {
 					"default": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
 
 					"defaultEmpty": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
-					"lowEmpty"    : {
-						"seq" : [ 1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2],
+					"lowEmpty": {
+						"seq": [ 1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2],
 						"loop": true
 					},
-					"mediumEmpty" : {
-						"seq" : [ 7, 8, 9, 10, 11, 12, 12, 11, 10, 9, 8],
+					"mediumEmpty": {
+						"seq": [ 7, 8, 9, 10, 11, 12, 12, 11, 10, 9, 8],
 						"loop": true
 					},
-					"highEmpty"   : {
-						"seq" : [13, 14, 15, 16, 17, 18, 18, 17, 16, 15, 14],
+					"highEmpty": {
+						"seq": [13, 14, 15, 16, 17, 18, 18, 17, 16, 15, 14],
 						"loop": true
 					},
 
 					"defaultEmptyHover": {
-						"seq" : [20],
+						"seq": [20],
 						"loop": false
 					},
-					"lowEmptyHover"    : {
-						"seq" : [21, 22, 23, 24, 25, 26, 26, 25, 24, 23, 22],
+					"lowEmptyHover": {
+						"seq": [21, 22, 23, 24, 25, 26, 26, 25, 24, 23, 22],
 						"loop": true
 					},
-					"mediumEmptyHover" : {
-						"seq" : [27, 28, 29, 30, 31, 32, 32, 31, 30, 29, 28],
+					"mediumEmptyHover": {
+						"seq": [27, 28, 29, 30, 31, 32, 32, 31, 30, 29, 28],
 						"loop": true
 					},
-					"highEmptyHover"   : {
-						"seq" : [33, 34, 35, 36, 37, 38, 38, 37, 36, 35, 34],
+					"highEmptyHover": {
+						"seq": [33, 34, 35, 36, 37, 38, 38, 37, 36, 35, 34],
 						"loop": true
 					},
 
 					"defaultFull": {
-						"seq" : [40],
+						"seq": [40],
 						"loop": false
 					},
-					"lowFull"    : {
-						"seq" : [41, 42, 43, 44, 45, 46, 46, 45, 44, 43, 42],
+					"lowFull": {
+						"seq": [41, 42, 43, 44, 45, 46, 46, 45, 44, 43, 42],
 						"loop": true
 					},
-					"mediumFull" : {
-						"seq" : [47, 48, 49, 50, 51, 52, 52, 51, 50, 49, 48],
+					"mediumFull": {
+						"seq": [47, 48, 49, 50, 51, 52, 52, 51, 50, 49, 48],
 						"loop": true
 					},
-					"highFull"   : {
-						"seq" : [53, 54, 55, 56, 57, 58, 58, 57, 56, 55, 54],
+					"highFull": {
+						"seq": [53, 54, 55, 56, 57, 58, 58, 57, 56, 55, 54],
 						"loop": true
 					},
 
 					"defaultFullHover": {
-						"seq" : [60],
+						"seq": [60],
 						"loop": false
 					},
-					"lowFullHover"    : {
-						"seq" : [61, 62, 63, 64, 65, 66, 66, 65, 64, 63, 62],
+					"lowFullHover": {
+						"seq": [61, 62, 63, 64, 65, 66, 66, 65, 64, 63, 62],
 						"loop": true
 					},
-					"mediumFullHover" : {
-						"seq" : [67, 68, 69, 70, 71, 72, 72, 71, 70, 69, 68],
+					"mediumFullHover": {
+						"seq": [67, 68, 69, 70, 71, 72, 72, 71, 70, 69, 68],
 						"loop": true
 					},
-					"highFullHover"   : {
-						"seq" : [73, 74, 75, 76, 77, 78, 78, 77, 76, 75, 74],
+					"highFullHover": {
+						"seq": [73, 74, 75, 76, 77, 78, 78, 77, 76, 75, 74],
 						"loop": true
 					}
 				}
 			}
 		},
 		{
-			"id"         : "littlePot",
-			"name"       : "littlePot",
-			"type"       : "Pot",
-			"sx"         : 615,
-			"sy"         : 499,
-			"w"          : 107,
-			"h"          : 112,
-			"zOrder"     : true,
-			"cookTime"   : 10,
+			"id": "littlePot",
+			"name": "littlePot",
+			"type": "Pot",
+			"sx": 615,
+			"sy": 499,
+			"w": 107,
+			"h": 112,
+			"zOrder": true,
+			"cookTime": 10,
 			"actionValue": 0.0011,
-			"picture"    : "images/utensils/littlePot.png",
-			"aniObject"  : {
-				"image"     : {
-					"tileWidth" : 107,
+			"picture": "images/utensils/littlePot.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 107,
 					"tileHeight": 112,
-					"imgWidth"  : 2140,
-					"imgHeight" : 450
+					"imgWidth": 2140,
+					"imgHeight": 450
 				},
 				"animations": {
 					"default": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
 
 					"defaultEmpty": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
-					"lowEmpty"    : {
-						"seq" : [ 1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2],
+					"lowEmpty": {
+						"seq": [ 1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2],
 						"loop": true
 					},
-					"mediumEmpty" : {
-						"seq" : [ 7, 8, 9, 10, 11, 12, 12, 11, 10, 9, 8],
+					"mediumEmpty": {
+						"seq": [ 7, 8, 9, 10, 11, 12, 12, 11, 10, 9, 8],
 						"loop": true
 					},
-					"highEmpty"   : {
-						"seq" : [13, 14, 15, 16, 17, 18, 18, 17, 16, 15, 14],
+					"highEmpty": {
+						"seq": [13, 14, 15, 16, 17, 18, 18, 17, 16, 15, 14],
 						"loop": true
 					},
 
 					"defaultEmptyHover": {
-						"seq" : [20],
+						"seq": [20],
 						"loop": false
 					},
-					"lowEmptyHover"    : {
-						"seq" : [21, 22, 23, 24, 25, 26, 26, 25, 24, 23, 22],
+					"lowEmptyHover": {
+						"seq": [21, 22, 23, 24, 25, 26, 26, 25, 24, 23, 22],
 						"loop": true
 					},
-					"mediumEmptyHover" : {
-						"seq" : [27, 28, 29, 30, 31, 32, 32, 31, 30, 29, 28],
+					"mediumEmptyHover": {
+						"seq": [27, 28, 29, 30, 31, 32, 32, 31, 30, 29, 28],
 						"loop": true
 					},
-					"highEmptyHover"   : {
-						"seq" : [33, 34, 35, 36, 37, 38, 38, 37, 36, 35, 34],
+					"highEmptyHover": {
+						"seq": [33, 34, 35, 36, 37, 38, 38, 37, 36, 35, 34],
 						"loop": true
 					},
 
 					"defaultFull": {
-						"seq" : [40],
+						"seq": [40],
 						"loop": false
 					},
-					"lowFull"    : {
-						"seq" : [41, 42, 43, 44, 45, 46, 46, 45, 44, 43, 42],
+					"lowFull": {
+						"seq": [41, 42, 43, 44, 45, 46, 46, 45, 44, 43, 42],
 						"loop": true
 					},
-					"mediumFull" : {
-						"seq" : [47, 48, 49, 50, 51, 52, 52, 51, 50, 49, 48],
+					"mediumFull": {
+						"seq": [47, 48, 49, 50, 51, 52, 52, 51, 50, 49, 48],
 						"loop": true
 					},
-					"highFull"   : {
-						"seq" : [53, 54, 55, 56, 57, 58, 58, 57, 56, 55, 54],
+					"highFull": {
+						"seq": [53, 54, 55, 56, 57, 58, 58, 57, 56, 55, 54],
 						"loop": true
 					},
 
 					"defaultFullHover": {
-						"seq" : [60],
+						"seq": [60],
 						"loop": false
 					},
-					"lowFullHover"    : {
-						"seq" : [61, 62, 63, 64, 65, 66, 66, 65, 64, 63, 62],
+					"lowFullHover": {
+						"seq": [61, 62, 63, 64, 65, 66, 66, 65, 64, 63, 62],
 						"loop": true
 					},
-					"mediumFullHover" : {
-						"seq" : [67, 68, 69, 70, 71, 72, 72, 71, 70, 69, 68],
+					"mediumFullHover": {
+						"seq": [67, 68, 69, 70, 71, 72, 72, 71, 70, 69, 68],
 						"loop": true
 					},
-					"highFullHover"   : {
-						"seq" : [73, 74, 75, 76, 77, 78, 78, 77, 76, 75, 74],
+					"highFullHover": {
+						"seq": [73, 74, 75, 76, 77, 78, 78, 77, 76, 75, 74],
 						"loop": true
 					}
 				}
 			}
 		},
 		{
-			"id"         : "pan",
-			"name"       : "pan",
-			"type"       : "Pot",
-			"sx"         : 650,
-			"sy"         : 500,
-			"w"          : 136,
-			"h"          : 110,
-			"zOrder"     : true,
-			"cookTime"   : 10,
+			"id": "pan",
+			"name": "pan",
+			"type": "Pot",
+			"sx": 650,
+			"sy": 500,
+			"w": 136,
+			"h": 110,
+			"zOrder": true,
+			"cookTime": 10,
 			"actionValue": 0.0011,
-			"picture"    : "images/utensils/bigPot.png",
-			"aniObject"  : {
-				"image"     : {
-					"tileWidth" : 136,
+			"picture": "images/utensils/bigPot.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 136,
 					"tileHeight": 110,
-					"imgWidth"  : 2720,
-					"imgHeight" : 440
+					"imgWidth": 2720,
+					"imgHeight": 440
 				},
 				"animations": {
 					"default": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
 
 					"defaultEmpty": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
-					"lowEmpty"    : {
-						"seq" : [ 1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2],
+					"lowEmpty": {
+						"seq": [ 1, 2, 3, 4, 5, 6, 6, 5, 4, 3, 2],
 						"loop": true
 					},
-					"mediumEmpty" : {
-						"seq" : [ 7, 8, 9, 10, 11, 12, 12, 11, 10, 9, 8],
+					"mediumEmpty": {
+						"seq": [ 7, 8, 9, 10, 11, 12, 12, 11, 10, 9, 8],
 						"loop": true
 					},
-					"highEmpty"   : {
-						"seq" : [13, 14, 15, 16, 17, 18, 18, 17, 16, 15, 14],
+					"highEmpty": {
+						"seq": [13, 14, 15, 16, 17, 18, 18, 17, 16, 15, 14],
 						"loop": true
 					},
 
 					"defaultEmptyHover": {
-						"seq" : [20],
+						"seq": [20],
 						"loop": false
 					},
-					"lowEmptyHover"    : {
-						"seq" : [21, 22, 23, 24, 25, 26, 26, 25, 24, 23, 22],
+					"lowEmptyHover": {
+						"seq": [21, 22, 23, 24, 25, 26, 26, 25, 24, 23, 22],
 						"loop": true
 					},
-					"mediumEmptyHover" : {
-						"seq" : [27, 28, 29, 30, 31, 32, 32, 31, 30, 29, 28],
+					"mediumEmptyHover": {
+						"seq": [27, 28, 29, 30, 31, 32, 32, 31, 30, 29, 28],
 						"loop": true
 					},
-					"highEmptyHover"   : {
-						"seq" : [33, 34, 35, 36, 37, 38, 38, 37, 36, 35, 34],
+					"highEmptyHover": {
+						"seq": [33, 34, 35, 36, 37, 38, 38, 37, 36, 35, 34],
 						"loop": true
 					},
 
 					"defaultFull": {
-						"seq" : [40],
+						"seq": [40],
 						"loop": false
 					},
-					"lowFull"    : {
-						"seq" : [41, 42, 43, 44, 45, 46, 46, 45, 44, 43, 42],
+					"lowFull": {
+						"seq": [41, 42, 43, 44, 45, 46, 46, 45, 44, 43, 42],
 						"loop": true
 					},
-					"mediumFull" : {
-						"seq" : [47, 48, 49, 50, 51, 52, 52, 51, 50, 49, 48],
+					"mediumFull": {
+						"seq": [47, 48, 49, 50, 51, 52, 52, 51, 50, 49, 48],
 						"loop": true
 					},
-					"highFull"   : {
-						"seq" : [53, 54, 55, 56, 57, 58, 58, 57, 56, 55, 54],
+					"highFull": {
+						"seq": [53, 54, 55, 56, 57, 58, 58, 57, 56, 55, 54],
 						"loop": true
 					},
 
 					"defaultFullHover": {
-						"seq" : [60],
+						"seq": [60],
 						"loop": false
 					},
-					"lowFullHover"    : {
-						"seq" : [61, 62, 63, 64, 65, 66, 66, 65, 64, 63, 62],
+					"lowFullHover": {
+						"seq": [61, 62, 63, 64, 65, 66, 66, 65, 64, 63, 62],
 						"loop": true
 					},
-					"mediumFullHover" : {
-						"seq" : [67, 68, 69, 70, 71, 72, 72, 71, 70, 69, 68],
+					"mediumFullHover": {
+						"seq": [67, 68, 69, 70, 71, 72, 72, 71, 70, 69, 68],
 						"loop": true
 					},
-					"highFullHover"   : {
-						"seq" : [73, 74, 75, 76, 77, 78, 78, 77, 76, 75, 74],
+					"highFullHover": {
+						"seq": [73, 74, 75, 76, 77, 78, 78, 77, 76, 75, 74],
 						"loop": true
 					}
 				}
 			}
 		},
 		{
-			"id"         : "knife",
-			"name"       : "knife",
-			"type"       : "Knife",
-			"sx"         : 250,
-			"sy"         : 279,
-			"w"          : 201,
-			"h"          : 111,
-			"zOrder"     : true,
-			"cookTime"   : 10,
+			"id": "knife",
+			"name": "knife",
+			"type": "Knife",
+			"sx": 250,
+			"sy": 279,
+			"w": 201,
+			"h": 111,
+			"zOrder": true,
+			"cookTime": 10,
 			"actionValue": 600,
-			"picture"    : "images/utensils/knife.png",
+			"picture": "images/utensils/knife.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 201,
+				"image": {
+					"tileWidth": 201,
 					"tileHeight": 111,
-					"imgWidth"  : 4020,
-					"imgHeight" : 222
+					"imgWidth": 4020,
+					"imgHeight": 222
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [20],
+						"seq": [20],
 						"loop": false
 					},
-					"cut"         : {
-						"seq" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 18, 17, 16, 15, 14, 13,
-						         12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2],
+					"cut": {
+						"seq": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12, 13, 14, 15, 16, 17, 18, 19, 18, 17, 16, 15, 14, 13,
+						        12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2],
 						"loop": true
 					},
-					"cutHover"    : {
-						"seq" : [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 38, 37, 36,
-						         35, 34, 33, 32, 31, 30, 2, 9, 28, 27, 26, 25, 24, 23, 22],
+					"cutHover": {
+						"seq": [21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 38, 37, 36,
+						        35, 34, 33, 32, 31, 30, 2, 9, 28, 27, 26, 25, 24, 23, 22],
 						"loop": true
 					}
 				}
 			}
 		},
 		{
-			"id"         : "bowl",
-			"name"       : "bowl",
-			"type"       : "Container",
-			"sx"         : 293,
-			"sy"         : 530,
-			"w"          : 116,
-			"h"          : 74,
-			"zOrder"     : true,
-			"cookTime"   : 10,
+			"id": "bowl",
+			"name": "bowl",
+			"type": "Container",
+			"sx": 293,
+			"sy": 530,
+			"w": 116,
+			"h": 74,
+			"zOrder": true,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/utensils/bowl.png",
+			"picture": "images/utensils/bowl.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 116,
+				"image": {
+					"tileWidth": 116,
 					"tileHeight": 74,
-					"imgWidth"  : 2320,
-					"imgHeight" : 296
+					"imgWidth": 2320,
+					"imgHeight": 296
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [20],
+						"seq": [20],
 						"loop": false
 					},
-					"full"        : {
-						"seq" : [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 58, 57,
-						         56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41],
+					"full": {
+						"seq": [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 58, 57,
+						        56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41],
 						"loop": true
 					},
-					"fullHover"   : {
-						"seq" : [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 78, 77,
-						         76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61],
+					"fullHover": {
+						"seq": [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 78, 77,
+						        76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61],
 						"loop": true
 					}
 				}
 			}
 		},
 		{
-			"id"         : "cuttingBoard",
-			"name"       : "cuttingBoard",
-			"type"       : "CuttingBoard",
-			"sx"         : 250,
-			"sy"         : 329,
-			"w"          : 174,
-			"h"          : 78,
-			"zOrder"     : 105,
-			"cookTime"   : 10,
+			"id": "cuttingBoard",
+			"name": "cuttingBoard",
+			"type": "CuttingBoard",
+			"sx": 250,
+			"sy": 329,
+			"w": 174,
+			"h": 78,
+			"zOrder": 105,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/utensils/cuttingBoard.png",
+			"picture": "images/utensils/cuttingBoard.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 174,
+				"image": {
+					"tileWidth": 174,
 					"tileHeight": 78,
-					"imgWidth"  : 174,
-					"imgHeight" : 156
+					"imgWidth": 174,
+					"imgHeight": 156
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
 
-					"full"     : {
-						"seq" : [0],
+					"full": {
+						"seq": [0],
 						"loop": false
 					},
 					"fullHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "bakingTin",
-			"name"       : "bakingTin",
-			"type"       : "Container",
-			"sx"         : 608,
-			"sy"         : 430,
-			"w"          : 124,
-			"h"          : 77,
-			"zOrder"     : true,
-			"cookTime"   : 10,
+			"id": "bakingTin",
+			"name": "bakingTin",
+			"type": "Container",
+			"sx": 608,
+			"sy": 430,
+			"w": 124,
+			"h": 77,
+			"zOrder": true,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/utensils/bakingTin.png",
+			"picture": "images/utensils/bakingTin.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 124,
+				"image": {
+					"tileWidth": 124,
 					"tileHeight": 77,
-					"imgWidth"  : 2480,
-					"imgHeight" : 308
+					"imgWidth": 2480,
+					"imgHeight": 308
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [20],
+						"seq": [20],
 						"loop": false
 					},
-					"full"        : {
-						"seq" : [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 58, 57,
-						         56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41],
+					"full": {
+						"seq": [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 58, 57,
+						        56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41],
 						"loop": true
 					},
-					"fullHover"   : {
-						"seq" : [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 78, 77,
-						         76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61],
+					"fullHover": {
+						"seq": [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 78, 77,
+						        76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61],
 						"loop": true
 					}
 				}
 			}
 		},
 		{
-			"id"         : "dish",
-			"name"       : "dish",
-			"type"       : "Container",
-			"sx"         : 610,
-			"sy"         : 329,
-			"w"          : 136,
-			"h"          : 69,
-			"zOrder"     : true,
-			"cookTime"   : 10,
+			"id": "dish",
+			"name": "dish",
+			"type": "Container",
+			"sx": 610,
+			"sy": 329,
+			"w": 136,
+			"h": 69,
+			"zOrder": true,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/utensils/dish.png",
+			"picture": "images/utensils/dish.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 136,
+				"image": {
+					"tileWidth": 136,
 					"tileHeight": 69,
-					"imgWidth"  : 136,
-					"imgHeight" : 138
+					"imgWidth": 136,
+					"imgHeight": 138
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "sieve",
-			"name"       : "sieve",
-			"type"       : "Sieve",
-			"sx"         : 233,
-			"sy"         : 515,
-			"w"          : 171,
-			"h"          : 72,
-			"zOrder"     : true,
-			"cookTime"   : 10,
+			"id": "sieve",
+			"name": "sieve",
+			"type": "Sieve",
+			"sx": 233,
+			"sy": 515,
+			"w": 171,
+			"h": 72,
+			"zOrder": true,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/utensils/sieve.png",
+			"picture": "images/utensils/sieve.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 171,
+				"image": {
+					"tileWidth": 171,
 					"tileHeight": 72,
-					"imgWidth"  : 171,
-					"imgHeight" : 290
+					"imgWidth": 171,
+					"imgHeight": 290
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
-					"full"        : {
-						"seq" : [2],
+					"full": {
+						"seq": [2],
 						"loop": false
 					},
-					"fullHover"   : {
-						"seq" : [3],
+					"fullHover": {
+						"seq": [3],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "hotPlateFrontLeft",
-			"name"       : "plate",
-			"type"       : "Plate",
-			"sx"         : 420,
-			"sy"         : 357,
-			"w"          : 91,
-			"h"          : 53,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
+			"id": "hotPlateFrontLeft",
+			"name": "plate",
+			"type": "Plate",
+			"sx": 420,
+			"sy": 357,
+			"w": 91,
+			"h": 53,
+			"zOrder": 10,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/stuff/hotPlateFront.png",
+			"picture": "images/stuff/hotPlateFront.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 91,
+				"image": {
+					"tileWidth": 91,
 					"tileHeight": 53,
-					"imgWidth"  : 1820,
-					"imgHeight" : 106
+					"imgWidth": 1820,
+					"imgHeight": 106
 				},
 				"animations": {
 					"default": {
-						"seq" : [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
+						"seq": [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
 						"loop": false
 					},
-					"low"    : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6],
+					"low": {
+						"seq": [0, 1, 2, 3, 4, 5, 6],
 						"loop": false
 					},
-					"medium" : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+					"medium": {
+						"seq": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
 						"loop": false
 					},
-					"high"   : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+					"high": {
+						"seq": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
 						"loop": false
 					},
 
 					"defaultHover": {
-						"seq" : [39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],
+						"seq": [39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],
 						"loop": false
 					},
-					"lowHover"    : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26],
+					"lowHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26],
 						"loop": false
 					},
-					"mediumHover" : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
+					"mediumHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
 						"loop": false
 					},
-					"highHover"   : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 135, 36, 37, 38, 39],
+					"highHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 135, 36, 37, 38, 39],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "hotPlateFrontRight",
-			"name"       : "plate",
-			"type"       : "Plate",
-			"sx"         : 510,
-			"sy"         : 357,
-			"w"          : 91,
-			"h"          : 53,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
+			"id": "hotPlateFrontRight",
+			"name": "plate",
+			"type": "Plate",
+			"sx": 510,
+			"sy": 357,
+			"w": 91,
+			"h": 53,
+			"zOrder": 10,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/stuff/hotPlateFront.png",
+			"picture": "images/stuff/hotPlateFront.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 91,
+				"image": {
+					"tileWidth": 91,
 					"tileHeight": 53,
-					"imgWidth"  : 1820,
-					"imgHeight" : 106
+					"imgWidth": 1820,
+					"imgHeight": 106
 				},
 				"animations": {
 					"default": {
-						"seq" : [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
+						"seq": [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
 						"loop": false
 					},
-					"low"    : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6],
+					"low": {
+						"seq": [0, 1, 2, 3, 4, 5, 6],
 						"loop": false
 					},
-					"medium" : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+					"medium": {
+						"seq": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
 						"loop": false
 					},
-					"high"   : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+					"high": {
+						"seq": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
 						"loop": false
 					},
 
 					"defaultHover": {
-						"seq" : [39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],
+						"seq": [39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],
 						"loop": false
 					},
-					"lowHover"    : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26],
+					"lowHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26],
 						"loop": false
 					},
-					"mediumHover" : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
+					"mediumHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
 						"loop": false
 					},
-					"highHover"   : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 135, 36, 37, 38, 39],
+					"highHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 135, 36, 37, 38, 39],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "hotPlateBackLeft",
-			"name"       : "plate",
-			"type"       : "Plate",
-			"sx"         : 431,
-			"sy"         : 314,
-			"w"          : 80,
-			"h"          : 48,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
+			"id": "hotPlateBackLeft",
+			"name": "plate",
+			"type": "Plate",
+			"sx": 431,
+			"sy": 314,
+			"w": 80,
+			"h": 48,
+			"zOrder": 10,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/stuff/hotPlateBack.png",
+			"picture": "images/stuff/hotPlateBack.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 80,
+				"image": {
+					"tileWidth": 80,
 					"tileHeight": 48,
-					"imgWidth"  : 1600,
-					"imgHeight" : 96
+					"imgWidth": 1600,
+					"imgHeight": 96
 				},
 				"animations": {
 					"default": {
-						"seq" : [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
+						"seq": [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
 						"loop": false
 					},
-					"low"    : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6],
+					"low": {
+						"seq": [0, 1, 2, 3, 4, 5, 6],
 						"loop": false
 					},
-					"medium" : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+					"medium": {
+						"seq": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
 						"loop": false
 					},
-					"high"   : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+					"high": {
+						"seq": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
 						"loop": false
 					},
 
 					"defaultHover": {
-						"seq" : [39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],
+						"seq": [39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],
 						"loop": false
 					},
-					"lowHover"    : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26],
+					"lowHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26],
 						"loop": false
 					},
-					"mediumHover" : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
+					"mediumHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
 						"loop": false
 					},
-					"highHover"   : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 135, 36, 37, 38, 39],
+					"highHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 135, 36, 37, 38, 39],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "hotPlateBackRight",
-			"name"       : "plate",
-			"type"       : "Plate",
-			"sx"         : 509,
-			"sy"         : 314,
-			"w"          : 80,
-			"h"          : 48,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
+			"id": "hotPlateBackRight",
+			"name": "plate",
+			"type": "Plate",
+			"sx": 509,
+			"sy": 314,
+			"w": 80,
+			"h": 48,
+			"zOrder": 10,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/stuff/hotPlateBack.png",
+			"picture": "images/stuff/hotPlateBack.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 80,
+				"image": {
+					"tileWidth": 80,
 					"tileHeight": 48,
-					"imgWidth"  : 1600,
-					"imgHeight" : 96
+					"imgWidth": 1600,
+					"imgHeight": 96
 				},
 				"animations": {
 					"default": {
-						"seq" : [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
+						"seq": [19, 18, 17, 16, 15, 14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0],
 						"loop": false
 					},
-					"low"    : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6],
+					"low": {
+						"seq": [0, 1, 2, 3, 4, 5, 6],
 						"loop": false
 					},
-					"medium" : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
+					"medium": {
+						"seq": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13],
 						"loop": false
 					},
-					"high"   : {
-						"seq" : [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
+					"high": {
+						"seq": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19],
 						"loop": false
 					},
 
 					"defaultHover": {
-						"seq" : [39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],
+						"seq": [39, 38, 37, 36, 35, 34, 33, 32, 31, 30, 29, 28, 27, 26, 25, 24, 23, 22, 21, 20],
 						"loop": false
 					},
-					"lowHover"    : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26],
+					"lowHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26],
 						"loop": false
 					},
-					"mediumHover" : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
+					"mediumHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33],
 						"loop": false
 					},
-					"highHover"   : {
-						"seq" : [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 135, 36, 37, 38, 39],
+					"highHover": {
+						"seq": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 135, 36, 37, 38, 39],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "knob0",
-			"name"       : "knob0",
-			"type"       : "Knob",
-			"sx"         : 418,
-			"sy"         : 405,
-			"w"          : 44,
-			"h"          : 44,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
+			"id": "knob0",
+			"name": "knob0",
+			"type": "Knob",
+			"sx": 418,
+			"sy": 405,
+			"w": 44,
+			"h": 44,
+			"zOrder": 10,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/stuff/knob.png",
+			"picture": "images/stuff/knob.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 44,
+				"image": {
+					"tileWidth": 44,
 					"tileHeight": 44,
-					"imgWidth"  : 44,
-					"imgHeight" : 352
+					"imgWidth": 44,
+					"imgHeight": 352
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
-					"one"         : {
-						"seq" : [2],
+					"one": {
+						"seq": [2],
 						"loop": false
 					},
-					"oneHover"    : {
-						"seq" : [3],
+					"oneHover": {
+						"seq": [3],
 						"loop": false
 					},
-					"two"         : {
-						"seq" : [4],
+					"two": {
+						"seq": [4],
 						"loop": false
 					},
-					"twoHover"    : {
-						"seq" : [5],
+					"twoHover": {
+						"seq": [5],
 						"loop": false
 					},
-					"three"       : {
-						"seq" : [6],
+					"three": {
+						"seq": [6],
 						"loop": false
 					},
-					"threeHover"  : {
-						"seq" : [7],
+					"threeHover": {
+						"seq": [7],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "knob1",
-			"name"       : "knob1",
-			"type"       : "Knob",
-			"sx"         : 464,
-			"sy"         : 405,
-			"w"          : 44,
-			"h"          : 44,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
+			"id": "knob1",
+			"name": "knob1",
+			"type": "Knob",
+			"sx": 464,
+			"sy": 405,
+			"w": 44,
+			"h": 44,
+			"zOrder": 10,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/stuff/knob.png",
+			"picture": "images/stuff/knob.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 44,
+				"image": {
+					"tileWidth": 44,
 					"tileHeight": 44,
-					"imgWidth"  : 44,
-					"imgHeight" : 352
+					"imgWidth": 44,
+					"imgHeight": 352
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
-					"one"         : {
-						"seq" : [2],
+					"one": {
+						"seq": [2],
 						"loop": false
 					},
-					"oneHover"    : {
-						"seq" : [3],
+					"oneHover": {
+						"seq": [3],
 						"loop": false
 					},
-					"two"         : {
-						"seq" : [4],
+					"two": {
+						"seq": [4],
 						"loop": false
 					},
-					"twoHover"    : {
-						"seq" : [5],
+					"twoHover": {
+						"seq": [5],
 						"loop": false
 					},
-					"three"       : {
-						"seq" : [6],
+					"three": {
+						"seq": [6],
 						"loop": false
 					},
-					"threeHover"  : {
-						"seq" : [7],
+					"threeHover": {
+						"seq": [7],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "knob2",
-			"name"       : "knob2",
-			"type"       : "Knob",
-			"sx"         : 496,
-			"sy"         : 405,
-			"w"          : 44,
-			"h"          : 44,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
+			"id": "knob2",
+			"name": "knob2",
+			"type": "Knob",
+			"sx": 496,
+			"sy": 405,
+			"w": 44,
+			"h": 44,
+			"zOrder": 10,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/stuff/knob.png",
+			"picture": "images/stuff/knob.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 44,
+				"image": {
+					"tileWidth": 44,
 					"tileHeight": 44,
-					"imgWidth"  : 44,
-					"imgHeight" : 352
+					"imgWidth": 44,
+					"imgHeight": 352
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
-					"one"         : {
-						"seq" : [2],
+					"one": {
+						"seq": [2],
 						"loop": false
 					},
-					"oneHover"    : {
-						"seq" : [3],
+					"oneHover": {
+						"seq": [3],
 						"loop": false
 					},
-					"two"         : {
-						"seq" : [4],
+					"two": {
+						"seq": [4],
 						"loop": false
 					},
-					"twoHover"    : {
-						"seq" : [5],
+					"twoHover": {
+						"seq": [5],
 						"loop": false
 					},
-					"three"       : {
-						"seq" : [6],
+					"three": {
+						"seq": [6],
 						"loop": false
 					},
-					"threeHover"  : {
-						"seq" : [7],
+					"threeHover": {
+						"seq": [7],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "knob3",
-			"name"       : "knob3",
-			"type"       : "Knob",
-			"sx"         : 528,
-			"sy"         : 405,
-			"w"          : 44,
-			"h"          : 44,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
+			"id": "knob3",
+			"name": "knob3",
+			"type": "Knob",
+			"sx": 528,
+			"sy": 405,
+			"w": 44,
+			"h": 44,
+			"zOrder": 10,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/stuff/knob.png",
+			"picture": "images/stuff/knob.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 44,
+				"image": {
+					"tileWidth": 44,
 					"tileHeight": 44,
-					"imgWidth"  : 44,
-					"imgHeight" : 352
+					"imgWidth": 44,
+					"imgHeight": 352
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
-					"one"         : {
-						"seq" : [2],
+					"one": {
+						"seq": [2],
 						"loop": false
 					},
-					"oneHover"    : {
-						"seq" : [3],
+					"oneHover": {
+						"seq": [3],
 						"loop": false
 					},
-					"two"         : {
-						"seq" : [4],
+					"two": {
+						"seq": [4],
 						"loop": false
 					},
-					"twoHover"    : {
-						"seq" : [5],
+					"twoHover": {
+						"seq": [5],
 						"loop": false
 					},
-					"three"       : {
-						"seq" : [6],
+					"three": {
+						"seq": [6],
 						"loop": false
 					},
-					"threeHover"  : {
-						"seq" : [7],
+					"threeHover": {
+						"seq": [7],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "knob4",
-			"name"       : "knob4",
-			"type"       : "Knob",
-			"sx"         : 560,
-			"sy"         : 405,
-			"w"          : 44,
-			"h"          : 44,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
+			"id": "knob4",
+			"name": "knob4",
+			"type": "Knob",
+			"sx": 560,
+			"sy": 405,
+			"w": 44,
+			"h": 44,
+			"zOrder": 10,
+			"cookTime": 10,
 			"actionValue": 60,
-			"picture"    : "images/stuff/knob.png",
+			"picture": "images/stuff/knob.png",
 
 			"aniObject": {
-				"image"     : {
-					"tileWidth" : 44,
+				"image": {
+					"tileWidth": 44,
 					"tileHeight": 44,
-					"imgWidth"  : 44,
-					"imgHeight" : 352
+					"imgWidth": 44,
+					"imgHeight": 352
 				},
 				"animations": {
-					"default"     : {
-						"seq" : [0],
+					"default": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
-					"one"         : {
-						"seq" : [2],
+					"one": {
+						"seq": [2],
 						"loop": false
 					},
-					"oneHover"    : {
-						"seq" : [3],
+					"oneHover": {
+						"seq": [3],
 						"loop": false
 					},
-					"two"         : {
-						"seq" : [4],
+					"two": {
+						"seq": [4],
 						"loop": false
 					},
-					"twoHover"    : {
-						"seq" : [5],
+					"twoHover": {
+						"seq": [5],
 						"loop": false
 					},
-					"three"       : {
-						"seq" : [6],
+					"three": {
+						"seq": [6],
 						"loop": false
 					},
-					"threeHover"  : {
-						"seq" : [7],
+					"threeHover": {
+						"seq": [7],
 						"loop": false
 					}
 				}
@@ -1034,378 +1034,279 @@
 		},
 
 		{
-			"id"         : "sink",
-			"name"       : "sink",
-			"type"       : "Sink",
-			"sx"         : 760,
-			"sy"         : 230,
-			"w"          : 178,
-			"h"          : 168,
-			"zOrder"     : 10,
-			"cookTime"   : 10,
+			"id": "sink",
+			"name": "sink",
+			"type": "Sink",
+			"sx": 760,
+			"sy": 230,
+			"w": 178,
+			"h": 168,
+			"zOrder": 10,
+			"cookTime": 10,
 			"actionValue": 0.0011,
-			"picture"    : "images/stuff/sinkTap.png",
-			"aniObject"  : {
-				"image"     : {
-					"tileWidth" : 178,
+			"picture": "images/stuff/sinkTap.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 178,
 					"tileHeight": 168,
-					"imgWidth"  : 7120,
-					"imgHeight" : 336
+					"imgWidth": 7120,
+					"imgHeight": 336
 				},
 				"animations": {
 					"default": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
 
 					"puring": {
-						"seq" : [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
+						"seq": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
 						"loop": false
 					},
 					"closed": {
-						"seq" : [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39],
+						"seq": [20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39],
 						"loop": false
 					},
 
 					"puringHover": {
-						"seq" : [41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],
+						"seq": [41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60],
 						"loop": false
 					},
 					"closedHover": {
-						"seq" : [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79],
+						"seq": [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "oven",
-			"name"       : "oven",
-			"type"       : "Oven",
-			"sx"         : 402,
-			"sy"         : 432,
-			"w"          : 216,
-			"h"          : 232,
-			"zOrder"     : 649,
-			"cookTime"   : 10,
+			"id": "oven",
+			"name": "oven",
+			"type": "Oven",
+			"sx": 394,
+			"sy": 433,
+			"w": 231,
+			"h": 230,
+			"zOrder": 649,
+			"cookTime": 10,
 			"actionValue": 0.0011,
-			"picture"    : "images/stuff/oven.png",
-			"aniObject"  : {
-				"image"     : {
-					"tileWidth" : 216,
-					"tileHeight": 232,
-					"imgWidth"  : 216,
-					"imgHeight" : 3712
-				},
-				"animations": {
-					"default": {
-						"seq" : [0],
-						"loop": false
-					},
-
-					"defaultClosed"     : {
-						"seq" : [0],
-						"loop": false
-					},
-					"defaultClosedHover": {
-						"seq" : [1],
-						"loop": false
-					},
-
-					"defaultOpen"     : {
-						"seq" : [2],
-						"loop": false
-					},
-					"defaultOpenHover": {
-						"seq" : [3],
-						"loop": false
-					},
-
-					"lowClosed"     : {
-						"seq" : [4],
-						"loop": false
-					},
-					"lowClosedHover": {
-						"seq" : [5],
-						"loop": false
-					},
-
-					"lowOpen"     : {
-						"seq" : [6],
-						"loop": false
-					},
-					"lowOpenHover": {
-						"seq" : [7],
-						"loop": false
-					},
-
-					"mediumClosed"     : {
-						"seq" : [8],
-						"loop": false
-					},
-					"mediumClosedHover": {
-						"seq" : [9],
-						"loop": false
-					},
-
-					"mediumOpen"     : {
-						"seq" : [10],
-						"loop": false
-					},
-					"mediumOpenHover": {
-						"seq" : [11],
-						"loop": false
-					},
-
-					"highClosed"     : {
-						"seq" : [12],
-						"loop": false
-					},
-					"highClosedHover": {
-						"seq" : [13],
-						"loop": false
-					},
-
-					"highOpen"     : {
-						"seq" : [14],
-						"loop": false
-					},
-					"highOpenHover": {
-						"seq" : [15],
-						"loop": false
-					}
-				}
-			}
-		},
-		{
-			"id"         : "oven",
-			"name"       : "oven",
-			"type"       : "Oven",
-			"sx"         : 404,
-			"sy"         : 433,
-			"w"          : 214,
-			"h"          : 230,
-			"zOrder"     : 649,
-			"cookTime"   : 10,
-			"actionValue": 0.0011,
-			"picture"    : "images/stuff/ovenDoor.png",
-			"aniObject"  : {
-				"image"     : {
-					"tileWidth" : 214,
+			"picture": "images/stuff/ovenDoor.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 231,
 					"tileHeight": 230,
-					"imgWidth"  : 214,
-					"imgHeight" : 920
+					"imgWidth": 231,
+					"imgHeight": 920
 				},
 				"animations": {
 					"default": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
 
-					"defaultClosed"     : {
-						"seq" : [0],
+					"defaultClosed": {
+						"seq": [0],
 						"loop": false
 					},
 					"defaultClosedHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
 
-					"defaultOpen"     : {
-						"seq" : [2],
+					"defaultOpen": {
+						"seq": [2],
 						"loop": false
 					},
 					"defaultOpenHover": {
-						"seq" : [3],
+						"seq": [3],
 						"loop": false
 					},
 
-					"lowClosed"     : {
-						"seq" : [0],
+					"lowClosed": {
+						"seq": [0],
 						"loop": false
 					},
 					"lowClosedHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
 
-					"lowOpen"     : {
-						"seq" : [2],
+					"lowOpen": {
+						"seq": [2],
 						"loop": false
 					},
 					"lowOpenHover": {
-						"seq" : [3],
+						"seq": [3],
 						"loop": false
 					},
 
-					"mediumClosed"     : {
-						"seq" : [0],
+					"mediumClosed": {
+						"seq": [0],
 						"loop": false
 					},
 					"mediumClosedHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
 
-					"mediumOpen"     : {
-						"seq" : [2],
+					"mediumOpen": {
+						"seq": [2],
 						"loop": false
 					},
 					"mediumOpenHover": {
-						"seq" : [3],
+						"seq": [3],
 						"loop": false
 					},
 
-					"highClosed"     : {
-						"seq" : [0],
+					"highClosed": {
+						"seq": [0],
 						"loop": false
 					},
 					"highClosedHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
 
-					"highOpen"     : {
-						"seq" : [2],
+					"highOpen": {
+						"seq": [2],
 						"loop": false
 					},
 					"highOpenHover": {
-						"seq" : [3],
+						"seq": [3],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "fridge",
-			"name"       : "fridge",
-			"type"       : "Fridge",
-			"sx"         : -19,
-			"sy"         : 141,
-			"w"          : 259,
-			"h"          : 513,
-			"zOrder"     : 649,
-			"cookTime"   : 10,
+			"id": "fridge",
+			"name": "fridge",
+			"type": "Fridge",
+			"sx": -19,
+			"sy": 141,
+			"w": 259,
+			"h": 513,
+			"zOrder": 649,
+			"cookTime": 10,
 			"actionValue": 0.0011,
-			"picture"    : "images/stuff/fridgeDoor.png",
-			"aniObject"  : {
-				"image"     : {
-					"tileWidth" : 259,
+			"picture": "images/stuff/fridgeDoor.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 259,
 					"tileHeight": 513,
-					"imgWidth"  : 259,
-					"imgHeight" : 2052
+					"imgWidth": 259,
+					"imgHeight": 2052
 				},
 				"animations": {
 					"default": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
 
-					"closed"     : {
-						"seq" : [0],
+					"closed": {
+						"seq": [0],
 						"loop": false
 					},
 					"closedHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
 
-					"open"     : {
-						"seq" : [2],
+					"open": {
+						"seq": [2],
 						"loop": false
 					},
 					"openHover": {
-						"seq" : [3],
+						"seq": [3],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "leftCupboard",
-			"name"       : "cupboard",
-			"type"       : "Cupboard",
-			"sx"         : 70,
-			"sy"         : 398,
-			"w"          : 356,
-			"h"          : 251,
-			"zOrder"     : 650,
-			"cookTime"   : 10,
+			"id": "leftCupboard",
+			"name": "cupboard",
+			"type": "Cupboard",
+			"sx": 70,
+			"sy": 398,
+			"w": 356,
+			"h": 251,
+			"zOrder": 650,
+			"cookTime": 10,
 			"actionValue": 0.0011,
-			"picture"    : "images/stuff/leftCupboardDoor.png",
-			"aniObject"  : {
-				"image"     : {
-					"tileWidth" : 356,
+			"picture": "images/stuff/leftCupboardDoor.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 356,
 					"tileHeight": 251,
-					"imgWidth"  : 356,
-					"imgHeight" : 1004
+					"imgWidth": 356,
+					"imgHeight": 1004
 				},
 				"animations": {
 					"default": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
 
-					"closed"     : {
-						"seq" : [0],
+					"closed": {
+						"seq": [0],
 						"loop": false
 					},
 					"closedHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
 
-					"open"     : {
-						"seq" : [2],
+					"open": {
+						"seq": [2],
 						"loop": false
 					},
 					"openHover": {
-						"seq" : [3],
+						"seq": [3],
 						"loop": false
 					}
 				}
 			}
 		},
 		{
-			"id"         : "rightCupboard",
-			"name"       : "cupboard",
-			"type"       : "Cupboard",
-			"sx"         : 597,
-			"sy"         : 398,
-			"w"          : 356,
-			"h"          : 251,
-			"zOrder"     : 650,
-			"cookTime"   : 10,
+			"id": "rightCupboard",
+			"name": "cupboard",
+			"type": "Cupboard",
+			"sx": 597,
+			"sy": 398,
+			"w": 356,
+			"h": 251,
+			"zOrder": 650,
+			"cookTime": 10,
 			"actionValue": 0.0011,
-			"picture"    : "images/stuff/rightCupboardDoor.png",
-			"aniObject"  : {
-				"image"     : {
-					"tileWidth" : 356,
+			"picture": "images/stuff/rightCupboardDoor.png",
+			"aniObject": {
+				"image": {
+					"tileWidth": 356,
 					"tileHeight": 251,
-					"imgWidth"  : 356,
-					"imgHeight" : 1004
+					"imgWidth": 356,
+					"imgHeight": 1004
 				},
 				"animations": {
 					"default": {
-						"seq" : [0],
+						"seq": [0],
 						"loop": false
 					},
 
-					"closed"     : {
-						"seq" : [0],
+					"closed": {
+						"seq": [0],
 						"loop": false
 					},
 					"closedHover": {
-						"seq" : [1],
+						"seq": [1],
 						"loop": false
 					},
 
-					"open"     : {
-						"seq" : [2],
+					"open": {
+						"seq": [2],
 						"loop": false
 					},
 					"openHover": {
-						"seq" : [3],
+						"seq": [3],
 						"loop": false
 					}
 				}
