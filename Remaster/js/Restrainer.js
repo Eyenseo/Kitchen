@@ -4,13 +4,14 @@ function Restrainer(kitchen) {
 	this.soundManager = this.kitchen.soundManager;
 	this.recipe = null;
 	this.recipeStage = 0;
+	this.htmlManager = kitchen.htmlManager;
 }
 
 Restrainer.prototype.constructor = Restrainer;
 
 Restrainer.prototype.setRecipe = function(recipe) {
 	this.recipe = recipe;
-	console.log(this.recipe.schedule[this.recipeStage].text);
+	this.htmlManager.updateSpeechBubbleText(this.recipe.schedule[this.recipeStage].text);
 };
 
 //TODO Doc
@@ -76,7 +77,7 @@ Restrainer.prototype.checkStage = function() {
 
 	if(done) {
 		this.recipeStage = this.recipeStage + 1; // TODO check for last step to "WoW"
-		console.log(this.recipe.schedule[this.recipeStage].text);
+		this.htmlManager.updateSpeechBubbleText(this.recipe.schedule[this.recipeStage].text);
 	}
 };
 

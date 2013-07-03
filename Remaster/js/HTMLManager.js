@@ -2,9 +2,24 @@ function HTMLManager(jsonHandler, kitchen) {
 	this.recipes = jsonHandler.recipes;
 	this.kitchen = kitchen;
 	this.allRecipes();
+	this.createSpeechBubble();
 }
 
 HTMLManager.prototype.constructor = HTMLManager;
+
+HTMLManager.prototype.createSpeechBubble = function() {
+	var kitchenDiv = document.querySelector("#kitchenDiv");
+
+	this.speechBubbleDiv = document.createElement("div");
+	this.speechBubbleDiv.setAttribute("id", "speechBubble");
+
+	kitchenDiv.appendChild(this.speechBubbleDiv);
+};
+
+HTMLManager.prototype.updateSpeechBubbleText = function(text) {
+	this.speechBubbleDiv.innerHTML = "";
+	this.speechBubbleDiv.appendChild(document.createTextNode(text));
+};
 
 HTMLManager.prototype.allRecipes = function() {
 	var THIS = this;
