@@ -192,19 +192,19 @@
 			"id"         : "pan",
 			"name"       : "pan",
 			"type"       : "Pot",
-			"sx"         : 650,
+			"sx"         : 603,
 			"sy"         : 500,
-			"w"          : 136,
+			"w"          : 190,
 			"h"          : 110,
 			"zOrder"     : true,
 			"actionValue": 0.0011,
-			"picture"    : "images/utensils/bigPot.png",
+			"picture"    : "images/utensils/pan.png",
 			"aniObject"  : {
 				"image"     : {
-					"tileWidth" : 136,
+					"tileWidth" : 190,
 					"tileHeight": 110,
-					"imgWidth"  : 2720,
-					"imgHeight" : 440
+					"imgWidth"  : 3800,
+					"imgHeight" : 660
 				},
 				"animations": {
 					"default": {
