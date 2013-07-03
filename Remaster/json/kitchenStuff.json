@@ -7,16 +7,16 @@
 			"sx"         : 655,
 			"sy"         : 400,
 			"w"          : 136,
-			"h"          : 110,
+			"h"          : 130,
 			"zOrder"     : true,
 			"actionValue": 0.0011,
 			"picture"    : "images/utensils/bigPot.png",
 			"aniObject"  : {
 				"image"     : {
 					"tileWidth" : 136,
-					"tileHeight": 110,
+					"tileHeight": 130,
 					"imgWidth"  : 2720,
-					"imgHeight" : 440
+					"imgHeight" : 780
 				},
 				"animations": {
 					"default": {
@@ -100,17 +100,17 @@
 			"type"       : "Pot",
 			"sx"         : 615,
 			"sy"         : 499,
-			"w"          : 107,
-			"h"          : 112,
+			"w"          : 106,
+			"h"          : 104,
 			"zOrder"     : true,
 			"actionValue": 0.0011,
 			"picture"    : "images/utensils/littlePot.png",
 			"aniObject"  : {
 				"image"     : {
-					"tileWidth" : 107,
-					"tileHeight": 112,
-					"imgWidth"  : 2140,
-					"imgHeight" : 450
+					"tileWidth" : 106,
+					"tileHeight": 104,
+					"imgWidth"  : 2120,
+					"imgHeight" : 624
 				},
 				"animations": {
 					"default": {
@@ -332,7 +332,6 @@
 			"w"          : 116,
 			"h"          : 74,
 			"zOrder"     : true,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/utensils/bowl.png",
 
@@ -486,7 +485,6 @@
 			"w"          : 171,
 			"h"          : 72,
 			"zOrder"     : true,
-			"cookTime"   : 10,
 			"actionValue": 60,
 			"picture"    : "images/utensils/sieve.png",
 
@@ -494,7 +492,7 @@
 				"image"     : {
 					"tileWidth" : 171,
 					"tileHeight": 72,
-					"imgWidth"  : 171,
+					"imgWidth"  : 3420,
 					"imgHeight" : 288
 				},
 				"animations": {
@@ -503,16 +501,18 @@
 						"loop": false
 					},
 					"defaultHover": {
-						"seq" : [1],
+						"seq" : [20],
 						"loop": false
 					},
 					"full"        : {
-						"seq" : [2],
-						"loop": false
+						"seq" : [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 58, 57,
+						         56, 55, 54, 53, 52, 51, 50, 49, 48, 47, 46, 45, 44, 43, 42, 41],
+						"loop": true
 					},
 					"fullHover"   : {
-						"seq" : [3],
-						"loop": false
+						"seq" : [60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 78, 77,
+						         76, 75, 74, 73, 72, 71, 70, 69, 68, 67, 66, 65, 64, 63, 62, 61],
+						"loop": true
 					}
 				}
 			}
