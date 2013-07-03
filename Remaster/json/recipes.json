@@ -3,8 +3,7 @@
 		{
 			"name"               : "DEBUG",
 			"difficulty"         : 5,
-			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
-			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
+			"pictureFinish"      : "./images/finished/spaetzle.png",
 			"description"        : "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht. Sie sind bekannt aus dem Schwabenländle. Dort werden sie in nahezu jeder Familie traditionsmäßig gegessen.",
 			"ingredients"        : ["backingPowder", "bacon", "butter", "cheese", "cream", "eggs", "flour", "meat",
 			                        "mushroom", "oil", "onion", "pepper", "potato", "salt", "sauerkraut", "spaetzle",
@@ -30,8 +29,7 @@
 		{
 			"name"               : "Käsespätzle",
 			"difficulty"         : 2,
-			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
-			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
+			"pictureFinish"      : "./images/finished/spaetzle.png",
 			"description"        : "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht. Sie sind bekannt aus dem Schwabenländle. Dort werden sie in nahezu jeder Familie traditionsmäßig gegessen.",
 			"ingredients"        : ["spaetzle", "oil", "salt", "cheese", "mushroom", "onion"],
 			"ingredientsReadable": ["Spaetzle", "Öl", "Salz", "Käse", "Pilze", "Zwiebeln"],
@@ -152,8 +150,7 @@
 		{
 			"name"               : "Fleisch mit Sauerkraut",
 			"difficulty"         : 3,
-			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
-			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
+			"pictureFinish"      : "./images/finished/meat.png",
 			"description"        : "Kassler mit Sauerkraut und Kartoffeln als Beilage ist ein altbekanntes Rezept. Meist wird das Rezept für dieses traditionelle Gericht von Mutter an Tochter durch die Familie gereicht.",
 			"ingredients"        : ["potato", "salt", "sauerkraut", "cream", "onion", "meat", "oil"],
 			"ingredientsReadable": ["Kartoffeln", "Salz", "Sauerkraut", "Sahne", "Zwiebeln", "Fleisch", "Öl"],
@@ -319,8 +316,7 @@
 		{
 			"name"               : "Bratkartoffeln",
 			"difficulty"         : 1,
-			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
-			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
+			"pictureFinish"      : "./images/finished/potatoes.png",
 			"description"        : "Bratkartoffeln mit Speck sind einfach lecker. Man kann sie schnell und leicht zubereiten. Außerdem sind die Zutaten typisch für die Deutsche Kultur.",
 			"ingredients"        : ["potato", "bacon", "onion", "pepper", "oil", "salt"],
 			"ingredientsReadable": ["Kartoffeln", "Speck", "Zwiebeln", "Pfeffer", "Salz", "Öl"],
@@ -441,8 +437,7 @@
 		{
 			"name"               : "Erdbeerkuchen",
 			"difficulty"         : 2,
-			"pictureBig"         : "/images/recipe/strawberriesBig.png",
-			"pictureFinish"      : "/images/recipe/strawberriesFinish.png",
+			"pictureFinish"      : "./images/finished/strawberryCake.png",
 			"description"        : "Das ist das Grundrezept für einen Erdbeerkuchen. Nach belieben kann man es auch mal erweitern; zum Beispiel mit einer Puddingschicht.",
 			"ingredients"        : ["strawberries", "flour", "sugar", "backingPowder", "butter", "eggs", "cream"],
 			"ingredientsReadable": ["Erdbeeren", "Mehl", "Zucker", "Backpulver", "Butter", "Eier", "Sahne"],
@@ -534,12 +529,11 @@
 					]
 				}
 			]
-		}     ,
+		},
 		{
 			"name"               : "Zwei in Einem: <br> Bratkartoffeln und Erdbeerkuchen",
 			"difficulty"         : 5,
-			"pictureBig"         : "/images/recipe/strawberriesBig.png",
-			"pictureFinish"      : "/images/recipe/potatoesFinish.png",
+			"pictureFinish"      : "./images/finished/strawberryCake.png",
 			"description"        : "Wer sich schon an den Einzelrezepten versucht hat, kann es mit diesem Rezept probieren, in dem Zwei Gerichte auf einmal fertiggestellt werden sollen: Bratkartofeln und Erdbeerkuchen.",
 			"ingredients"        : ["potato", "bacon", "onion", "pepper", "water", "oil", "salt", "strawberries",
 			                        "flour", "sugar", "backingPowder", "butter", "eggs", "cream"],
