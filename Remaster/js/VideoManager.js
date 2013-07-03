@@ -39,6 +39,10 @@ function VideoManager() {
 
 VideoManager.prototype.constructor = VideoManager;
 
+VideoManager.prototype.stopAll = function() {
+	this.videoDiv.innerHTML = "";
+};
+
 VideoManager.prototype.nextVideo = function() {
 	if(this.currentVideo < this.videos.length - 1) {
 		this.currentVideo++;

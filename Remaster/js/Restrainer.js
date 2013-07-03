@@ -10,6 +10,7 @@ function Restrainer(kitchen) {
 Restrainer.prototype.constructor = Restrainer;
 
 Restrainer.prototype.setRecipe = function(recipe) {
+	this.recipeStage = 0;
 	this.recipe = recipe;
 	this.htmlManager.updateSpeechBubbleText(this.recipe.schedule[this.recipeStage].text);
 };
@@ -76,8 +77,13 @@ Restrainer.prototype.checkStage = function() {
 	});
 
 	if(done) {
-		this.recipeStage = this.recipeStage + 1; // TODO check for last step to "WoW"
-		this.htmlManager.updateSpeechBubbleText(this.recipe.schedule[this.recipeStage].text);
+		if(this.recipeStage === this.recipe.schedule.length - 1) {
+			this.htmlManager.showWow(this.recipe.pictureFinish);
+			this.kitchen.finished = true;
+		} else {
+			this.recipeStage = this.recipeStage + 1;
+			this.htmlManager.updateSpeechBubbleText(this.recipe.schedule[this.recipeStage].text);
+		}
 	}
 };
 

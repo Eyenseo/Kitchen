@@ -25,13 +25,47 @@
 	max-height : 80px;
 }
 
+#wow {
+	background-image  : url("../images/menu/wow.png");
+	background-repeat : no-repeat;
+	height            : 600px;
+	background-size   : 100%;
+	width             : 600px;
+	z-index           : 3;
+	position          : relative;
+	margin            : auto;
+	margin-top        : -100px;
+}
+
+#back {
+	width            : 124px;
+	height           : 85px;
+	position         : absolute;
+	margin-left      : 105px;
+	margin-top       : 361px;
+	background-image : url("../images/menu/back.png");
+}
+
+#back:hover {
+	background-image : url("../images/menu/backGlow.png");
+}
+
+#finished {
+	position    : absolute;
+	width       : 119px;
+	height      : 64px;
+	margin-top  : 327px;
+	margin-left : 240px;
+
+}
+
 #speechBubble {
 	position    : relative;
 	z-index     : 2;
 	margin-top  : -122px;
-	margin-left : 463px;
+	margin-left : 405px;
 	padding     : 0.5em;
-	width       : 190px;
+	width       : 250px;
 	height      : 94px;
 }
 
@@ -53,13 +87,12 @@
 }
 
 #noteGroundDiv {
-	margin              : 1em auto;
-	padding-top         : 50px;
-	width               : 420px; /* height minus 50 px for the padding */
-	height              : 512px;
-	background-image    : url("../images/menu/paper.png");
-	background-position : 0 -50;
-	background-size     : 420px, auto;
+	margin           : 1em auto;
+	padding-top      : 50px;
+	width            : 420px; /* height minus 50 px for the padding */
+	height           : 512px;
+	background-image : url("../images/menu/paper.png");
+	background-size  : 420px, auto;
 }
 
 #scrollDiv {
@@ -70,7 +103,7 @@
 #menuDiv {
 	display     : block;
 	padding     : 1.5em;
-	padding-top : 0em;
+	padding-top : 0;
 }
 
 #menuDiv img {
@@ -104,17 +137,19 @@
 
 .oneRecipeDiv {
 	margin-top : 0.5em;
-	border     : 2px #9C9C9C solid;
+	/*border     : 2px #9C9C9C solid;*/
 	cursor     : pointer;
 }
 
-div.oneRecipeDiv:hover {
-	border : 2px #4D9C48 solid;
+div.oneRecipeDiv:hover span {
+	/*border : 2px #4D9C48 solid;*/
+	color       : #2C5A29;
+	text-shadow : 0 0 2px #FFFFFF;
 }
 
 .oneRecipeDiv img {
 	margin-right   : 0.5em;
-	height         : 64px;
+	width          : 80px;
 	vertical-align : middle;
 }
 
@@ -148,5 +183,6 @@ div.oneRecipeDiv:hover {
 	float      : left;
 	margin     : 1em;
 	margin-top : 0;
-	height     : 128px;
+	height     : 64px;
+	width      : 119px;
 }

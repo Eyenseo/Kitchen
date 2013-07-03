@@ -25,6 +25,29 @@ function SoundManager() {
 //TODO is this needed?
 SoundManager.prototype.constructor = SoundManager;
 
+SoundManager.prototype.stopAll = function() {
+	this.DROP.forEach(function(sound) {
+		sound.pause();
+	});
+	this.KNOB.forEach(function(sound) {
+		sound.pause();
+	});
+	this.POTHEATINGUP.forEach(function(sound) {
+		sound.pause();
+	});
+	this.POTONTOSTOVE.forEach(function(sound) {
+		sound.pause();
+	});
+	this.NEGATIVE.forEach(function(sound) {
+		sound.pause();
+	});
+	this.dropLoop = 0;
+	this.knobLoop = 0;
+	this.potHeatingUpLoop = 0;
+	this.potOntoStoveLoop = 0;
+	this.negativeLoop = 0;
+};
+
 /**
  * The function initialise the sound arrays by filling them with Audio objects
  * @param array - the value determines the array th ned Audio objects will be saved in (it has to have a length)
