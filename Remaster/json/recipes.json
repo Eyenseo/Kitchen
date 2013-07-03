@@ -321,7 +321,7 @@
 			"difficulty"         : 1,
 			"pictureBig"         : "/images/recipe/spaetzlesBig.png",
 			"pictureFinish"      : "/images/recipe/spaetzlesFinish.png",
-			"description"        : "Bratkartoffeln mit Würstchen sind einfach lecker. Man kann sie schnell und leicht zubereiten. Außerdem sind die Zutaten typisch für die Deutsche Kultur.",
+			"description"        : "Bratkartoffeln mit Speck sind einfach lecker. Man kann sie schnell und leicht zubereiten. Außerdem sind die Zutaten typisch für die Deutsche Kultur.",
 			"ingredients"        : ["potato", "bacon", "onion", "pepper", "oil", "salt"],
 			"ingredientsReadable": ["Kartoffeln", "Speck", "Zwiebeln", "Pfeffer", "Salz", "Öl"],
 			"utensils"           : ["dish", "sieve", "bigPot", "pan", "cuttingBoard", "knife"],
@@ -443,7 +443,7 @@
 			"difficulty"         : 2,
 			"pictureBig"         : "/images/recipe/strawberriesBig.png",
 			"pictureFinish"      : "/images/recipe/strawberriesFinish.png",
-			"description"        : "Dieser Erdbeerkuchen",
+			"description"        : "Das ist das Grundrezept für einen Erdbeerkuchen. Nach belieben kann man es auch mal erweitern; zum Beispiel mit einer Puddingschicht.",
 			"ingredients"        : ["strawberries", "flour", "sugar", "backingPowder", "butter", "eggs", "cream"],
 			"ingredientsReadable": ["Erdbeeren", "Mehl", "Zucker", "Backpulver", "Butter", "Eier", "Sahne"],
 			"utensils"           : ["dish", "sieve", "bowl", "bakingTin", "cuttingBoard", "knife"],
@@ -530,6 +530,218 @@
 							"utensil": "bakingTin",
 							"act"    : "put",
 							"stuff"  : ["dish"]
+						}
+					]
+				}
+			]
+		}     ,
+		{
+			"name"               : "Zwei in Einem: <br> Bratkartoffeln und Erdbeerkuchen",
+			"difficulty"         : 5,
+			"pictureBig"         : "/images/recipe/strawberriesBig.png",
+			"pictureFinish"      : "/images/recipe/potatoesFinish.png",
+			"description"        : "Wer sich schon an den Einzelrezepten versucht hat, kann es mit diesem Rezept probieren, in dem Zwei Gerichte auf einmal fertiggestellt werden sollen: Bratkartofeln und Erdbeerkuchen.",
+			"ingredients"        : ["potato", "bacon", "onion", "pepper", "water", "oil", "salt", "strawberries",
+			                        "flour", "sugar", "backingPowder", "butter", "eggs", "cream"],
+			"ingredientsReadable": ["Kartoffeln", "Speck", "Zwiebeln", "Pfeffer", "Salz", "Wasser", "Öl", "Erdbeeren",
+			                        "Mehl", "Zucker", "Backpulver", "Butter", "Eier", "Sahne"],
+			"utensils"           : ["dish", "plate", "bigPot", "pan", "sieve", "bowl", "backingTin", "cuttingBoard",
+			                        "knife"],
+			"schedule"           : [
+				{
+					"text"  : "Zuerst füllen Sie einen großen Topf mit Wasser und einer Priese Salz.",
+					"action": [
+						{
+							"utensil": "bigPot",
+							"act"    : "put",
+							"stuff"  : ["water", "salt"]
+						}
+					]
+				},
+				{
+					"text"  : "Stellen Sie den Topf auf eine Herdplatte und bringen Sie das Wasser zum Kochen.",
+					"action": [
+						{
+							"utensil": "plate",
+							"act"    : "put",
+							"stuff"  : ["bigPot"]
+						},
+						{
+							"utensil": "plate",
+							"act"    : "isCooked",
+							"stuff"  : ["water"]
+						}
+					]
+				},
+				{
+					"text"  : "Jetzt geben sie die Kartoffeln in das kochende Wasser.",
+					"action": [
+						{
+							"utensil": "bigPot",
+							"act"    : "put",
+							"stuff"  : ["potato"]
+						},
+						{
+							"utensil": "bigPot",
+							"act"    : "isCooked",
+							"stuff"  : ["potato"]
+						}
+					]
+				},
+				{
+					"text"  : "Nun nehmen Sie eine Schüssel und geben Sie in diese nach und nach Mehl, Backpulver, Sahne, Eier und Zucker.",
+					"action": [
+						{
+							"utensil": "bowl",
+							"act"    : "put",
+							"stuff"  : ["flour", "sugar", "backingPowder", "eggs", "cream"]
+						}
+					]
+				},
+				{
+					"text"  : "Fetten Sie nun eine Backform mit Butter ein.",
+					"action": [
+						{
+							"utensil": "backingTin",
+							"act"    : "put",
+							"stuff"  : ["butter"]
+						}
+					]
+				},
+				{
+					"text"  : "Jetzt wird der Inhalt der Schüssel in die Backform gegeben.",
+					"action": [
+						{
+							"utensil": "backingTin",
+							"act"    : "put",
+							"stuff"  : ["flour", "sugar", "backingPowder", "eggs", "cream"]
+						}
+					]
+				},
+				{
+					"text"  : "Und nun kommt die Backform in den Backofen. Schalten Sie den Backofen an, damit der Kuchenteig gebacken wird.",
+					"action": [
+						{
+							"utensil": "oven",
+							"act"    : "put",
+							"stuff"  : ["backingTin"]
+						}
+					]
+				},
+				{
+					"text"  : "Wenn die Kartoffeln gekocht sind können Sie ein Sieb ins Spülbecken stellen.",
+					"action": [
+						{
+							"utensil": "sink",
+							"act"    : "put",
+							"stuff"  : ["sieve"]
+						}
+					]
+				},
+				{
+					"text"  : "Schütten Sie nun die Kartoffeln ins Sieb.",
+					"action": [
+						{
+							"utensil": "sieve",
+							"act"    : "put",
+							"stuff"  : ["bigPot"]
+						}
+					]
+				},
+				{
+					"text"  : "Jetzt legen Sie die Kartoffeln aus dem Sieb und die Zwiebeln auf das Schneidebrett und schneiden Sie die Zutaten in kleine Stücke.",
+					"action": [
+						{
+							"utensil": "cuttingBoard",
+							"act"    : "put",
+							"stuff"  : ["sieve", "onion"]
+						}      ,
+						{
+							"utensil": "cuttingBoard",
+							"act"    : "isCut",
+							"stuff"  : ["potato", "onion"]
+						}
+					]
+				},
+				{
+					"text"  : "Stellen Sie nun eine Pfanne auf eine Herdplatte.",
+					"action": [
+						{
+							"utensil": "plate",
+							"act"    : "put",
+							"stuff"  : ["pan"]
+						}
+					]
+				},
+				{
+					"text"  : "Geben Sie die Zutaten auf dem Schneidebrett mit Öl und Pfeffer und Schinken in die Pfanne und braten Sie das Gemenge.",
+					"action": [
+						{
+							"utensil": "pan",
+							"act"    : "put",
+							"stuff"  : ["potatoe", "onion", "bacon", "oil", "pepper"]
+						},
+						{
+							"utensil": "pan",
+							"act"    : "isCooked",
+							"stuff"  : ["potato", "onion", "bacon", "pepper"]
+						}
+					]
+				},
+
+				{
+					"text"  : "Nun brereiten Sie die Erdbeeren vor. Geben Sie diese in ein Sieb und waschen Sie die Früchte mit Wasser.",
+					"action": [
+						{
+							"utensil": "sieve",
+							"act"    : "put",
+							"stuff"  : ["strawberries", "water"]
+						}
+					]
+				},
+				{
+					"text"  : "Geben Sie die Erdbeeren auf das Schneidebrett und schneiden Sie diese klein.",
+					"action": [
+						{
+							"utensil": "cuttingBoard",
+							"act"    : "put",
+							"stuff"  : ["sieve"]
+						},
+						{
+							"utensil": "cuttingBoard",
+							"act"    : "isCut",
+							"stuff"  : "strawberries"
+						}
+					]
+				},
+				{
+					"text"  : "Nun müssen die Erdbeeren geschnitten werden.",
+					"action": [
+						{
+							"utensil": "cuttingBoard",
+							"act"    : "put",
+							"stuff"  : ["sieve"]
+						}
+					]
+				},
+				{
+					"text"  : "Sobald der Teig fertig ist, werden die Erdbeeren auch in die Form gegeben.",
+					"action": [
+
+						{
+							"utensil": "backingTin",
+							"act"    : "put",
+							"stuff"  : ["strawberries"]
+						}
+					]
+				},
+				{
+					"text"  : "Nun können Sie auch alles aus der Pfanne auf einem Teller an.",
+					"action": [
+						{
+							"utensil": "dish",
+							"act"    : "put",
+							"stuff"  : ["pan"]
 						}
 					]
 				}

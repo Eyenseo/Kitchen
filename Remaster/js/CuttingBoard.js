@@ -1,3 +1,10 @@
+/**
+ * Class which defines what a cutting board can do
+ * @param stage Stageobject
+ * @param data Data from the jasonfile which says where the image of the cutting board lies
+ * @param restrainer Restrainerobject
+ * @constructor
+ */
 function CuttingBoard(stage, data, restrainer) {
 	Container.call(this, stage, data, restrainer);
 }
@@ -14,6 +21,11 @@ CuttingBoard.prototype.addLinkedObject = function(object) {
 	this.linkedObjects.push(object)
 };
 
+/**
+ * Function to add an object to the cutting board.
+ * If it is an ingredient or an object from the container.js it can be pushed into an array where the things which lie on the cutting board are saved.
+ * @param object Object which was put on the cutting board
+ */
 CuttingBoard.prototype.addContent = function(object) {
 	if((object instanceof Ingredient || object instanceof  Container) &&
 	   this.restrainer.checkPutRequest(this, object)) {
