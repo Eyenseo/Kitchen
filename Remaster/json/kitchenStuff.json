@@ -1489,6 +1489,32 @@
 					}
 				}
 			}
+		},
+		{
+			"id"         : "mascot",
+			"name"       : "mascot",
+			"type"       : "Mascot",
+			"sx"         : 350,
+			"sy"         : 146,
+			"w"          : 116,
+			"h"          : 87,
+			"zOrder"     : true,
+			"actionValue": 0.0011,
+			"picture"    : "images/stuff/supervieh.png",
+			"aniObject"  : {
+				"image"     : {
+					"tileWidth" : 116,
+					"tileHeight": 87,
+					"imgWidth"  : 116,
+					"imgHeight" : 87
+				},
+				"animations": {
+					"default": {
+						"seq" : [0],
+						"loop": false
+					}
+				}
+			}
 		}
 	]
 }
