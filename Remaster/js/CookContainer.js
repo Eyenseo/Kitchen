@@ -51,6 +51,10 @@ CookContainer.prototype.getStatus = function() {
 		state = "Full";
 	}
 
+	if(this.temperature !== this.DEFAULTTEMP) {
+		state += "Cooking"
+	}
+
 	if(this.hover) {
 		state += "Hover";
 	}
