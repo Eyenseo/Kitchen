@@ -1,8 +1,10 @@
 /**
- * Class for the Knife to know what it can do and how it does it.
- * @param stage Stageobject
- * @param data Data from the Jasonfile to load the image
- * @param restrainer Restrainerobject from the restrainer.js
+ * This object is used to cut Ingredients that are in the content array of a Container
+ * It's a child of PhysicalThing
+ * @param stage - the stage of the Kitchen
+ * @param data - Data object obtained from a JSON file
+ * @param restrainer - restrainer
+ * @param soundManager - soundManager
  * @constructor
  */
 function Knife(stage, data, restrainer, soundManager) {
@@ -16,19 +18,22 @@ Knife.prototype = Object.create(PhysicalThing.prototype);
 Knife.prototype.constructor = Knife;
 
 /**
- * Function to check where the knife is dragged. Then push it to the object over which it was dragged.
- * @param kitchen Kitchenobject
+ * the function is called by the kitchen upon a drag end event
+ * the function checks for which objects the linkObjects function shall be called and if there are any Ingredients that are not jet cut are the content of a CuttingBoard
+ * the function will update the image/animation
+ * the function will play a sound it cuts
+ * @param kitchen - the kitchen
  */
 Knife.prototype.dragEndAction = function(kitchen) {
 	var THIS = this;
 	var centerObject = this.getCenter();
-	var bottom = centerObject.cy - 10; //for the glow
-	var left = centerObject.cx - this.width / 4;
-	var right = centerObject.cx + this.width / 4;
+	var bottom = centerObject.cy - 10;                                      // -10 for the glow
+	var left = centerObject.cx - this.width / 4;                            // /4 for 'smaller' hitzone
+	var right = centerObject.cx + this.width / 4;                           // /4 for 'smaller' hitzone
 	var objectsUnder = [];
 
-	kitchen.allObjects.forEach(function(object) {
-		if(object instanceof CuttingBoard || object instanceof Cupboard) {
+	kitchen.allObjects.forEach(function(object) {                           //for all available objects
+		if(object instanceof CuttingBoard || object instanceof Cupboard) {  //only thous and not this
 			var zone = object.getHitZone();
 			if(right >= zone.hx && bottom >= zone.hy && left <= zone.hx + zone.hw && bottom <= zone.hy + zone.hh) {
 				objectsUnder.push(object);
@@ -36,11 +41,7 @@ Knife.prototype.dragEndAction = function(kitchen) {
 		}
 	});
 
-	/**
-	 * Function which checks if the pixels under the Knife which was dragged are transparent.
-	 * If not and if it is a door, it should open.
-	 */
-	objectsUnder.forEach(function(object) {
+	objectsUnder.forEach(function(object) {                                 // for all objects under this
 		if(object instanceof Oven || object instanceof Cupboard) {
 			//			console.log("Knife: check Oven and Cupboard");//DEBUG
 			if(object.open ||
@@ -52,13 +53,10 @@ Knife.prototype.dragEndAction = function(kitchen) {
 		}
 	});
 
-	/**
-	 * If the knife was dragged over the cutting board and there lies something on it select the right animation for that thing.
-	 */
-	this.linkedObjects.forEach(function(object) {
+	this.linkedObjects.forEach(function(object) {                           // for all linked objects
 		if(object instanceof CuttingBoard && object.content.length !== 0) {
 			object.content.forEach(function(content) {
-				if(!content.cut) {
+				if(!content.cut) {                                          // if one object is not jet cut
 					THIS.cutting = true;
 				}
 			});
@@ -72,8 +70,8 @@ Knife.prototype.dragEndAction = function(kitchen) {
 };
 
 /**
- * Function to show the right animation of an ingredient which should be cut on the cutting board
- * @param keepIndex
+ * the function is called to update the image/animation to be displayed
+ * @param keepIndex BOOLEAN - if the animation index should be changed or not
  */
 Knife.prototype.selectAnimation = function(keepIndex) {
 	var anim = "";
@@ -91,6 +89,11 @@ Knife.prototype.selectAnimation = function(keepIndex) {
 	this.changeAnimation(anim, keepIndex);
 };
 
+/**
+ * the function is the overridden function of the parent
+ * the function will check if this and the object will connect
+ *  @param object PhysicalThing - object to connect with
+ */
 Knife.prototype.linkObjects = function(object) {
 	if(object instanceof CuttingBoard || object instanceof Cupboard || object instanceof Oven) {
 		object.addLinkedObject(this);
@@ -98,7 +101,17 @@ Knife.prototype.linkObjects = function(object) {
 	}
 };
 
+/**
+ * the function is the function of the parent object
+ * @type {Function}
+ */
 Knife.prototype.PHY_action = Knife.prototype.action;
+/**
+ * the function will call its parent and if cutting is true it will count up until time limit, and cut all ingredients
+ * the function will update the image/animation
+ * the function will stop a sound it cuts
+ * @param kitchen - the kitchen
+ */
 Knife.prototype.action = function(kitchen) {
 	this.PHY_action(kitchen);
 

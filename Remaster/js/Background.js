@@ -1,3 +1,9 @@
+/**
+ * The Background is the background of the kitchen.
+ * It has collision boxes that other objects can use to detect weather they are inf ree fall or on an actual object
+ * @param stage - the stage of the Kitchen
+ * @constructor
+ */
 function Background(stage) {
 	VisualRenderObject.call(this, stage.getContext(), 0, 0, 1024, 650, "images/background/kitchenBackground.png", 9);
 	this.collisionBoxes = [];
@@ -7,7 +13,9 @@ function Background(stage) {
 
 Background.prototype = Object.create(VisualRenderObject.prototype);
 Background.prototype.constructor = Background;
-
+/**
+ * The function will create all need collision boxes needed for the background
+ */
 Background.prototype.initialiseCollisionBoxes = function() {
 	// From top to bottom, left to right
 
@@ -51,6 +59,13 @@ Background.prototype.initialiseCollisionBoxes = function() {
 	this.addCollisionBox(0, 609, 1024, 100);
 };
 
+/**
+ * the function will create a box object and will push the new object in the collisionBoxes array
+ * @param x NUMBER - x-start position of the object
+ * @param y NUMBER - y-start position of the object
+ * @param w NUMBER - width of the object
+ * @param h NUMBER - height of the object
+ */
 Background.prototype.addCollisionBox = function(x, y, w, h) {
 	var box = {"x": x, "y": y, "w": w, "h": h};
 	this.collisionBoxes.push(box);

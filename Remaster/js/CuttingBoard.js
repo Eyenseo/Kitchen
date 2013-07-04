@@ -1,8 +1,8 @@
 /**
- * Class which defines what a cutting board can do
- * @param stage Stageobject
- * @param data Data from the jasonfile which says where the image of the cutting board lies
- * @param restrainer Restrainerobject
+ * This object is a child of PhysicalThing and is needed to cut Ingredient objects
+ * @param stage - the stage of the Kitchen
+ * @param data - Data object obtained from a JSON file
+ * @param restrainer - restrainer
  * @constructor
  */
 function CuttingBoard(stage, data, restrainer) {
@@ -11,6 +11,10 @@ function CuttingBoard(stage, data, restrainer) {
 CuttingBoard.prototype = Object.create(Container.prototype);
 CuttingBoard.prototype.constructor = CuttingBoard;
 
+/**
+ * the function will add the object to the linkedObjects array and if the object is appropriated it will be added to the content
+ * @param object object to be added
+ */
 CuttingBoard.prototype.addLinkedObject = function(object) {
 	//console.log("CuttingBoard: Link " + this.name + " with: " + object.name);//DEBUG
 
@@ -22,9 +26,9 @@ CuttingBoard.prototype.addLinkedObject = function(object) {
 };
 
 /**
- * Function to add an object to the cutting board.
- * If it is an ingredient or an object from the container.js it can be pushed into an array where the things which lie on the cutting board are saved.
- * @param object Object which was put on the cutting board
+ * the function will add the object to the linkedObjects array and if the object is appropriated it will be added to the content
+ * the function will check if the object is on the Stage, if not it will be added and its location is in the center
+ * @param object - object to be added
  */
 CuttingBoard.prototype.addContent = function(object) {
 	if((object instanceof Ingredient || object instanceof  Container) &&

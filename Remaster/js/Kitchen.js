@@ -51,15 +51,14 @@ function Kitchen(canvasId) {
 
 }
 
+/**
+ * the function will reset the kitchen to a state right after finish loading the web page
+ */
 Kitchen.prototype.restart = function() {
 	var THIS = this;
 
-	this.videoManager.stopAll();
-	this.soundManager.stopAll();
-
 	this.allObjects.forEach(function(object) {
 		THIS.stage.removeFromStage(object);
-
 	});
 
 	this.restrainer.recipeStage = 0;
@@ -70,11 +69,23 @@ Kitchen.prototype.restart = function() {
 	this.htmlManager.allRecipes();
 };
 
+/**
+ * the function will create a object based on the objectId and if required with the extra data
+ * @param objectId STRING - id of the object to be created - not - the name
+ * @param extra {*} - varies for each object type to be created
+ * @returns {*} the return value is the object that was created
+ */
 Kitchen.prototype.makeObjectById = function(objectId, extra) {
 	var objectData = this.jsonHandler.objectById(objectId);
 	return  this.makeObject(objectData, extra);
 };
 
+/**
+ * the function will create a object based on the objectData and if required with the extra data
+ * @param objectData the data for the object to be created, the data should be obtained from the jsonHandler
+ * @param extra {*} - varies for each object type to be created
+ * @returns {*} the return value is the object that was created
+ */
 Kitchen.prototype.makeObject = function(objectData, extra) {
 	var addToStage = true;
 	var object;
@@ -153,6 +164,11 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 	return  object;
 };
 
+/**
+ * the function adds the object to the stage if requested and will put it in the allObjects array
+ * @param object {*} object to be added
+ * @param addToStage BOOLEAN - if the object should be added to the stage
+ */
 Kitchen.prototype.addObject = function(object, addToStage) {
 	if(object !== null && object !== undefined) {
 		this.allObjects.push(object);
@@ -162,6 +178,9 @@ Kitchen.prototype.addObject = function(object, addToStage) {
 	}
 };
 
+/**
+ * the function will create all static objects that are always needed for the kitchen
+ */
 Kitchen.prototype.initialiseKitchen = function() {
 	var bufferObject;
 
@@ -208,6 +227,10 @@ Kitchen.prototype.initialiseKitchen = function() {
 	this.makeObjectById("sink", this.jsonHandler.objectById("water"));
 };
 
+/**
+ * the function will add all needed ingredients and utensils to the kitchen based on the recipe, sets the recipe in the restrainer, calls the stage to reorder all objects and finally sets finished to false and sets prepared to true
+ * @param currentRecipe the value determines which recipe will be cooked
+ */
 Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 	var THIS = this;
 
@@ -224,6 +247,11 @@ Kitchen.prototype.prepareKitchen = function(currentRecipe) {
 	this.finished = false;
 };
 
+/**
+ * the function checks if the event target is an object and if the CLICK event is really caused by a CLICK
+ * afterwards it checks if the object as a method named - clickAction
+ * @param event event object
+ */
 Kitchen.prototype.onClick = function(event) {
 	if(event.target !== null && event.target !== undefined) {
 		if(this.pressesObject !== null && this.pressesObject !== undefined && this.pressesObject === event.target &&
@@ -234,9 +262,10 @@ Kitchen.prototype.onClick = function(event) {
 };
 
 /**
- * Checks what has to happen if something is dropped over an other thing.
- * Then the special function dragEndAction of an object is performed.
- * @param event
+ * the function checks if the event target is an object
+ * afterwards it checks if the object as a method named - dragEndAction
+ * the function will call a reorder of the stage
+ * @param event event object
  */
 Kitchen.prototype.onDragend = function(event) {
 	if(event.target !== null && event.target !== undefined) {
@@ -248,8 +277,9 @@ Kitchen.prototype.onDragend = function(event) {
 };
 
 /**
- * Checks if a function has to be performed when something is dragged from somewhere.
- * @param event
+ * the function checks if the event target is an object
+ * afterwards it checks if the object as a method named - dragStartAction
+ * @param event event object
  */
 Kitchen.prototype.onDragstart = function(event) {
 	if(event.target !== null && event.target !== undefined) {
@@ -259,7 +289,11 @@ Kitchen.prototype.onDragstart = function(event) {
 	}
 };
 
-//TODO JAVADOC
+/**
+ * the function checks if the event target is an object
+ * afterwards it checks if the object as a method named - mouseOverAction
+ * @param event event object
+ */
 Kitchen.prototype.onMouseover = function(event) {
 	if(event.target !== null && event.target !== undefined) {
 		if("mouseOverAction" in event.target) {
@@ -268,7 +302,11 @@ Kitchen.prototype.onMouseover = function(event) {
 	}
 };
 
-//TODO JAVADOC
+/**
+ * the function checks if the event target is an object
+ * afterwards it checks if the object as a method named - mouseOutAction
+ * @param event event object
+ */
 Kitchen.prototype.onMouseout = function(event) {
 	if(event.target !== null && event.target !== undefined) {
 		if("mouseOutAction" in event.target) {
@@ -277,7 +315,13 @@ Kitchen.prototype.onMouseout = function(event) {
 	}
 };
 
-//TODO JAVADOC
+/**
+ * the function checks if the event target is an object
+ * afterwards it checks if the object as a method named - mouseDownAction and if it is draggable
+ * the function will call a reorder of the stage
+ * the event target will be set as new pressesObject for the check in onClick
+ * @param event event object
+ */
 Kitchen.prototype.onMousedown = function(event) {
 	if(event.target !== null && event.target !== undefined) {
 		if("mouseDownAction" in event.target && event.target.hasOwnProperty("draggable") && event.target.draggable) {
@@ -288,7 +332,11 @@ Kitchen.prototype.onMousedown = function(event) {
 	this.pressesObject = event.target;
 };
 
-//TODO JAVADOC
+/**
+ * the function checks if the event target is an object
+ * afterwards it checks if the object as a method named - mouseUpAction
+ * @param event event object
+ */
 Kitchen.prototype.onMouseup = function(event) {
 	if(event.target !== null && event.target !== undefined) {
 		if("mouseUpAction" in event.target) {

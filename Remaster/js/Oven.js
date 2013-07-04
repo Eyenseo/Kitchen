@@ -7,6 +7,10 @@ function Oven(stage, data, restrainer, soundManager) {
 Oven.prototype = Object.create(Plate.prototype);
 Oven.prototype.constructor = Oven;
 
+/**
+ * the function is called to update the image/animation to be displayed
+ * @param keepIndex BOOLEAN - if the animation index should be changed or not
+ */
 Oven.prototype.selectAnimation = function(keepIndex) {
 	var anim = "";
 
@@ -36,7 +40,12 @@ Oven.prototype.selectAnimation = function(keepIndex) {
 
 	this.changeAnimation(anim, keepIndex);
 };
-
+/**
+ * the function is called by the kitchen upon a click event
+ * the function will play a sound for opening and closing
+ * the function will update the image/animation
+ * @param kitchen - the kitchen
+ */
 Oven.prototype.clickAction = function(kitchen) {
 	this.open = !this.open;
 
@@ -48,7 +57,10 @@ Oven.prototype.clickAction = function(kitchen) {
 
 	this.selectAnimation(true);
 };
-
+/**
+ * the function is called by the kitchen at evey frame draw
+ * the function will update the temperature of all linked Objects
+ */
 Oven.prototype.action = function(kitchen) {
 	var THIS = this;
 	if(this.linkedObjects.length > 0) {
@@ -64,6 +76,12 @@ Oven.prototype.action = function(kitchen) {
 	}
 };
 
+/**
+ * the function will add the object to the linkedObjects array
+ * the function will set the open state to true
+ * the function will update the image/animation
+ * @param object
+ */
 Oven.prototype.addLinkedObject = function(object) {
 	//	console.log("Oven: Link " + this.name + " with: " + object.name);//DEBUG
 

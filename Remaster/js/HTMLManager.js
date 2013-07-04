@@ -1,3 +1,10 @@
+/**
+ * The object handels the html (apart of the audio and the video).
+ * It's responsible to display the menu, the speech bubble text and the "wow" picture.
+ * @param jsonHandler - the jsonHandler
+ * @param kitchen - the kitchen
+ * @constructor
+ */
 function HTMLManager(jsonHandler, kitchen) {
 	this.recipes = jsonHandler.recipes;
 	this.kitchen = kitchen;
@@ -9,6 +16,9 @@ function HTMLManager(jsonHandler, kitchen) {
 
 HTMLManager.prototype.constructor = HTMLManager;
 
+/**
+ * the function creates the speech bubble div
+ */
 HTMLManager.prototype.createSpeechBubble = function() {
 	this.speechBubbleDiv = document.createElement("div");
 	this.speechBubbleDiv.setAttribute("id", "speechBubble");
@@ -16,11 +26,19 @@ HTMLManager.prototype.createSpeechBubble = function() {
 	this.kitchenDiv.appendChild(this.speechBubbleDiv);
 };
 
+/**
+ * the function deletes all previous html from the speech bubble div and will put the text as text node in.
+ * @param text STRING - text to be displayed
+ */
 HTMLManager.prototype.updateSpeechBubbleText = function(text) {
 	this.speechBubbleDiv.innerHTML = "";
 	this.speechBubbleDiv.appendChild(document.createTextNode(text));
 };
 
+/**
+ * the function creates the finish image div with the "wow", a restart button and a picture of the finished dish
+ * @param finishedSource STRING - path to the finished dish image
+ */
 HTMLManager.prototype.showWow = function(finishedSource) {
 	var THIS = this;
 
@@ -41,9 +59,12 @@ HTMLManager.prototype.showWow = function(finishedSource) {
 	wowDiv.appendChild(finishedDiv);
 };
 
+/**
+ * the function creates the whole recipe menu
+ */
 HTMLManager.prototype.allRecipes = function() {
+	// delete previous finished wow divs
 	var wowDiv = document.querySelector("#wow");
-
 	if(wowDiv !== null) {
 		wowDiv.parentNode.removeChild(wowDiv);
 	}
@@ -51,6 +72,7 @@ HTMLManager.prototype.allRecipes = function() {
 	var THIS = this;
 	var body = document.querySelector('body');
 
+	//background
 	var startUpDiv = document.createElement('div');
 	startUpDiv.setAttribute('id', 'startUpDiv');
 	body.appendChild(startUpDiv);

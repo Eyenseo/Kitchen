@@ -1,4 +1,7 @@
-//TODO DOC
+/**
+ * the Object handels the loading of the json files
+ * @constructor
+ */
 function JSONHandler() {
 	var jsonHandler = this;
 	this.recipes = null;
@@ -18,7 +21,11 @@ function JSONHandler() {
 
 JSONHandler.prototype.constructor = JSONHandler;
 
-//TODO DOC
+/**
+ * the function searches for a id in the loaded json files
+ * @param id STRING - id of the object to be found
+ * @returns {null} object that has the same id as the id parameter
+ */
 JSONHandler.prototype.objectById = function(id) {
 	var object = null;
 

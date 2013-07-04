@@ -1,10 +1,11 @@
 /**
- * Class for the sink and the tap.
- * @param stage Stageobject
- * @param data Data from the jsonfile
- * @param restrainer Restrainerobject
- * @param kitchen Kitchenobject
- * @param waterData Data to create water
+ * This object is used to create water really,it doesn't have any pipes!
+ * It's a child of PhysicalThing
+ * @param stage - the stage of the Kitchen
+ * @param data - Data object obtained from a JSON file
+ * @param restrainer - restrainer
+ * @param kitchen - the kitchen
+ * @param waterData - water data object to create a water Ingredient
  * @constructor
  */
 function Sink(stage, data, restrainer, kitchen, waterData) {
@@ -16,12 +17,16 @@ function Sink(stage, data, restrainer, kitchen, waterData) {
 	this.waterData = waterData;
 	this.kitchen = kitchen;
 	this.soundManager = kitchen.soundManager;
-	this.water = new Ingredient(stage, this.waterData);
+	this.water = new Ingredient(stage, this.waterData, restrainer, this.soundManager);
 }
 
 Sink.prototype = Object.create(PhysicalThing.prototype);
 Sink.prototype.constructor = Sink;
 
+/**
+ * the function is called to update the image/animation to be displayed
+ * @param keepIndex BOOLEAN - if the animation index should be changed or not
+ */
 Sink.prototype.selectAnimation = function(keepIndex) {
 	var anim = "";
 
@@ -45,8 +50,8 @@ Sink.prototype.selectAnimation = function(keepIndex) {
 };
 
 /**
- * Function to check which object is in the sink to put water into it if the water is puring and the object is able to get water.
- * @param object Object which is in the sink
+ * the function will add the object to the linkedObjects array and if the object is appropriated it will be added to the content
+ * @param object object to be added
  */
 Sink.prototype.addLinkedObject = function(object) {
 	if(this.puring && object instanceof Container && this.restrainer.checkPutRequest(object, this.water, true)) {
@@ -56,9 +61,9 @@ Sink.prototype.addLinkedObject = function(object) {
 };
 
 /**
- * Function to define that the water should stop or start to pur if the sink was clicked.
- * Every object in the sink is told that water is floating and may be get "into" the objects.
- * @param kitchen Kitchenobject
+ * the function will switch the state of the tap and will play/stop the puring sound
+ * the function will update the image/animation
+ * @param kitchen - the kitchen
  */
 Sink.prototype.clickAction = function(kitchen) {
 	var THIS = this;

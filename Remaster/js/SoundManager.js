@@ -40,9 +40,12 @@ function SoundManager() {
 	this.initialiseSound(this.CLOSEDOOR, "sounds/closeDoor.wav");
 	this.initialiseSound(this.CUT, "sounds/cut.wav");
 }
-//TODO is this needed?
+
 SoundManager.prototype.constructor = SoundManager;
 
+/**
+ * the function will stop all sounds and set all loops to 0
+ */
 SoundManager.prototype.stopAll = function() {
 	this.DROP.forEach(function(sound) {
 		sound.pause();
@@ -176,7 +179,7 @@ SoundManager.prototype.manageSound = function(sound, status) {
  *                        3: Play looping sound
  * @returns {number} NUMBER - the return value is the amount of looping sounds from the sound array
  */
-SoundManager.prototype.controlSound = function(sound, loop, status) {
+SoundManager.prototype.controlSound = function(sound, loop, status) { //TODO split up, quite a long function ...
 	switch(status) {
 		case 0:
 			if(loop < sound.length) {
