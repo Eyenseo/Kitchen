@@ -368,6 +368,7 @@ Kitchen.prototype.run = function(kit) {
 		}
 
 		//See also the Video manager - firefox has sometimes problems ...
+
 		//		if(this.bug < 5) { // Dirty hack - probably because of something in the stage?
 		//			this.videoManager.changePower(); // if this is not done the stage doesn't start to render the previous created
 		//			this.videoManager.changePower();

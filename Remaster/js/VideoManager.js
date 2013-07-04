@@ -100,12 +100,12 @@ VideoManager.prototype.changePower = function() {
 VideoManager.prototype.playVideo = function() {
 	var video = this.videos[this.currentVideo];
 
-	if(video.readyState == 4) {     //Experimental, but it seems to work
-		this.videoDiv.innerHTML = "";
+	//	if(video.readyState == 4) {     //Experimental firefox doesn't like this ...
+	this.videoDiv.innerHTML = "";
 
-		video.currentTime = ((Date.now() - this.time) / 1000) % video.duration; //Experimental
+	//		video.currentTime = ((Date.now() - this.time) / 1000) % video.duration; //Experimental
 
-		this.videoDiv.appendChild(video);
-		video.play();
-	}          //Experimental
+	this.videoDiv.appendChild(video);
+	video.play();
+	//	}          //Experimental
 };
