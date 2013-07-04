@@ -546,7 +546,7 @@
 					]
 				},
 				{
-					"text"  : "Jetzt geben sie die Kartoffeln in das kochende Wasser.",
+					"text"  : "Jetzt geben sie die Kartoffeln in das kochende Wasser und warten Sie darauf, das sie gekocht sind.",
 					"action": [
 						{
 							"utensil": "bigPot",
@@ -616,7 +616,7 @@
 						{
 							"utensil": "sieve",
 							"act"    : "put",
-							"stuff"  : ["bigPot"]
+							"stuff"  : ["water", "salt", "potato"]
 						}
 					]
 				},
@@ -626,8 +626,8 @@
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "put",
-							"stuff"  : ["sieve", "onion"]
-						}      ,
+							"stuff"  : ["water", "salt", "potato", "onion"]
+						},
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "isCut",
@@ -677,22 +677,12 @@
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "put",
-							"stuff"  : ["sieve"]
+							"stuff"  : ["potato"]
 						},
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "isCut",
 							"stuff"  : "strawberries"
-						}
-					]
-				},
-				{
-					"text"  : "Nun müssen die Erdbeeren geschnitten werden.",
-					"action": [
-						{
-							"utensil": "cuttingBoard",
-							"act"    : "put",
-							"stuff"  : ["sieve"]
 						}
 					]
 				},
