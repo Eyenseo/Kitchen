@@ -110,7 +110,7 @@ Restrainer.prototype.checkActionState = function(stuffObjectName, action) {
 							}
 						});
 						if(!done) {
-							if(object instanceof Container) {
+							if(object instanceof Container && object.name === action.utensil) {
 								var content = object.content;
 								content.forEach(function(o) {
 									if(!done && stuffObjectName === o.name) {

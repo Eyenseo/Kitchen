@@ -1,32 +1,6 @@
 {
 	"recipes": [
 		{
-			"name"               : "DEBUG",
-			"difficulty"         : 5,
-			"pictureFinish"      : "./images/finished/spaetzle.png",
-			"description"        : "Käsespätzle sind ein einfaches und schnell zu zubereitendes Gericht. Sie sind bekannt aus dem Schwabenländle. Dort werden sie in nahezu jeder Familie traditionsmäßig gegessen.",
-			"ingredients"        : ["backingPowder", "bacon", "butter", "cheese", "cream", "eggs", "flour", "meat",
-			                        "mushroom", "oil", "onion", "pepper", "potato", "salt", "sauerkraut", "spaetzle",
-			                        "strawberries", "sugar"],
-			"ingredientsReadable": ["backingPowder", "bacon", "butter", "cheese", "cream", "eggs", "flour", "meat",
-			                        "mushroom", "oil", "onion", "pepper", "potato", "salt", "sauerkraut", "spaetzle",
-			                        "strawberries", "sugar"],
-			"utensils"           : ["bakingTin", "bowl", "littlePot", "dish", "bigPot", "pan", "sieve", "cuttingBoard",
-			                        "knife"],
-			"schedule"           : [
-				{
-					"text"  : "Einen Topf mit Wasser und einer Priese Salz füllen.",
-					"action": [
-						{
-							"utensil": "bigPot",
-							"act"    : "put",
-							"stuff"  : ["water", "salt"]
-						}
-					]
-				}
-			]
-		},
-		{
 			"name"               : "Käsespätzle",
 			"difficulty"         : 2,
 			"pictureFinish"      : "./images/finished/spaetzle.png",
@@ -121,17 +95,17 @@
 					]
 				},
 				{
-					"text"  : "Die Spätzle, Pilze und Zwiebeln mit Öl in die Pfanne geben und anbraten.",
+					"text"  : "Die Spätzle, Käse, Pilze und Zwiebeln mit Öl in die Pfanne geben und anbraten.",
 					"action": [
 						{
 							"utensil": "pan",
 							"act"    : "put",
-							"stuff"  : ["spaetzle", "mushroom", "onion", "oil"]
+							"stuff"  : ["spaetzle", "mushroom", "onion", "oil", "cheese"]
 						},
 						{
 							"utensil": "pan",
 							"act"    : "isCooked",
-							"stuff"  : ["spaetzle", "mushroom", "onion"]
+							"stuff"  : ["spaetzle", "mushroom", "onion", "cheese"]
 						}
 					]
 				},
@@ -227,17 +201,22 @@
 					]
 				},
 				{
-					"text"  : "Nun legen Sie die Zwiebeln auf das Schneidebrett.",
+					"text"  : "Nun legen Sie die Zwiebeln auf das Schneidebrett und schneiden diese.",
 					"action": [
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "put",
 							"stuff"  : ["onion"]
+						},
+						{
+							"utensil": "cuttingBoard",
+							"act"    : "isCut",
+							"stuff"  : ["onion"]
 						}
 					]
 				},
 				{
-					"text"  : "Stellen Sie ein Sieb ins Spülbecken.",
+					"text"  : "Stellen Sie ein Sieb ins Spülbecken und warten sie darauf, dass die Katoffeln gekocht sind.",
 					"action": [
 						{
 							"utensil": "sink",
@@ -252,7 +231,7 @@
 					]
 				},
 				{
-					"text"  : "Wenn die Kartoffeln fertig gekocht sind, können Sie diese ins Sieb im Spülbecken geben.",
+					"text"  : "Nun können Sie die Katoffen ins Sieb im Spülbecken geben.",
 					"action": [
 						{
 							"utensil": "sieve",
@@ -272,7 +251,7 @@
 					]
 				},
 				{
-					"text"  : "Das Kasslersteak und die Zwiebeln kommen nun mit Öl in die Pfanne.",
+					"text"  : "Das Kasslersteak und die Zwiebeln kommen nun mit Öl in die Pfanne und werden angebraten.",
 					"action": [
 						{
 							"utensil": "pan",
@@ -348,27 +327,27 @@
 					]
 				},
 				{
-					"text"  : "Jetzt geben sie die Kartoffeln in das kochende Wasser.",
+					"text"  : "Jetzt geben Sie die Kartoffeln in das kochende Wasser und kochen diese.",
 					"action": [
 						{
 							"utensil": "bigPot",
 							"act"    : "put",
-							"stuff"  : ["potato"]
-						},
-						{
-							"utensil": "bigPot",
-							"act"    : "isCooked",
 							"stuff"  : ["potato"]
 						}
 					]
 				},
 				{
-					"text"  : "Wenn die Kartoffeln gekocht sind können Sie ein Sieb ins Spülbecken stellen.",
+					"text"  : "Nun  können Sie ein Sieb ins Spülbecken stellen und warten Sie darauf, dass die Katoffeln fertig kochen.",
 					"action": [
 						{
 							"utensil": "sink",
 							"act"    : "put",
 							"stuff"  : ["sieve"]
+						} ,
+						{
+							"utensil": "bigPot",
+							"act"    : "isCooked",
+							"stuff"  : ["potato"]
 						}
 					]
 				},
@@ -441,7 +420,7 @@
 			"description"        : "Das ist das Grundrezept für einen Erdbeerkuchen. Nach belieben kann man es auch mal erweitern; zum Beispiel mit einer Puddingschicht.",
 			"ingredients"        : ["strawberries", "flour", "sugar", "backingPowder", "butter", "eggs", "cream"],
 			"ingredientsReadable": ["Erdbeeren", "Mehl", "Zucker", "Backpulver", "Butter", "Eier", "Sahne"],
-			"utensils"           : ["dish", "sieve", "bowl", "bakingTin", "cuttingBoard", "knife"],
+			"utensils"           : ["dish", "bowl", "bakingTin", "cuttingBoard", "knife"],
 			"schedule"           : [
 				{
 					"text"  : "Zuerst nehmen Sie eine Schüssel und geben Sie in diese nach und nach Mehl, Backpulver, Sahne, Eier und Zucker.",
@@ -474,7 +453,7 @@
 					]
 				},
 				{
-					"text"  : "Und nun kommt die Backform in den Backofen. Schalten Sie den Backofen an, damit der Kuchenteig gebacken wird.",
+					"text"  : "Schalten Sie den Backofen an, damit der Kuchenteig gebacken wird. Und nun kommt die Backform in den Backofen. ",
 					"action": [
 						{
 							"utensil": "oven",
@@ -509,7 +488,7 @@
 					]
 				},
 				{
-					"text"  : "Sobald der Teig fertig ist, werden die Erdbeeren auch in die Form gegeben.",
+					"text"  : "Jetzt werden die Erdbeeren auch in die Form gegeben.",
 					"action": [
 						{
 							"utensil": "bakingTin",
@@ -533,7 +512,7 @@
 		{
 			"name"               : "Zwei in Einem: Bratkartoffeln und Erdbeerkuchen",
 			"difficulty"         : 5,
-			"pictureFinish"      : "./images/finished/strawberryCake.png",
+			"pictureFinish"      : "./images/finished/cakeAndMeat.png",
 			"description"        : "Wer sich schon an den Einzelrezepten versucht hat, kann es mit diesem Rezept probieren, in dem Zwei Gerichte auf einmal fertiggestellt werden sollen: Bratkartofeln und Erdbeerkuchen.",
 			"ingredients"        : ["potato", "bacon", "onion", "pepper", "oil", "salt", "strawberries", "flour",
 			                        "sugar", "backingPowder", "butter", "eggs", "cream"],

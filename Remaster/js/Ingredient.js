@@ -43,7 +43,8 @@ Ingredient.prototype.dragEndAction = function(kitchen) {
 
 	objectsUnder.forEach(function(object) {
 		if(object instanceof Oven || object instanceof Cupboard) {
-			if((!object.open && !THIS.stage._checkTransparency({ x: bottomObject.cx, y: bottomObject.cy }, object))) {
+			if(object.open ||
+			   (!object.open && !THIS.stage._checkTransparency({ x: bottomObject.cx, y: bottomObject.cy }, object))) {
 				THIS.linkObjects(object);
 			}
 		} else {

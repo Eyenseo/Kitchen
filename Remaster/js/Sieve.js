@@ -16,6 +16,7 @@ Sieve.prototype.addContent = function(object) {
 Sieve.prototype.linkObjects = function(object) {
 	var added = false;
 	var THIS = this;
+
 	console.log("Sieve");
 	this.PHY_linkObjects(object);
 
@@ -33,6 +34,7 @@ Sieve.prototype.linkObjects = function(object) {
 			}
 		});
 	}
+
 	if(added) {
 		this.soundManager.play(this.soundManager.DROP);
 	}

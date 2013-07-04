@@ -37,7 +37,8 @@ Container.prototype.dragEndAction = function(kitchen) {
 	objectsUnder.forEach(function(object) {
 		if(object instanceof Oven || object instanceof Cupboard) {
 			console.log("Container: check Oven and Cupboard");
-			if((!object.open && !THIS.stage._checkTransparency({ x: bottomObject.cx, y: bottomObject.cy }, object))) {
+			if(object.open ||
+			   (!object.open && !THIS.stage._checkTransparency({ x: bottomObject.cx, y: bottomObject.cy }, object))) {
 				THIS.linkObjects(object);
 			}
 		} else {
@@ -95,7 +96,7 @@ Container.prototype.addContent = function(object) {
 	if((object instanceof Ingredient || object instanceof  Container) &&
 	   this.restrainer.checkPutRequest(this, object)) {
 		this.content.push(object);
-		this.selectAnimation(false);
+		//		this.selectAnimation(false);
 	}
 	this.selectAnimation(true);
 };
