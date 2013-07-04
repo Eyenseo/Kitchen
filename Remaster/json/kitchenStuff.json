@@ -5,7 +5,7 @@
 			"name"       : "bigPot",
 			"type"       : "Pot",
 			"sx"         : 655,
-			"sy"         : 400,
+			"sy"         : 380,
 			"w"          : 136,
 			"h"          : 130,
 			"zOrder"     : true,
@@ -102,8 +102,8 @@
 			"id"         : "littlePot",
 			"name"       : "littlePot",
 			"type"       : "Pot",
-			"sx"         : 615,
-			"sy"         : 499,
+			"sx"         : 685,
+			"sy"         : 500,
 			"w"          : 106,
 			"h"          : 104,
 			"zOrder"     : true,
@@ -200,7 +200,7 @@
 			"id"         : "pan",
 			"name"       : "pan",
 			"type"       : "Pan",
-			"sx"         : 603,
+			"sx"         : 607,
 			"sy"         : 500,
 			"w"          : 173,
 			"h"          : 100,
@@ -298,10 +298,10 @@
 			"id"         : "knife",
 			"name"       : "knife",
 			"type"       : "Knife",
-			"sx"         : 250,
-			"sy"         : 279,
+			"sx"         : 252,
+			"sy"         : 305,
 			"w"          : 201,
-			"h"          : 111,
+			"h"          : 112,
 			"zOrder"     : true,
 			"actionValue": 600,
 			"picture"    : "images/utensils/knife.png",
@@ -309,9 +309,9 @@
 			"aniObject": {
 				"image"     : {
 					"tileWidth" : 201,
-					"tileHeight": 111,
+					"tileHeight": 112,
 					"imgWidth"  : 4020,
-					"imgHeight" : 222
+					"imgHeight" : 224
 				},
 				"animations": {
 					"default"     : {
@@ -460,7 +460,7 @@
 			"name"       : "dish",
 			"type"       : "Container",
 			"sx"         : 610,
-			"sy"         : 329,
+			"sy"         : 415,
 			"w"          : 136,
 			"h"          : 69,
 			"zOrder"     : true,
