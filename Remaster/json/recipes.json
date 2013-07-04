@@ -546,7 +546,7 @@
 					]
 				},
 				{
-					"text"  : "Jetzt geben sie die Kartoffeln in das kochende Wasser und warten Sie darauf, das sie gekocht sind.",
+					"text"  : "Geben Sie jetzt die Kartoffeln in das kochende Wasser und warten Sie darauf, das diese gekocht sind.",
 					"action": [
 						{
 							"utensil": "bigPot",
@@ -561,7 +561,7 @@
 					]
 				},
 				{
-					"text"  : "Nun nehmen Sie eine Schüssel und geben Sie in diese nach und nach Mehl, Backpulver, Sahne, Eier und Zucker.",
+					"text"  : "Nun nehmen Sie eine Schüssel und geben Sie in diese Mehl, Backpulver, Sahne, Eier und Zucker.",
 					"action": [
 						{
 							"utensil": "bowl",
@@ -591,7 +591,7 @@
 					]
 				},
 				{
-					"text"  : "Und nun kommt die Backform in den Backofen. Schalten Sie den Backofen an, damit der Kuchenteig gebacken wird.",
+					"text"  : "Schalten Sie den Backofen an, damit der Kuchenteig gebacken wird. Und stellen Sie die Backform in den Backofen.",
 					"action": [
 						{
 							"utensil": "oven",
@@ -601,7 +601,7 @@
 					]
 				},
 				{
-					"text"  : "Wenn die Kartoffeln gekocht sind können Sie ein Sieb ins Spülbecken stellen.",
+					"text"  : "Stellen Sie das Sieb ins Spülbecken und warten Sie auf die Katoffeln.",
 					"action": [
 						{
 							"utensil": "sink",
@@ -651,23 +651,12 @@
 						{
 							"utensil": "pan",
 							"act"    : "put",
-							"stuff"  : ["potatoe", "onion", "bacon", "oil", "pepper"]
+							"stuff"  : ["potato", "onion", "bacon", "oil", "pepper"]
 						},
 						{
 							"utensil": "pan",
 							"act"    : "isCooked",
 							"stuff"  : ["potato", "onion", "bacon", "pepper"]
-						}
-					]
-				},
-
-				{
-					"text"  : "Nun brereiten Sie die Erdbeeren vor. Geben Sie diese in ein Sieb und waschen Sie die Früchte mit Wasser.",
-					"action": [
-						{
-							"utensil": "sieve",
-							"act"    : "put",
-							"stuff"  : ["strawberries", "water"]
 						}
 					]
 				},
@@ -677,17 +666,17 @@
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "put",
-							"stuff"  : ["potato"]
+							"stuff"  : ["strawberries"]
 						},
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "isCut",
-							"stuff"  : "strawberries"
+							"stuff"  : ["strawberries"]
 						}
 					]
 				},
 				{
-					"text"  : "Sobald der Teig fertig ist, werden die Erdbeeren auch in die Form gegeben.",
+					"text"  : "Hohlen Sie nun den Kuchen aus dem Ofen und ganierien ihn mit den Erdbeeren.",
 					"action": [
 
 						{
@@ -698,7 +687,7 @@
 					]
 				},
 				{
-					"text"  : "Nun können Sie auch alles aus der Pfanne auf einem Teller an.",
+					"text"  : "Richten Sie nun alles aus der Pfanne auf einem Teller an.",
 					"action": [
 						{
 							"utensil": "dish",

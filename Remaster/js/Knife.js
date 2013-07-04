@@ -21,10 +21,10 @@ Knife.prototype.constructor = Knife;
  */
 Knife.prototype.dragEndAction = function(kitchen) {
 	var THIS = this;
-	var bottomObject = this.getBottomCenter();
-	var bottom = bottomObject.cy - 10; //for the glow
-	var left = bottomObject.cx - this.width / 4;
-	var right = bottomObject.cx + this.width / 4;
+	var centerObject = this.getCenter();
+	var bottom = centerObject.cy - 10; //for the glow
+	var left = centerObject.cx - this.width / 4;
+	var right = centerObject.cx + this.width / 4;
 	var objectsUnder = [];
 
 	kitchen.allObjects.forEach(function(object) {
@@ -44,7 +44,7 @@ Knife.prototype.dragEndAction = function(kitchen) {
 		if(object instanceof Oven || object instanceof Cupboard) {
 			console.log("Knife: check Oven and Cupboard");
 			if(object.open ||
-			   (!object.open && !THIS.stage._checkTransparency({ x: bottomObject.cx, y: bottomObject.cy }, object))) {
+			   (!object.open && !THIS.stage._checkTransparency({ x: centerObject.cx, y: centerObject.cy }, object))) {
 				THIS.linkObjects(object);
 			}
 		} else {

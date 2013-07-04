@@ -137,7 +137,6 @@ Restrainer.prototype.checkActionState = function(stuffObjectName, action) {
 			break;
 
 		case "isCooked":
-
 			stuffObjects.forEach(function(object) {
 				if(!done) {
 					if(object instanceof Ingredient) {
