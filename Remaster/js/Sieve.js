@@ -32,11 +32,11 @@ Sieve.prototype.linkObjects = function(object) {
 			} else if(content.tiny) {
 				THIS.removeContent(content);
 			}
+			this.selectAnimation(false);
 		});
 	}
 
 	if(added) {
 		this.soundManager.play(this.soundManager.DROP);
 	}
-	this.selectAnimation(false);
 };
