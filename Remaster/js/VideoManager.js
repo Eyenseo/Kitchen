@@ -80,12 +80,12 @@ VideoManager.prototype.changePower = function() {
 VideoManager.prototype.playVideo = function() {
 	var video = this.videos[this.currentVideo];
 
-	//	if(video.readyState == 4) { // Firefox doesn't support it -__-
-	this.videoDiv.innerHTML = "";
+	if(video.readyState == 4) {     //Experimental
+		this.videoDiv.innerHTML = "";
 
-	//		video.currentTime =((Date.now() - this.time)/ 1000) % video.duration;
+		video.currentTime = ((Date.now() - this.time) / 1000) % video.duration; //Experimental
 
-	this.videoDiv.appendChild(video);
-	video.play();
-	//	}
+		this.videoDiv.appendChild(video);
+		video.play();
+	}          //Experimental
 };
