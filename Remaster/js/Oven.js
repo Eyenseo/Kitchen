@@ -65,7 +65,7 @@ Oven.prototype.action = function(kitchen) {
 };
 
 Oven.prototype.addLinkedObject = function(object) {
-	console.log("Oven: Link " + this.name + " with: " + object.name);
+	//	console.log("Oven: Link " + this.name + " with: " + object.name);//DEBUG
 
 	this.open = true;
 	this.selectAnimation(false);

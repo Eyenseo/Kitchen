@@ -42,7 +42,7 @@ Knife.prototype.dragEndAction = function(kitchen) {
 	 */
 	objectsUnder.forEach(function(object) {
 		if(object instanceof Oven || object instanceof Cupboard) {
-			console.log("Knife: check Oven and Cupboard");
+			//			console.log("Knife: check Oven and Cupboard");//DEBUG
 			if(object.open ||
 			   (!object.open && !THIS.stage._checkTransparency({ x: centerObject.cx, y: centerObject.cy }, object))) {
 				THIS.linkObjects(object);

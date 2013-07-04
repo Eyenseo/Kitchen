@@ -12,11 +12,11 @@ CuttingBoard.prototype = Object.create(Container.prototype);
 CuttingBoard.prototype.constructor = CuttingBoard;
 
 CuttingBoard.prototype.addLinkedObject = function(object) {
-	console.log("CuttingBoard: Link " + this.name + " with: " + object.name);
+	//console.log("CuttingBoard: Link " + this.name + " with: " + object.name);//DEBUG
 
 	if(object instanceof Ingredient && (object.cut || this.restrainer.checkPutRequest(this, object))) {
 		this.addContent(object);
-		console.log("Container: Add: " + object.name);
+		//		console.log("Container: Add: " + object.name);//DEBUG
 	}
 	this.linkedObjects.push(object)
 };

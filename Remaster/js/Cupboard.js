@@ -36,7 +36,7 @@ Cupboard.prototype.clickAction = function(kitchen) {
 };
 
 Cupboard.prototype.addLinkedObject = function(object) {
-	console.log("Cupboard: Link " + this.name + " with: " + object.name);
+	//	console.log("Cupboard: Link " + this.name + " with: " + object.name);//DEBUG
 
 	this.open = true;
 	this.selectAnimation(false);

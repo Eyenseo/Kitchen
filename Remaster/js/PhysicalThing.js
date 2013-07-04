@@ -127,7 +127,7 @@ PhysicalThing.prototype.dragEndAction = function(kitchen) {
 
 	objectsUnder.forEach(function(object) {
 		if(object instanceof Oven || object instanceof Cupboard) {
-			console.log("Physical: check Oven and Cupboard");
+			//			console.log("Physical: check Oven and Cupboard");//DEBUG
 			if((!object.open && !THIS.stage._checkTransparency({ x: bottomObject.cx, y: bottomObject.cy }, object))) {
 				THIS.linkObjects(object);
 			}
@@ -139,14 +139,14 @@ PhysicalThing.prototype.dragEndAction = function(kitchen) {
 
 PhysicalThing.prototype.linkObjects = function(object) {
 	if(object instanceof PhysicalThing) {
-		console.log("Physical: Check Link from: " + this.name + " with: " + object.name);
+		//		console.log("Physical: Check Link from: " + this.name + " with: " + object.name);//DEBUG
 		object.addLinkedObject(this);
 		this.addLinkedObject(object);
 	}
 };
 
 PhysicalThing.prototype.addLinkedObject = function(object) {
-	console.log("Physical: Link " + this.name + " with: " + object.name);
+	//	console.log("Physical: Link " + this.name + " with: " + object.name);//DEBUG
 
 	this.linkedObjects.push(object);
 };

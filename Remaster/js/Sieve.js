@@ -17,14 +17,14 @@ Sieve.prototype.linkObjects = function(object) {
 	var added = false;
 	var THIS = this;
 
-	console.log("Sieve");
+	//	console.log("Sieve");//DEBUG
 	this.PHY_linkObjects(object);
 
 	if(object instanceof Container) {
 		this.content.forEach(function(content) {
 			if(THIS.restrainer.checkPutRequest(object, content, true)) {
 				if(!content.tiny) {
-					console.log("Sieve: Put " + content.name + " in: " + object.name);
+					//					console.log("Sieve: Put " + content.name + " in: " + object.name);//DEBUG
 					object.addContent(content);
 					THIS.removeContent(content);
 					added = true;
