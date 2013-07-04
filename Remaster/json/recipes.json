@@ -626,7 +626,7 @@
 						{
 							"utensil": "cuttingBoard",
 							"act"    : "put",
-							"stuff"  : ["water", "salt", "potato", "onion"]
+							"stuff"  : ["potato", "onion"]
 						},
 						{
 							"utensil": "cuttingBoard",
