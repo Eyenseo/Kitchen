@@ -299,7 +299,7 @@
 			"name"       : "knife",
 			"type"       : "Knife",
 			"sx"         : 252,
-			"sy"         : 305,
+			"sy"         : 280,
 			"w"          : 201,
 			"h"          : 112,
 			"zOrder"     : true,
@@ -1429,17 +1429,17 @@
 			"type"       : "RestartButton",
 			"sx"         : -2,
 			"sy"         : -2,
-			"w"          : 90,
-			"h"          : 62,
+			"w"          : 85,
+			"h"          : 59,
 			"zOrder"     : 9,
 			"actionValue": 0.0011,
 			"picture"    : "images/stuff/backButton.png",
 			"aniObject"  : {
 				"image"     : {
-					"tileWidth" : 90,
-					"tileHeight": 62,
-					"imgWidth"  : 90,
-					"imgHeight" : 124
+					"tileWidth" : 85,
+					"tileHeight": 59,
+					"imgWidth"  : 85,
+					"imgHeight" : 118
 				},
 				"animations": {
 					"default": {
