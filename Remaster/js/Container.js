@@ -36,7 +36,7 @@ Container.prototype.dragEndAction = function(kitchen) {
 
 	objectsUnder.forEach(function(object) {
 		if(object instanceof Oven || object instanceof Cupboard) {
-			console.log("Container: check Oven and Cupboard");
+			//			console.log("Container: check Oven and Cupboard");//DEBUG
 			if(object.open ||
 			   (!object.open && !THIS.stage._checkTransparency({ x: bottomObject.cx, y: bottomObject.cy }, object))) {
 				THIS.linkObjects(object);
@@ -50,14 +50,14 @@ Container.prototype.dragEndAction = function(kitchen) {
 Container.prototype.PHY_linkObjects = Container.prototype.linkObjects;
 Container.prototype.linkObjects = function(object) {
 	var THIS = this;
-	console.log("Container");
+	//	console.log("Container");//DEBUG
 	this.PHY_linkObjects(object);
 
 	if(object instanceof Container) {
 
 		this.content.forEach(function(content) {
 			if(THIS.restrainer.checkPutRequest(object, content, true)) {
-				console.log("Container: Put " + content.name + " in: " + object.name);
+				//console.log("Container: Put " + content.name + " in: " + object.name);//DEBUG
 				object.addContent(content);
 				THIS.removeContent(content);
 				THIS.temperature = THIS.DEFAULTTEMP;
@@ -68,11 +68,11 @@ Container.prototype.linkObjects = function(object) {
 };
 
 Container.prototype.addLinkedObject = function(object) {
-	console.log("Container: Link " + this.name + " with: " + object.name);
+	//console.log("Container: Link " + this.name + " with: " + object.name);//DEBUG
 
 	if(object instanceof Ingredient && this.restrainer.checkPutRequest(this, object)) {
 		this.addContent(object);
-		console.log("Container: Add: " + object.name);
+		//console.log("Container: Add: " + object.name);//DEBUG
 	}
 	this.linkedObjects.push(object)
 };

@@ -18,7 +18,7 @@ Ingredient.prototype.updateTemperature = function(temperature) {
 	this.Phy_updateTemperatures(temperature);
 
 	if(!this.cooked && this.temperature >= this.COOKEDTEMP) {
-		console.log(this.name + " is cooked");
+		//		console.log(this.name + " is cooked");//DEBUG
 		this.setCooked(true);
 	}
 };
@@ -68,7 +68,7 @@ Ingredient.prototype.linkObjects = function(object) {
 };
 
 Ingredient.prototype.addLinkedObject = function(object) {
-	console.log("Ingredient: Link " + this.name + " with: " + object.name);
+	//	console.log("Ingredient: Link " + this.name + " with: " + object.name);//DEBUG
 
 	this.linkedObjects.push(object);
 };
