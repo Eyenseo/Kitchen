@@ -97,7 +97,7 @@ Kitchen.prototype.makeObject = function(objectData, extra) {
 				object = new Knob(this.stage, objectData, this.restrainer, extra);
 				break;
 			case "Sieve":
-				object = new Sieve(this.stage, objectData, this.restrainer);
+				object = new Sieve(this.stage, objectData, this.restrainer, this.soundManager);
 				break;
 			case "Pot":
 				object = new CookContainer(this.stage, objectData, this.restrainer, this.soundManager);

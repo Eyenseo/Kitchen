@@ -32,7 +32,7 @@ Sieve.prototype.linkObjects = function(object) {
 			} else if(content.tiny) {
 				THIS.removeContent(content);
 			}
-			this.selectAnimation(false);
+			THIS.selectAnimation(false);
 		});
 	}
 
