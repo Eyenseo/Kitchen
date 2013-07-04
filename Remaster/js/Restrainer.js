@@ -94,10 +94,8 @@ Restrainer.prototype.checkStage = function() {
 
 	if(done) {
 		if(this.recipeStage === this.recipe.schedule.length - 1) {
-			this.htmlManager.showWow(this.recipe.pictureFinish);
-			this.soundManager.stopAll();
-			this.kitchen.videoManager.stopAll();
 			this.kitchen.finished = true;
+			this.htmlManager.showWow(this.recipe.pictureFinish);
 		} else {
 			this.recipeStage = this.recipeStage + 1;
 			this.htmlManager.updateSpeechBubbleText(this.recipe.schedule[this.recipeStage].text);
@@ -213,7 +211,9 @@ Restrainer.prototype.getObject = function(name) {
 	});
 
 	if(name !== "water" && found.length === 0) {                      //water still needed?
-		console.log("Object with name: " + name + " wasn't found!");
+		//console.log("Object with name: " + name + " wasn't found!");//DEBUG? - console will get spammed since the browser seems to buffer the frame call
+		// and dosn't reackt to the change of the finished attribute of the kitchen - all things are removed from
+		// stage(finished has to be true) but still requests to find an object ...
 	} else {
 		return found;
 	}

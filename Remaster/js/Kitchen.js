@@ -57,6 +57,9 @@ function Kitchen(canvasId) {
 Kitchen.prototype.restart = function() {
 	var THIS = this;
 
+	this.soundManager.stopAll();
+	this.videoManager.stopAll();
+
 	this.allObjects.forEach(function(object) {
 		THIS.stage.removeFromStage(object);
 	});
@@ -364,11 +367,12 @@ Kitchen.prototype.run = function(kit) {
 			this.restrainer.checkStage();
 		}
 
-		if(this.bug < 5) { // Dirty hack - probably because of something in the stage?
-			this.videoManager.changePower(); // if this is not done the stage doesn't start to render the previous created
-			this.videoManager.changePower();
-			this.bug++
-		}
+		//See also the Video manager - firefox has sometimes problems ...
+		//		if(this.bug < 5) { // Dirty hack - probably because of something in the stage?
+		//			this.videoManager.changePower(); // if this is not done the stage doesn't start to render the previous created
+		//			this.videoManager.changePower();
+		//			this.bug++
+		//		}
 
 		// Always render after the updates
 		kit.stage.render();
